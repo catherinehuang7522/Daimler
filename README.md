@@ -4,7 +4,7 @@
  
  ## Project Overview
  
- We are reimaging the in-car entertainment system for the self-driving age.
+ We are reimagining the in-car entertainment system for the self-driving age.
  
  [Theme Music](https://open.spotify.com/user/21kv2tf3fcihbiwnlgww7asly/playlist/65LWzmY6oKjGv141vKFQqX?si=bn9aqPjESgKEjo_0pvkYFQ)
  
