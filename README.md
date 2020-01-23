@@ -11,11 +11,11 @@
  # Team Members
 Member |  Email | Photo
 --- | --- | ---
-Pau Anzaldo | -- | --
-Wilhelm Bolin | -- | --
+Pau Anzaldo | panzaldo@stanford.edu| --
+Wilhelm Bolin |wbolin@stanford.edu | --
 Jack Gartland | gartland@stanford.edu | --
-Kenneth Nturibi | -- | --
-Johnson Song | -- | --
+Kenneth Nturibi |knturibi@stanford.edu | --
+Johnson Song | jsong526@stanford.edu | --
 
 # Team Skills Matrix
 
