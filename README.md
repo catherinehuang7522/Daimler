@@ -31,6 +31,6 @@ Johnson Song | UI/UX, Product Design, Graphic Design | Fun, creative | Product D
 
 Email: 
 
-Slack: 
+Slack: cs210-teamdaimler2020.slack.com
 
 Documentation: 
