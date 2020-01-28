@@ -33,4 +33,4 @@ Email: teamcabana@lists.stanford.edu
 
 Slack: cs210-teamdaimler2020.slack.com
 
-Documentation: 
+Documentation on Google Drive available [here](https://docs.google.com/spreadsheets/d/1isjtFNKAyAGDMbAxcidu6oYKNnlBSQgpFNARiAo0xig/edit?usp=sharing)
