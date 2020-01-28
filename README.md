@@ -29,7 +29,7 @@ Johnson Song | UI/UX, Data Visualization, Product Design, Graphic Design | Fun, 
 
 # Team Communication
 
-Email: 
+Email: teamcabana@lists.stanford.edu
 
 Slack: cs210-teamdaimler2020.slack.com
 
