@@ -11,11 +11,11 @@
  # Team Members
 Member |  Email | Photo
 --- | --- | ---
-Pau Anzaldo | panzaldo@stanford.edu| --
-Wilhelm Bolin |wbolin@stanford.edu | --
-Jack Gartland | gartland@stanford.edu | --
-Kenneth Nturibi |knturibi@stanford.edu | --
-Johnson Song | johnsonsong@stanford.edu | --
+Pau Anzaldo | panzaldo@stanford.edu| <img src="/Resources/Headshots/PauNormal.jpg" alt="Pau Photo" height="200" />
+Wilhelm Bolin |wbolin@stanford.edu | <img src="/Resources/Headshots/Will headshot.jpg" alt="Will Photo" height="200" />
+Jack Gartland | gartland@stanford.edu | <img src="/Resources/Headshots/Jack Headshot.jpeg" alt="Jack Photo" height="200"/>
+Kenneth Nturibi |knturibi@stanford.edu | <img src="/Resources/Headshots/received_418816395692875.jpeg" alt="Ken Photo" height="200"/>
+Johnson Song | johnsonsong@stanford.edu | <img src="/Resources/Headshots/Johnson Headshot.jpg" alt="Johnson Photo" height="200"/>
 
 # Team Skills Matrix
 
