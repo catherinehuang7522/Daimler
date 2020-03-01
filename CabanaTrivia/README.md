@@ -2,4 +2,4 @@ Clone the repo.
 
 cd into the CabanaTrivia directory
 
-Run npm run dev  
+Run npm install in dir, then npm run dev  
