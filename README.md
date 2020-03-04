@@ -3,6 +3,8 @@
 <img src="Cabana Logo.png" alt="Cabana Logo"/>
  
  # :rocket: Latest Updates :rocket:
+ 
+ * [V1.0 Presentation in Stutgart added to files](https://github.com/cs210/Daimler/blob/master/Presentation%20Outline%20(V1.0))
  * [Figma design](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
  
  ## Project Overview
