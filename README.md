@@ -6,6 +6,7 @@
  
  * [V1.0 Presentation in Stutgart added to files](https://github.com/cs210/Daimler/blob/master/Presentation%20Outline%20(V1.0))
  * [Figma design](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
+ * GitHub repository made public for Daimler to view progress (3/3/2020)
  
  ## Project Overview
  
