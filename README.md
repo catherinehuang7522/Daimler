@@ -6,7 +6,7 @@
  
  * V1.0 of presentation for Stutgart added to files [here](https://github.com/cs210/Daimler/blob/master/Presentation%20Outline%20(V1.0))
  * Trivia Design created in Figma can be viewed [here](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
- * A more detailed Roadmap overview for team sprints can be viewed [here](https://docs.google.com/spreadsheets/d/1XCwTbh0N-ijNtFKVzL6cxW9gsjVZF3XECJRNrYBc3ho/edit#gid=0)
+ * A more detailed Roadmap/Overview can be viewed [here](https://docs.google.com/spreadsheets/d/1XCwTbh0N-ijNtFKVzL6cxW9gsjVZF3XECJRNrYBc3ho/edit#gid=0)
  * GitHub repository made public for Daimler to view progress (3/3/2020)
  
  ## Project Overview
