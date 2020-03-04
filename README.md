@@ -2,8 +2,8 @@
 
 <img src="Cabana Logo.png" alt="Cabana Logo"/>
  
- # Latest Updates
- [Figma design](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
+ # :rocket: Latest Updates :rocket:
+ * [Figma design](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
  
  ## Project Overview
  
