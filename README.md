@@ -28,7 +28,7 @@ Johnson Song | johnsonsong@stanford.edu | <img src="/Resources/Headshots/Johnson
 Name | Skills | Personal Traits | Desired Growth | Weakness
 --- | --- | --- | --- | ---
 Pau Anzaldo | Full-stack development, iOS, UI/UX,rapid prototyping | Disciplined, extroverted, listener | Product Management | short term memory
-Wilhelm Bolin | Product/Project Management, Finance, Business, Strategy  | Outgoing and Open. Big Picture type of person. Like direct and constructive feedback | Product Management and Programming | Programming
+Wilhelm Bolin | Product/Project Management, Finance, Business, Strategy, Web Applications | Outgoing and Open. Big Picture type of person. Like direct and constructive feedback | Product Management and Programming | Programming
 Jack Gartland | Front-end and full-stack development, user research and design thinking process | Driven, social, like to plan ahead | Product Management, interfacing with partners | Sometimes get absorbed in my own tasks and lose sight of the team
 Kenneth Nturibi | Fullstack dev - web and mobile-with a greater focus on backend, AI, security | Empatheric, Hardworking, Resorative, fun loving | PM, Setting engineering timelines | Decisiveness
 Johnson Song | UI/UX, Data Visualization, Product Design, Graphic Design | Creative, artistic, compassionate, and fun! | Product Design and Programming | Programming, bluntness
