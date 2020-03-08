@@ -27,6 +27,12 @@ class StartComponent extends Component {
       duration: 1
     };
 
+
+    this.onClickStartGame = this.onClickStartGame.bind(this)
+    this.onClickSingle = this.onClickSingle.bind(this)
+    this.onClickMulti  = this.onClickMulti.bind(this)
+    
+
   }
 
 
