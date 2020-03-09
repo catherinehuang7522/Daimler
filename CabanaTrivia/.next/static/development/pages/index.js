@@ -17743,7 +17743,7 @@ var IndexPage = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
   \***************************************************************************************************************************************/
@@ -17766,5 +17766,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
