@@ -14,27 +14,21 @@ export default class CabanaTrivia extends App {
     return { pageProps };
   }
 
-  renderHead() {
-    return (
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-        />
-      </Head>
-    );
-  }
-
   render() {
     const { Component, pageProps } = this.props;
     return (
-      //changed continer to div - might be wrong
-       <div>  
-        {this.renderHead()}
+       <html>
+         <head>
+           <meta name="viewport" content="width=device-width, initial-scale=1" />
+           <link
+             rel="stylesheet"
+             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+           />
+         </head>
+
         <CssBaseline />
         <Component {...pageProps} />
-      </div>
+      </html>
     );
   }
 }

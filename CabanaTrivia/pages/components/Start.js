@@ -3,21 +3,39 @@ import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
 
-
 const styles = ({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column'
-  },
   root: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+    backgroundColor: '#07142B',
+    width: 1062,
+    height: 484,
+    fontFamily: 'Kontakt'
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 20,
+    marginBottom: 20
+  },
+  title: {
+    color: 'white',
+    fontSize: 48,
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  unselectedButton: {
+    backgroundColor: '#205B82',
+    color: 'white',
+    borderRadius: 20,
+    width: 332,
+    height: 78,
+    fontFamily: 'Kontakt'
+  },
 })
 
 class StartComponent extends Component {
-
   constructor(props) {
     super(props)
 
@@ -27,12 +45,9 @@ class StartComponent extends Component {
       duration: 1
     };
 
-
     this.onClickStartGame = this.onClickStartGame.bind(this)
     this.onClickSingle = this.onClickSingle.bind(this)
     this.onClickMulti  = this.onClickMulti.bind(this)
-
-
   }
 
 
@@ -54,81 +69,67 @@ class StartComponent extends Component {
     this.setState({ duration: dur })
   }
 
-
-
-
-
-
-
   render() {
-
-    const startButton = this.state.startGame ?
-      <Button variant="contained" onClick={this.onClickStartGame} >
+    const startButton =
+      <Button style={styles.unselectedButton} variant="contained" onClick={this.onClickStartGame} >
         Start Game
-    </Button> :
-      <DangerButton text="End Game" onClick={this.onClickStartGame}>
-      </DangerButton>
+      </Button>
 
     const singlePlayerSelector = this.state.singlePlayer ?
-      <DangerButton text="Single Player">
-      </DangerButton> :
-      <Button variant="contained" onClick={this.onClickSingle} >
+      <DangerButton text="Single Player"/>
+      :
+      <Button style={styles.unselectedButton} variant="contained" onClick={this.onClickSingle} >
         Single Player
-    </Button>
+      </Button>
 
     const multiPlayerSelector = this.state.singlePlayer ?
-      <Button variant="contained" onClick={this.onClickMulti} >
+      <Button style={styles.unselectedButton} variant="contained" onClick={this.onClickMulti} >
         Multi Player
-    </Button> :
-      <DangerButton text="Multi Player">
-      </DangerButton>
+      </Button>
+      :
+      <DangerButton text="Multi Player"/>
 
     const shortDurationSelector = this.state.duration === 1 ?
-      <DangerButton text="Short Game [10 min]">
-      </DangerButton> :
-      <Button variant="contained" onClick={() => this.onSelectDuration(1)} >
+      <DangerButton text="Short Game [10 min]"/>
+      :
+      <Button style={styles.unselectedButton}  variant="contained" onClick={() => this.onSelectDuration(1)} >
         Short Game [10 min]
-    </Button>
+      </Button>
 
     const medDurationSelector = this.state.duration === 2 ?
-      <DangerButton text="Medium Game [20 min]">
-      </DangerButton> :
-      <Button variant="contained" onClick={() => this.onSelectDuration(2)} >
+      <DangerButton text="Medium Game [20 min]"/>
+      :
+      <Button style={styles.unselectedButton}  variant="contained" onClick={() => this.onSelectDuration(2)} >
         Medium Game [20 min]
-    </Button>
+      </Button>
 
     const longDurationSelector = this.state.duration === 3 ?
-      <DangerButton text="Long Game [30 min]">
-      </DangerButton> :
-      <Button variant="contained" onClick={() => this.onSelectDuration(3)} >
+      <DangerButton text="Long Game [30 min]"/>
+      :
+      <Button style={styles.unselectedButton} variant="contained" onClick={() => this.onSelectDuration(3)} >
         Long Game [30 min]
-    </Button>
-    return <div style={styles.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+      </Button>
+
+    return (
+      <div style={styles.root}>
+        <Grid style={styles.title}> TRIVIA </Grid>
+
+        <Grid style={styles.row} spacing={3}>
           {singlePlayerSelector}
-        </Grid>
-        <Grid item xs={12} sm={6}>
           {multiPlayerSelector}
         </Grid>
-      </Grid>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={4}>
+
+        <Grid style={styles.row} spacing={3}>
           {shortDurationSelector}
-        </Grid>
-        <Grid item xs={12} sm={4}>
           {medDurationSelector}
-        </Grid>
-        <Grid item xs={12} sm={4}>
           {longDurationSelector}
         </Grid>
-      </Grid>
-      <Grid container spacing={3}>
-        <Grid item>
+
+        <Grid style={styles.row} spacing={3}>
           {startButton}
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    );
   }
 
 }
