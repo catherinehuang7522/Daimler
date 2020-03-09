@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Answers.js";
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -138,7 +138,18 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   onPressAnswer(answerObj) {
-    this.props.callback(answerObj.correct);
+    let correctAnswer;
+
+    for (let i in this.props.answers) {
+      let currAnswerObj = this.props.answers[i];
+
+      if (currAnswerObj.correct) {
+        correctAnswer = entities.decode(currAnswerObj.text);
+        break;
+      }
+    }
+
+    this.props.callback(answerObj.correct, correctAnswer);
   }
 
   render() {
@@ -154,7 +165,7 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 53
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -162,21 +173,21 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 59
       },
       __self: this
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       onClick: () => this.onPressAnswer(answer1),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 60
       },
       __self: this
     }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       onClick: () => this.onPressAnswer(answer2),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 61
       },
       __self: this
     }, entities.decode(answer2.text))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -184,21 +195,21 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 64
       },
       __self: this
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       onClick: () => this.onPressAnswer(answer3),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 65
       },
       __self: this
     }, entities.decode(answer3.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       onClick: () => this.onPressAnswer(answer4),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 66
       },
       __self: this
     }, entities.decode(answer4.text))));
@@ -223,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -248,6 +259,106 @@ class DangerButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
+/***/ "./pages/components/Feedback.js":
+/*!**************************************!*\
+  !*** ./pages/components/Feedback.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
+
+const entities = new Entities();
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
+  container: {
+    display: 'grid',
+    direction: 'column'
+  },
+  minicontainer: {
+    display: 'grid',
+    direction: 'row'
+  }
+}));
+
+class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.onPressDismiss = this.onPressDismiss.bind(this);
+  }
+
+  onPressDismiss() {
+    this.props.callback();
+  }
+
+  render() {
+    let headerText;
+    let bodyText;
+
+    if (this.props.wasCorrect) {
+      headerText = "Correct!";
+      bodyText = "Way to go! You were right! " + this.props.correctAnswer + "is correct.";
+    } else {
+      headerText = "Incorrect";
+      bodyText = "Oh no, that wasn't right. The correct answer was " + this.props.correctAnswer + ".";
+    }
+
+    return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      container: true,
+      direction: "column",
+      justify: "center",
+      alignItems: "center",
+      spacing: 2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      minicontainer: true,
+      spacing: 1,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, headerText)), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }, bodyText));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (FeedbackComponent);
+
+/***/ }),
+
 /***/ "./pages/components/GameOver.js":
 /*!**************************************!*\
   !*** ./pages/components/GameOver.js ***!
@@ -265,7 +376,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -344,10 +455,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
-/* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Questions.js";
+/* harmony import */ var _material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Backdrop */ "@material-ui/core/Backdrop");
+/* harmony import */ var _material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
+/* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
+/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -370,6 +486,7 @@ const styles = {
   }
 };
 const MAX_NUM_QUESTIONS = 3;
+const FEEDBACK_SHOW_TIME_SECS = 2;
 
 class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
@@ -379,7 +496,10 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"]
       singlePlayer: true,
       duration: 1,
       questionIndex: 0,
-      currentScore: 0
+      currentScore: 0,
+      showFeedback: false,
+      lastQuestionCorrect: false,
+      lastQuestionAnswer: ""
     };
     this.nextQuestion = this.nextQuestion.bind(this);
   }
@@ -398,9 +518,23 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"]
     });
   }
 
-  nextQuestion(isCorrect) {
+  nextQuestion(isCorrect, correctAnswer) {
     const score = isCorrect ? this.state.currentScore + 1 : this.state.currentScore;
     const nextQIndex = this.state.questionIndex + 1;
+    this.setState({
+      lastQuestionCorrect: isCorrect
+    });
+    this.setState({
+      lastQuestionAnswer: correctAnswer
+    });
+    this.setState({
+      showFeedback: true
+    });
+    setTimeout(() => {
+      this.setState({
+        showFeedback: false
+      });
+    }, FEEDBACK_SHOW_TIME_SECS * 1000);
     this.setState({
       currentScore: score
     });
@@ -410,39 +544,54 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"]
   }
 
   render() {
-    return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      open: this.state.showFeedback,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80
+      },
+      __self: this
+    }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      wasCorrect: this.state.lastQuestionCorrect,
+      correctAnswer: this.state.lastQuestionAnswer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81
+      },
+      __self: this
+    })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       container: true,
       direction: "column",
       justify: "center",
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 87
       },
       __self: this
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 95
       },
       __self: this
-    }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), "   "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), "   "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_5__["default"], {
       answers: this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers,
       callback: this.nextQuestion,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 96
       },
       __self: this
-    })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
       score: this.state.currentScore,
       callback: this.props.callback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 102
       },
       __self: this
-    })));
+    }))));
   }
 
 }
@@ -467,7 +616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -499,17 +648,9 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   onClickStartGame() {
-    //change the state when the user clicks start game
-    if (this.state.startGame === true) {
-      this.setState({
-        startGame: false
-      });
-    } else {
-      this.setState({
-        startGame: true
-      });
-    }
-
+    this.setState({
+      startGame: !this.state.startGame
+    });
     this.props.callback("QUESTIONS");
   }
 
@@ -537,7 +678,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickStartGame,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 66
       },
       __self: this
     }, "Start Game") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -545,7 +686,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickStartGame,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 69
       },
       __self: this
     });
@@ -553,7 +694,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Single Player",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 73
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -561,7 +702,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickSingle,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 75
       },
       __self: this
     }, "Single Player");
@@ -570,14 +711,14 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickMulti,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 80
       },
       __self: this
     }, "Multi Player") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Multi Player",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 83
       },
       __self: this
     });
@@ -585,7 +726,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Short Game [10 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 87
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -593,7 +734,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(1),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 89
       },
       __self: this
     }, "Short Game [10 min]");
@@ -601,7 +742,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Medium Game [20 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 94
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -609,7 +750,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(2),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 96
       },
       __self: this
     }, "Medium Game [20 min]");
@@ -617,7 +758,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Long Game [30 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 101
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -625,7 +766,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(3),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 103
       },
       __self: this
     }, "Long Game [30 min]");
@@ -633,7 +774,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styles.root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 106
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -641,7 +782,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 107
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -650,7 +791,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       sm: 6,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 108
       },
       __self: this
     }, singlePlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -659,7 +800,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       sm: 6,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 111
       },
       __self: this
     }, multiPlayerSelector)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -667,7 +808,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 115
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -676,7 +817,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       sm: 4,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 116
       },
       __self: this
     }, shortDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -685,7 +826,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       sm: 4,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 119
       },
       __self: this
     }, medDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -694,7 +835,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       sm: 4,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 122
       },
       __self: this
     }, longDurationSelector)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -702,14 +843,14 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 126
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       item: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 127
       },
       __self: this
     }, startButton)));
@@ -740,7 +881,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Start */ "./pages/components/Start.js");
 /* harmony import */ var _components_Questions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Questions */ "./pages/components/Questions.js");
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/index.js";
+var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -813,8 +954,19 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ken/Documents/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@material-ui/core/Backdrop":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/Backdrop" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Backdrop");
 
 /***/ }),
 

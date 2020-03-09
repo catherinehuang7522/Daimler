@@ -37,12 +37,7 @@ class StartComponent extends Component {
 
 
   onClickStartGame() {
-    //change the state when the user clicks start game
-    if (this.state.startGame === true) {
-      this.setState({ startGame: false })
-    } else {
-      this.setState({ startGame: true })
-    }
+    this.setState({ startGame: !this.state.startGame })
     this.props.callback("QUESTIONS")
   }
 

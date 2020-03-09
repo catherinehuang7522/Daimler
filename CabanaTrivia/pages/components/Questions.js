@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
+import Backdrop from '@material-ui/core/Backdrop'
 import AnswersComponent from './Answers'
 import GameOverComponent from './GameOver'
+import FeedbackComponent from './Feedback'
 const Entities = require('html-entities').AllHtmlEntities
 
 const entities = new Entities();
@@ -21,6 +23,7 @@ const styles = ({
 })
 
 const MAX_NUM_QUESTIONS = 3
+const FEEDBACK_SHOW_TIME_SECS = 2
 
 class QuestionsComponent extends Component {
 
@@ -33,6 +36,9 @@ class QuestionsComponent extends Component {
       duration: 1,
       questionIndex: 0,
       currentScore: 0,
+      showFeedback: false,
+      lastQuestionCorrect: false,
+      lastQuestionAnswer: "",
     };
 
     this.nextQuestion = this.nextQuestion.bind(this)
@@ -41,7 +47,6 @@ class QuestionsComponent extends Component {
   componentWillMount() {
     this.onGetQuestions()
   }
-
 
   async onGetQuestions(category) {
     const finalCateg = category == null ? "entertainment-music" : category
@@ -54,9 +59,16 @@ class QuestionsComponent extends Component {
 
   }
 
-  nextQuestion(isCorrect) {
+  nextQuestion(isCorrect, correctAnswer) {
     const score = isCorrect ? this.state.currentScore + 1 : this.state.currentScore
     const nextQIndex = this.state.questionIndex + 1
+
+    this.setState({ lastQuestionCorrect: isCorrect})
+    this.setState({ lastQuestionAnswer: correctAnswer})
+    this.setState({ showFeedback: true})
+    setTimeout(() => {
+      this.setState({ showFeedback: false})
+    }, FEEDBACK_SHOW_TIME_SECS * 1000)
 
     this.setState({ currentScore: score })
     this.setState({ questionIndex: nextQIndex })
@@ -64,6 +76,14 @@ class QuestionsComponent extends Component {
 
   render() {
     return (
+      <>
+      <Backdrop open={this.state.showFeedback}>
+        <FeedbackComponent
+          wasCorrect={this.state.lastQuestionCorrect}
+          correctAnswer={this.state.lastQuestionAnswer}
+        />
+      </Backdrop>
+
       <Grid
         container
         direction="column"
@@ -80,10 +100,12 @@ class QuestionsComponent extends Component {
         {this.state.questionIndex >= MAX_NUM_QUESTIONS && <>
 
         <GameOverComponent score={this.state.currentScore} callback={this.props.callback}></GameOverComponent>
-        
+
         </>}
 
-        </Grid>)
+        </Grid>
+
+      </>)
   }
 
 }

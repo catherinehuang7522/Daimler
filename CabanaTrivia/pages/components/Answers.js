@@ -29,7 +29,16 @@ class AnswersComponent extends Component {
   }
 
   onPressAnswer(answerObj){
-    this.props.callback(answerObj.correct)
+    let correctAnswer;
+    for (let i in this.props.answers) {
+      let currAnswerObj = this.props.answers[i]
+      if (currAnswerObj.correct) {
+        correctAnswer = entities.decode(currAnswerObj.text)
+        break
+      }
+    }
+
+    this.props.callback(answerObj.correct, correctAnswer)
 
   }
 
@@ -39,12 +48,12 @@ class AnswersComponent extends Component {
     const answer2  =  this.props.answers == null? "Answer 2" :this.props.answers[1]
     const answer3  =  this.props.answers == null? "Answer 3" :this.props.answers[2]
     const answer4  =  this.props.answers == null? "Answer 4" :this.props.answers[3]
-    
+
 
     return <Grid container
     direction="column"
     justify="center"
-    alignItems="center" 
+    alignItems="center"
     spacing={2}>
 
       <Grid minicontainer spacing={1}>
