@@ -31,7 +31,7 @@ class StartComponent extends Component {
     this.onClickStartGame = this.onClickStartGame.bind(this)
     this.onClickSingle = this.onClickSingle.bind(this)
     this.onClickMulti  = this.onClickMulti.bind(this)
-    
+
 
   }
 
@@ -43,6 +43,7 @@ class StartComponent extends Component {
     } else {
       this.setState({ startGame: true })
     }
+    this.props.callback("QUESTIONS")
   }
 
   onClickSingle() {
@@ -57,6 +58,8 @@ class StartComponent extends Component {
   onSelectDuration(dur) {
     this.setState({ duration: dur })
   }
+
+
 
 
 

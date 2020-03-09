@@ -116,6 +116,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
+
+const entities = new Entities();
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
   container: {
     display: 'grid',
@@ -130,19 +134,27 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["
 class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
+    this.onPressAnswer = this.onPressAnswer.bind(this);
+  }
+
+  onPressAnswer(answerObj) {
+    this.props.callback(answerObj.correct);
   }
 
   render() {
-    const answer1 = this.props.answers == null ? "Answer 1" : this.props.answers[0].text;
-    const answer2 = this.props.answers == null ? "Answer 2" : this.props.answers[1].text;
-    const answer3 = this.props.answers == null ? "Answer 3" : this.props.answers[2].text;
-    const answer4 = this.props.answers == null ? "Answer 4" : this.props.answers[3].text;
+    const answer1 = this.props.answers == null ? "Answer 1" : this.props.answers[0];
+    const answer2 = this.props.answers == null ? "Answer 2" : this.props.answers[1];
+    const answer3 = this.props.answers == null ? "Answer 3" : this.props.answers[2];
+    const answer4 = this.props.answers == null ? "Answer 4" : this.props.answers[3];
     return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       container: true,
+      direction: "column",
+      justify: "center",
+      alignItems: "center",
       spacing: 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 44
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -150,42 +162,46 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 50
       },
       __self: this
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      onClick: () => this.onPressAnswer(answer1),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 51
       },
       __self: this
-    }, answer1, " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      onClick: () => this.onPressAnswer(answer2),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 52
       },
       __self: this
-    }, answer2)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, entities.decode(answer2.text))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       minicontainer: true,
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 55
       },
       __self: this
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      onClick: () => this.onPressAnswer(answer3),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 56
       },
       __self: this
-    }, answer3, " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, entities.decode(answer3.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      onClick: () => this.onPressAnswer(answer4),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 57
       },
       __self: this
-    }, answer4)));
+    }, entities.decode(answer4.text))));
   }
 
 }
@@ -232,10 +248,10 @@ class DangerButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ "./pages/components/Questions.js":
-/*!***************************************!*\
-  !*** ./pages/components/Questions.js ***!
-  \***************************************/
+/***/ "./pages/components/GameOver.js":
+/*!**************************************!*\
+  !*** ./pages/components/GameOver.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -249,7 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
-var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Questions.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -268,41 +284,15 @@ const styles = {
   }
 };
 
-class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class GameOverComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
-    this.state = {
-      startGame: true,
-      singlePlayer: true,
-      duration: 1
-    };
+    this.state = {};
+    this.onGoHome = this.onGoHome.bind(this);
   }
 
-  componentWillMount() {
-    this.onGetQuestions();
-  }
-
-  async onGetQuestions(category) {
-    const finalCateg = category == null ? "entertainment-music" : category;
-    console.log("Starting out"); //fetch questions
-
-    const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg);
-    console.log("response is: ");
-    console.log(response);
-    const allData = await response.json();
-    console.log("All Data: ");
-    console.log(allData);
-    this.setState({
-      questionsArr: allData
-    });
-    this.setState({
-      currentQ: allData[0].text
-    });
-    this.setState({
-      currentAnswers: allData[0].answers
-    });
-    console.log("The State:");
-    console.log(this.state);
+  onGoHome() {
+    this.props.callback("START");
   }
 
   render() {
@@ -313,60 +303,151 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"]
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 40
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 46
       },
       __self: this
-    }, this.state.currentQ), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      answers: this.state.currentAnswers,
+    }, "Game Over. You scored: ", this.props.score), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      onClick: this.onGoHome,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 47
       },
       __self: this
-    }));
+    }, "Back to Home"));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (QuestionsComponent); // import React, { Component } from 'react';
-// import Button from '@material-ui/core/Button'
-// import Grid from '@material-ui/core/Grid';
-// class QuestionsComponent extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { questionsArr: [] };
-//     this.onGetQuestions = this.onGetQuestions.bind(this);
-//     this.onClickAnswer = this.onClickAnswer.bind(this);
-//   }
-//   async onGetQuestions(category) {
-//     const finalCateg = category == null ? category : "entertainment-music";
-//     console.log("Starting out");
-//     //fetch questions
-//     //https://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music
-//     // const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg)
-//     // const allData = await response.json()
-//     const allData = []
-//     this.setState({ questionsArr: allData })
-//     this.setState({ currentQ: allData[0].text })
-//     this.setState({ currentAnswers: allData[0].answers })
-//     console.log("Got the data:")
-//     console.log(allData)
-//   }
-//   onClickAnswer() {
-//   }
-//   async render() {
-//    // await this.onGetQuestions()
-//     // <AnswersComponent answers={this.state.currentAnswers}></AnswersComponent>
-//     return  <p>First Question</p>
-//   }
-// }
-// export default QuestionsComponent;
+/* harmony default export */ __webpack_exports__["default"] = (GameOverComponent);
+
+/***/ }),
+
+/***/ "./pages/components/Questions.js":
+/*!***************************************!*\
+  !*** ./pages/components/Questions.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
+/* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Questions.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
+
+const entities = new Entities();
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+  root: {
+    flexGrow: 1
+  }
+};
+const MAX_NUM_QUESTIONS = 3;
+
+class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startGame: true,
+      singlePlayer: true,
+      duration: 1,
+      questionIndex: 0,
+      currentScore: 0
+    };
+    this.nextQuestion = this.nextQuestion.bind(this);
+  }
+
+  componentWillMount() {
+    this.onGetQuestions();
+  }
+
+  async onGetQuestions(category) {
+    const finalCateg = category == null ? "entertainment-music" : category; //fetch questions
+
+    const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg);
+    const allData = await response.json();
+    this.setState({
+      questionsArr: allData
+    });
+  }
+
+  nextQuestion(isCorrect) {
+    const score = isCorrect ? this.state.currentScore + 1 : this.state.currentScore;
+    const nextQIndex = this.state.questionIndex + 1;
+    this.setState({
+      currentScore: score
+    });
+    this.setState({
+      questionIndex: nextQIndex
+    });
+  }
+
+  render() {
+    return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      container: true,
+      direction: "column",
+      justify: "center",
+      alignItems: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
+      },
+      __self: this
+    }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75
+      },
+      __self: this
+    }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), "   "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      answers: this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers,
+      callback: this.nextQuestion,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: this
+    })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      score: this.state.currentScore,
+      callback: this.props.callback,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      },
+      __self: this
+    })));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (QuestionsComponent);
 
 /***/ }),
 
@@ -428,6 +509,8 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         startGame: true
       });
     }
+
+    this.props.callback("QUESTIONS");
   }
 
   onClickSingle() {
@@ -454,7 +537,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickStartGame,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 71
       },
       __self: this
     }, "Start Game") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -462,7 +545,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickStartGame,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 74
       },
       __self: this
     });
@@ -470,7 +553,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Single Player",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 78
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -478,7 +561,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickSingle,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 80
       },
       __self: this
     }, "Single Player");
@@ -487,14 +570,14 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.onClickMulti,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 85
       },
       __self: this
     }, "Multi Player") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Multi Player",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 88
       },
       __self: this
     });
@@ -502,7 +585,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Short Game [10 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 92
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -510,7 +593,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(1),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 94
       },
       __self: this
     }, "Short Game [10 min]");
@@ -518,7 +601,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Medium Game [20 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 99
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -526,7 +609,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(2),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 101
       },
       __self: this
     }, "Medium Game [20 min]");
@@ -534,7 +617,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       text: "Long Game [30 min]",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 106
       },
       __self: this
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -542,7 +625,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: () => this.onSelectDuration(3),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 108
       },
       __self: this
     }, "Long Game [30 min]");
@@ -550,7 +633,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styles.root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 111
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -558,19 +641,10 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109
+        lineNumber: 112
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      item: true,
-      xs: 12,
-      sm: 6,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 110
-      },
-      __self: this
-    }, singlePlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       item: true,
       xs: 12,
       sm: 6,
@@ -579,24 +653,24 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 113
       },
       __self: this
+    }, singlePlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      item: true,
+      xs: 12,
+      sm: 6,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116
+      },
+      __self: this
     }, multiPlayerSelector)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       container: true,
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 120
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      item: true,
-      xs: 12,
-      sm: 4,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 118
-      },
-      __self: this
-    }, shortDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       item: true,
       xs: 12,
       sm: 4,
@@ -605,7 +679,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 121
       },
       __self: this
-    }, medDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, shortDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       item: true,
       xs: 12,
       sm: 4,
@@ -614,19 +688,28 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 124
       },
       __self: this
+    }, medDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      item: true,
+      xs: 12,
+      sm: 4,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      },
+      __self: this
     }, longDurationSelector)), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       container: true,
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 131
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       item: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 132
       },
       __self: this
     }, startButton)));
@@ -673,15 +756,20 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       gameState: "START"
     };
     this.renderSwitch = this.renderSwitch.bind(this);
+    this.backHome = this.backHome.bind(this);
+  }
+
+  backHome(nextActions) {
+    this.setState({
+      gameState: nextActions
+    });
   }
 
   renderSwitch(gameState) {
-    console.log("State is: ");
-    console.log(gameState);
-
     switch (gameState) {
       case 'START':
         return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 33
@@ -691,6 +779,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
       case 'QUESTIONS':
         return __jsx(_components_Questions__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 35
@@ -759,6 +848,17 @@ module.exports = require("@material-ui/core/Grid");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
+
+/***/ }),
+
+/***/ "html-entities":
+/*!********************************!*\
+  !*** external "html-entities" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("html-entities");
 
 /***/ }),
 

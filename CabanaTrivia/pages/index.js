@@ -20,19 +20,19 @@ export default class IndexPage extends Component {
     };
 
     this.renderSwitch = this.renderSwitch.bind(this)
+    this.backHome = this.backHome.bind(this)
+  }
 
+  backHome(nextActions){
+    this.setState({gameState:nextActions})
   }
 
   renderSwitch(gameState) {
-    console.log("State is: ");
-    console.log(gameState);
-
-
     switch (gameState) {
       case 'START':
-        return <StartComponent></StartComponent>
+        return <StartComponent callback={this.backHome}></StartComponent>
       case 'QUESTIONS':
-        return <QuestionsComponent></QuestionsComponent>
+        return <QuestionsComponent callback={this.backHome}></QuestionsComponent>
       default:
         return <StartComponent></StartComponent>
     }

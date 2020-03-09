@@ -3,7 +3,10 @@ import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
 import AnswersComponent from './Answers'
+import GameOverComponent from './GameOver'
+const Entities = require('html-entities').AllHtmlEntities
 
+const entities = new Entities();
 
 const styles = ({
   container: {
@@ -17,6 +20,8 @@ const styles = ({
   }
 })
 
+const MAX_NUM_QUESTIONS = 3
+
 class QuestionsComponent extends Component {
 
   constructor(props) {
@@ -25,11 +30,15 @@ class QuestionsComponent extends Component {
     this.state = {
       startGame: true,
       singlePlayer: true,
-      duration: 1
+      duration: 1,
+      questionIndex: 0,
+      currentScore: 0,
     };
+
+    this.nextQuestion = this.nextQuestion.bind(this)
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.onGetQuestions()
   }
 
@@ -37,97 +46,45 @@ class QuestionsComponent extends Component {
   async onGetQuestions(category) {
     const finalCateg = category == null ? "entertainment-music" : category
 
-    console.log("Starting out");
     //fetch questions
     const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg)
-    console.log("response is: ");
-    console.log(response);
-
-
     const allData = await response.json()
-    console.log("All Data: ");
-    console.log(allData);
-
 
     this.setState({ questionsArr: allData })
-    this.setState({ currentQ: allData[0].text })
-    this.setState({ currentAnswers: allData[0].answers })
-    console.log("The State:")
-    console.log(this.state)
+
   }
 
+  nextQuestion(isCorrect) {
+    const score = isCorrect ? this.state.currentScore + 1 : this.state.currentScore
+    const nextQIndex = this.state.questionIndex + 1
 
-
-
+    this.setState({ currentScore: score })
+    this.setState({ questionIndex: nextQIndex })
+  }
 
   render() {
-    
-    return(
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
-      <p>{this.state.currentQ}</p>
-      <AnswersComponent answers={this.state.currentAnswers}></AnswersComponent></Grid> )
+    return (
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
+
+        {this.state.questionIndex < MAX_NUM_QUESTIONS && <>
+        <p>{this.state.questionsArr && entities.decode( this.state.questionsArr[this.state.questionIndex].text) }   </p>
+        <AnswersComponent answers={this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers} callback={this.nextQuestion}></AnswersComponent>
+        </>}
+
+
+        {this.state.questionIndex >= MAX_NUM_QUESTIONS && <>
+
+        <GameOverComponent score={this.state.currentScore} callback={this.props.callback}></GameOverComponent>
+        
+        </>}
+
+        </Grid>)
   }
 
 }
-export default QuestionsComponent;
-
-
-
-// import React, { Component } from 'react';
-// import Button from '@material-ui/core/Button'
-// import Grid from '@material-ui/core/Grid';
-
-// class QuestionsComponent extends Component {
-
-//   constructor(props) {
-//     super(props);
-//     this.state = { questionsArr: [] };
-
-//     this.onGetQuestions = this.onGetQuestions.bind(this);
-//     this.onClickAnswer = this.onClickAnswer.bind(this);
-//   }
-
-
-//   async onGetQuestions(category) {
-//     const finalCateg = category == null ? category : "entertainment-music";
-
-//     console.log("Starting out");
-
-
-//     //fetch questions
-//     //https://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music
-//     // const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg)
-//     // const allData = await response.json()
-//     const allData = []
-//     this.setState({ questionsArr: allData })
-//     this.setState({ currentQ: allData[0].text })
-//     this.setState({ currentAnswers: allData[0].answers })
-
-
-
-//     console.log("Got the data:")
-//     console.log(allData)
-
-
-
-
-
-//   }
-
-//   onClickAnswer() {
-
-//   }
-
-//   async render() {
-//    // await this.onGetQuestions()
-
-//     // <AnswersComponent answers={this.state.currentAnswers}></AnswersComponent>
-//     return  <p>First Question</p>
-//   }
-// }
-// export default QuestionsComponent;
+export default QuestionsComponent
