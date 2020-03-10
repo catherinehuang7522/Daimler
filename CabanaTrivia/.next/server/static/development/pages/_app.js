@@ -433,11 +433,21 @@ class CabanaTrivia extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
     };
   }
 
-  renderHead() {
-    return __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  render() {
+    const {
+      Component,
+      pageProps
+    } = this.props;
+    return __jsx("html", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx("head", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
       },
       __self: this
     }, __jsx("meta", {
@@ -445,7 +455,7 @@ class CabanaTrivia extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       content: "width=device-width, initial-scale=1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 22
       },
       __self: this
     }), __jsx("link", {
@@ -453,38 +463,22 @@ class CabanaTrivia extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 23
       },
       __self: this
-    }));
-  }
-
-  render() {
-    const {
-      Component,
-      pageProps
-    } = this.props;
-    return (//changed continer to div - might be wrong
-      __jsx("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, this.renderHead(), __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      }), __jsx(Component, _extends({}, pageProps, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      })))
-    );
+    })), __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }), __jsx(Component, _extends({}, pageProps, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    })));
   }
 
 }

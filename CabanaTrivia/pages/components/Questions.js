@@ -7,20 +7,9 @@ import AnswersComponent from './Answers'
 import GameOverComponent from './GameOver'
 import FeedbackComponent from './Feedback'
 const Entities = require('html-entities').AllHtmlEntities
+import { styles } from '../stylesheet.js'
 
 const entities = new Entities();
-
-const styles = ({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column'
-  },
-  root: {
-    flexGrow: 1
-  }
-})
 
 const MAX_NUM_QUESTIONS = 3
 const FEEDBACK_SHOW_TIME_SECS = 2
@@ -76,7 +65,7 @@ class QuestionsComponent extends Component {
 
   render() {
     return (
-      <>
+      <div style={styles.root}>
       <Backdrop open={this.state.showFeedback}>
         <FeedbackComponent
           wasCorrect={this.state.lastQuestionCorrect}
@@ -92,7 +81,7 @@ class QuestionsComponent extends Component {
       >
 
         {this.state.questionIndex < MAX_NUM_QUESTIONS && <>
-        <p>{this.state.questionsArr && entities.decode( this.state.questionsArr[this.state.questionIndex].text) }   </p>
+        <p style={styles.questionText}>{this.state.questionsArr && entities.decode( this.state.questionsArr[this.state.questionIndex].text) }   </p>
         <AnswersComponent answers={this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers} callback={this.nextQuestion}></AnswersComponent>
         </>}
 
@@ -105,7 +94,7 @@ class QuestionsComponent extends Component {
 
         </Grid>
 
-      </>)
+      </div>)
   }
 
 }

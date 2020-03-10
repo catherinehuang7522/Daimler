@@ -2,38 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
-
-const styles = ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: '#07142B',
-    width: 1062,
-    height: 484,
-    fontFamily: 'Kontakt'
-  },
-  row: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-    marginTop: 20,
-    marginBottom: 20
-  },
-  title: {
-    color: 'white',
-    fontSize: 48,
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  unselectedButton: {
-    backgroundColor: '#205B82',
-    color: 'white',
-    borderRadius: 20,
-    width: 332,
-    height: 78,
-    fontFamily: 'Kontakt'
-  },
-})
+import { styles } from '../stylesheet.js'
 
 class StartComponent extends Component {
   constructor(props) {

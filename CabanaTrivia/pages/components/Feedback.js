@@ -36,7 +36,7 @@ class FeedbackComponent extends Component {
     let bodyText;
     if (this.props.wasCorrect) {
       headerText = "Correct!";
-      bodyText = "Way to go! You were right! " + this.props.correctAnswer + "is correct."
+      bodyText = "Way to go! You were right! " + this.props.correctAnswer + " is correct."
     } else {
       headerText = "Incorrect";
       bodyText = "Oh no, that wasn't right. The correct answer was " + this.props.correctAnswer + "."

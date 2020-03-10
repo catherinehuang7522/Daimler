@@ -3,20 +3,7 @@ import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
 import AnswersComponent from './Answers'
-
-
-const styles = ({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column'
-  },
-  root: {
-    flexGrow: 1
-  }
-})
-
+import { styles } from '../stylesheet.js'
 
 class GameOverComponent extends Component {
 
@@ -24,7 +11,7 @@ class GameOverComponent extends Component {
     super(props)
 
     this.state = {
-      
+
     };
 
     this.onGoHome = this.onGoHome.bind(this)
@@ -43,8 +30,8 @@ class GameOverComponent extends Component {
         justify="center"
         alignItems="center"
       >
-        <p>Game Over. You scored: {this.props.score}</p>
-        <Button onClick={this.onGoHome}>Back to Home</Button>
+        <p style={styles.questionText}>Game Over. You scored: {this.props.score}</p>
+        <Button style={styles.unselectedButton} Click={this.onGoHome}>Back to Home</Button>
         </Grid> )
   }
 
