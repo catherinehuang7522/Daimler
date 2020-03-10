@@ -149,27 +149,27 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
           lineNumber: 68
         },
         __self: this
-      }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_14__["default"], {
-        wasCorrect: this.state.lastQuestionCorrect,
-        correctAnswer: this.state.lastQuestionAnswer,
+      }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        open: this.state.showFeedback,
+        invisible: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 69
         },
         __self: this
-      }), __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        open: this.state.showFeedback,
+      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].unselectedButton,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 70
         },
         __self: this
-      }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }, "HELLO"), __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_14__["default"], {
         wasCorrect: this.state.lastQuestionCorrect,
         correctAnswer: this.state.lastQuestionAnswer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 71
         },
         __self: this
       })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -179,14 +179,14 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         alignItems: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 77
         },
         __self: this
       }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("p", {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].questionText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 85
         },
         __self: this
       }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), "   "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -194,7 +194,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         callback: this.nextQuestion,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 86
         },
         __self: this
       })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -202,7 +202,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         callback: this.props.callback,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 92
         },
         __self: this
       }))));
@@ -217,4 +217,4 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.e183f24511babfef3609.hot-update.js.map
+//# sourceMappingURL=index.js.fc86dadc402edb75f05c.hot-update.js.map
