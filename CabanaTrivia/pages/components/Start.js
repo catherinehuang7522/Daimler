@@ -9,6 +9,7 @@ class StartComponent extends Component {
     super(props)
 
     this.state = {
+      randomvar: '',
       startGame: true,
       singlePlayer: true,
       duration: 1
