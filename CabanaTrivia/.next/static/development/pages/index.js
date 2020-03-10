@@ -17418,6 +17418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
 
 
 
@@ -17433,19 +17434,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 var Entities = __webpack_require__(/*! html-entities */ "./node_modules/html-entities/index.js").AllHtmlEntities;
 
+
 var entities = new Entities();
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["makeStyles"])(function (theme) {
-  return {
-    container: {
-      display: 'grid',
-      direction: 'column'
-    },
-    minicontainer: {
-      display: 'grid',
-      direction: 'row'
-    }
-  };
-});
 
 var FeedbackComponent = /*#__PURE__*/function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(FeedbackComponent, _Component);
@@ -17480,34 +17470,36 @@ var FeedbackComponent = /*#__PURE__*/function (_Component) {
       }
 
       return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        container: true,
+        columnGrid: true,
         direction: "column",
         justify: "center",
         alignItems: "center",
         spacing: 2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 33
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        minicontainer: true,
+        rowGrid: true,
         spacing: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 39
         },
         __self: this
-      }, __jsx("h1", {
+      }, __jsx("p", {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackHeaderText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 40
         },
         __self: this
       }, headerText)), __jsx("p", {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackBodyText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 43
         },
         __self: this
       }, bodyText));
@@ -18210,6 +18202,13 @@ var styles = {
   questionText: {
     color: 'white'
   },
+  feedbackHeaderText: {
+    color: 'white',
+    fontSize: 48
+  },
+  feedbackBodyText: {
+    color: 'white'
+  },
   unselectedButton: {
     backgroundColor: '#205B82',
     color: 'white',
@@ -18237,7 +18236,7 @@ var styles = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!**********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjack%2FGoogle%20Drive%2FWinter%20Quarter%202020%2FCS%20210%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
   \**********************************************************************************************************************************************************************************/
@@ -18260,5 +18259,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -288,6 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
 var _jsxFileName = "/Users/jack/Google Drive/Winter Quarter 2020/CS 210/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -297,17 +298,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
 
+
 const entities = new Entities();
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
-  container: {
-    display: 'grid',
-    direction: 'column'
-  },
-  minicontainer: {
-    display: 'grid',
-    direction: 'row'
-  }
-}));
 
 class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
@@ -332,34 +324,36 @@ class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
     }
 
     return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      container: true,
+      columnGrid: true,
       direction: "column",
       justify: "center",
       alignItems: "center",
       spacing: 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 33
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      minicontainer: true,
+      rowGrid: true,
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 39
       },
       __self: this
-    }, __jsx("h1", {
+    }, __jsx("p", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 40
       },
       __self: this
     }, headerText)), __jsx("p", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackBodyText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 43
       },
       __self: this
     }, bodyText));
@@ -931,6 +925,13 @@ const styles = {
   questionText: {
     color: 'white'
   },
+  feedbackHeaderText: {
+    color: 'white',
+    fontSize: 48
+  },
+  feedbackBodyText: {
+    color: 'white'
+  },
   unselectedButton: {
     backgroundColor: '#205B82',
     color: 'white',
@@ -958,7 +959,7 @@ const styles = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

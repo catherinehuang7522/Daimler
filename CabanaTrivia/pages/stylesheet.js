@@ -23,6 +23,13 @@ const styles = ({
   questionText: {
     color: 'white'
   },
+  feedbackHeaderText: {
+    color: 'white',
+    fontSize: 48
+  },
+  feedbackBodyText: {
+    color: 'white'
+  },
   unselectedButton: {
     backgroundColor: '#205B82',
     color: 'white',
