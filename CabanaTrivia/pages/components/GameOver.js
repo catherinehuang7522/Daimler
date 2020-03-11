@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import AnswersComponent from './Answers'
 import { styles } from '../stylesheet.js'
 
+// component shown when the game is over
 class GameOverComponent extends Component {
 
   constructor(props) {
@@ -17,6 +18,7 @@ class GameOverComponent extends Component {
     this.onGoHome = this.onGoHome.bind(this)
   }
 
+  // calls the callback function from questions
   onGoHome(){
     this.props.callback("START")
   }

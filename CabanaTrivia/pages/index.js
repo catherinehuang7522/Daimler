@@ -15,6 +15,7 @@ export default class IndexPage extends Component {
   constructor(props) {
     super(props)
 
+    // initialize the game state
     this.state = {
       gameState: "START"
     };
@@ -23,13 +24,15 @@ export default class IndexPage extends Component {
     this.backHome = this.backHome.bind(this)
   }
 
+  // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
   backHome(nextActions){
     this.setState({gameState:nextActions})
   }
 
+  // reder the desired componenent based on the state
   renderSwitch(gameState) {
     switch (gameState) {
-      case 'START':
+      case 'START': 
         return <StartComponent callback={this.backHome}></StartComponent>
       case 'QUESTIONS':
         return <QuestionsComponent callback={this.backHome}></QuestionsComponent>

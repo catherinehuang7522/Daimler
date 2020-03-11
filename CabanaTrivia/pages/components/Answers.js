@@ -7,6 +7,7 @@ import { styles } from '../stylesheet.js'
 
 const entities = new Entities();
 
+// component that displays the answers
 class AnswersComponent extends Component {
 
   constructor(props) {
@@ -15,12 +16,13 @@ class AnswersComponent extends Component {
 
   }
 
+  // executed when answer is pressed
   onPressAnswer(answerObj){
     let correctAnswer;
     for (let i in this.props.answers) {
       let currAnswerObj = this.props.answers[i]
       if (currAnswerObj.correct) {
-        correctAnswer = entities.decode(currAnswerObj.text)
+        correctAnswer = entities.decode(currAnswerObj.text)  // decoding because some of the questions and answers have HTML entities e.g. &quot;
         break
       }
     }
@@ -30,7 +32,8 @@ class AnswersComponent extends Component {
   }
 
   render() {
-
+  
+    //did the null check because it takes time for the API to return the values
     const answer1  =  this.props.answers == null? "Answer 1" : this.props.answers[0]
     const answer2  =  this.props.answers == null? "Answer 2" :this.props.answers[1]
     const answer3  =  this.props.answers == null? "Answer 3" :this.props.answers[2]

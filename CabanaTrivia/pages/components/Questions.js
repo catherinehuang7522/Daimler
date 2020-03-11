@@ -14,6 +14,7 @@ const entities = new Entities();
 const MAX_NUM_QUESTIONS = 3
 const FEEDBACK_SHOW_TIME_SECS = 2
 
+// component that displays the questions or the game over component
 class QuestionsComponent extends Component {
 
   constructor(props) {
@@ -33,10 +34,12 @@ class QuestionsComponent extends Component {
     this.nextQuestion = this.nextQuestion.bind(this)
   }
 
+  // calls function to fetch the questions before the component mounts
   componentWillMount() {
     this.onGetQuestions()
   }
 
+  // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
     const finalCateg = category == null ? "entertainment-music" : category
 
@@ -48,6 +51,7 @@ class QuestionsComponent extends Component {
 
   }
 
+  //changes to the next question. isCorrect ia a bool for if the previous value was correct. correctAnswer is the correct answer
   nextQuestion(isCorrect, correctAnswer) {
     const score = isCorrect ? this.state.currentScore + 1 : this.state.currentScore
     const nextQIndex = this.state.questionIndex + 1
@@ -66,6 +70,7 @@ class QuestionsComponent extends Component {
   render() {
     return (
       <div style={styles.root}>
+    
       <Backdrop open={this.state.showFeedback}>
         <FeedbackComponent
           wasCorrect={this.state.lastQuestionCorrect}
