@@ -32,7 +32,7 @@ export default class IndexPage extends Component {
   // reder the desired componenent based on the state
   renderSwitch(gameState) {
     switch (gameState) {
-      case 'START': 
+      case 'START':
         return <StartComponent callback={this.backHome}></StartComponent>
       case 'QUESTIONS':
         return <QuestionsComponent callback={this.backHome}></QuestionsComponent>

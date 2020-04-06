@@ -20,7 +20,9 @@ class GameOverComponent extends Component {
 
   // calls the callback function from questions
   onGoHome(){
+  //  this.setState({ startGame: !this.state.startGame })
     this.props.callback("START")
+    console.log("Hello!!!")
   }
 
   render() {
@@ -33,7 +35,7 @@ class GameOverComponent extends Component {
         alignItems="center"
       >
         <p style={styles.questionText}>Game Over. You scored: {this.props.score}</p>
-        <Button style={styles.unselectedButton} Click={this.onGoHome}>Back to Home</Button>
+        <Button style={styles.unselectedButton} onClick={this.onGoHome}>Back to Home</Button>
         </Grid> )
   }
 
