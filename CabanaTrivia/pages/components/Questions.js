@@ -7,7 +7,7 @@ import AnswersComponent from './Answers'
 import GameOverComponent from './GameOver'
 import FeedbackComponent from './Feedback'
 const Entities = require('html-entities').AllHtmlEntities
-import { styles } from '../stylesheet.js'
+import { styles } from '../../stylesheet'
 
 const entities = new Entities();
 

@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 const Entities = require('html-entities').AllHtmlEntities
-import { styles } from '../stylesheet.js'
+import { styles } from '../../stylesheet'
 
 const entities = new Entities();
 

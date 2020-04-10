@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
 import AnswersComponent from './Answers'
-import { styles } from '../stylesheet.js'
+import { styles } from '../../stylesheet'
 
 // component shown when the game is over
 class GameOverComponent extends Component {

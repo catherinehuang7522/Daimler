@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
-import { styles } from '../stylesheet.js'
+import { styles } from '../../stylesheet'
 
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state

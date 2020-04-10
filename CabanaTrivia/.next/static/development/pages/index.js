@@ -13565,19 +13565,19 @@ var index = create();
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_82519ec661270f7f484f ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \**********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13599,12 +13599,12 @@ module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_82519ec661270f7f484f ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -14239,23 +14239,23 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_82519ec661270f7f484f ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_82519ec661270f7f484f ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -16389,12 +16389,12 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_82519ec661270f7f484f ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -17188,14 +17188,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../stylesheet */ "./stylesheet.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Answers.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17268,7 +17268,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer1);
         },
@@ -17278,7 +17278,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer2);
         },
@@ -17296,7 +17296,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer3);
         },
@@ -17306,7 +17306,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, entities.decode(answer3.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer4);
         },
@@ -17348,7 +17348,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -17421,14 +17421,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../stylesheet */ "./stylesheet.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17492,14 +17492,14 @@ var FeedbackComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, __jsx("p", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackHeaderText,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackHeaderText,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 40
         },
         __self: this
       }, headerText)), __jsx("p", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackBodyText,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].feedbackBodyText,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43
@@ -17537,14 +17537,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../stylesheet */ "./stylesheet.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17589,14 +17589,14 @@ var GameOverComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, __jsx("p", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].questionText,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_11__["styles"].questionText,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         },
         __self: this
       }, "Game Over. You scored: ", this.props.score), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_11__["styles"].unselectedButton,
         onClick: this.onGoHome,
         __source: {
           fileName: _jsxFileName,
@@ -17640,7 +17640,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
 /* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
 /* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../stylesheet */ "./stylesheet.js");
 
 
 
@@ -17648,7 +17648,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Questions.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
@@ -17760,7 +17760,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return __jsx("div", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].root,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_15__["styles"].root,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 72
@@ -17792,7 +17792,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("p", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].questionText,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_15__["styles"].questionText,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 89
@@ -17845,14 +17845,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../stylesheet */ "./stylesheet.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17920,7 +17920,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       var startButton = __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: this.onClickStartGame,
         __source: {
@@ -17938,7 +17938,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: this.onClickSingle,
         __source: {
@@ -17948,7 +17948,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         __self: this
       }, "Single Player");
       var multiPlayerSelector = this.state.singlePlayer ? __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: this.onClickMulti,
         __source: {
@@ -17972,7 +17972,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: function onClick() {
           return _this2.onSelectDuration(1);
@@ -17991,7 +17991,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: function onClick() {
           return _this2.onSelectDuration(2);
@@ -18010,7 +18010,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
         variant: "contained",
         onClick: function onClick() {
           return _this2.onSelectDuration(3);
@@ -18022,21 +18022,21 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         __self: this
       }, "Long Game [30 min]");
       return __jsx("div", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].root,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].root,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 88
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].title,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].title,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 89
         },
         __self: this
       }, " TRIVIA "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
@@ -18044,7 +18044,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, singlePlayerSelector, multiPlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
@@ -18052,7 +18052,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __self: this
       }, shortDurationSelector, medDurationSelector, longDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_10__["styles"].row,
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
@@ -18099,7 +18099,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
+var _jsxFileName = "/Users/ken/Documents/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -18184,10 +18184,10 @@ var IndexPage = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./pages/stylesheet.js":
-/*!*****************************!*\
-  !*** ./pages/stylesheet.js ***!
-  \*****************************/
+/***/ "./stylesheet.js":
+/*!***********************!*\
+  !*** ./stylesheet.js ***!
+  \***********************/
 /*! exports provided: styles */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -18254,25 +18254,25 @@ var styles = {
 /***/ }),
 
 /***/ 1:
-/*!**************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \**************************************************************************************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fken%2FDocuments%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_0fb095e325d7ebf261c3":
+/***/ "dll-reference dll_82519ec661270f7f484f":
 /*!*******************************************!*\
-  !*** external "dll_0fb095e325d7ebf261c3" ***!
+  !*** external "dll_82519ec661270f7f484f" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_0fb095e325d7ebf261c3;
+module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
