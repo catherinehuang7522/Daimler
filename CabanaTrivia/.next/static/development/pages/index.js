@@ -18210,6 +18210,15 @@ var styles = {
     marginTop: 20,
     marginBottom: 20
   },
+  //NOTE: Not sure if this is the right formatting for a column
+  column: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'column',
+    marginTop: 20,
+    marginBottom: 20
+  },
   title: {
     color: 'white',
     fontSize: 48,
