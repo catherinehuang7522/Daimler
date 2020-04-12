@@ -10,9 +10,6 @@ class CategoriesButton extends Component {
     return (
       <Button style={styles.unselectedButton} variant="contained" color="secondary" onClick={this.props.onClick}>
         {this.props.text}
-
-        //Not sure if this is right?? Or if we need it
-        {this.props.hasChosenCategory}
       </Button>
     );
   }

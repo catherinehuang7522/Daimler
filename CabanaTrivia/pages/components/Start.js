@@ -27,7 +27,7 @@ class StartComponent extends Component {
   // sets up the state to play a game for the prototype. Calls a callback function that will call the backhome function
   onClickStartGame() {
     this.setState({ startGame: !this.state.startGame })
-    this.props.callback("QUESTIONS")
+    this.props.callback("CATEGORIES")
   }
 
   onClickSingle() {

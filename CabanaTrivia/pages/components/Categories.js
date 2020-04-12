@@ -13,11 +13,9 @@ class CategoriesComponent extends Component {
     super(props)
 
     this.state = {
-      isUnselected: true,
-
       generalKnowledge: false,
       film: false,
-      switchcienceNature: false,
+      scienceNature: false,
       sports: false,
       history: false,
       tv: false,
@@ -27,88 +25,165 @@ class CategoriesComponent extends Component {
       geography: false,
       art: false,
       videoGames: false,
-
     };
-    this.onClickCat = this.onClickCat.bind(this)
+
+    this.onClickGeneralKnowledge = this.onClickGeneralKnowledge.bind(this);
+    this.onClickFilm = this.onClickFilm.bind(this);
+    this.onClickScienceNature = this.onClickScienceNature.bind(this);
+    this.onClickSports = this.onClickSports.bind(this);
+    this.onClickHistory = this.onClickHistory.bind(this);
+    this.onClickTV = this.onClickTV.bind(this);
+    this.onClickBooks = this.onClickBooks.bind(this);
+    this.onClickMusic = this.onClickMusic.bind(this);
+    this.onClickMythology = this.onClickMythology.bind(this);
+    this.onClickGeography = this.onClickGeography.bind(this);
+    this.onClickArt = this.onClickArt.bind(this);
+    this.onClickVideoGames = this.onClickVideoGames.bind(this);
   }
 
-  //Set the value of the category chosen as true
-  onClickCat(someCategory) {
-    this.setState({ someCategory: true })
+  onClickGeneralKnowledge() {
+    this.setState({generalKnowledge: !this.state.generalKnowledge});
+  }
+
+  onClickFilm() {
+    this.setState({film: !this.state.film});
+  }
+
+  onClickScienceNature() {
+    this.setState({scienceNature: !this.state.scienceNature});
+  }
+
+  onClickSports() {
+    this.setState({sports: !this.state.sports});
+  }
+
+  onClickHistory() {
+    this.setState({history: !this.state.history});
+  }
+
+  onClickTV() {
+    this.setState({tv: !this.state.tv});
+  }
+
+  onClickBooks() {
+    this.setState({books: !this.state.books});
+  }
+
+  onClickMusic() {
+    this.setState({music: !this.state.music});
+  }
+
+  onClickMythology() {
+    this.setState({mythology: !this.state.mythology});
+  }
+
+  onClickGeography() {
+    this.setState({geography: !this.state.geography});
+  }
+
+  onClickArt() {
+    this.setState({art: !this.state.art});
+  }
+
+  onClickVideoGames() {
+    this.setState({videoGames: !this.state.videoGames});
   }
 
   render() {
     //By default, our categoty buttons are all unselected. When selected, the button looks selected
-    //TODO: Pass a function that will change the boolen of individual category
-    //Example is given on General Knowledge
-    const generalKnowledgeButton = this.state.isUnselected ?
-      <CategoriesButton text="General Knowledge" hasChosenCategory= this.onClickCat(generalKnowledge) /> : <DangerButton text="General Knowledge"/>
+    const generalKnowledgeButton = this.state.generalKnowledge ?
+      <DangerButton text="General Knowledge" onClick={this.onClickGeneralKnowledge}/>
+      :
+      <CategoriesButton text="General Knowledge" onClick={this.onClickGeneralKnowledge} />
 
-    const filmButton = this.state.isUnselected ?
-      <CategoriesButton text="Film"/> : <DangerButton text="Film"/>
+    const filmButton = this.state.film ?
+      <DangerButton text="Film" onClick={this.onClickFilm}/>
+      :
+      <CategoriesButton text="Film" onClick={this.onClickFilm} />
 
-    const scienceNatureButton = this.state.isUnselected ?
-      <CategoriesButton text="Science and Nature"/> : <DangerButton text="Science and Nature"/>
+    const scienceNatureButton = this.state.scienceNature ?
+      <DangerButton text="Science and Nature" onClick={this.onClickScienceNature}/>
+      :
+      <CategoriesButton text="Science and Nature" onClick={this.onClickScienceNature} />
 
-    const sportsButton = this.state.isUnselected ?
-      <CategoriesButton text="Sports"/> : <DangerButton text="Sports"/>
+    const sportsButton = this.state.sports ?
+      <DangerButton text="Sports" onClick={this.onClickSports}/>
+      :
+      <CategoriesButton text="Sports" onClick={this.onClickSports} />
 
-    const historyButton = this.state.isUnselected ?
-      <CategoriesButton text="History"/> : <DangerButton text="History"/>
+    const historyButton = this.state.history ?
+      <DangerButton text="History" onClick={this.onClickHistory}/>
+      :
+      <CategoriesButton text="History" onClick={this.onClickHistory} />
 
-    const tvButton = this.state.isUnselected ?
-      <CategoriesButton text="Television"/> : <DangerButton text="Television"/>
+    const tvButton = this.state.tv ?
+      <DangerButton text="Television" onClick={this.onClickTV}/>
+      :
+      <CategoriesButton text="Television" onClick={this.onClickTV} />
 
-    const booksButton = this.state.isUnselected ?
-      <CategoriesButton text="Books"/> : <DangerButton text="Books"/>
+    const booksButton = this.state.books ?
+      <DangerButton text="Books" onClick={this.onClickBooks}/>
+      :
+      <CategoriesButton text="Books" onClick={this.onClickBooks} />
 
-    const musicButton = this.state.isUnselected ?
-      <CategoriesButton text="Books"/> : <DangerButton text="Books"/>
+    const musicButton = this.state.music ?
+      <DangerButton text="Music" onClick={this.onClickMusic}/>
+      :
+      <CategoriesButton text="Music" onClick={this.onClickMusic} />
 
-    const mythologyButton = this.state.isUnselected ?
-      <CategoriesButton text="Mythology"/> : <DangerButton text="Mythology"/>
+    const mythologyButton = this.state.mythology ?
+      <DangerButton text="Mythology" onClick={this.onClickMythology}/>
+      :
+      <CategoriesButton text="Mythology" onClick={this.onClickMythology} />
 
-    const geographyButton = this.state.isUnselected ?
-      <CategoriesButton text="Geography"/> : <DangerButton text="Geography"/>
+    const geographyButton = this.state.geography ?
+      <DangerButton text="Geography" onClick={this.onClickGeography}/>
+      :
+      <CategoriesButton text="Geography" onClick={this.onClickGeography} />
 
-    const artButton = this.state.isUnselected ?
-      <CategoriesButton text="Art"/> : <DangerButton text="Art"/>
+    const artButton = this.state.art ?
+      <DangerButton text="Art" onClick={this.onClickArt}/>
+      :
+      <CategoriesButton text="Art" onClick={this.onClickArt} />
 
-    const videoGamesButton = this.state.isUnselected ?
-      <CategoriesButton text="Art"/> : <DangerButton text="Art"/>
+    const videoGamesButton = this.state.videoGames ?
+      <DangerButton text="Video Games" onClick={this.onClickVideoGames}/>
+      :
+      <CategoriesButton text="Video Games" onClick={this.onClickVideoGames} />
 
-
+      // TODO: Add arrow button that would mean "Next".
+      // TODO: Limit selection to three categories.
+      // TODO: Keep track of which categories were selected for future API calls
     return (
-
-      //TODO: Make sure that styles.column does actually style to 2 columns. Check the stylesheet.js file
       <div style={styles.root}>
         <Grid style={styles.title}> SELECT UP TO 3 CATEGORIES </Grid>
 
-
-        //Column 1
-        <Grid style={styles.column} spacing={3}>
+        <div style={styles.categoryButtonsContainer}>
+        <Grid style={styles.categoryRow} spacing={3}>
           {generalKnowledgeButton}
           {filmButton}
+        </Grid>
+        <Grid style={styles.categoryRow} spacing={3}>
           {scienceNatureButton}
           {sportsButton}
+        </Grid>
+        <Grid style={styles.categoryRow} spacing={3}>
           {historyButton}
           {tvButton}
         </Grid>
-
-        //Column 2
-        <Grid style={styles.column} spacing={3}>
+        <Grid style={styles.categoryRow} spacing={3}>
           {booksButton}
           {musicButton}
+        </Grid>
+        <Grid style={styles.categoryRow} spacing={3}>
           {mythologyButton}
           {geographyButton}
+        </Grid>
+        <Grid style={styles.categoryRow} spacing={3}>
           {artButton}
           {videoGamesButton}
         </Grid>
-
-        //TODO:
-        //Add some arrow button that would mean "Next".
-        //Not yet implemented
-
+        </div>
       </div>
     );
   }

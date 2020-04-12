@@ -4,7 +4,8 @@ const styles = ({
     backgroundColor: '#07142B',
     width: 1062,
     height: 484,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Kontakt',
+    overflow: 'scroll',
   },
   row: {
     display: 'flex',
@@ -14,7 +15,18 @@ const styles = ({
     marginTop: 20,
     marginBottom: 20
   },
-
+  categoryButtonsContainer: {
+    paddingLeft: 166,
+    paddingRight: 166
+  },
+  categoryRow: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 20,
+    marginBottom: 20,
+  },
   //NOTE: Not sure if this is the right formatting for a column
   column: {
     display: 'flex',

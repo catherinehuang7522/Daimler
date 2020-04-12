@@ -111,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Answers.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -220,6 +220,467 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
+/***/ "./pages/components/Categories.js":
+/*!****************************************!*\
+  !*** ./pages/components/Categories.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
+/* harmony import */ var _CategoriesButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CategoriesButton */ "./pages/components/CategoriesButton.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Categories.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+/* shown when user first starts playing - they can choose what type of game they want to play
+initializes the state
+*/
+
+class CategoriesComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      generalKnowledge: false,
+      film: false,
+      scienceNature: false,
+      sports: false,
+      history: false,
+      tv: false,
+      books: false,
+      music: false,
+      mythology: false,
+      geography: false,
+      art: false,
+      videoGames: false
+    };
+    this.onClickGeneralKnowledge = this.onClickGeneralKnowledge.bind(this);
+    this.onClickFilm = this.onClickFilm.bind(this);
+    this.onClickScienceNature = this.onClickScienceNature.bind(this);
+    this.onClickSports = this.onClickSports.bind(this);
+    this.onClickHistory = this.onClickHistory.bind(this);
+    this.onClickTV = this.onClickTV.bind(this);
+    this.onClickBooks = this.onClickBooks.bind(this);
+    this.onClickMusic = this.onClickMusic.bind(this);
+    this.onClickMythology = this.onClickMythology.bind(this);
+    this.onClickGeography = this.onClickGeography.bind(this);
+    this.onClickArt = this.onClickArt.bind(this);
+    this.onClickVideoGames = this.onClickVideoGames.bind(this);
+  }
+
+  onClickGeneralKnowledge() {
+    this.setState({
+      generalKnowledge: !this.state.generalKnowledge
+    });
+  }
+
+  onClickFilm() {
+    this.setState({
+      film: !this.state.film
+    });
+  }
+
+  onClickScienceNature() {
+    this.setState({
+      scienceNature: !this.state.scienceNature
+    });
+  }
+
+  onClickSports() {
+    this.setState({
+      sports: !this.state.sports
+    });
+  }
+
+  onClickHistory() {
+    this.setState({
+      history: !this.state.history
+    });
+  }
+
+  onClickTV() {
+    this.setState({
+      tv: !this.state.tv
+    });
+  }
+
+  onClickBooks() {
+    this.setState({
+      books: !this.state.books
+    });
+  }
+
+  onClickMusic() {
+    this.setState({
+      music: !this.state.music
+    });
+  }
+
+  onClickMythology() {
+    this.setState({
+      mythology: !this.state.mythology
+    });
+  }
+
+  onClickGeography() {
+    this.setState({
+      geography: !this.state.geography
+    });
+  }
+
+  onClickArt() {
+    this.setState({
+      art: !this.state.art
+    });
+  }
+
+  onClickVideoGames() {
+    this.setState({
+      videoGames: !this.state.videoGames
+    });
+  }
+
+  render() {
+    //By default, our categoty buttons are all unselected. When selected, the button looks selected
+    const generalKnowledgeButton = this.state.generalKnowledge ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "General Knowledge",
+      onClick: this.onClickGeneralKnowledge,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "General Knowledge",
+      onClick: this.onClickGeneralKnowledge,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    });
+    const filmButton = this.state.film ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Film",
+      onClick: this.onClickFilm,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Film",
+      onClick: this.onClickFilm,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
+      },
+      __self: this
+    });
+    const scienceNatureButton = this.state.scienceNature ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Science and Nature",
+      onClick: this.onClickScienceNature,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Science and Nature",
+      onClick: this.onClickScienceNature,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107
+      },
+      __self: this
+    });
+    const sportsButton = this.state.sports ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Sports",
+      onClick: this.onClickSports,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 110
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Sports",
+      onClick: this.onClickSports,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 112
+      },
+      __self: this
+    });
+    const historyButton = this.state.history ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "History",
+      onClick: this.onClickHistory,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 115
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "History",
+      onClick: this.onClickHistory,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117
+      },
+      __self: this
+    });
+    const tvButton = this.state.tv ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Television",
+      onClick: this.onClickTV,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Television",
+      onClick: this.onClickTV,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 122
+      },
+      __self: this
+    });
+    const booksButton = this.state.books ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Books",
+      onClick: this.onClickBooks,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Books",
+      onClick: this.onClickBooks,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      },
+      __self: this
+    });
+    const musicButton = this.state.music ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Music",
+      onClick: this.onClickMusic,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 130
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Music",
+      onClick: this.onClickMusic,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 132
+      },
+      __self: this
+    });
+    const mythologyButton = this.state.mythology ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Mythology",
+      onClick: this.onClickMythology,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 135
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Mythology",
+      onClick: this.onClickMythology,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 137
+      },
+      __self: this
+    });
+    const geographyButton = this.state.geography ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Geography",
+      onClick: this.onClickGeography,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Geography",
+      onClick: this.onClickGeography,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 142
+      },
+      __self: this
+    });
+    const artButton = this.state.art ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Art",
+      onClick: this.onClickArt,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Art",
+      onClick: this.onClickArt,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 147
+      },
+      __self: this
+    });
+    const videoGamesButton = this.state.videoGames ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Video Games",
+      onClick: this.onClickVideoGames,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 150
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Video Games",
+      onClick: this.onClickVideoGames,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 152
+      },
+      __self: this
+    }); // TODO: Add arrow button that would mean "Next".
+    // TODO: Limit selection to three categories.
+    // TODO: Keep track of which categories were selected for future API calls
+
+    return __jsx("div", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].root,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 158
+      },
+      __self: this
+    }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 159
+      },
+      __self: this
+    }, " SELECT UP TO 3 CATEGORIES "), __jsx("div", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryButtonsContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 161
+      },
+      __self: this
+    }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 162
+      },
+      __self: this
+    }, generalKnowledgeButton, filmButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 166
+      },
+      __self: this
+    }, scienceNatureButton, sportsButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 170
+      },
+      __self: this
+    }, historyButton, tvButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 174
+      },
+      __self: this
+    }, booksButton, musicButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 178
+      },
+      __self: this
+    }, mythologyButton, geographyButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 182
+      },
+      __self: this
+    }, artButton, videoGamesButton)));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CategoriesComponent);
+
+/***/ }),
+
+/***/ "./pages/components/CategoriesButton.js":
+/*!**********************************************!*\
+  !*** ./pages/components/CategoriesButton.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+ //Recycle Category Button, by default the button is unselected
+
+class CategoriesButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_2__["styles"].unselectedButton,
+      variant: "contained",
+      color: "secondary",
+      onClick: this.props.onClick,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, this.props.text);
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CategoriesButton);
+
+/***/ }),
+
 /***/ "./pages/components/DangerButton.js":
 /*!******************************************!*\
   !*** ./pages/components/DangerButton.js ***!
@@ -233,7 +694,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -292,7 +753,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -386,7 +847,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -466,7 +927,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
 /* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Questions.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -624,7 +1085,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -654,7 +1115,7 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.setState({
       startGame: !this.state.startGame
     });
-    this.props.callback("QUESTIONS");
+    this.props.callback("CATEGORIES");
   }
 
   onClickSingle() {
@@ -838,8 +1299,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Start */ "./pages/components/Start.js");
 /* harmony import */ var _components_Questions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Questions */ "./pages/components/Questions.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
+/* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Categories */ "./pages/components/Categories.js");
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -873,7 +1336,17 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 37
+          },
+          __self: this
+        });
+
+      case 'CATEGORIES':
+        return __jsx(_components_Categories__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          callback: this.backHome,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39
           },
           __self: this
         });
@@ -883,7 +1356,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 41
           },
           __self: this
         });
@@ -892,7 +1365,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_4__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 43
           },
           __self: this
         });
@@ -923,9 +1396,22 @@ const styles = {
     backgroundColor: '#07142B',
     width: 1062,
     height: 484,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Kontakt',
+    overflow: 'scroll'
   },
   row: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 20,
+    marginBottom: 20
+  },
+  categoryButtonsContainer: {
+    paddingLeft: 166,
+    paddingRight: 166
+  },
+  categoryRow: {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -992,7 +1478,7 @@ const styles = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

@@ -4,6 +4,7 @@ import DangerButton from './components/DangerButton'
 import Grid from '@material-ui/core/Grid'
 import StartComponent from './components/Start'
 import QuestionsComponent from './components/Questions'
+import CategoriesComponent from './components/Categories'
 
 
 const styles = ({
@@ -34,6 +35,8 @@ export default class IndexPage extends Component {
     switch (gameState) {
       case 'START':
         return <StartComponent callback={this.backHome}></StartComponent>
+      case 'CATEGORIES':
+        return <CategoriesComponent callback={this.backHome}></CategoriesComponent>
       case 'QUESTIONS':
         return <QuestionsComponent callback={this.backHome}></QuestionsComponent>
       default:
