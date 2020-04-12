@@ -13565,19 +13565,19 @@ var index = create();
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
-/*!*****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \*****************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \**********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13599,12 +13599,12 @@ module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -14239,23 +14239,23 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -16389,12 +16389,12 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -17195,7 +17195,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17354,7 +17354,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Categories.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Categories.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -17376,6 +17376,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CategoriesComponent).call(this, props));
     _this.state = {
+      count: 0,
       generalKnowledge: false,
       film: false,
       scienceNature: false,
@@ -17401,6 +17402,8 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
     _this.onClickGeography = _this.onClickGeography.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.onClickArt = _this.onClickArt.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.onClickVideoGames = _this.onClickVideoGames.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.incrementCount = _this.incrementCount.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.decrementCount = _this.decrementCount.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
 
@@ -17410,6 +17413,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         generalKnowledge: !this.state.generalKnowledge
       });
+      !this.state.generalKnowledge ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickFilm",
@@ -17417,6 +17421,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         film: !this.state.film
       });
+      !this.state.film ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickScienceNature",
@@ -17424,6 +17429,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         scienceNature: !this.state.scienceNature
       });
+      !this.state.scienceNature ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickSports",
@@ -17431,6 +17437,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         sports: !this.state.sports
       });
+      !this.state.sports ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickHistory",
@@ -17438,6 +17445,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         history: !this.state.history
       });
+      !this.state.history ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickTV",
@@ -17445,6 +17453,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         tv: !this.state.tv
       });
+      !this.state.tv ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickBooks",
@@ -17452,6 +17461,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         books: !this.state.books
       });
+      !this.state.books ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickMusic",
@@ -17459,6 +17469,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         music: !this.state.music
       });
+      !this.state.music ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickMythology",
@@ -17466,6 +17477,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         mythology: !this.state.mythology
       });
+      !this.state.music ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickGeography",
@@ -17473,6 +17485,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         geography: !this.state.geography
       });
+      !this.state.geography ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickArt",
@@ -17480,6 +17493,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         art: !this.state.art
       });
+      !this.state.art ? this.incrementCount() : this.decrementCount();
     }
   }, {
     key: "onClickVideoGames",
@@ -17487,17 +17501,42 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         videoGames: !this.state.videoGames
       });
+      !this.state.videoGames ? this.incrementCount() : this.decrementCount();
+    }
+  }, {
+    key: "incrementCount",
+    value: function incrementCount() {
+      this.setState({
+        count: this.state.count + 1
+      });
+    }
+  }, {
+    key: "decrementCount",
+    value: function decrementCount() {
+      this.setState({
+        count: this.state.count - 1
+      });
     }
   }, {
     key: "render",
     value: function render() {
       //By default, our categoty buttons are all unselected. When selected, the button looks selected
+      //Prints current number of categories selected
+      var currentCount = this.state.count;
+      console.log(currentCount); //Checks if user has selected at least one category
+
+      if (currentCount == 1 || currentCount == 2 || currentCount == 3) {
+        console.log("Ready to start!");
+      } else {
+        console.log("Select 3 categories or less");
+      }
+
       var generalKnowledgeButton = this.state.generalKnowledge ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
         text: "General Knowledge",
         onClick: this.onClickGeneralKnowledge,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 133
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17505,7 +17544,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeneralKnowledge,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 135
         },
         __self: this
       });
@@ -17514,7 +17553,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickFilm,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 138
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17522,7 +17561,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickFilm,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 140
         },
         __self: this
       });
@@ -17531,7 +17570,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickScienceNature,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 143
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17539,7 +17578,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickScienceNature,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 145
         },
         __self: this
       });
@@ -17548,7 +17587,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickSports,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 148
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17556,7 +17595,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickSports,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 150
         },
         __self: this
       });
@@ -17565,7 +17604,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 153
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17573,7 +17612,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 155
         },
         __self: this
       });
@@ -17582,7 +17621,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickTV,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 158
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17590,7 +17629,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickTV,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 160
         },
         __self: this
       });
@@ -17599,7 +17638,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickBooks,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 163
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17607,7 +17646,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickBooks,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 165
         },
         __self: this
       });
@@ -17616,7 +17655,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 168
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17624,7 +17663,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 170
         },
         __self: this
       });
@@ -17633,7 +17672,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMythology,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 173
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17641,7 +17680,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMythology,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 175
         },
         __self: this
       });
@@ -17650,7 +17689,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeography,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 178
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17658,7 +17697,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeography,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 180
         },
         __self: this
       });
@@ -17667,7 +17706,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickArt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 183
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17675,7 +17714,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickArt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 185
         },
         __self: this
       });
@@ -17684,7 +17723,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickVideoGames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 188
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -17692,7 +17731,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickVideoGames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 190
         },
         __self: this
       }); // TODO: Add arrow button that would mean "Next".
@@ -17703,21 +17742,21 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 196
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 197
         },
         __self: this
       }, " SELECT UP TO 3 CATEGORIES "), __jsx("div", {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].categoryButtonsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 199
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17725,7 +17764,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 200
         },
         __self: this
       }, generalKnowledgeButton, filmButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17733,7 +17772,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166
+          lineNumber: 204
         },
         __self: this
       }, scienceNatureButton, sportsButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17741,7 +17780,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 208
         },
         __self: this
       }, historyButton, tvButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17749,7 +17788,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 212
         },
         __self: this
       }, booksButton, musicButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17757,7 +17796,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 216
         },
         __self: this
       }, mythologyButton, geographyButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -17765,7 +17804,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 220
         },
         __self: this
       }, artButton, videoGamesButton)));
@@ -17802,7 +17841,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -17863,7 +17902,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -17943,7 +17982,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -18059,7 +18098,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -18163,7 +18202,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
@@ -18367,7 +18406,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -18615,7 +18654,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -18803,25 +18842,25 @@ var styles = {
 /***/ }),
 
 /***/ 1:
-/*!*********************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \*********************************************************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_82519ec661270f7f484f":
+/***/ "dll-reference dll_0fb095e325d7ebf261c3":
 /*!*******************************************!*\
-  !*** external "dll_82519ec661270f7f484f" ***!
+  !*** external "dll_0fb095e325d7ebf261c3" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_82519ec661270f7f484f;
+module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
