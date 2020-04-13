@@ -11,7 +11,6 @@ import { styles } from '../stylesheet.js'
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 3
 const FEEDBACK_SHOW_TIME_SECS = 2
 
 // component that displays the questions or the game over component
@@ -44,7 +43,8 @@ class QuestionsComponent extends Component {
     const finalCateg = category == null ? "entertainment-music" : category
 
     //fetch questions
-    const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg)
+    const requestString = finalCateg + "/count/" + String(this.props.numQuestions)
+    const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + requestString)
     const allData = await response.json()
 
     this.setState({ questionsArr: allData })
@@ -85,13 +85,13 @@ class QuestionsComponent extends Component {
         alignItems="center"
       >
 
-        {this.state.questionIndex < MAX_NUM_QUESTIONS && <>
+        {this.state.questionIndex < this.props.numQuestions && <>
         <p style={styles.questionText}>{this.state.questionsArr && entities.decode( this.state.questionsArr[this.state.questionIndex].text) }   </p>
         <AnswersComponent answers={this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers} callback={this.nextQuestion}></AnswersComponent>
         </>}
 
 
-        {this.state.questionIndex >= MAX_NUM_QUESTIONS && <>
+        {this.state.questionIndex >= this.props.numQuestions && <>
 
         <GameOverComponent score={this.state.currentScore} callback={this.props.callback}></GameOverComponent>
 
