@@ -772,6 +772,176 @@ class DangerButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
+/***/ "./pages/components/Difficulty.js":
+/*!****************************************!*\
+  !*** ./pages/components/Difficulty.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
+/* harmony import */ var _CategoriesButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CategoriesButton */ "./pages/components/CategoriesButton.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Difficulty.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+class DifficultyComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      easy: false,
+      medium: false,
+      hard: false,
+      startGame: false
+    };
+    this.onClickEasy = this.onClickEasy.bind(this);
+    this.onClickMedium = this.onClickMedium.bind(this);
+    this.onClickHard = this.onClickHard.bind(this);
+    this.onClickStartGame = this.onClickStartGame.bind(this);
+  }
+
+  onClickEasy() {
+    this.setState({
+      easy: !this.state.easy
+    });
+  }
+
+  onClickMedium() {
+    this.setState({
+      medium: !this.state.medium
+    });
+  }
+
+  onClickHard() {
+    this.setState({
+      hard: !this.state.hard
+    });
+  }
+
+  onClickStartGame() {
+    this.setState({
+      startGame: !this.state.startGame
+    }); //Send to Questions screen
+
+    this.props.callback("QUESTIONS");
+  }
+
+  render() {
+    const easyButton = this.state.easy ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Easy",
+      onClick: this.onClickEasy,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Easy",
+      onClick: this.onClickEasy,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    });
+    const mediumButton = this.state.medium ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Medium",
+      onClick: this.onClickMedium,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Medium",
+      onClick: this.onClickMedium,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    });
+    const hardButton = this.state.hard ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: "Hard",
+      onClick: this.onClickHard,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "Hard",
+      onClick: this.onClickHard,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }); //Currently the Start Button will look the same as the other buttons
+
+    const startButton = __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      text: "START",
+      onClick: this.onClickStart,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    });
+
+    return __jsx("div", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].root,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: this
+    }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, " CHOOSE A DIFFICULTY "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].row,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
+      },
+      __self: this
+    }, easyButton, mediumButton, hardButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].row,
+      spacing: 3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }, startButton));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (DifficultyComponent);
+
+/***/ }),
+
 /***/ "./pages/components/Feedback.js":
 /*!**************************************!*\
   !*** ./pages/components/Feedback.js ***!
@@ -1337,8 +1507,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Start */ "./pages/components/Start.js");
 /* harmony import */ var _components_Questions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Questions */ "./pages/components/Questions.js");
 /* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Categories */ "./pages/components/Categories.js");
+/* harmony import */ var _components_Difficulty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Difficulty */ "./pages/components/Difficulty.js");
 var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1373,7 +1545,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 38
           },
           __self: this
         });
@@ -1383,7 +1555,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 40
           },
           __self: this
         });
@@ -1393,7 +1565,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           callback: this.backHome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 42
           },
           __self: this
         });
@@ -1402,7 +1574,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_4__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 44
           },
           __self: this
         });

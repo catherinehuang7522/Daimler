@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import StartComponent from './components/Start'
 import QuestionsComponent from './components/Questions'
 import CategoriesComponent from './components/Categories'
+import DifficultyComponent from './components/Difficulty'
 
 
 const styles = ({
