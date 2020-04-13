@@ -36,6 +36,12 @@ const styles = ({
     marginTop: 20,
     marginBottom: 20
   },
+  nextButton: {
+    color: 'white',
+    position: 'fixed',
+    top: 420,
+    left: 980
+  },
   title: {
     color: 'white',
     fontSize: 48,

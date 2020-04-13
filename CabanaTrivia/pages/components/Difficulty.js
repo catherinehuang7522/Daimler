@@ -5,7 +5,6 @@ import CategoriesButton from './CategoriesButton'
 import Grid from '@material-ui/core/Grid'
 import { styles } from '../stylesheet.js'
 
-
 class DifficultyComponent extends Component{
   constructor(props) {
     super(props)
@@ -20,27 +19,33 @@ class DifficultyComponent extends Component{
     this.onClickMedium = this.onClickMedium.bind(this);
     this.onClickHard = this.onClickHard.bind(this);
     this.onClickStartGame = this.onClickStartGame.bind(this);
-
 }
 
 onClickEasy() {
   this.setState({easy: !this.state.easy});
+  this.setState({ medium: false });
+  this.setState({ hard: false });
 }
 
 onClickMedium() {
   this.setState({medium: !this.state.medium});
+  this.setState({ easy: false });
+  this.setState({ hard: false });
 }
 
 onClickHard(){
   this.setState({ hard: !this.state.hard});
+  this.setState({ easy: false });
+  this.setState({ medium: false });
 }
+
 onClickStartGame() {
   this.setState({ startGame: !this.state.startGame })
   //Send to Questions screen
   this.props.callback("QUESTIONS")
 }
-render() {
 
+render() {
   const easyButton = this.state.easy ?
     <DangerButton text="Easy" onClick={this.onClickEasy}/>
     :
@@ -58,7 +63,7 @@ render() {
 
     //Currently the Start Button will look the same as the other buttons
     const startButton =
-    <CategoriesButton text="START" onClick={this.onClickStart} />
+    <CategoriesButton text="START" onClick={this.onClickStartGame} />
 
   return (
     <div style={styles.root}>

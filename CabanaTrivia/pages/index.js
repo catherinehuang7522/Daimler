@@ -40,6 +40,8 @@ export default class IndexPage extends Component {
         return <CategoriesComponent callback={this.backHome}></CategoriesComponent>
       case 'QUESTIONS':
         return <QuestionsComponent callback={this.backHome}></QuestionsComponent>
+      case 'DIFFICULTY':
+        return <DifficultyComponent callback={this.backHome}></DifficultyComponent>
       default:
         return <StartComponent></StartComponent>
     }

@@ -4,6 +4,8 @@ import DangerButton from './DangerButton'
 import CategoriesButton from './CategoriesButton'
 import Grid from '@material-ui/core/Grid'
 import { styles } from '../stylesheet.js'
+import { IconButton } from '@material-ui/core';
+import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
@@ -42,6 +44,11 @@ class CategoriesComponent extends Component {
     this.onClickVideoGames = this.onClickVideoGames.bind(this);
     this.incrementCount = this.incrementCount.bind(this);
     this.decrementCount = this.decrementCount.bind(this);
+    this.onClickShowDifficultyScreen = this.onClickShowDifficultyScreen.bind(this)
+  }
+
+  onClickShowDifficultyScreen() {
+    this.props.callback("DIFFICULTY")
   }
 
   onClickGeneralKnowledge() {
@@ -195,33 +202,35 @@ class CategoriesComponent extends Component {
     return (
       <div style={styles.root}>
         <Grid style={styles.title}> SELECT UP TO 3 CATEGORIES </Grid>
-
         <div style={styles.categoryButtonsContainer}>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {generalKnowledgeButton}
-          {filmButton}
-        </Grid>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {scienceNatureButton}
-          {sportsButton}
-        </Grid>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {historyButton}
-          {tvButton}
-        </Grid>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {booksButton}
-          {musicButton}
-        </Grid>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {mythologyButton}
-          {geographyButton}
-        </Grid>
-        <Grid style={styles.categoryRow} spacing={3}>
-          {artButton}
-          {videoGamesButton}
-        </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {generalKnowledgeButton}
+            {filmButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {scienceNatureButton}
+            {sportsButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {historyButton}
+            {tvButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {booksButton}
+            {musicButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {mythologyButton}
+            {geographyButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {artButton}
+            {videoGamesButton}
+          </Grid>
         </div>
+        <IconButton style={styles.nextButton} onClick={this.onClickShowDifficultyScreen}>
+          <DoubleArrowIcon fontSize="large"/>
+        </IconButton>
       </div>
     );
   }
