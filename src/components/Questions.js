@@ -5,6 +5,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import AnswersComponent from "./Answers";
 import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
+import {CATEGORIES_MAP} from '../constants'
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
@@ -29,6 +30,7 @@ class QuestionsComponent extends Component {
     };
 
     this.nextQuestion = this.nextQuestion.bind(this);
+    this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this)
   }
 
   // calls function to fetch the questions before the component mounts
@@ -38,15 +40,45 @@ class QuestionsComponent extends Component {
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
-    const finalCateg = category == null ? "entertainment-music" : category;
+    const finalCateg = category == null ? "MUSIC" : category;  // pass in the category as you wish
+    const numQs = "10"  // change this or pass it into the function
 
-    //fetch questions
     const response = await fetch(
-      "https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg
-    );
-    const allData = await response.json();
-
+      "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[finalCateg]
+    )
+    let allData = await response.json();
+    // parse the question to the same format 
+    allData = this.parseQuestionAnswerFormat(allData.results)
     this.setState({ questionsArr: allData });
+  }
+
+// shuffles the array of answers for randomness
+  shuffleArray(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+/*This function parses the result from the API to the same format that was used in the previous API*/ 
+  parseQuestionAnswerFormat(arr){
+    const finalArr = []
+    for (const item of arr){
+      const questionObj = {}
+      questionObj.text = item.question
+      const answers = [{ text: item.correct_answer, correct: true}]
+      for (const answerObj of item.incorrect_answers){
+        answers.push({text: answerObj, correct: false})
+      }
+      this.shuffleArray(answers)
+      questionObj.answers = answers
+      finalArr.push(questionObj)
+    }
+    return finalArr
   }
 
   //changes to the next question. isCorrect ia a bool for if the previous value was correct. correctAnswer is the correct answer

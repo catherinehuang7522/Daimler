@@ -18,6 +18,9 @@ class AnswersComponent extends Component {
     let correctAnswer;
     for (let i in this.props.answers) {
       let currAnswerObj = this.props.answers[i];
+      console.log("current answer is: ");
+      console.log(currAnswerObj)
+      
       if (currAnswerObj.correct) {
         correctAnswer = entities.decode(currAnswerObj.text); // decoding because some of the questions and answers have HTML entities e.g. &quot;
         break;
@@ -28,15 +31,19 @@ class AnswersComponent extends Component {
   }
 
   render() {
-    //did the null check because it takes time for the API to return the values
-    const answer1 =
-      this.props.answers == null ? "Answer 1" : this.props.answers[0];
-    const answer2 =
-      this.props.answers == null ? "Answer 2" : this.props.answers[1];
-    const answer3 =
-      this.props.answers == null ? "Answer 3" : this.props.answers[2];
-    const answer4 =
-      this.props.answers == null ? "Answer 4" : this.props.answers[3];
+    //did the null check because it may take time for the API to return the values
+    if( !this.props.answers ) return null
+    
+    const answer1 = this.props.answers[0];
+    const answer2 = this.props.answers[1];
+    
+    // initialize these and set  when we have 4 choice multiple choice questions rather than true/false questions
+    let answer3 = null; 
+    let answer4 = null;
+    if (this.props.answers.length ===  4){
+      answer3 = this.props.answers[2];
+      answer4 = this.props.answers[3];
+    }
 
     return (
       <Grid
@@ -62,18 +69,18 @@ class AnswersComponent extends Component {
         </Grid>
 
         <Grid rowGrid spacing={1}>
-          <Button
+          { (this.props.answers.length === 4) && <Button
             style={styles.unselectedButton}
             onClick={() => this.onPressAnswer(answer3)}
           >
             {entities.decode(answer3.text)}{" "}
-          </Button>
-          <Button
+          </Button>}
+          { (this.props.answers.length === 4) && <Button
             style={styles.unselectedButton}
             onClick={() => this.onPressAnswer(answer4)}
           >
             {entities.decode(answer4.text)}
-          </Button>
+          </Button> }
         </Grid>
       </Grid>
     );
