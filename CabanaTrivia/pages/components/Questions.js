@@ -71,7 +71,7 @@ class QuestionsComponent extends Component {
     return (
       <div style={styles.root}>
 
-      <Backdrop open={this.state.showFeedback}>
+      <Backdrop open={this.state.showFeedback} style={styles.feedbackWrapper}>
         <FeedbackComponent
           wasCorrect={this.state.lastQuestionCorrect}
           correctAnswer={this.state.lastQuestionAnswer}

@@ -4,7 +4,8 @@ const styles = ({
     backgroundColor: '#07142B',
     width: 1062,
     height: 484,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Kontakt',
+    zIndex: 1,
   },
   row: {
     display: 'flex',
@@ -20,12 +21,25 @@ const styles = ({
     display: 'flex',
     justifyContent: 'center'
   },
+  feedbackWrapper: {
+    zIndex: 10,
+    width: 1062,
+    height: 484,
+  },
+  feedbackContent: {
+    display: 'flex',
+    textAlign: 'center'
+  },
   questionText: {
     color: 'white'
   },
-  feedbackHeaderText: {
-    color: 'white',
-    fontSize: 48
+  feedbackHeaderTextCorrect: {
+    color: '#379634',
+    fontSize: 60,
+  },
+  feedbackHeaderTextIncorrect: {
+    color: '#F06449',
+    fontSize: 60,
   },
   feedbackBodyText: {
     color: 'white'
