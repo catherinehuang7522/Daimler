@@ -1246,20 +1246,16 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       currentScore: 0,
       showFeedback: false,
       lastQuestionCorrect: false,
-      lastQuestionAnswer: "",
-      urlLinks: []
+      lastQuestionAnswer: ""
     };
     this.nextQuestion = this.nextQuestion.bind(this);
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
-  }
-
-  componentDidMount() {
-    this.getUrls();
   } // calls function to fetch the questions before the component mounts
 
 
   componentWillMount() {
+    this.getUrls();
     this.onGetQuestions();
   }
   /*
@@ -1269,22 +1265,22 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   Appends to the CustomID array defined in state
    */
   //TODO:
-  // Currently, urlLinks is just holding the URL for the last category chosen, not all of them. How do we fix them?
+  // Currently, urlLinks is just holding the URL for the first category chosen, not all of them. How do we fix them?
   //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
 
 
   getUrls() {
+    var urls = [];
+    var customURL = "";
     const numQs = "10"; // change this or pass it into the function
 
     for (var i = 0; i < this.props.cat.length; i++) {
-      this.state.urlLinks[i] = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
-      //NOT UPDATING because set state onsetState() does not immediately mutate this.state!
+      customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
 
-      var link = this.state.urlLinks.concat(customURL);
-      this.setState({
-        urlLinks: link
-      });
+      urls.push(customURL);
     }
+
+    return urls;
   } // fetch quesions from cocktail trivia
 
 
@@ -1374,21 +1370,22 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   }
 
   render() {
+    const [allUrls] = this.getUrls();
     console.log("THESE WERE THE CATEGORIES CHOSEN " + this.props.cat);
     console.log("THIS WAS THE DIFFICULTY CHOSEN " + this.props.diff);
-    console.log("THESE ARE THE URLS " + this.state.urlLinks);
+    console.log("THESE ARE THE URLS " + allUrls);
     return __jsx("div", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 149
       },
       __self: this
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152
+        lineNumber: 150
       },
       __self: this
     }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1396,7 +1393,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       correctAnswer: this.state.lastQuestionAnswer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
+        lineNumber: 151
       },
       __self: this
     })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1406,14 +1403,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159
+        lineNumber: 157
       },
       __self: this
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("p", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].questionText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162
+        lineNumber: 160
       },
       __self: this
     }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1421,7 +1418,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.nextQuestion,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168
+        lineNumber: 166
       },
       __self: this
     })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1429,7 +1426,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.props.callback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 180
+        lineNumber: 178
       },
       __self: this
     }))));

@@ -30,7 +30,6 @@ class QuestionsComponent extends Component {
       showFeedback: false,
       lastQuestionCorrect: false,
       lastQuestionAnswer: "",
-      urlLinks: [],
     };
 
     this.nextQuestion = this.nextQuestion.bind(this);
@@ -38,12 +37,10 @@ class QuestionsComponent extends Component {
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this)
   }
 
-  componentDidMount(){
-    this.getUrls();
 
-  }
   // calls function to fetch the questions before the component mounts
   componentWillMount() {
+      this.getUrls();
       this.onGetQuestions();
   }
 
@@ -56,19 +53,20 @@ class QuestionsComponent extends Component {
 
   */
   //TODO:
-  // Currently, urlLinks is just holding the URL for the last category chosen, not all of them. How do we fix them?
+  // Currently, urlLinks is just holding the URL for the first category chosen, not all of them. How do we fix them?
   //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
+
   getUrls(){
+    var urls = []
+    var customURL = ""
     const numQs = "10"  // change this or pass it into the function
     for(var i = 0; i < this.props.cat.length; i ++) {
-      var customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
+      customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
       //Add URL LINK to array
-
-      //NOT UPDATING because setState can only be updated unce
-      var link = this.state.urlLinks.concat(customURL)
-      this.setState({urlLinks : link })
+      urls.push(customURL)
   }
-
+  return urls
+}
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
@@ -137,11 +135,13 @@ class QuestionsComponent extends Component {
   }
 
   render() {
+    const [allUrls] = this.getUrls()
+
     console.log("THESE WERE THE CATEGORIES CHOSEN " + this.props.cat)
 
     console.log("THIS WAS THE DIFFICULTY CHOSEN " + this.props.diff)
 
-    console.log("THESE ARE THE URLS " + this.state.urlLinks)
+    console.log("THESE ARE THE URLS " + allUrls)
 
 
 
