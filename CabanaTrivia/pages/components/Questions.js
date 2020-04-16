@@ -38,9 +38,12 @@ class QuestionsComponent extends Component {
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this)
   }
 
+  componentDidMount(){
+    this.getUrls();
+
+  }
   // calls function to fetch the questions before the component mounts
   componentWillMount() {
-      this.getUrls();
       this.onGetQuestions();
   }
 
@@ -53,17 +56,21 @@ class QuestionsComponent extends Component {
 
   */
   //TODO:
-  // Currently, urlLinks is just holding the URL for the LAST category chosen, not all of them. How do we fix them?
+  // Currently, urlLinks is just holding the URL for the last category chosen, not all of them. How do we fix them?
+  //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
   getUrls(){
     const numQs = "10"  // change this or pass it into the function
     for(var i = 0; i < this.props.cat.length; i ++) {
-      var customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
+      this.state.urlLinks[i] = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
       //Add URL LINK to array
+
+      //NOT UPDATING because set state onsetState() does not immediately mutate this.state!
       var link = this.state.urlLinks.concat(customURL)
       this.setState({urlLinks : link })
-
     }
+    
   }
+
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {

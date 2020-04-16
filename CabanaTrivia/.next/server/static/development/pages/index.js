@@ -1252,11 +1252,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
     this.nextQuestion = this.nextQuestion.bind(this);
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
+  }
+
+  componentDidMount() {
+    this.getUrls();
   } // calls function to fetch the questions before the component mounts
 
 
   componentWillMount() {
-    this.getUrls();
     this.onGetQuestions();
   }
   /*
@@ -1266,14 +1269,16 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   Appends to the CustomID array defined in state
    */
   //TODO:
-  // Currently, urlLinks is just holding the URL for the LAST category chosen, not all of them. How do we fix them?
+  // Currently, urlLinks is just holding the URL for the last category chosen, not all of them. How do we fix them?
+  //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
 
 
   getUrls() {
     const numQs = "10"; // change this or pass it into the function
 
     for (var i = 0; i < this.props.cat.length; i++) {
-      var customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
+      this.state.urlLinks[i] = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
+      //NOT UPDATING because set state onsetState() does not immediately mutate this.state!
 
       var link = this.state.urlLinks.concat(customURL);
       this.setState({
@@ -1376,14 +1381,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
+        lineNumber: 151
       },
       __self: this
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145
+        lineNumber: 152
       },
       __self: this
     }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1391,7 +1396,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       correctAnswer: this.state.lastQuestionAnswer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 153
       },
       __self: this
     })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1401,14 +1406,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152
+        lineNumber: 159
       },
       __self: this
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("p", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].questionText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155
+        lineNumber: 162
       },
       __self: this
     }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1416,7 +1421,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.nextQuestion,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161
+        lineNumber: 168
       },
       __self: this
     })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1424,7 +1429,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.props.callback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173
+        lineNumber: 180
       },
       __self: this
     }))));
