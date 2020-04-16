@@ -10,6 +10,7 @@ class DifficultyComponent extends Component{
     super(props)
 
     this.state = {
+      chosenDifficulty: "",
       easy: false,
       medium: false,
       hard: false,
@@ -23,26 +24,33 @@ class DifficultyComponent extends Component{
 
 onClickEasy() {
   this.setState({easy: !this.state.easy});
+  this.setState({ chosenDifficulty: "easy" });
   this.setState({ medium: false });
   this.setState({ hard: false });
 }
 
 onClickMedium() {
   this.setState({medium: !this.state.medium});
+  this.setState({ chosenDifficulty: "medium" });
   this.setState({ easy: false });
   this.setState({ hard: false });
 }
 
 onClickHard(){
   this.setState({ hard: !this.state.hard});
+  this.setState({ chosenDifficulty: "hard" });
   this.setState({ easy: false });
   this.setState({ medium: false });
 }
 
 onClickStartGame() {
+    //Send to Questions screen the chosen difficulty
   this.setState({ startGame: !this.state.startGame })
+
   //Send to Questions screen
-  this.props.callback("QUESTIONS")
+  this.props.callback("QUESTIONS", this.state.chosenDifficulty)
+  //this.props.callback("QUESTIONS")
+
 }
 
 render() {

@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid'
 import { styles } from '../stylesheet.js'
 import { IconButton } from '@material-ui/core';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
+import {CATEGORIES_MAP} from '../constants'
+
 
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
@@ -16,6 +18,9 @@ class CategoriesComponent extends Component {
 
     this.state = {
       count: 0,
+      categoriesChosen:[],
+
+      //PREVIOUSLY:
       generalKnowledge: false,
       film: false,
       scienceNature: false,
@@ -48,93 +53,112 @@ class CategoriesComponent extends Component {
   }
 
   onClickShowDifficultyScreen() {
-    this.props.callback("DIFFICULTY")
+    //Checks if user has selected at least one category
+    const currentCount = this.state.count
+    if (currentCount == 1 || currentCount == 2 || currentCount == 3) {
+      this.props.callback("DIFFICULTY", this.state.categoriesChosen)
+      console.log("Ready to start")
+    } else { console.log("Select 3 categories or less") }
+
   }
 
   onClickGeneralKnowledge() {
     this.setState({generalKnowledge: !this.state.generalKnowledge});
-    !this.state.generalKnowledge ? this.incrementCount() : this.decrementCount();
+    !this.state.generalKnowledge ? this.incrementCount("GENERAL_KNOWLEDGE") : this.decrementCount("GENERAL_KNOWLEDGE");
+
   }
 
   onClickFilm() {
     this.setState({film: !this.state.film});
-    !this.state.film ? this.incrementCount() : this.decrementCount();
+    !this.state.film ? this.incrementCount("FILM") : this.decrementCount("FILM");
   }
 
   onClickScienceNature() {
     this.setState({scienceNature: !this.state.scienceNature});
-    !this.state.scienceNature ? this.incrementCount() : this.decrementCount();
+    !this.state.scienceNature ? this.incrementCount("SCIENCE_NATURE") : this.decrementCount("SCIENCE_NATURE");
 
   }
 
   onClickSports() {
     this.setState({sports: !this.state.sports});
-    !this.state.sports ? this.incrementCount() : this.decrementCount();
+    !this.state.sports ? this.incrementCount("SPORTS") : this.decrementCount("SPORTS");
   }
 
   onClickHistory() {
     this.setState({history: !this.state.history});
-    !this.state.history ? this.incrementCount() : this.decrementCount();
+    !this.state.history ? this.incrementCount("HISTORY") : this.decrementCount("HISTORY");
   }
 
   onClickTV() {
     this.setState({tv: !this.state.tv});
-    !this.state.tv ? this.incrementCount() : this.decrementCount();
+    !this.state.tv ? this.incrementCount("TELEVISION") : this.decrementCount("TELEVISION");
 
   }
 
   onClickBooks() {
     this.setState({books: !this.state.books});
-    !this.state.books ? this.incrementCount() : this.decrementCount();
+    !this.state.books ? this.incrementCount("BOOKS") : this.decrementCount("BOOKS");
   }
 
   onClickMusic() {
     this.setState({music: !this.state.music});
-    !this.state.music ? this.incrementCount() : this.decrementCount();
+    !this.state.music ? this.incrementCount("MUSIC") : this.decrementCount(("MUSIC"));
   }
 
   onClickMythology() {
     this.setState({mythology: !this.state.mythology});
-    !this.state.music ? this.incrementCount() : this.decrementCount();
+    !this.state.music ? this.incrementCount("MYTHOLOGY") : this.decrementCount("MYTHOLOGY");
 
   }
 
   onClickGeography() {
     this.setState({geography: !this.state.geography});
-    !this.state.geography ? this.incrementCount() : this.decrementCount();
+    !this.state.geography ? this.incrementCount("GEOGRAPHY") : this.decrementCount("GEOGRAPHY");
 
   }
 
   onClickArt() {
     this.setState({art: !this.state.art});
-    !this.state.art ? this.incrementCount() : this.decrementCount();
+    !this.state.art ? this.incrementCount("ART") : this.decrementCount("ART");
 
   }
 
   onClickVideoGames() {
     this.setState({videoGames: !this.state.videoGames});
-    !this.state.videoGames ? this.incrementCount() : this.decrementCount();
+    !this.state.videoGames ? this.incrementCount("VIDEO_GAMES") : this.decrementCount("VIDEO_GAMES");
 
   }
 
-  incrementCount(){
+  incrementCount(catName){
     this.setState({ count: this.state.count + 1 })
+
+    //Add category to array
+    var input = this.state.categoriesChosen.concat(catName)
+    this.setState({categoriesChosen : input })
+
   }
 
-  decrementCount(){
+  decrementCount(index){
     this.setState({ count: this.state.count - 1 })
+
+    //Remove a category
+    var currentCategories = this.state.categoriesChosen
+    var unwantedCategory = currentCategories.indexOf(index)
+    currentCategories.splice(unwantedCategory,1)
+    this.setState({categoriesChosen : currentCategories })
   }
 
   render() {
     //By default, our categoty buttons are all unselected. When selected, the button looks selected
 
-    //Prints current number of categories selected
-    const currentCount = this.state.count
-    console.log(currentCount)
+    //DEBUGGING PURPOSES, DELETE ME
+    const myEmptyArray = this.state.categoriesChosen
+    const emptyArraySize = this.state.categoriesChosen.length
 
-    //Checks if user has selected at least one category
-    if (currentCount == 1 || currentCount == 2 || currentCount == 3) {console.log("Ready to start!")}
-    else {console.log("Select 3 categories or less")}
+    //DEBUGGING PURPOSES, DELETE ME
+    console.log("Array of current categories content  " + myEmptyArray)
+    console.log("Array of current categories size " + emptyArraySize)
+
 
     const generalKnowledgeButton = this.state.generalKnowledge ?
       <DangerButton text="General Knowledge" onClick={this.onClickGeneralKnowledge}/>

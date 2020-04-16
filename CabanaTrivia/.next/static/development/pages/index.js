@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./node_modules/core-js/library/fn/get-iterator.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
@@ -39257,6 +39268,20 @@ function toVal(mix) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/fn/get-iterator.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/get-iterator.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
+__webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
+module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node_modules/core-js/library/modules/core.get-iterator.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/object/create.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/fn/object/create.js ***!
@@ -39417,6 +39442,40 @@ module.exports = function (IS_INCLUDES) {
       if (O[index] === el) return IS_INCLUDES || index || 0;
     } return !IS_INCLUDES && -1;
   };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_classof.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_classof.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__(/*! ./_cof */ "./node_modules/core-js/library/modules/_cof.js");
+var TAG = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/library/modules/_wks.js")('toStringTag');
+// ES3 wrong here
+var ARG = cof(function () { return arguments; }()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function (it, key) {
+  try {
+    return it[key];
+  } catch (e) { /* empty */ }
+};
+
+module.exports = function (it) {
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
 
 
@@ -40615,6 +40674,43 @@ var $exports = module.exports = function (name) {
 };
 
 $exports.store = store;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/core.get-iterator-method.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.get-iterator-method.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof = __webpack_require__(/*! ./_classof */ "./node_modules/core-js/library/modules/_classof.js");
+var ITERATOR = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/library/modules/_wks.js")('iterator');
+var Iterators = __webpack_require__(/*! ./_iterators */ "./node_modules/core-js/library/modules/_iterators.js");
+module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js").getIteratorMethod = function (it) {
+  if (it != undefined) return it[ITERATOR]
+    || it['@@iterator']
+    || Iterators[classof(it)];
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/core.get-iterator.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.get-iterator.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(/*! ./_an-object */ "./node_modules/core-js/library/modules/_an-object.js");
+var get = __webpack_require__(/*! ./core.get-iterator-method */ "./node_modules/core-js/library/modules/core.get-iterator-method.js");
+module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js").getIterator = function (it) {
+  var iterFn = get(it);
+  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
+  return anObject(iterFn.call(it));
+};
 
 
 /***/ }),
@@ -45510,19 +45606,19 @@ var index = create();
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
-/*!*****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \*****************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \**********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48174,12 +48270,12 @@ Popper.Defaults = Defaults;
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -48814,23 +48910,23 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -50964,12 +51060,12 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_0fb095e325d7ebf261c3 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_0fb095e325d7ebf261c3 */ "dll-reference dll_0fb095e325d7ebf261c3"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -51789,27 +51885,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../stylesheet */ "./pages/stylesheet.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Answers.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
 
 
 
 var Entities = __webpack_require__(/*! html-entities */ "./node_modules/html-entities/index.js").AllHtmlEntities;
-
 
 var entities = new Entities(); // component that displays the answers
 
@@ -51834,6 +51928,8 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
 
       for (var i in this.props.answers) {
         var currAnswerObj = this.props.answers[i];
+        console.log("current answer is: ");
+        console.log(currAnswerObj);
 
         if (currAnswerObj.correct) {
           correctAnswer = entities.decode(currAnswerObj.text); // decoding because some of the questions and answers have HTML entities e.g. &quot;
@@ -51849,11 +51945,19 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      //did the null check because it takes time for the API to return the values
-      var answer1 = this.props.answers == null ? "Answer 1" : this.props.answers[0];
-      var answer2 = this.props.answers == null ? "Answer 2" : this.props.answers[1];
-      var answer3 = this.props.answers == null ? "Answer 3" : this.props.answers[2];
-      var answer4 = this.props.answers == null ? "Answer 4" : this.props.answers[3];
+      //did the null check because it may take time for the API to return the values
+      if (!this.props.answers) return null;
+      var answer1 = this.props.answers[0];
+      var answer2 = this.props.answers[1]; // initialize these and set  when we have 4 choice multiple choice questions rather than true/false questions
+
+      var answer3 = null;
+      var answer4 = null;
+
+      if (this.props.answers.length === 4) {
+        answer3 = this.props.answers[2];
+        answer4 = this.props.answers[3];
+      }
+
       return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
         columnGrid: true,
         direction: "column",
@@ -51862,7 +51966,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         spacing: 2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -51870,27 +51974,27 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         spacing: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 56
         },
         __self: this
-      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_6__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer1);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 57
         },
         __self: this
-      }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+      }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_6__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer2);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 63
         },
         __self: this
       }, entities.decode(answer2.text))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -51898,27 +52002,27 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
         spacing: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 71
         },
         __self: this
-      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+      }, this.props.answers.length === 4 && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_6__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer3);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 72
         },
         __self: this
-      }, entities.decode(answer3.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].unselectedButton,
+      }, entities.decode(answer3.text), " "), this.props.answers.length === 4 && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_6__["styles"].unselectedButton,
         onClick: function onClick() {
           return _this2.onPressAnswer(answer4);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 78
         },
         __self: this
       }, entities.decode(answer4.text))));
@@ -51926,7 +52030,7 @@ var AnswersComponent = /*#__PURE__*/function (_Component) {
   }]);
 
   return AnswersComponent;
-}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AnswersComponent);
 
@@ -51957,14 +52061,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 /* harmony import */ var _material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/DoubleArrow */ "./node_modules/@material-ui/icons/DoubleArrow.js");
 /* harmony import */ var _material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../constants */ "./pages/constants.js");
 
 
 
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Categories.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Categories.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
 
 
 
@@ -51988,6 +52094,8 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CategoriesComponent).call(this, props));
     _this.state = {
       count: 0,
+      categoriesChosen: [],
+      //PREVIOUSLY:
       generalKnowledge: false,
       film: false,
       scienceNature: false,
@@ -52022,7 +52130,15 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CategoriesComponent, [{
     key: "onClickShowDifficultyScreen",
     value: function onClickShowDifficultyScreen() {
-      this.props.callback("DIFFICULTY");
+      //Checks if user has selected at least one category
+      var currentCount = this.state.count;
+
+      if (currentCount == 1 || currentCount == 2 || currentCount == 3) {
+        this.props.callback("DIFFICULTY", this.state.categoriesChosen);
+        console.log("Ready to start");
+      } else {
+        console.log("Select 3 categories or less");
+      }
     }
   }, {
     key: "onClickGeneralKnowledge",
@@ -52030,7 +52146,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         generalKnowledge: !this.state.generalKnowledge
       });
-      !this.state.generalKnowledge ? this.incrementCount() : this.decrementCount();
+      !this.state.generalKnowledge ? this.incrementCount("GENERAL_KNOWLEDGE") : this.decrementCount("GENERAL_KNOWLEDGE");
     }
   }, {
     key: "onClickFilm",
@@ -52038,7 +52154,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         film: !this.state.film
       });
-      !this.state.film ? this.incrementCount() : this.decrementCount();
+      !this.state.film ? this.incrementCount("FILM") : this.decrementCount("FILM");
     }
   }, {
     key: "onClickScienceNature",
@@ -52046,7 +52162,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         scienceNature: !this.state.scienceNature
       });
-      !this.state.scienceNature ? this.incrementCount() : this.decrementCount();
+      !this.state.scienceNature ? this.incrementCount("SCIENCE_NATURE") : this.decrementCount("SCIENCE_NATURE");
     }
   }, {
     key: "onClickSports",
@@ -52054,7 +52170,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         sports: !this.state.sports
       });
-      !this.state.sports ? this.incrementCount() : this.decrementCount();
+      !this.state.sports ? this.incrementCount("SPORTS") : this.decrementCount("SPORTS");
     }
   }, {
     key: "onClickHistory",
@@ -52062,7 +52178,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         history: !this.state.history
       });
-      !this.state.history ? this.incrementCount() : this.decrementCount();
+      !this.state.history ? this.incrementCount("HISTORY") : this.decrementCount("HISTORY");
     }
   }, {
     key: "onClickTV",
@@ -52070,7 +52186,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         tv: !this.state.tv
       });
-      !this.state.tv ? this.incrementCount() : this.decrementCount();
+      !this.state.tv ? this.incrementCount("TELEVISION") : this.decrementCount("TELEVISION");
     }
   }, {
     key: "onClickBooks",
@@ -52078,7 +52194,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         books: !this.state.books
       });
-      !this.state.books ? this.incrementCount() : this.decrementCount();
+      !this.state.books ? this.incrementCount("BOOKS") : this.decrementCount("BOOKS");
     }
   }, {
     key: "onClickMusic",
@@ -52086,7 +52202,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         music: !this.state.music
       });
-      !this.state.music ? this.incrementCount() : this.decrementCount();
+      !this.state.music ? this.incrementCount("MUSIC") : this.decrementCount("MUSIC");
     }
   }, {
     key: "onClickMythology",
@@ -52094,7 +52210,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         mythology: !this.state.mythology
       });
-      !this.state.music ? this.incrementCount() : this.decrementCount();
+      !this.state.music ? this.incrementCount("MYTHOLOGY") : this.decrementCount("MYTHOLOGY");
     }
   }, {
     key: "onClickGeography",
@@ -52102,7 +52218,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         geography: !this.state.geography
       });
-      !this.state.geography ? this.incrementCount() : this.decrementCount();
+      !this.state.geography ? this.incrementCount("GEOGRAPHY") : this.decrementCount("GEOGRAPHY");
     }
   }, {
     key: "onClickArt",
@@ -52110,7 +52226,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         art: !this.state.art
       });
-      !this.state.art ? this.incrementCount() : this.decrementCount();
+      !this.state.art ? this.incrementCount("ART") : this.decrementCount("ART");
     }
   }, {
     key: "onClickVideoGames",
@@ -52118,42 +52234,50 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         videoGames: !this.state.videoGames
       });
-      !this.state.videoGames ? this.incrementCount() : this.decrementCount();
+      !this.state.videoGames ? this.incrementCount("VIDEO_GAMES") : this.decrementCount("VIDEO_GAMES");
     }
   }, {
     key: "incrementCount",
-    value: function incrementCount() {
+    value: function incrementCount(catName) {
       this.setState({
         count: this.state.count + 1
+      }); //Add category to array
+
+      var input = this.state.categoriesChosen.concat(catName);
+      this.setState({
+        categoriesChosen: input
       });
     }
   }, {
     key: "decrementCount",
-    value: function decrementCount() {
+    value: function decrementCount(index) {
       this.setState({
         count: this.state.count - 1
+      }); //Remove a category
+
+      var currentCategories = this.state.categoriesChosen;
+      var unwantedCategory = currentCategories.indexOf(index);
+      currentCategories.splice(unwantedCategory, 1);
+      this.setState({
+        categoriesChosen: currentCategories
       });
     }
   }, {
     key: "render",
     value: function render() {
       //By default, our categoty buttons are all unselected. When selected, the button looks selected
-      //Prints current number of categories selected
-      var currentCount = this.state.count;
-      console.log(currentCount); //Checks if user has selected at least one category
+      //DEBUGGING PURPOSES, DELETE ME
+      var myEmptyArray = this.state.categoriesChosen;
+      var emptyArraySize = this.state.categoriesChosen.length; //DEBUGGING PURPOSES, DELETE ME
 
-      if (currentCount == 1 || currentCount == 2 || currentCount == 3) {
-        console.log("Ready to start!");
-      } else {
-        console.log("Select 3 categories or less");
-      }
-
+      console.log("Array of current categories content  " + myEmptyArray);
+      console.log("Array of current categories size " + emptyArraySize);
       var generalKnowledgeButton = this.state.generalKnowledge ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
         text: "General Knowledge",
         onClick: this.onClickGeneralKnowledge,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 164
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52161,7 +52285,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeneralKnowledge,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 166
         },
         __self: this
       });
@@ -52170,7 +52294,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickFilm,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 169
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52178,7 +52302,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickFilm,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 171
         },
         __self: this
       });
@@ -52187,7 +52311,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickScienceNature,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 174
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52195,7 +52319,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickScienceNature,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 176
         },
         __self: this
       });
@@ -52204,7 +52328,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickSports,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155
+          lineNumber: 179
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52212,7 +52336,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickSports,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 181
         },
         __self: this
       });
@@ -52221,7 +52345,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 184
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52229,7 +52353,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHistory,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 186
         },
         __self: this
       });
@@ -52238,7 +52362,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickTV,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 189
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52246,7 +52370,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickTV,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 191
         },
         __self: this
       });
@@ -52255,7 +52379,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickBooks,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 194
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52263,7 +52387,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickBooks,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 196
         },
         __self: this
       });
@@ -52272,7 +52396,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 199
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52280,7 +52404,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 201
         },
         __self: this
       });
@@ -52289,7 +52413,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMythology,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 204
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52297,7 +52421,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMythology,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 206
         },
         __self: this
       });
@@ -52306,7 +52430,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeography,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 209
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52314,7 +52438,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickGeography,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 211
         },
         __self: this
       });
@@ -52323,7 +52447,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickArt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 214
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52331,7 +52455,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickArt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192
+          lineNumber: 216
         },
         __self: this
       });
@@ -52340,7 +52464,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickVideoGames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 219
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52348,7 +52472,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickVideoGames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 221
         },
         __self: this
       }); // TODO: Add arrow button that would mean "Next".
@@ -52359,21 +52483,21 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203
+          lineNumber: 227
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 228
         },
         __self: this
       }, " SELECT UP TO 3 CATEGORIES "), __jsx("div", {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].categoryButtonsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205
+          lineNumber: 229
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52381,7 +52505,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 230
         },
         __self: this
       }, generalKnowledgeButton, filmButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52389,7 +52513,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 234
         },
         __self: this
       }, scienceNatureButton, sportsButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52397,7 +52521,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 238
         },
         __self: this
       }, historyButton, tvButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52405,7 +52529,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 218
+          lineNumber: 242
         },
         __self: this
       }, booksButton, musicButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52413,7 +52537,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 246
         },
         __self: this
       }, mythologyButton, geographyButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52421,7 +52545,7 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 226
+          lineNumber: 250
         },
         __self: this
       }, artButton, videoGamesButton)), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__["IconButton"], {
@@ -52429,14 +52553,14 @@ var CategoriesComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickShowDifficultyScreen,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 255
         },
         __self: this
       }, __jsx(_material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_13___default.a, {
         fontSize: "large",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 256
         },
         __self: this
       })));
@@ -52473,7 +52597,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -52534,7 +52658,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -52615,7 +52739,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Difficulty.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Difficulty.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -52634,6 +52758,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(DifficultyComponent).call(this, props));
     _this.state = {
+      chosenDifficulty: "",
       easy: false,
       medium: false,
       hard: false,
@@ -52653,6 +52778,9 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         easy: !this.state.easy
       });
       this.setState({
+        chosenDifficulty: "easy"
+      });
+      this.setState({
         medium: false
       });
       this.setState({
@@ -52664,6 +52792,9 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
     value: function onClickMedium() {
       this.setState({
         medium: !this.state.medium
+      });
+      this.setState({
+        chosenDifficulty: "medium"
       });
       this.setState({
         easy: false
@@ -52679,6 +52810,9 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         hard: !this.state.hard
       });
       this.setState({
+        chosenDifficulty: "hard"
+      });
+      this.setState({
         easy: false
       });
       this.setState({
@@ -52688,11 +52822,12 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
   }, {
     key: "onClickStartGame",
     value: function onClickStartGame() {
+      //Send to Questions screen the chosen difficulty
       this.setState({
         startGame: !this.state.startGame
       }); //Send to Questions screen
 
-      this.props.callback("QUESTIONS");
+      this.props.callback("QUESTIONS", this.state.chosenDifficulty); //this.props.callback("QUESTIONS")
     }
   }, {
     key: "render",
@@ -52702,7 +52837,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickEasy,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 58
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52710,7 +52845,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickEasy,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 60
         },
         __self: this
       });
@@ -52719,7 +52854,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMedium,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 63
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52727,7 +52862,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMedium,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 65
         },
         __self: this
       });
@@ -52736,7 +52871,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 68
         },
         __self: this
       }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -52744,7 +52879,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickHard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 70
         },
         __self: this
       }); //Currently the Start Button will look the same as the other buttons
@@ -52754,7 +52889,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickStartGame,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 74
         },
         __self: this
       });
@@ -52763,14 +52898,14 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 77
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 78
         },
         __self: this
       }, " CHOOSE A DIFFICULTY "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52778,7 +52913,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 80
         },
         __self: this
       }, easyButton, mediumButton, hardButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -52786,7 +52921,7 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 86
         },
         __self: this
       }, startButton));
@@ -52827,7 +52962,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -52943,7 +53078,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -53022,24 +53157,27 @@ var GameOverComponent = /*#__PURE__*/function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _DangerButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DangerButton */ "./pages/components/DangerButton.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _stylesheet__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../stylesheet */ "./pages/stylesheet.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
 /* harmony import */ var _material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Backdrop */ "./node_modules/@material-ui/core/esm/Backdrop/index.js");
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
-/* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
-/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Categories */ "./pages/components/Categories.js");
+/* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
+/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../index */ "./pages/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../constants */ "./pages/constants.js");
 
 
 
@@ -53047,8 +53185,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Questions.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+
+
 
 
 
@@ -53060,20 +53201,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 var Entities = __webpack_require__(/*! html-entities */ "./node_modules/html-entities/index.js").AllHtmlEntities;
 
-
 var entities = new Entities();
 var MAX_NUM_QUESTIONS = 3;
 var FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 var QuestionsComponent = /*#__PURE__*/function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(QuestionsComponent, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(QuestionsComponent, _Component);
 
   function QuestionsComponent(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, QuestionsComponent);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, QuestionsComponent);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(QuestionsComponent).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(QuestionsComponent).call(this, props));
     _this.state = {
       startGame: true,
       singlePlayer: true,
@@ -53082,49 +53222,163 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
       currentScore: 0,
       showFeedback: false,
       lastQuestionCorrect: false,
-      lastQuestionAnswer: ""
+      lastQuestionAnswer: "",
+      urlLinks: []
     };
-    _this.nextQuestion = _this.nextQuestion.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.nextQuestion = _this.nextQuestion.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.getUrls = _this.getUrls.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.parseQuestionAnswerFormat = _this.parseQuestionAnswerFormat.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
     return _this;
   } // calls function to fetch the questions before the component mounts
 
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(QuestionsComponent, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(QuestionsComponent, [{
     key: "componentWillMount",
     value: function componentWillMount() {
+      this.getUrls();
       this.onGetQuestions();
+    }
+    /*
+    function: getUrls
+    Iterates over the user's selected categories (stored in this.props.cat)
+    Creates a custom URL for each category
+    Appends to the CustomID array defined in state
+     */
+    //TODO:
+    // Currently, urlLinks is just holding the URL for the LAST category chosen, not all of them. How do we fix them?
+
+  }, {
+    key: "getUrls",
+    value: function getUrls() {
+      var numQs = "10"; // change this or pass it into the function
+
+      for (var i = 0; i < this.props.cat.length; i++) {
+        var customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_17__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
+
+        var link = this.state.urlLinks.concat(customURL);
+        this.setState({
+          urlLinks: link
+        });
+      }
     } // fetch quesions from cocktail trivia
 
   }, {
     key: "onGetQuestions",
     value: function onGetQuestions(category) {
-      var finalCateg, response, allData;
-      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function onGetQuestions$(_context) {
+      var finalCateg, difficulty, numQs, response, allData;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.async(function onGetQuestions$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              finalCateg = category == null ? "entertainment-music" : category; //fetch questions
+              finalCateg = category == null ? "MUSIC" : category; // pass in the category as you wish
 
-              _context.next = 3;
-              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + finalCateg));
+              difficulty = this.props.diff;
+              numQs = "10"; // change this or pass it into the function
 
-            case 3:
+              _context.next = 5;
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.awrap(fetch("https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_17__["CATEGORIES_MAP"][finalCateg] + "&difficulty=" + difficulty));
+
+            case 5:
               response = _context.sent;
-              _context.next = 6;
-              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response.json());
+              _context.next = 8;
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.awrap(response.json());
 
-            case 6:
+            case 8:
               allData = _context.sent;
+              // parse the question to the same format
+              allData = this.parseQuestionAnswerFormat(allData.results);
               this.setState({
                 questionsArr: allData
               });
 
-            case 8:
+            case 11:
             case "end":
               return _context.stop();
           }
         }
       }, null, this);
+    } // shuffles the array of answers for randomness
+
+  }, {
+    key: "shuffleArray",
+    value: function shuffleArray(a) {
+      var j, x, i;
+
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+
+      return a;
+    }
+    /*This function parses the result from the API to the same format that was used in the previous API*/
+
+  }, {
+    key: "parseQuestionAnswerFormat",
+    value: function parseQuestionAnswerFormat(arr) {
+      var finalArr = [];
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default()(arr), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var item = _step.value;
+          var questionObj = {};
+          questionObj.text = item.question;
+          var answers = [{
+            text: item.correct_answer,
+            correct: true
+          }];
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = undefined;
+
+          try {
+            for (var _iterator2 = _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default()(item.incorrect_answers), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var answerObj = _step2.value;
+              answers.push({
+                text: answerObj,
+                correct: false
+              });
+            }
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                _iterator2["return"]();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+
+          this.shuffleArray(answers);
+          questionObj.answers = answers;
+          finalArr.push(questionObj);
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      return finalArr;
     } //changes to the next question. isCorrect ia a bool for if the previous value was correct. correctAnswer is the correct answer
 
   }, {
@@ -53158,26 +53412,29 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log("THESE WERE THE CATEGORIES CHOSEN " + this.props.cat);
+      console.log("THIS WAS THE DIFFICULTY CHOSEN " + this.props.diff);
+      console.log("THESE ARE THE URLS " + this.state.urlLinks);
       return __jsx("div", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].root,
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 144
         },
         __self: this
       }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__["default"], {
         open: this.state.showFeedback,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 145
         },
         __self: this
-      }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_15__["default"], {
         wasCorrect: this.state.lastQuestionCorrect,
         correctAnswer: this.state.lastQuestionAnswer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 146
         },
         __self: this
       })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -53187,30 +53444,30 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         alignItems: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 152
         },
         __self: this
-      }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("p", {
-        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].questionText,
+      }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx("p", {
+        style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].questionText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 155
         },
         __self: this
-      }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), "   "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_12__["default"], {
         answers: this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers,
         callback: this.nextQuestion,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 161
         },
         __self: this
-      })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_14__["default"], {
         score: this.state.currentScore,
         callback: this.props.callback,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 173
         },
         __self: this
       }))));
@@ -53218,7 +53475,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
   }]);
 
   return QuestionsComponent;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (QuestionsComponent);
 
@@ -53251,7 +53508,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -53469,6 +53726,38 @@ var StartComponent = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./pages/constants.js":
+/*!****************************!*\
+  !*** ./pages/constants.js ***!
+  \****************************/
+/*! exports provided: CATEGORIES_MAP */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORIES_MAP", function() { return CATEGORIES_MAP; });
+var CATEGORIES_MAP = {
+  "GENERAL_KNOWLEDGE": "9",
+  "MYTHOLOGY": "20",
+  "MUSIC": "12",
+  "FILM": "11",
+  "SPORTS": "21",
+  "ART": "25",
+  "MUSICAL_AND_THEATRES": "13",
+  "TELEVISION": "14",
+  "VIDEO_GAMES": "15",
+  "BOARD_GAMES": "16",
+  "SCIENCE_NATURE": "17",
+  "SCIENCE_COMPUTERS": "18",
+  "SCIENCE_MATH": "19",
+  "GEOGRAPHY": "22",
+  "HISTORY": "23",
+  "CELEBRITIES": "26",
+  "VEHICLES": "28"
+};
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -53500,7 +53789,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js";
+var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -53523,15 +53812,39 @@ var IndexPage = /*#__PURE__*/function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(IndexPage).call(this, props)); // initialize the game state
 
     _this.state = {
-      gameState: "START"
+      gameState: "START",
+      catArray: [],
+      gameDifficulty: ""
     };
     _this.renderSwitch = _this.renderSwitch.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.backHome = _this.backHome.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.fromDifficultyToQuestions = _this.fromDifficultyToQuestions.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.fromCategoriestoDifficulty = _this.fromCategoriestoDifficulty.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
-  } // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
-
+  }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(IndexPage, [{
+    key: "fromCategoriestoDifficulty",
+    value: function fromCategoriestoDifficulty(nextActions, updatedArray) {
+      this.setState({
+        catArray: updatedArray
+      });
+      this.setState({
+        gameState: nextActions
+      });
+    }
+  }, {
+    key: "fromDifficultyToQuestions",
+    value: function fromDifficultyToQuestions(nextActions, difficulty) {
+      this.setState({
+        gameDifficulty: difficulty
+      });
+      this.setState({
+        gameState: nextActions
+      });
+    } // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
+
+  }, {
     key: "backHome",
     value: function backHome(nextActions) {
       this.setState({
@@ -53548,17 +53861,17 @@ var IndexPage = /*#__PURE__*/function (_Component) {
             callback: this.backHome,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 54
             },
             __self: this
           });
 
         case 'CATEGORIES':
           return __jsx(_components_Categories__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            callback: this.backHome,
+            callback: this.fromCategoriestoDifficulty,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 40
+              lineNumber: 56
             },
             __self: this
           });
@@ -53566,19 +53879,21 @@ var IndexPage = /*#__PURE__*/function (_Component) {
         case 'QUESTIONS':
           return __jsx(_components_Questions__WEBPACK_IMPORTED_MODULE_11__["default"], {
             callback: this.backHome,
+            cat: this.state.catArray,
+            diff: this.state.gameDifficulty,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 58
             },
             __self: this
-          });
+          }, " ");
 
         case 'DIFFICULTY':
           return __jsx(_components_Difficulty__WEBPACK_IMPORTED_MODULE_13__["default"], {
-            callback: this.backHome,
+            callback: this.fromDifficultyToQuestions,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 60
             },
             __self: this
           });
@@ -53587,7 +53902,7 @@ var IndexPage = /*#__PURE__*/function (_Component) {
           return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_10__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 62
             },
             __self: this
           });
@@ -53705,25 +54020,25 @@ var styles = {
 /***/ }),
 
 /***/ 1:
-/*!*********************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
-  \*********************************************************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fpaulinaanzaldo%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_82519ec661270f7f484f":
+/***/ "dll-reference dll_0fb095e325d7ebf261c3":
 /*!*******************************************!*\
-  !*** external "dll_82519ec661270f7f484f" ***!
+  !*** external "dll_0fb095e325d7ebf261c3" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_82519ec661270f7f484f;
+module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
