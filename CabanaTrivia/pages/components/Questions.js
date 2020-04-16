@@ -61,14 +61,12 @@ class QuestionsComponent extends Component {
   getUrls(){
     const numQs = "10"  // change this or pass it into the function
     for(var i = 0; i < this.props.cat.length; i ++) {
-      this.state.urlLinks[i] = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
+      var customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
       //Add URL LINK to array
 
-      //NOT UPDATING because set state onsetState() does not immediately mutate this.state!
+      //NOT UPDATING because setState can only be updated unce
       var link = this.state.urlLinks.concat(customURL)
       this.setState({urlLinks : link })
-    }
-    
   }
 
 
