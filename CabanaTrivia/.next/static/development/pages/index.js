@@ -53202,7 +53202,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 var Entities = __webpack_require__(/*! html-entities */ "./node_modules/html-entities/index.js").AllHtmlEntities;
 
 var entities = new Entities();
-var MAX_NUM_QUESTIONS = 6;
+var MAX_NUM_QUESTIONS = 10;
 var FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 var QuestionsComponent = /*#__PURE__*/function (_Component) {
@@ -53249,7 +53249,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
     value: function getUrls(categories) {
       var urls = [];
       var customURL = "";
-      var numQs = MAX_NUM_QUESTIONS / 2; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+      var numQs = MAX_NUM_QUESTIONS; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
 
       for (var i = 0; i < categories.length; i++) {
         customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_17__["CATEGORIES_MAP"][categories[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
@@ -53303,12 +53303,14 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
               break;
 
             case 19:
-              //shuffle array, trim the array up to the MAX number of questions
+              this.shuffleArray(allData);
+              allData.slice(0, MAX_NUM_QUESTIONS);
+              console.log(allData);
               this.setState({
                 questionsArr: allData
               });
 
-            case 20:
+            case 23:
             case "end":
               return _context.stop();
           }
@@ -53433,14 +53435,14 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 142
         },
         __self: this
       }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__["default"], {
         open: this.state.showFeedback,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 143
         },
         __self: this
       }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -53448,7 +53450,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         correctAnswer: this.state.lastQuestionAnswer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 144
         },
         __self: this
       })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -53458,14 +53460,14 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         alignItems: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148
+          lineNumber: 150
         },
         __self: this
       }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx("p", {
         style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].questionText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 153
         },
         __self: this
       }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -53473,7 +53475,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         callback: this.nextQuestion,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 159
         },
         __self: this
       })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -53481,7 +53483,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         callback: this.props.callback,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 171
         },
         __self: this
       }))));

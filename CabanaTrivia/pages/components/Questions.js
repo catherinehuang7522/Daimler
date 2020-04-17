@@ -13,7 +13,7 @@ const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 6;
+const MAX_NUM_QUESTIONS = 10;
 const FEEDBACK_SHOW_TIME_SECS = 2;
 
 // component that displays the questions or the game over component
@@ -52,7 +52,7 @@ class QuestionsComponent extends Component {
   getUrls(categories){
     var urls = []
     var customURL = ""
-    const numQs = MAX_NUM_QUESTIONS / 2  // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    const numQs = MAX_NUM_QUESTIONS  // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
     for(var i = 0; i < categories.length; i ++) {
       customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[categories[i]]+"&difficulty="+this.props.diff
       //Add URL LINK to array
@@ -82,8 +82,11 @@ class QuestionsComponent extends Component {
       allData = allData.concat(catQuestionsAndAnswers)
     }
 
+    this.shuffleArray(allData)
+    allData.slice(0, MAX_NUM_QUESTIONS)
 
-    //shuffle array, trim the array up to the MAX number of questions
+    console.log(allData)
+
    this.setState({ questionsArr: allData });
   }
 
@@ -135,7 +138,6 @@ class QuestionsComponent extends Component {
   }
 
   render() {
-
     return (
       <div style={styles.root}>
         <Backdrop open={this.state.showFeedback}>

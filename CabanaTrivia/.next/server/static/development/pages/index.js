@@ -1232,7 +1232,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
 
 const entities = new Entities();
-const MAX_NUM_QUESTIONS = 6;
+const MAX_NUM_QUESTIONS = 10;
 const FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
@@ -1269,7 +1269,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   getUrls(categories) {
     var urls = [];
     var customURL = "";
-    const numQs = MAX_NUM_QUESTIONS / 2; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    const numQs = MAX_NUM_QUESTIONS; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
 
     for (var i = 0; i < categories.length; i++) {
       customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][categories[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
@@ -1299,9 +1299,11 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       json = await fetchRequest.json();
       catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
       allData = allData.concat(catQuestionsAndAnswers);
-    } //shuffle array, trim the array up to the MAX number of questions
+    }
 
-
+    this.shuffleArray(allData);
+    allData.slice(0, MAX_NUM_QUESTIONS);
+    console.log(allData);
     this.setState({
       questionsArr: allData
     });
@@ -1380,14 +1382,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 142
       },
       __self: this
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 143
       },
       __self: this
     }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1395,7 +1397,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       correctAnswer: this.state.lastQuestionAnswer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
+        lineNumber: 144
       },
       __self: this
     })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1405,14 +1407,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 150
       },
       __self: this
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("p", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].questionText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 153
       },
       __self: this
     }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1420,7 +1422,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.nextQuestion,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 159
       },
       __self: this
     })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1428,7 +1430,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.props.callback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
+        lineNumber: 171
       },
       __self: this
     }))));
