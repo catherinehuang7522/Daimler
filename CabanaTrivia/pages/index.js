@@ -42,9 +42,14 @@ export default class IndexPage extends Component {
 
 
   // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
-  backHome(nextActions){
+  backHome(nextActions) {
     this.setState({gameState:nextActions})
 
+  }
+
+  // sets the number of questions
+  setNumQuestions(numQuestions) {
+    this.setState({numQuestions: numQuestions})
   }
 
   // reder the desired componenent based on the state

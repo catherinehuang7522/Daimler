@@ -4,6 +4,8 @@ import DangerButton from './DangerButton'
 import Grid from '@material-ui/core/Grid'
 import { styles } from '../stylesheet.js'
 
+const NUM_QUESTIONS_PER_MINUTE = 10
+
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
 */
@@ -41,6 +43,7 @@ class StartComponent extends Component {
 
   onSelectDuration(dur) {
     this.setState({ duration: dur })
+    this.props.setNumQuestionsCallback(dur * NUM_QUESTIONS_PER_MINUTE)
   }
 
   render() {

@@ -15690,6 +15690,7 @@ var ListItemText = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(funct
     }, secondaryTypographyProps), secondary);
   }
 
+<<<<<<< HEAD
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, className, dense && classes.dense, inset && classes.inset, primary && secondary && classes.multiline),
     ref: ref
@@ -15706,12 +15707,23 @@ var ListItemText = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(funct
    * See [CSS API](#css) below for more details.
    */
   classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
+=======
+/***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
+/*!***********************************************************************************************************************!*\
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_82519ec661270f7f484f ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+>>>>>>> master
 
   /**
    * @ignore
    */
   className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
 
+<<<<<<< HEAD
   /**
    * If `true`, the children won't be wrapped by a Typography component.
    * This can be useful to render an alternative Typography variant by wrapping
@@ -15719,6 +15731,14 @@ var ListItemText = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(funct
    * with the Typography component.
    */
   disableTypography: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+=======
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js!./":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fjohnsonsong%2FDesktop%2FDaimler%2FCabanaTrivia%2Fpages%2Findex.js ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> master
 
   /**
    * If `true`, the children will be indented.
@@ -15754,6 +15774,7 @@ var ListItemText = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(funct
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/@material-ui/core/esm/ListItemText/index.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/ListItemText/index.js ***!
@@ -15767,6 +15788,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ListItemText__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
+=======
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!*********************************************************************************************************!*\
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_82519ec661270f7f484f ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/checkPropTypes.js");
+>>>>>>> master
 
 /***/ }),
 
@@ -16231,6 +16262,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/@material-ui/core/esm/MenuItem/MenuItem.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/MenuItem/MenuItem.js ***!
@@ -16251,9 +16283,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
 /* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
 /* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js");
+=======
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*******************************************************************************************************************!*\
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_82519ec661270f7f484f ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+>>>>>>> master
 
 
+<<<<<<< HEAD
 
+=======
+/***/ "./node_modules/react-dom/index.js":
+/*!***********************************************************************************************!*\
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react-dom/index.js");
+>>>>>>> master
 
 
 
@@ -18399,6 +18452,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
 /***/ }),
 
 /***/ "./node_modules/@material-ui/core/esm/OutlinedInput/NotchedOutline.js":
@@ -18407,6 +18461,16 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************************************************/
 /*! exports provided: styles, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+=======
+/***/ "./node_modules/react/index.js":
+/*!*******************************************************************************************!*\
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_82519ec661270f7f484f ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_82519ec661270f7f484f */ "dll-reference dll_82519ec661270f7f484f"))("./node_modules/react/index.js");
+>>>>>>> master
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -52739,7 +52803,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
 var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Difficulty.js";
+=======
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
+>>>>>>> master
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -52916,9 +52984,82 @@ var DifficultyComponent = /*#__PURE__*/function (_Component) {
           lineNumber: 80
         },
         __self: this
+<<<<<<< HEAD
       }, easyButton, mediumButton, hardButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_11__["styles"].row,
         spacing: 3,
+=======
+      }, entities.decode(answer4.text))));
+    }
+  }]);
+
+  return AnswersComponent;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (AnswersComponent);
+
+/***/ }),
+
+/***/ "./pages/components/DangerButton.js":
+/*!******************************************!*\
+  !*** ./pages/components/DangerButton.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+
+
+
+
+
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+
+var styles = {
+  selectedButton: {
+    backgroundColor: 'white',
+    color: '#1F1F55',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    borderTop: '5px solid #4DFAFA',
+    borderBottom: '5px solid #4DFAFA',
+    borderLeft: '5px solid #4DFAFA',
+    borderRight: '5px solid #4DFAFA',
+    width: 332,
+    height: 78,
+    fontFamily: 'Kontakt'
+  }
+};
+
+var DangerButton = /*#__PURE__*/function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(DangerButton, _Component);
+
+  function DangerButton() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, DangerButton);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(DangerButton).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(DangerButton, [{
+    key: "render",
+    value: function render() {
+      return __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        style: styles.selectedButton,
+        variant: "contained",
+        color: "secondary",
+        onClick: this.props.onClick,
+>>>>>>> master
         __source: {
           fileName: _jsxFileName,
           lineNumber: 86
@@ -53199,9 +53340,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
 
 var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+=======
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+>>>>>>> master
 
 
 
@@ -53216,7 +53362,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 var Entities = __webpack_require__(/*! html-entities */ "./node_modules/html-entities/index.js").AllHtmlEntities;
 
 var entities = new Entities();
+<<<<<<< HEAD
 var MAX_NUM_QUESTIONS = 10;
+=======
+>>>>>>> master
 var FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 var QuestionsComponent = /*#__PURE__*/function (_Component) {
@@ -53277,8 +53426,13 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
   }, {
     key: "onGetQuestions",
     value: function onGetQuestions(category) {
+<<<<<<< HEAD
       var chosenCategories, allUrls, finalCateg, difficulty, numQs, json, allData, catQuestionsAndAnswers, fetchRequest, i;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.async(function onGetQuestions$(_context) {
+=======
+      var finalCateg, requestString, response, allData;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function onGetQuestions$(_context) {
+>>>>>>> master
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -53289,6 +53443,7 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
               difficulty = this.props.diff;
               numQs = MAX_NUM_QUESTIONS; // change this or pass it into the function
 
+<<<<<<< HEAD
               allData = [];
               i = 0;
 
@@ -53320,11 +53475,28 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
               this.shuffleArray(allData);
               allData.slice(0, MAX_NUM_QUESTIONS);
               console.log(allData);
+=======
+              requestString = finalCateg + "/count/" + String(this.props.numQuestions);
+              _context.next = 4;
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + requestString));
+
+            case 4:
+              response = _context.sent;
+              _context.next = 7;
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response.json());
+
+            case 7:
+              allData = _context.sent;
+>>>>>>> master
               this.setState({
                 questionsArr: allData
               });
 
+<<<<<<< HEAD
             case 23:
+=======
+            case 9:
+>>>>>>> master
             case "end":
               return _context.stop();
           }
@@ -53454,7 +53626,11 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
         __self: this
       }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_11__["default"], {
         open: this.state.showFeedback,
+<<<<<<< HEAD
         style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].feedbackWrapper,
+=======
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].feedbackWrapper,
+>>>>>>> master
         __source: {
           fileName: _jsxFileName,
           lineNumber: 143
@@ -53478,8 +53654,13 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
           lineNumber: 150
         },
         __self: this
+<<<<<<< HEAD
       }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx("p", {
         style: _stylesheet__WEBPACK_IMPORTED_MODULE_8__["styles"].questionText,
+=======
+      }, this.state.questionIndex < this.props.numQuestions && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("p", {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_15__["styles"].questionText,
+>>>>>>> master
         __source: {
           fileName: _jsxFileName,
           lineNumber: 153
@@ -53493,7 +53674,11 @@ var QuestionsComponent = /*#__PURE__*/function (_Component) {
           lineNumber: 159
         },
         __self: this
+<<<<<<< HEAD
       })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_9___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_14__["default"], {
+=======
+      })), this.state.questionIndex >= this.props.numQuestions && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_13__["default"], {
+>>>>>>> master
         score: this.state.currentScore,
         callback: this.props.callback,
         __source: {
@@ -53546,6 +53731,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
+var NUM_QUESTIONS_PER_MINUTE = 10;
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
 */
@@ -53600,6 +53786,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
       this.setState({
         duration: dur
       });
+      this.props.setNumQuestionsCallback(dur * NUM_QUESTIONS_PER_MINUTE);
     }
   }, {
     key: "render",
@@ -53612,7 +53799,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickStartGame,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 51
         },
         __self: this
       }, "Start Game");
@@ -53621,7 +53808,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         text: "Single Player",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 56
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -53630,7 +53817,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickSingle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 58
         },
         __self: this
       }, "Single Player");
@@ -53640,14 +53827,14 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         onClick: this.onClickMulti,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 63
         },
         __self: this
       }, "Multi Player") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
         text: "Multi Player",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 67
         },
         __self: this
       });
@@ -53655,7 +53842,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         text: "Short Game [10 min]",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 70
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -53666,7 +53853,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 72
         },
         __self: this
       }, "Short Game [10 min]");
@@ -53674,7 +53861,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         text: "Medium Game [20 min]",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 77
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -53685,7 +53872,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 79
         },
         __self: this
       }, "Medium Game [20 min]");
@@ -53693,7 +53880,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         text: "Long Game [30 min]",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 84
         },
         __self: this
       }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -53704,7 +53891,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 86
         },
         __self: this
       }, "Long Game [30 min]");
@@ -53712,14 +53899,14 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].root,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         },
         __self: this
       }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_10__["styles"].title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 92
         },
         __self: this
       }, " TRIVIA "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -53727,7 +53914,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 94
         },
         __self: this
       }, singlePlayerSelector, multiPlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -53735,7 +53922,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 99
         },
         __self: this
       }, shortDurationSelector, medDurationSelector, longDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -53743,7 +53930,7 @@ var StartComponent = /*#__PURE__*/function (_Component) {
         spacing: 3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 105
         },
         __self: this
       }, startButton));
@@ -53844,6 +54031,7 @@ var IndexPage = /*#__PURE__*/function (_Component) {
 
     _this.state = {
       gameState: "START",
+<<<<<<< HEAD
       catArray: [],
       gameDifficulty: ""
     };
@@ -53851,6 +54039,13 @@ var IndexPage = /*#__PURE__*/function (_Component) {
     _this.backHome = _this.backHome.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.fromDifficultyToQuestions = _this.fromDifficultyToQuestions.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.fromCategoriestoDifficulty = _this.fromCategoriestoDifficulty.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+=======
+      numQuestions: 10
+    };
+    _this.renderSwitch = _this.renderSwitch.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.backHome = _this.backHome.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.setNumQuestions = _this.setNumQuestions.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+>>>>>>> master
     return _this;
   }
 
@@ -53881,6 +54076,14 @@ var IndexPage = /*#__PURE__*/function (_Component) {
       this.setState({
         gameState: nextActions
       });
+    } // sets the number of questions
+
+  }, {
+    key: "setNumQuestions",
+    value: function setNumQuestions(numQuestions) {
+      this.setState({
+        numQuestions: numQuestions
+      });
     } // reder the desired componenent based on the state
 
   }, {
@@ -53890,8 +54093,10 @@ var IndexPage = /*#__PURE__*/function (_Component) {
         case 'START':
           return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_10__["default"], {
             callback: this.backHome,
+            setNumQuestionsCallback: this.setNumQuestions,
             __source: {
               fileName: _jsxFileName,
+<<<<<<< HEAD
               lineNumber: 54
             },
             __self: this
@@ -53903,6 +54108,9 @@ var IndexPage = /*#__PURE__*/function (_Component) {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 56
+=======
+              lineNumber: 43
+>>>>>>> master
             },
             __self: this
           });
@@ -53910,6 +54118,7 @@ var IndexPage = /*#__PURE__*/function (_Component) {
         case 'QUESTIONS':
           return __jsx(_components_Questions__WEBPACK_IMPORTED_MODULE_11__["default"], {
             callback: this.backHome,
+<<<<<<< HEAD
             cat: this.state.catArray,
             diff: this.state.gameDifficulty,
             __source: {
@@ -53925,6 +54134,12 @@ var IndexPage = /*#__PURE__*/function (_Component) {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 60
+=======
+            numQuestions: this.state.numQuestions,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 45
+>>>>>>> master
             },
             __self: this
           });
@@ -53933,7 +54148,11 @@ var IndexPage = /*#__PURE__*/function (_Component) {
           return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_10__["default"], {
             __source: {
               fileName: _jsxFileName,
+<<<<<<< HEAD
               lineNumber: 62
+=======
+              lineNumber: 47
+>>>>>>> master
             },
             __self: this
           });
@@ -53970,7 +54189,10 @@ var styles = {
     width: 1062,
     height: 484,
     fontFamily: 'Kontakt',
+<<<<<<< HEAD
     overflow: 'scroll',
+=======
+>>>>>>> master
     zIndex: 1
   },
   row: {
