@@ -13,7 +13,7 @@ const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 3;
+const MAX_NUM_QUESTIONS = 6;
 const FEEDBACK_SHOW_TIME_SECS = 2;
 
 // component that displays the questions or the game over component
@@ -35,56 +35,56 @@ class QuestionsComponent extends Component {
     this.nextQuestion = this.nextQuestion.bind(this);
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this)
+    this.shuffleArray = this.shuffleArray.bind(this)
   }
-
 
   // calls function to fetch the questions before the component mounts
   componentWillMount() {
-      this.getUrls();
-      this.onGetQuestions();
+      this.onGetQuestions(this.props.cat);
   }
-
 
   /*
   function: getUrls
   Iterates over the user's selected categories (stored in this.props.cat)
   Creates a custom URL for each category
-  Appends to the CustomID array defined in state
-
+  Returns an array with all the URLS to fetch
   */
-  //TODO:
-  // Currently, urlLinks is just holding the URL for the first category chosen, not all of them. How do we fix them?
-  //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
-
-  getUrls(){
+  getUrls(categories){
     var urls = []
     var customURL = ""
-    const numQs = "10"  // change this or pass it into the function
-    for(var i = 0; i < this.props.cat.length; i ++) {
-      customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[this.props.cat[i]]+"&difficulty="+this.props.diff
+    const numQs = MAX_NUM_QUESTIONS / 2  // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    for(var i = 0; i < categories.length; i ++) {
+      customURL = "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[categories[i]]+"&difficulty="+this.props.diff
       //Add URL LINK to array
       urls.push(customURL)
+
   }
   return urls
 }
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
-    const finalCateg = category == null ? "MUSIC" : category;  // pass in the category as you wish
+    var chosenCategories = this.props.cat
+    const allUrls = this.getUrls(chosenCategories)
+    const finalCateg = category == null ? "MUSIC" : category;  // pass in the array of categories.
     const difficulty = this.props.diff
-    const numQs = "10"  // change this or pass it into the function
+    const numQs = MAX_NUM_QUESTIONS  // change this or pass it into the function
 
-    const response = await fetch(
-      "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[finalCateg]+"&difficulty="+difficulty
-    )
+    let json
+    var allData = []
+    let catQuestionsAndAnswers
+    let fetchRequest
 
-    //TODO: Use a Promise so that we can process multiple urls rather than just one.
-    // const response = Promise.all(urlLinks.map(url =>fetch(url)))
+    for(var i = 0; i < allUrls.length; i ++) {
+      fetchRequest = await fetch(allUrls[i])
+      json = await fetchRequest.json();
+      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results)
+      allData = allData.concat(catQuestionsAndAnswers)
+    }
 
-    let allData = await response.json();
-    // parse the question to the same format
-    allData = this.parseQuestionAnswerFormat(allData.results)
-    this.setState({ questionsArr: allData });
+
+    //shuffle array, trim the array up to the MAX number of questions
+   this.setState({ questionsArr: allData });
   }
 
 // shuffles the array of answers for randomness
@@ -135,15 +135,6 @@ class QuestionsComponent extends Component {
   }
 
   render() {
-    const [allUrls] = this.getUrls()
-
-    console.log("THESE WERE THE CATEGORIES CHOSEN " + this.props.cat)
-
-    console.log("THIS WAS THE DIFFICULTY CHOSEN " + this.props.diff)
-
-    console.log("THESE ARE THE URLS " + allUrls)
-
-
 
     return (
       <div style={styles.root}>

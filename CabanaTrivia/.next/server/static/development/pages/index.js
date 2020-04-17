@@ -1232,7 +1232,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
 
 const entities = new Entities();
-const MAX_NUM_QUESTIONS = 3;
+const MAX_NUM_QUESTIONS = 6;
 const FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
@@ -1251,31 +1251,28 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
     this.nextQuestion = this.nextQuestion.bind(this);
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
+    this.shuffleArray = this.shuffleArray.bind(this);
   } // calls function to fetch the questions before the component mounts
 
 
   componentWillMount() {
-    this.getUrls();
-    this.onGetQuestions();
+    this.onGetQuestions(this.props.cat);
   }
   /*
   function: getUrls
   Iterates over the user's selected categories (stored in this.props.cat)
   Creates a custom URL for each category
-  Appends to the CustomID array defined in state
-   */
-  //TODO:
-  // Currently, urlLinks is just holding the URL for the first category chosen, not all of them. How do we fix them?
-  //We can't use setState in a for loop, because it only updates the state 1 time, so we need a better way
+  Returns an array with all the URLS to fetch
+  */
 
 
-  getUrls() {
+  getUrls(categories) {
     var urls = [];
     var customURL = "";
-    const numQs = "10"; // change this or pass it into the function
+    const numQs = MAX_NUM_QUESTIONS / 2; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
 
-    for (var i = 0; i < this.props.cat.length; i++) {
-      customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][this.props.cat[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
+    for (var i = 0; i < categories.length; i++) {
+      customURL = "https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][categories[i]] + "&difficulty=" + this.props.diff; //Add URL LINK to array
 
       urls.push(customURL);
     }
@@ -1285,17 +1282,26 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
 
 
   async onGetQuestions(category) {
-    const finalCateg = category == null ? "MUSIC" : category; // pass in the category as you wish
+    var chosenCategories = this.props.cat;
+    const allUrls = this.getUrls(chosenCategories);
+    const finalCateg = category == null ? "MUSIC" : category; // pass in the array of categories.
 
     const difficulty = this.props.diff;
-    const numQs = "10"; // change this or pass it into the function
+    const numQs = MAX_NUM_QUESTIONS; // change this or pass it into the function
 
-    const response = await fetch("https://opentdb.com/api.php?amount=" + numQs + "&category=" + _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORIES_MAP"][finalCateg] + "&difficulty=" + difficulty); //TODO: Use a Promise so that we can process multiple urls rather than just one.
-    // const response = Promise.all(urlLinks.map(url =>fetch(url)))
+    let json;
+    var allData = [];
+    let catQuestionsAndAnswers;
+    let fetchRequest;
 
-    let allData = await response.json(); // parse the question to the same format
+    for (var i = 0; i < allUrls.length; i++) {
+      fetchRequest = await fetch(allUrls[i]);
+      json = await fetchRequest.json();
+      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
+      allData = allData.concat(catQuestionsAndAnswers);
+    } //shuffle array, trim the array up to the MAX number of questions
 
-    allData = this.parseQuestionAnswerFormat(allData.results);
+
     this.setState({
       questionsArr: allData
     });
@@ -1370,22 +1376,18 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   }
 
   render() {
-    const [allUrls] = this.getUrls();
-    console.log("THESE WERE THE CATEGORIES CHOSEN " + this.props.cat);
-    console.log("THIS WAS THE DIFFICULTY CHOSEN " + this.props.diff);
-    console.log("THESE ARE THE URLS " + allUrls);
     return __jsx("div", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].root,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 149
+        lineNumber: 140
       },
       __self: this
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 141
       },
       __self: this
     }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1393,7 +1395,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       correctAnswer: this.state.lastQuestionAnswer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 142
       },
       __self: this
     })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1403,14 +1405,14 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       alignItems: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 148
       },
       __self: this
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("p", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].questionText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 151
       },
       __self: this
     }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1418,7 +1420,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.nextQuestion,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 157
       },
       __self: this
     })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1426,7 +1428,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       callback: this.props.callback,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 169
       },
       __self: this
     }))));
