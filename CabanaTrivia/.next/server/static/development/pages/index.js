@@ -109,7 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Answers.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -250,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/DoubleArrow */ "@material-ui/icons/DoubleArrow");
 /* harmony import */ var _material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../constants */ "./pages/constants.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Categories.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Categories.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -744,7 +744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/CategoriesButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -784,7 +784,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/DangerButton.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/DangerButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -843,7 +843,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Difficulty.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Difficulty.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1042,7 +1042,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Feedback.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Feedback.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1069,14 +1069,35 @@ class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
     let bodyText;
 
     if (this.props.wasCorrect) {
-      headerText = "Correct!";
+      headerText = __jsx("p", {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderTextCorrect,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, "Correct!");
       bodyText = "Way to go! You were right! " + this.props.correctAnswer + " is correct.";
     } else {
-      headerText = "Incorrect";
+      headerText = __jsx("p", {
+        style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderTextIncorrect,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, "Incorrect");
       bodyText = "Oh no, that wasn't right. The correct answer was " + this.props.correctAnswer + ".";
     }
 
-    return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    return __jsx("div", {
+      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackContent,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       columnGrid: true,
       direction: "column",
       justify: "center",
@@ -1084,7 +1105,7 @@ class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
       spacing: 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 35
       },
       __self: this
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1092,24 +1113,17 @@ class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
       spacing: 1,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 41
       },
       __self: this
-    }, __jsx("p", {
-      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderText,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, headerText)), __jsx("p", {
+    }, headerText), __jsx("p", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackBodyText,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 45
       },
       __self: this
-    }, bodyText));
+    }, bodyText)));
   }
 
 }
@@ -1136,7 +1150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Answers */ "./pages/components/Answers.js");
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/GameOver.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/GameOver.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1216,7 +1230,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../index */ "./pages/index.js");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../constants */ "./pages/constants.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Questions.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -1387,6 +1401,7 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       __self: this
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
+      style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].feedbackWrapper,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 143
@@ -1459,7 +1474,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/components/Start.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Start.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1707,7 +1722,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Questions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Questions */ "./pages/components/Questions.js");
 /* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Categories */ "./pages/components/Categories.js");
 /* harmony import */ var _components_Difficulty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Difficulty */ "./pages/components/Difficulty.js");
-var _jsxFileName = "/Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js";
+var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1839,7 +1854,8 @@ const styles = {
     width: 1062,
     height: 484,
     fontFamily: 'Kontakt',
-    overflow: 'scroll'
+    overflow: 'scroll',
+    zIndex: 1
   },
   row: {
     display: 'flex',
@@ -1882,12 +1898,25 @@ const styles = {
     display: 'flex',
     justifyContent: 'center'
   },
+  feedbackWrapper: {
+    zIndex: 10,
+    width: 1062,
+    height: 484
+  },
+  feedbackContent: {
+    display: 'flex',
+    textAlign: 'center'
+  },
   questionText: {
     color: 'white'
   },
-  feedbackHeaderText: {
-    color: 'white',
-    fontSize: 48
+  feedbackHeaderTextCorrect: {
+    color: '#379634',
+    fontSize: 60
+  },
+  feedbackHeaderTextIncorrect: {
+    color: '#F06449',
+    fontSize: 60
   },
   feedbackBodyText: {
     color: 'white'
@@ -1926,7 +1955,7 @@ const styles = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/paulinaanzaldo/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
