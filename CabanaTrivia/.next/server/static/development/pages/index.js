@@ -109,14 +109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-<<<<<<< HEAD
 var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-=======
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Answers.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
->>>>>>> master
 
 
 
@@ -171,59 +165,66 @@ class AnswersComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       justify: "center",
       alignItems: "center",
       spacing: 2,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
+        lineNumber: 49,
+        columnNumber: 7
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       rowGrid: true,
       spacing: 1,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
+        lineNumber: 56,
+        columnNumber: 9
+      }
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].unselectedButton,
       onClick: () => this.onPressAnswer(answer1),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
+        lineNumber: 57,
+        columnNumber: 11
+      }
     }, entities.decode(answer1.text), " "), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].unselectedButton,
       onClick: () => this.onPressAnswer(answer2),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
+        lineNumber: 63,
+        columnNumber: 11
+      }
     }, entities.decode(answer2.text))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       rowGrid: true,
       spacing: 1,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
+        lineNumber: 71,
+        columnNumber: 9
+      }
     }, this.props.answers.length === 4 && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].unselectedButton,
       onClick: () => this.onPressAnswer(answer3),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
+        lineNumber: 72,
+        columnNumber: 50
+      }
     }, entities.decode(answer3.text), " "), this.props.answers.length === 4 && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].unselectedButton,
       onClick: () => this.onPressAnswer(answer4),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
+        lineNumber: 78,
+        columnNumber: 50
+      }
     }, entities.decode(answer4.text))));
   }
 
@@ -439,294 +440,329 @@ class CategoriesComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"
     const generalKnowledgeButton = this.state.generalKnowledge ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "General Knowledge",
       onClick: this.onClickGeneralKnowledge,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
-      },
-      __self: this
+        lineNumber: 164,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "General Knowledge",
       onClick: this.onClickGeneralKnowledge,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
-      },
-      __self: this
+        lineNumber: 166,
+        columnNumber: 7
+      }
     });
     const filmButton = this.state.film ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Film",
       onClick: this.onClickFilm,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169
-      },
-      __self: this
+        lineNumber: 169,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Film",
       onClick: this.onClickFilm,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
-      },
-      __self: this
+        lineNumber: 171,
+        columnNumber: 7
+      }
     });
     const scienceNatureButton = this.state.scienceNature ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Science and Nature",
       onClick: this.onClickScienceNature,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
-      },
-      __self: this
+        lineNumber: 174,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Science and Nature",
       onClick: this.onClickScienceNature,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
-      },
-      __self: this
+        lineNumber: 176,
+        columnNumber: 7
+      }
     });
     const sportsButton = this.state.sports ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Sports",
       onClick: this.onClickSports,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
-      },
-      __self: this
+        lineNumber: 179,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Sports",
       onClick: this.onClickSports,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 181
-      },
-      __self: this
+        lineNumber: 181,
+        columnNumber: 7
+      }
     });
     const historyButton = this.state.history ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "History",
       onClick: this.onClickHistory,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
-      },
-      __self: this
+        lineNumber: 184,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "History",
       onClick: this.onClickHistory,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 186
-      },
-      __self: this
+        lineNumber: 186,
+        columnNumber: 7
+      }
     });
     const tvButton = this.state.tv ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Television",
       onClick: this.onClickTV,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
-      },
-      __self: this
+        lineNumber: 189,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Television",
       onClick: this.onClickTV,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 191
-      },
-      __self: this
+        lineNumber: 191,
+        columnNumber: 7
+      }
     });
     const booksButton = this.state.books ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Books",
       onClick: this.onClickBooks,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194
-      },
-      __self: this
+        lineNumber: 194,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Books",
       onClick: this.onClickBooks,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196
-      },
-      __self: this
+        lineNumber: 196,
+        columnNumber: 7
+      }
     });
     const musicButton = this.state.music ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Music",
       onClick: this.onClickMusic,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 199
-      },
-      __self: this
+        lineNumber: 199,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Music",
       onClick: this.onClickMusic,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 201
-      },
-      __self: this
+        lineNumber: 201,
+        columnNumber: 7
+      }
     });
     const mythologyButton = this.state.mythology ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Mythology",
       onClick: this.onClickMythology,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 204
-      },
-      __self: this
+        lineNumber: 204,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Mythology",
       onClick: this.onClickMythology,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 206
-      },
-      __self: this
+        lineNumber: 206,
+        columnNumber: 7
+      }
     });
     const geographyButton = this.state.geography ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Geography",
       onClick: this.onClickGeography,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 209
-      },
-      __self: this
+        lineNumber: 209,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Geography",
       onClick: this.onClickGeography,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211
-      },
-      __self: this
+        lineNumber: 211,
+        columnNumber: 7
+      }
     });
     const artButton = this.state.art ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Art",
       onClick: this.onClickArt,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 214
-      },
-      __self: this
+        lineNumber: 214,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Art",
       onClick: this.onClickArt,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 216
-      },
-      __self: this
+        lineNumber: 216,
+        columnNumber: 7
+      }
     });
     const videoGamesButton = this.state.videoGames ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Video Games",
       onClick: this.onClickVideoGames,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 219
-      },
-      __self: this
+        lineNumber: 219,
+        columnNumber: 7
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Video Games",
       onClick: this.onClickVideoGames,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 221
-      },
-      __self: this
+        lineNumber: 221,
+        columnNumber: 7
+      }
     }); // TODO: Add arrow button that would mean "Next".
     // TODO: Limit selection to three categories.
     // TODO: Keep track of which categories were selected for future API calls
 
     return __jsx("div", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].root,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 227
-      },
-      __self: this
+        lineNumber: 227,
+        columnNumber: 7
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].title,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 228
-      },
-      __self: this
+        lineNumber: 228,
+        columnNumber: 9
+      }
     }, " SELECT UP TO 3 CATEGORIES "), __jsx("div", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryButtonsContainer,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229
-      },
-      __self: this
+        lineNumber: 229,
+        columnNumber: 9
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 230
-      },
-      __self: this
+        lineNumber: 230,
+        columnNumber: 11
+      }
     }, generalKnowledgeButton, filmButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 234
-      },
-      __self: this
+        lineNumber: 234,
+        columnNumber: 11
+      }
     }, scienceNatureButton, sportsButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 238
-      },
-      __self: this
+        lineNumber: 238,
+        columnNumber: 11
+      }
     }, historyButton, tvButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 242
-      },
-      __self: this
+        lineNumber: 242,
+        columnNumber: 11
+      }
     }, booksButton, musicButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 246
-      },
-      __self: this
+        lineNumber: 246,
+        columnNumber: 11
+      }
     }, mythologyButton, geographyButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].categoryRow,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 250
-      },
-      __self: this
+        lineNumber: 250,
+        columnNumber: 11
+      }
     }, artButton, videoGamesButton)), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["IconButton"], {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].nextButton,
       onClick: this.onClickShowDifficultyScreen,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 255
-      },
-      __self: this
+        lineNumber: 255,
+        columnNumber: 9
+      }
     }, __jsx(_material_ui_icons_DoubleArrow__WEBPACK_IMPORTED_MODULE_7___default.a, {
       fontSize: "large",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 256
-      },
-      __self: this
+        lineNumber: 256,
+        columnNumber: 11
+      }
     })));
   }
 
@@ -763,11 +799,12 @@ class CategoriesButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       variant: "contained",
       color: "secondary",
       onClick: this.props.onClick,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
+        lineNumber: 9,
+        columnNumber: 7
+      }
     }, this.props.text);
   }
 
@@ -817,11 +854,12 @@ class DangerButton extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       variant: "contained",
       color: "secondary",
       onClick: this.props.onClick,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
+        lineNumber: 23,
+        columnNumber: 7
+      }
     }, this.props.text);
   }
 
@@ -932,95 +970,106 @@ class DifficultyComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"
     const easyButton = this.state.easy ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Easy",
       onClick: this.onClickEasy,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
+        lineNumber: 58,
+        columnNumber: 5
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Easy",
       onClick: this.onClickEasy,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
+        lineNumber: 60,
+        columnNumber: 5
+      }
     });
     const mediumButton = this.state.medium ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Medium",
       onClick: this.onClickMedium,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
+        lineNumber: 63,
+        columnNumber: 5
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Medium",
       onClick: this.onClickMedium,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
+        lineNumber: 65,
+        columnNumber: 5
+      }
     });
     const hardButton = this.state.hard ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Hard",
       onClick: this.onClickHard,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
-      },
-      __self: this
+        lineNumber: 68,
+        columnNumber: 5
+      }
     }) : __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "Hard",
       onClick: this.onClickHard,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
+        lineNumber: 70,
+        columnNumber: 5
+      }
     }); //Currently the Start Button will look the same as the other buttons
 
     const startButton = __jsx(_CategoriesButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
       text: "START",
       onClick: this.onClickStartGame,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
+        lineNumber: 74,
+        columnNumber: 5
+      }
     });
 
     return __jsx("div", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].root,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
+        lineNumber: 77,
+        columnNumber: 5
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].title,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
+        lineNumber: 78,
+        columnNumber: 7
+      }
     }, " CHOOSE A DIFFICULTY "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].row,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: this
+        lineNumber: 80,
+        columnNumber: 7
+      }
     }, easyButton, mediumButton, hardButton), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].row,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
+        lineNumber: 86,
+        columnNumber: 7
+      }
     }, startButton));
   }
 
@@ -1077,58 +1126,64 @@ class FeedbackComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
     if (this.props.wasCorrect) {
       headerText = __jsx("p", {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderTextCorrect,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
+          lineNumber: 26,
+          columnNumber: 20
+        }
       }, "Correct!");
       bodyText = "Way to go! You were right! " + this.props.correctAnswer + " is correct.";
     } else {
       headerText = __jsx("p", {
         style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackHeaderTextIncorrect,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
+          lineNumber: 29,
+          columnNumber: 20
+        }
       }, "Incorrect");
       bodyText = "Oh no, that wasn't right. The correct answer was " + this.props.correctAnswer + ".";
     }
 
     return __jsx("div", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackContent,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
+        lineNumber: 34,
+        columnNumber: 7
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       columnGrid: true,
       direction: "column",
       justify: "center",
       alignItems: "center",
       spacing: 2,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
+        lineNumber: 35,
+        columnNumber: 9
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       rowGrid: true,
       spacing: 1,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
+        lineNumber: 41,
+        columnNumber: 11
+      }
     }, headerText), __jsx("p", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].feedbackBodyText,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
+        lineNumber: 45,
+        columnNumber: 11
+      }
     }, bodyText)));
   }
 
@@ -1185,26 +1240,29 @@ class GameOverComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] 
       direction: "column",
       justify: "center",
       alignItems: "center",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
+        lineNumber: 31,
+        columnNumber: 7
+      }
     }, __jsx("p", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].questionText,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
+        lineNumber: 37,
+        columnNumber: 9
+      }
     }, "Game Over. You scored: ", this.props.score), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_5__["styles"].unselectedButton,
       onClick: this.onGoHome,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
+        lineNumber: 38,
+        columnNumber: 9
+      }
     }, "Back to Home"));
   }
 
@@ -1234,16 +1292,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Categories */ "./pages/components/Categories.js");
 /* harmony import */ var _GameOver__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GameOver */ "./pages/components/GameOver.js");
 /* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Feedback */ "./pages/components/Feedback.js");
-<<<<<<< HEAD
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../index */ "./pages/index.js");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../constants */ "./pages/constants.js");
 var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-=======
-/* harmony import */ var _stylesheet_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../stylesheet.js */ "./pages/stylesheet.js");
-var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/components/Questions.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
->>>>>>> master
 
 
 
@@ -1258,10 +1310,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Entities = __webpack_require__(/*! html-entities */ "html-entities").AllHtmlEntities;
 
 const entities = new Entities();
-<<<<<<< HEAD
 const MAX_NUM_QUESTIONS = 10;
-=======
->>>>>>> master
 const FEEDBACK_SHOW_TIME_SECS = 2; // component that displays the questions or the game over component
 
 class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
@@ -1330,15 +1379,9 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
       allData = allData.concat(catQuestionsAndAnswers);
     }
 
-<<<<<<< HEAD
     this.shuffleArray(allData);
     allData.slice(0, MAX_NUM_QUESTIONS);
     console.log(allData);
-=======
-    const requestString = finalCateg + "/count/" + String(this.props.numQuestions);
-    const response = await fetch("https://cocktail-trivia-api.herokuapp.com/api/category/" + requestString);
-    const allData = await response.json();
->>>>>>> master
     this.setState({
       questionsArr: allData
     });
@@ -1415,73 +1458,67 @@ class QuestionsComponent extends react__WEBPACK_IMPORTED_MODULE_1__["Component"]
   render() {
     return __jsx("div", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].root,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
-      },
-      __self: this
+        lineNumber: 142,
+        columnNumber: 7
+      }
     }, __jsx(_material_ui_core_Backdrop__WEBPACK_IMPORTED_MODULE_3___default.a, {
       open: this.state.showFeedback,
-<<<<<<< HEAD
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].feedbackWrapper,
-=======
-      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_8__["styles"].feedbackWrapper,
->>>>>>> master
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
-      },
-      __self: this
+        lineNumber: 143,
+        columnNumber: 9
+      }
     }, __jsx(_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
       wasCorrect: this.state.lastQuestionCorrect,
       correctAnswer: this.state.lastQuestionAnswer,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
-      },
-      __self: this
+        lineNumber: 144,
+        columnNumber: 11
+      }
     })), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
       container: true,
       direction: "column",
       justify: "center",
       alignItems: "center",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
-      },
-      __self: this
-<<<<<<< HEAD
+        lineNumber: 150,
+        columnNumber: 9
+      }
     }, this.state.questionIndex < MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("p", {
       style: _stylesheet__WEBPACK_IMPORTED_MODULE_0__["styles"].questionText,
-=======
-    }, this.state.questionIndex < this.props.numQuestions && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("p", {
-      style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_8__["styles"].questionText,
->>>>>>> master
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
-      },
-      __self: this
+        lineNumber: 153,
+        columnNumber: 15
+      }
     }, this.state.questionsArr && entities.decode(this.state.questionsArr[this.state.questionIndex].text), " "), __jsx(_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
       answers: this.state.questionsArr && this.state.questionsArr[this.state.questionIndex].answers,
       callback: this.nextQuestion,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159
-      },
-      __self: this
-<<<<<<< HEAD
+        lineNumber: 159,
+        columnNumber: 15
+      }
     })), this.state.questionIndex >= MAX_NUM_QUESTIONS && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
-=======
-    })), this.state.questionIndex >= this.props.numQuestions && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GameOver__WEBPACK_IMPORTED_MODULE_6__["default"], {
->>>>>>> master
       score: this.state.currentScore,
       callback: this.props.callback,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
-      },
-      __self: this
+        lineNumber: 171,
+        columnNumber: 15
+      }
     }))));
   }
 
@@ -1558,7 +1595,6 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.setState({
       duration: dur
     });
-    this.props.setNumQuestionsCallback(dur * NUM_QUESTIONS_PER_MINUTE);
   }
 
   render() {
@@ -1566,136 +1602,152 @@ class StartComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: this.onClickStartGame,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
+        lineNumber: 50,
+        columnNumber: 7
+      }
     }, "Start Game");
 
     const singlePlayerSelector = this.state.singlePlayer ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Single Player",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
+        lineNumber: 55,
+        columnNumber: 7
+      }
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: this.onClickSingle,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
+        lineNumber: 57,
+        columnNumber: 7
+      }
     }, "Single Player");
     const multiPlayerSelector = this.state.singlePlayer ? __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: this.onClickMulti,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
+        lineNumber: 62,
+        columnNumber: 7
+      }
     }, "Multi Player") : __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Multi Player",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
+        lineNumber: 66,
+        columnNumber: 7
+      }
     });
     const shortDurationSelector = this.state.duration === 1 ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Short Game [10 min]",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
+        lineNumber: 69,
+        columnNumber: 7
+      }
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: () => this.onSelectDuration(1),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
+        lineNumber: 71,
+        columnNumber: 7
+      }
     }, "Short Game [10 min]");
     const medDurationSelector = this.state.duration === 2 ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Medium Game [20 min]",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
+        lineNumber: 76,
+        columnNumber: 7
+      }
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: () => this.onSelectDuration(2),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: this
+        lineNumber: 78,
+        columnNumber: 7
+      }
     }, "Medium Game [20 min]");
     const longDurationSelector = this.state.duration === 3 ? __jsx(_DangerButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "Long Game [30 min]",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
+        lineNumber: 83,
+        columnNumber: 7
+      }
     }) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].unselectedButton,
       variant: "contained",
       onClick: () => this.onSelectDuration(3),
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
+        lineNumber: 85,
+        columnNumber: 7
+      }
     }, "Long Game [30 min]");
     return __jsx("div", {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].root,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
+        lineNumber: 90,
+        columnNumber: 7
+      }
     }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].title,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
+        lineNumber: 91,
+        columnNumber: 9
+      }
     }, " TRIVIA "), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].row,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
-      },
-      __self: this
+        lineNumber: 93,
+        columnNumber: 9
+      }
     }, singlePlayerSelector, multiPlayerSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].row,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
-      },
-      __self: this
+        lineNumber: 98,
+        columnNumber: 9
+      }
     }, shortDurationSelector, medDurationSelector, longDurationSelector), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: _stylesheet_js__WEBPACK_IMPORTED_MODULE_4__["styles"].row,
       spacing: 3,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
-      },
-      __self: this
+        lineNumber: 104,
+        columnNumber: 9
+      }
     }, startButton));
   }
 
@@ -1756,11 +1808,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Start */ "./pages/components/Start.js");
 /* harmony import */ var _components_Questions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Questions */ "./pages/components/Questions.js");
-<<<<<<< HEAD
 /* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Categories */ "./pages/components/Categories.js");
 /* harmony import */ var _components_Difficulty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Difficulty */ "./pages/components/Difficulty.js");
-=======
->>>>>>> master
 var _jsxFileName = "/Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1778,7 +1827,6 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     this.state = {
       gameState: "START",
-<<<<<<< HEAD
       catArray: [],
       gameDifficulty: ""
     };
@@ -1804,13 +1852,6 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.setState({
       gameState: nextActions
     });
-=======
-      numQuestions: 10
-    };
-    this.renderSwitch = this.renderSwitch.bind(this);
-    this.backHome = this.backHome.bind(this);
-    this.setNumQuestions = this.setNumQuestions.bind(this);
->>>>>>> master
   } // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
 
 
@@ -1833,68 +1874,57 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       case 'START':
         return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_4__["default"], {
           callback: this.backHome,
-          setNumQuestionsCallback: this.setNumQuestions,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< HEAD
-            lineNumber: 54
-          },
-          __self: this
+            lineNumber: 59,
+            columnNumber: 16
+          }
         });
 
       case 'CATEGORIES':
         return __jsx(_components_Categories__WEBPACK_IMPORTED_MODULE_6__["default"], {
           callback: this.fromCategoriestoDifficulty,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
-=======
-            lineNumber: 43
->>>>>>> master
-          },
-          __self: this
+            lineNumber: 61,
+            columnNumber: 16
+          }
         });
 
       case 'QUESTIONS':
         return __jsx(_components_Questions__WEBPACK_IMPORTED_MODULE_5__["default"], {
           callback: this.backHome,
-<<<<<<< HEAD
           cat: this.state.catArray,
           diff: this.state.gameDifficulty,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
-          },
-          __self: this
+            lineNumber: 63,
+            columnNumber: 16
+          }
         }, " ");
 
       case 'DIFFICULTY':
         return __jsx(_components_Difficulty__WEBPACK_IMPORTED_MODULE_7__["default"], {
           callback: this.fromDifficultyToQuestions,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
-=======
-          numQuestions: this.state.numQuestions,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 45
->>>>>>> master
-          },
-          __self: this
+            lineNumber: 65,
+            columnNumber: 16
+          }
         });
 
       default:
         return __jsx(_components_Start__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          __self: this,
           __source: {
             fileName: _jsxFileName,
-<<<<<<< HEAD
-            lineNumber: 62
-=======
-            lineNumber: 47
->>>>>>> master
-          },
-          __self: this
+            lineNumber: 67,
+            columnNumber: 16
+          }
         });
     }
   }
@@ -1924,10 +1954,7 @@ const styles = {
     width: 1062,
     height: 484,
     fontFamily: 'Kontakt',
-<<<<<<< HEAD
     overflow: 'scroll',
-=======
->>>>>>> master
     zIndex: 1
   },
   row: {
@@ -2029,7 +2056,6 @@ const styles = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! /Users/johnsonsong/Desktop/Daimler/CabanaTrivia/pages/index.js */"./pages/index.js");
-<<<<<<< HEAD
 
 
 /***/ }),
@@ -2040,8 +2066,6 @@ module.exports = __webpack_require__(/*! /Users/johnsonsong/Desktop/Daimler/Caba
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
-=======
->>>>>>> master
 
 module.exports = require("@material-ui/core");
 
