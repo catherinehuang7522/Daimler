@@ -4,6 +4,8 @@ import Button from "@material-ui/core/Button";
 import DangerButton from "./DangerButton";
 import Grid from "@material-ui/core/Grid";
 
+const NUM_QUESTIONS_PER_MINUTE = 10;
+
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
 */
@@ -26,7 +28,7 @@ class StartComponent extends Component {
   // sets up the state to play a game for the prototype. Calls a callback function that will call the backhome function
   onClickStartGame() {
     this.setState({ startGame: !this.state.startGame });
-    this.props.callback("QUESTIONS");
+    this.props.callback("CATEGORIES");
   }
 
   onClickSingle() {

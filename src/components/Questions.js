@@ -5,7 +5,8 @@ import Backdrop from "@material-ui/core/Backdrop";
 import AnswersComponent from "./Answers";
 import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
-import {CATEGORIES_MAP} from '../constants'
+import { CATEGORIES_MAP } from "../constants";
+
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
@@ -30,55 +31,95 @@ class QuestionsComponent extends Component {
     };
 
     this.nextQuestion = this.nextQuestion.bind(this);
-    this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this)
+    this.getUrls = this.getUrls.bind(this);
+    this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
+    this.shuffleArray = this.shuffleArray.bind(this);
   }
 
   // calls function to fetch the questions before the component mounts
   componentWillMount() {
-    this.onGetQuestions();
+    this.onGetQuestions(this.props.cat);
+  }
+
+  /*
+  function: getUrls
+  Iterates over the user's selected categories (stored in this.props.cat)
+  Creates a custom URL for each category
+  Returns an array with all the URLS to fetch
+  */
+  getUrls(categories) {
+    var urls = [];
+    var customURL = "";
+    const numQs = MAX_NUM_QUESTIONS; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    for (var i = 0; i < categories.length; i++) {
+      customURL =
+        "https://opentdb.com/api.php?amount=" +
+        numQs +
+        "&category=" +
+        CATEGORIES_MAP[categories[i]] +
+        "&difficulty=" +
+        this.props.diff;
+      //Add URL LINK to array
+      urls.push(customURL);
+    }
+    return urls;
   }
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
-    const finalCateg = category == null ? "MUSIC" : category;  // pass in the category as you wish
-    const numQs = "10"  // change this or pass it into the function
+    var chosenCategories = this.props.cat;
+    const allUrls = this.getUrls(chosenCategories);
+    const finalCateg = category == null ? "MUSIC" : category; // pass in the array of categories.
+    const difficulty = this.props.diff;
+    const numQs = MAX_NUM_QUESTIONS; // change this or pass it into the function
 
-    const response = await fetch(
-      "https://opentdb.com/api.php?amount="+numQs+"&category="+CATEGORIES_MAP[finalCateg]
-    )
-    let allData = await response.json();
-    // parse the question to the same format 
-    allData = this.parseQuestionAnswerFormat(allData.results)
+    let json;
+    var allData = [];
+    let catQuestionsAndAnswers;
+    let fetchRequest;
+
+    for (var i = 0; i < allUrls.length; i++) {
+      fetchRequest = await fetch(allUrls[i]);
+      json = await fetchRequest.json();
+      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
+      allData = allData.concat(catQuestionsAndAnswers);
+    }
+
+    this.shuffleArray(allData);
+    allData.slice(0, MAX_NUM_QUESTIONS);
+
+    console.log(allData);
+
     this.setState({ questionsArr: allData });
   }
 
-// shuffles the array of answers for randomness
+  // shuffles the array of answers for randomness
   shuffleArray(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+      j = Math.floor(Math.random() * (i + 1));
+      x = a[i];
+      a[i] = a[j];
+      a[j] = x;
     }
     return a;
-}
+  }
 
-/*This function parses the result from the API to the same format that was used in the previous API*/ 
-  parseQuestionAnswerFormat(arr){
-    const finalArr = []
-    for (const item of arr){
-      const questionObj = {}
-      questionObj.text = item.question
-      const answers = [{ text: item.correct_answer, correct: true}]
-      for (const answerObj of item.incorrect_answers){
-        answers.push({text: answerObj, correct: false})
+  /*This function parses the result from the API to the same format that was used in the previous API*/
+  parseQuestionAnswerFormat(arr) {
+    const finalArr = [];
+    for (const item of arr) {
+      const questionObj = {};
+      questionObj.text = item.question;
+      const answers = [{ text: item.correct_answer, correct: true }];
+      for (const answerObj of item.incorrect_answers) {
+        answers.push({ text: answerObj, correct: false });
       }
-      this.shuffleArray(answers)
-      questionObj.answers = answers
-      finalArr.push(questionObj)
+      this.shuffleArray(answers);
+      questionObj.answers = answers;
+      finalArr.push(questionObj);
     }
-    return finalArr
+    return finalArr;
   }
 
   //changes to the next question. isCorrect ia a bool for if the previous value was correct. correctAnswer is the correct answer
@@ -102,7 +143,7 @@ class QuestionsComponent extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <Backdrop open={this.state.showFeedback}>
+        <Backdrop open={this.state.showFeedback} style={styles.feedbackWrapper}>
           <FeedbackComponent
             wasCorrect={this.state.lastQuestionCorrect}
             correctAnswer={this.state.lastQuestionAnswer}
