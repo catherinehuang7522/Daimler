@@ -43,12 +43,20 @@ class DifficultyComponent extends Component {
   }
 
   onClickStartGame() {
-    //Send to Questions screen the chosen difficulty
-    this.setState({ startGame: !this.state.startGame });
+    if (
+      this.state.easy === false &&
+      this.state.medium === false &&
+      this.state.hard === false
+    ) {
+      // add a pop-up/message etc. to select difficulty
+    } else {
+      //Send to Questions screen the chosen difficulty
+      this.setState({ startGame: !this.state.startGame });
 
-    //Send to Questions screen
-    this.props.callback("QUESTIONS", this.state.chosenDifficulty);
-    //this.props.callback("QUESTIONS")
+      //Send to Questions screen
+      this.props.callback("QUESTIONS", this.state.chosenDifficulty);
+      //this.props.callback("QUESTIONS")
+    }
   }
 
   render() {
