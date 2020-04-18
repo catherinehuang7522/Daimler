@@ -15,14 +15,14 @@ export default class IndexPage extends Component {
       gameState: "START",
       catArray: [],
       gameDifficulty: "",
+      numQuestions: 10,
     };
 
     this.renderSwitch = this.renderSwitch.bind(this);
     this.backHome = this.backHome.bind(this);
+    this.setNumQuestions = this.setNumQuestions.bind(this)
     this.fromDifficultyToQuestions = this.fromDifficultyToQuestions.bind(this);
-    this.fromCategoriestoDifficulty = this.fromCategoriestoDifficulty.bind(
-      this
-    );
+    this.fromCategoriestoDifficulty = this.fromCategoriestoDifficulty.bind(this);
   }
 
   fromCategoriestoDifficulty(nextActions, updatedArray) {
@@ -49,7 +49,7 @@ export default class IndexPage extends Component {
   renderSwitch(gameState) {
     switch (gameState) {
       case "START":
-        return <StartComponent callback={this.backHome}></StartComponent>;
+        return <StartComponent callback={this.backHome} setNumQuestionsCallback={this.setNumQuestions}></StartComponent>;
       case "CATEGORIES":
         return (
           <CategoriesComponent
@@ -60,6 +60,7 @@ export default class IndexPage extends Component {
         return (
           <QuestionsComponent
             callback={this.backHome}
+            numQuestions={this.state.numQuestions}
             cat={this.state.catArray}
             diff={this.state.gameDifficulty}
           >

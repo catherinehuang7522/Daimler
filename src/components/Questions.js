@@ -50,7 +50,7 @@ class QuestionsComponent extends Component {
   getUrls(categories) {
     var urls = [];
     var customURL = "";
-    const numQs = MAX_NUM_QUESTIONS; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
     for (var i = 0; i < categories.length; i++) {
       customURL =
         "https://opentdb.com/api.php?amount=" +
@@ -71,7 +71,7 @@ class QuestionsComponent extends Component {
     const allUrls = this.getUrls(chosenCategories);
     const finalCateg = category == null ? "MUSIC" : category; // pass in the array of categories.
     const difficulty = this.props.diff;
-    const numQs = MAX_NUM_QUESTIONS; // change this or pass it into the function
+    const numQs = this.props.numQuestions; // change this or pass it into the function
 
     let json;
     var allData = [];
@@ -86,7 +86,7 @@ class QuestionsComponent extends Component {
     }
 
     this.shuffleArray(allData);
-    allData.slice(0, MAX_NUM_QUESTIONS);
+    allData.slice(0, this.props.numQuestions);
 
     console.log(allData);
 
@@ -151,7 +151,7 @@ class QuestionsComponent extends Component {
         </Backdrop>
 
         <Grid container direction="column" justify="center" alignItems="center">
-          {this.state.questionIndex < MAX_NUM_QUESTIONS && (
+          {this.state.questionIndex < this.props.numQuestions && (
             <>
               <p style={styles.questionText}>
                 {this.state.questionsArr &&
@@ -169,7 +169,7 @@ class QuestionsComponent extends Component {
             </>
           )}
 
-          {this.state.questionIndex >= MAX_NUM_QUESTIONS && (
+          {this.state.questionIndex >= this.props.numQuestions && (
             <>
               <GameOverComponent
                 score={this.state.currentScore}

@@ -41,6 +41,7 @@ class StartComponent extends Component {
 
   onSelectDuration(dur) {
     this.setState({ duration: dur });
+    this.props.setNumQuestionsCallback(dur * NUM_QUESTIONS_PER_MINUTE)
   }
 
   render() {

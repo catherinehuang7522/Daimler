@@ -48,6 +48,7 @@ const styles = {
     fontSize: 48,
     display: "flex",
     justifyContent: "center",
+    marginTop: 50
   },
   feedbackWrapper: {
     zIndex: 10,
