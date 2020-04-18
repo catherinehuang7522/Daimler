@@ -1,7 +1,9 @@
-import { styles } from "../stylesheet";
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 const Entities = require("html-entities").AllHtmlEntities;
+import { styles } from "../stylesheet.js";
 
 const entities = new Entities();
 
@@ -19,13 +21,13 @@ class FeedbackComponent extends Component {
     let headerText;
     let bodyText;
     if (this.props.wasCorrect) {
-      headerText = "Correct!";
+      headerText = <p style={styles.feedbackHeaderTextCorrect}>Correct!</p>;
       bodyText =
         "Way to go! You were right! " +
         this.props.correctAnswer +
         " is correct.";
     } else {
-      headerText = "Incorrect";
+      headerText = <p style={styles.feedbackHeaderTextIncorrect}>Incorrect</p>;
       bodyText =
         "Oh no, that wasn't right. The correct answer was " +
         this.props.correctAnswer +
@@ -33,19 +35,21 @@ class FeedbackComponent extends Component {
     }
 
     return (
-      <Grid
-        columnGrid
-        direction="column"
-        justify="center"
-        alignItems="center"
-        spacing={2}
-      >
-        <Grid rowGrid spacing={1}>
-          <p style={styles.feedbackHeaderText}>{headerText}</p>
-        </Grid>
+      <div style={styles.feedbackContent}>
+        <Grid
+          columnGrid
+          direction="column"
+          justify="center"
+          alignItems="center"
+          spacing={2}
+        >
+          <Grid rowGrid spacing={1}>
+            {headerText}
+          </Grid>
 
-        <p style={styles.feedbackBodyText}>{bodyText}</p>
-      </Grid>
+          <p style={styles.feedbackBodyText}>{bodyText}</p>
+        </Grid>
+      </div>
     );
   }
 }

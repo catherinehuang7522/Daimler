@@ -11,7 +11,7 @@ const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 3;
+const MAX_NUM_QUESTIONS = 10;
 const FEEDBACK_SHOW_TIME_SECS = 2;
 
 // component that displays the questions or the game over component
