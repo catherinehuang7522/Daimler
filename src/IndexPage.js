@@ -3,12 +3,23 @@ import StartComponent from "./components/Start";
 import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
+import Firebase from "./components/firebase"
 
 const styles = {};
 
 export default class IndexPage extends Component {
   constructor(props) {
     super(props);
+
+    let firebase = Firebase.sharedInstance
+    let data = {
+      name: 'Los Angeles',
+      state: 'CA',
+      country: 'USA'
+    };
+
+    // Add a new document in collection "cities" with ID 'LA'
+    let setDoc = firebase.db.collection('cities').doc('LA').set(data);
 
     // initialize the game state
     this.state = {
