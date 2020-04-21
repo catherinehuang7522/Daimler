@@ -2,6 +2,10 @@
 
 <img src="Cabana Logo.png" alt="Cabana Logo"/>
  
+# Play our Trivia Game! :game:
+
+https://master-dev.d28ds4nnoxwdjw.amplifyapp.com
+ 
  # :rocket: Latest Updates :rocket:
  
  * We are now going in to Finals Week and Spring Break so Activity will be lower until the start of Spring quarter starting March 30th. 
