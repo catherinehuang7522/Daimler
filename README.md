@@ -2,7 +2,7 @@
 
 <img src="Cabana Logo.png" alt="Cabana Logo"/>
  
-# Play our Trivia Game! :game:
+# Play our Trivia Game
 
 https://master-dev.d28ds4nnoxwdjw.amplifyapp.com
  
