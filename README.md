@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cabana
 
-## Available Scripts
+<img src="Cabana Logo.png" alt="Cabana Logo"/>
+ 
+ # :rocket: Latest Updates :rocket:
+ 
+ * We are now going in to Finals Week and Spring Break so Activity will be lower until the start of Spring quarter starting March 30th. 
+ * Stanford is closing the campus and moves all classes online until further notice. More information [here](https://healthalerts.stanford.edu/)
+ * (Presentation in Stuttgart cancelled due to COVID-19 Virus) V1.0 of presentation for Stuttgart added to files [here](https://github.com/cs210/Daimler/blob/master/Presentation%20Outline%20(V1.0))
+ * Trivia Design created in Figma can be viewed [here](https://www.figma.com/proto/wgkf0Bb5YrHXKGYLv3OfVI/Trivia-Start-Page?node-id=9%3A93&scaling=min-zoom)
+ * A more detailed Roadmap/Overview can be viewed [here](https://docs.google.com/spreadsheets/d/1XCwTbh0N-ijNtFKVzL6cxW9gsjVZF3XECJRNrYBc3ho/edit#gid=0)
+ * GitHub repository made public for Daimler to view progress (3/3/2020)
+ 
+ ## Project Overview
+ 
+ We are reimagining the in-car entertainment system for the self-driving age.
+ 
+ [Theme Music](https://open.spotify.com/user/21kv2tf3fcihbiwnlgww7asly/playlist/65LWzmY6oKjGv141vKFQqX?si=bn9aqPjESgKEjo_0pvkYFQ)
+ 
+ # Team Members
+Member |  Email | Photo
+--- | --- | ---
+Pau Anzaldo | panzaldo@stanford.edu| <img src="/Resources/Headshots/PauNormal.jpg" alt="Pau Photo" height="200" />
+Wilhelm Bolin |wbolin@stanford.edu | <img src="/Resources/Headshots/Will headshot.jpg" alt="Will Photo" height="200" />
+Jack Gartland | gartland@stanford.edu | <img src="/Resources/Headshots/Jack Headshot.jpeg" alt="Jack Photo" height="200"/>
+Kenneth Nturibi |knturibi@stanford.edu | <img src="/Resources/Headshots/received_418816395692875.jpeg" alt="Ken Photo" height="200"/>
+Johnson Song | johnsonsong@stanford.edu | <img src="/Resources/Headshots/Johnson Headshot.jpg" alt="Johnson Photo" height="200"/>
 
-In the project directory, you can run:
+# Team Skills Matrix
 
-### `npm start`
+Name | Skills | Personal Traits | Desired Growth | Weakness
+--- | --- | --- | --- | ---
+Pau Anzaldo | Full-stack development, iOS, UI/UX,rapid prototyping | Disciplined, extroverted, listener | Product Management | short term memory
+Wilhelm Bolin | Product/Project Management, Finance, Business, Strategy, Web Applications | Outgoing and Open. Big Picture type of person. Like direct and constructive feedback | Product Management and Programming | Programming
+Jack Gartland | Front-end and full-stack development, user research and design thinking process | Driven, social, like to plan ahead | Product Management, interfacing with partners | Sometimes get absorbed in my own tasks and lose sight of the team
+Kenneth Nturibi | Fullstack dev - web and mobile-with a greater focus on backend, AI, security | Empatheric, Hardworking, Resorative, fun loving | PM, Setting engineering timelines | Decisiveness
+Johnson Song | UI/UX, Data Visualization, Product Design, Graphic Design | Creative, artistic, compassionate, and fun! | Product Design and Programming | Programming, bluntness
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Team Communication
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Email: teamcabana@lists.stanford.edu
 
-### `npm test`
+Slack: [cs210-teamdaimler2020.slack.com](cs210-teamdaimler2020.slack.com)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Documentation on Google Drive available [here](https://docs.google.com/spreadsheets/d/1isjtFNKAyAGDMbAxcidu6oYKNnlBSQgpFNARiAo0xig/edit?usp=sharing)
