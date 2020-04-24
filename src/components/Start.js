@@ -3,8 +3,16 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import DangerButton from "./DangerButton";
 import Grid from "@material-ui/core/Grid";
+import UIFx from "uifx";
+import selectAudio from "../res/select.mp3"
+
 
 const NUM_QUESTIONS_PER_MINUTE = 10;
+const select = new UIFx(selectAudio,
+  {
+    volume: 0.4, // number between 0.0 ~ 1.0
+    throttleMs: 100
+  })
 
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
@@ -29,19 +37,23 @@ class StartComponent extends Component {
   onClickStartGame() {
     this.setState({ startGame: !this.state.startGame });
     this.props.callback("CATEGORIES");
+    select.play()
   }
 
   onClickSingle() {
     this.setState({ singlePlayer: true });
+    select.play()
   }
 
   onClickMulti() {
     this.setState({ singlePlayer: false });
+    select.play()
   }
 
   onSelectDuration(dur) {
     this.setState({ duration: dur });
     this.props.setNumQuestionsCallback(dur * NUM_QUESTIONS_PER_MINUTE)
+    select.play()
   }
 
   render() {

@@ -3,6 +3,14 @@ import DangerButton from "./DangerButton";
 import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import { styles } from "../stylesheet.js";
+import UIFx from "uifx";
+import selectAudio from "../res/select.mp3";
+
+const select = new UIFx(selectAudio,
+  {
+    volume: 0.4, // number between 0.0 ~ 1.0
+    throttleMs: 100
+  })
 
 class DifficultyComponent extends Component {
   constructor(props) {
@@ -22,6 +30,7 @@ class DifficultyComponent extends Component {
   }
 
   onClickEasy() {
+    select.play()
     this.setState({ easy: !this.state.easy });
     this.setState({ chosenDifficulty: "easy" });
     this.setState({ medium: false });
@@ -29,6 +38,7 @@ class DifficultyComponent extends Component {
   }
 
   onClickMedium() {
+    select.play()
     this.setState({ medium: !this.state.medium });
     this.setState({ chosenDifficulty: "medium" });
     this.setState({ easy: false });
@@ -36,6 +46,7 @@ class DifficultyComponent extends Component {
   }
 
   onClickHard() {
+    select.play()
     this.setState({ hard: !this.state.hard });
     this.setState({ chosenDifficulty: "hard" });
     this.setState({ easy: false });
@@ -43,6 +54,7 @@ class DifficultyComponent extends Component {
   }
 
   onClickStartGame() {
+    select.play()
     if (
       this.state.easy === false &&
       this.state.medium === false &&

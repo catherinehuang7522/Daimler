@@ -6,7 +6,14 @@ import { styles } from "../stylesheet.js";
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import { CATEGORIES_MAP } from "../constants";
+import UIFx from "uifx";
+import selectAudio from "../res/select.mp3"
 
+const select = new UIFx(selectAudio,
+  {
+    volume: 0.4, // number between 0.0 ~ 1.0
+    throttleMs: 100
+  })
 /* shown when user first starts playing - they can choose what type of game they want to play
 initializes the state
 */
@@ -53,6 +60,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickShowDifficultyScreen() {
+    select.play()
     //Checks if user has selected at least one category
     const currentCount = this.state.count;
     if (currentCount === 1 || currentCount === 2 || currentCount === 3) {

@@ -7,6 +7,7 @@ import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
 import { CATEGORIES_MAP } from "../constants";
 
+
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
@@ -88,8 +89,6 @@ class QuestionsComponent extends Component {
     this.shuffleArray(allData);
     allData.slice(0, this.props.numQuestions);
 
-    console.log(allData);
-
     this.setState({ questionsArr: allData });
   }
 
@@ -147,6 +146,7 @@ class QuestionsComponent extends Component {
           <FeedbackComponent
             wasCorrect={this.state.lastQuestionCorrect}
             correctAnswer={this.state.lastQuestionAnswer}
+            questionIndex={this.state.questionIndex}
           />
         </Backdrop>
 
