@@ -20,7 +20,7 @@ class GameOverComponent extends Component {
       score: this.props.score
     };
 
-    // Add a new document in collection "cities" with ID 'LA'
+    //set the data in Firebase
     let setDoc = firebase.db.collection('users').doc('userid').set(data);
   }
 
