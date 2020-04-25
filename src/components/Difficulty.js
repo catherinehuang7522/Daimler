@@ -18,7 +18,7 @@ class DifficultyComponent extends Component {
 
     this.state = {
       chosenDifficulty: "",
-      easy: false,
+      easy: true,
       medium: false,
       hard: false,
       startGame: false,

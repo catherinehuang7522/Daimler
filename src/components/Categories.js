@@ -72,6 +72,11 @@ class CategoriesComponent extends Component {
   }
 
   onClickGeneralKnowledge() {
+    // Trying to select new one but 3 are already selected
+    if (this.state.count == 3 && !this.state.generalKnowledge) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ generalKnowledge: !this.state.generalKnowledge });
     !this.state.generalKnowledge
       ? this.incrementCount("GENERAL_KNOWLEDGE")
@@ -79,6 +84,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickFilm() {
+    if (this.state.count == 3 && !this.state.film) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ film: !this.state.film });
     !this.state.film
       ? this.incrementCount("FILM")
@@ -86,6 +95,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickScienceNature() {
+    if (this.state.count == 3 && !this.state.scienceNature) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ scienceNature: !this.state.scienceNature });
     !this.state.scienceNature
       ? this.incrementCount("SCIENCE_NATURE")
@@ -93,6 +106,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickSports() {
+    if (this.state.count == 3 && !this.state.sports) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ sports: !this.state.sports });
     !this.state.sports
       ? this.incrementCount("SPORTS")
@@ -100,6 +117,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickHistory() {
+    if (this.state.count == 3 && !this.state.history) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ history: !this.state.history });
     !this.state.history
       ? this.incrementCount("HISTORY")
@@ -107,6 +128,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickTV() {
+    if (this.state.count == 3 && !this.state.tv) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ tv: !this.state.tv });
     !this.state.tv
       ? this.incrementCount("TELEVISION")
@@ -114,6 +139,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickBooks() {
+    if (this.state.count == 3 && !this.state.books) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ books: !this.state.books });
     !this.state.books
       ? this.incrementCount("BOOKS")
@@ -121,6 +150,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickMusic() {
+    if (this.state.count == 3 && !this.state.music) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ music: !this.state.music });
     !this.state.music
       ? this.incrementCount("MUSIC")
@@ -128,6 +161,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickMythology() {
+    if (this.state.count == 3 && !this.state.mythology) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ mythology: !this.state.mythology });
     !this.state.music
       ? this.incrementCount("MYTHOLOGY")
@@ -135,6 +172,10 @@ class CategoriesComponent extends Component {
   }
 
   onClickGeography() {
+    if (this.state.count == 3 && !this.state.geography) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ geography: !this.state.geography });
     !this.state.geography
       ? this.incrementCount("GEOGRAPHY")
@@ -142,11 +183,19 @@ class CategoriesComponent extends Component {
   }
 
   onClickArt() {
+    if (this.state.count == 3 && !this.state.art) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ art: !this.state.art });
     !this.state.art ? this.incrementCount("ART") : this.decrementCount("ART");
   }
 
   onClickVideoGames() {
+    if (this.state.count == 3 && !this.state.videoGames) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
     this.setState({ videoGames: !this.state.videoGames });
     !this.state.videoGames
       ? this.incrementCount("VIDEO_GAMES")
@@ -266,6 +315,17 @@ class CategoriesComponent extends Component {
       <CategoriesButton text="Video Games" onClick={this.onClickVideoGames} />
     );
 
+    const nextButton = this.state.count > 0 ? (
+      <IconButton
+        style={styles.nextButton}
+        onClick={this.onClickShowDifficultyScreen}
+      >
+        <DoubleArrowIcon fontSize="large" />
+      </IconButton>
+    ) : (
+      <div></div>
+    );
+
     // TODO: Add arrow button that would mean "Next".
     // TODO: Limit selection to three categories.
     // TODO: Keep track of which categories were selected for future API calls
@@ -298,12 +358,7 @@ class CategoriesComponent extends Component {
             {videoGamesButton}
           </Grid>
         </div>
-        <IconButton
-          style={styles.nextButton}
-          onClick={this.onClickShowDifficultyScreen}
-        >
-          <DoubleArrowIcon fontSize="large" />
-        </IconButton>
+        {nextButton}
       </div>
     );
   }

@@ -5,7 +5,8 @@ import DangerButton from "./DangerButton";
 import Grid from "@material-ui/core/Grid";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
-
+import { IconButton } from "@material-ui/core";
+import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
 const NUM_QUESTIONS_PER_MINUTE = 10;
 const select = new UIFx(selectAudio,
@@ -28,13 +29,13 @@ class StartComponent extends Component {
       duration: 1,
     };
 
-    this.onClickStartGame = this.onClickStartGame.bind(this);
+    this.onClickShowCategoriesScreen = this.onClickShowCategoriesScreen.bind(this);
     this.onClickSingle = this.onClickSingle.bind(this);
     this.onClickMulti = this.onClickMulti.bind(this);
   }
 
   // sets up the state to play a game for the prototype. Calls a callback function that will call the backhome function
-  onClickStartGame() {
+  onClickShowCategoriesScreen() {
     this.setState({ startGame: !this.state.startGame });
     this.props.callback("CATEGORIES");
     select.play()
@@ -58,13 +59,12 @@ class StartComponent extends Component {
 
   render() {
     const startButton = (
-      <Button
-        style={styles.unselectedButton}
-        variant="contained"
-        onClick={this.onClickStartGame}
+      <IconButton
+        style={styles.nextButton}
+        onClick={this.onClickShowCategoriesScreen}
       >
-        Start Game
-      </Button>
+        <DoubleArrowIcon fontSize="large" />
+      </IconButton>
     );
 
     const singlePlayerSelector = this.state.singlePlayer ? (
