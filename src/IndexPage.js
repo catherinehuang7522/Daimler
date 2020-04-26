@@ -3,6 +3,7 @@ import StartComponent from "./components/Start";
 import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
+import ProfileComponent from "./components/Profiles"
 
 const styles = {};
 
@@ -12,7 +13,7 @@ export default class IndexPage extends Component {
 
     // initialize the game state
     this.state = {
-      gameState: "START",
+      gameState: "PROFILES",
       catArray: [],
       gameDifficulty: "",
       numQuestions: 10,
@@ -55,6 +56,13 @@ export default class IndexPage extends Component {
           <CategoriesComponent
             callback={this.fromCategoriestoDifficulty}
           ></CategoriesComponent>
+        );
+        case "PROFILES":
+        return (
+          <ProfileComponent
+            callback={this.backHome}
+            ></ProfileComponent>
+
         );
       case "QUESTIONS":
         return (
