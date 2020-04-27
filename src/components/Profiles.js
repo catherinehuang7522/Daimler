@@ -5,9 +5,16 @@ import DangerButton from "./DangerButton";
 import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import UIFx from "uifx";
-import selectAudio from "../res/select.mp3"
+import selectAudio from "../res/select.mp3";
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+import foxImageUnselected from '../assets/avatar_fox_unselected.png';
+import pandaImageUnselected from '../assets/avatar_panda_unselected.png';
+import tigerImageUnselected from '../assets/avatar_tiger_unselected.png';
+import foxImageSelected from '../assets/avatar_fox_selected.png';
+import pandaImageSelected from '../assets/avatar_panda_selected.png';
+import tigerImageSelected from '../assets/avatar_tiger_selected.png';
+import CharacterButton from "./CharacterButton";
 
 const select = new UIFx(selectAudio,
   {
@@ -121,29 +128,59 @@ class ProfileComponent extends Component {
 
   render() {
 
-    const funnyFoxButton = this.state.funnyFox ? (
-      <DangerButton text="Funny Fox" onClick={this.onClickFunnyFox} />
-    ) : (
-      <CategoriesButton text="Funny Fox" onClick={this.onClickFunnyFox} />
-    );
+    const funnyFoxButton = this.state.funnyFox ?
+    <CharacterButton image={foxImageSelected}
+      name="Funny Fox"
+      selected={this.state.funnyFox}
+      onClick={this.onClickFunnyFox}
+    />
+    :
+    <CharacterButton image={foxImageUnselected}
+      name="Funny Fox"
+      selected={this.state.funnyFox}
+      onClick={this.onClickFunnyFox}
+    />;
 
-    const patientPandaButton = this.state.patientPanda ? (
-      <DangerButton text="Patient Panda" onClick={this.onClickPatientPanda} />
-    ) : (
-      <CategoriesButton text="Patient Panda" onClick={this.onClickPatientPanda} />
-    );
+    const patientPandaButton = this.state.patientPanda ?
+    <CharacterButton image={pandaImageSelected}
+      name="Patient Panda"
+      selected={this.state.patientPanda}
+      onClick={this.onClickPatientPanda}
+    />
+    :
+    <CharacterButton image={pandaImageUnselected}
+      name="Patient Panda"
+      selected={this.state.patientPanda}
+      onClick={this.onClickPatientPanda}
+    />
+    ;
 
-    const trustyTigerButton = this.state.trustyTiger ? (
-      <DangerButton text="Trusty Tiger" onClick={this.onClickTrustyTiger} />
-    ) : (
-      <CategoriesButton text="trustyTiger" onClick={this.onClickTrustyTiger} />
-    );
+    const trustyTigerButton = this.state.trustyTiger ?
+    <CharacterButton image={tigerImageSelected}
+      name="Trusty Tiger"
+      selected={this.state.trustyTiger}
+      onClick={this.onClickTrustyTiger}
+    />
+    :
+    <CharacterButton image={tigerImageUnselected}
+      name="Trusty Tiger"
+      selected={this.state.trustyTiger}
+      onClick={this.onClickTrustyTiger}
+    />
+    ;
 
-    const newPlayerButton = this.state.newPlayer ? (
-      <DangerButton text=" + " onClick={this.onClickNewPlayer} />
-    ) : (
-      <CategoriesButton text=" + " onClick={this.onClickNewPlayer} />
-    );
+    const newPlayerButton = this.state.newPlayer ?
+      <CharacterButton
+        name="+"
+        selected={this.state.newPlayer}
+        onClick={this.onClickNewPlayer}
+      />
+      :
+      <CharacterButton
+        name="+"
+        selected={this.state.newPlayer}
+        onClick={this.onClickNewPlayer}
+      />
 
     const nextButton = this.state.numOfPlayers == 1 ? (
       <IconButton
