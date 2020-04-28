@@ -2,7 +2,7 @@ import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Firebase from "./components/firebase"
+import Firebase from "../components/firebase"
 
 // component shown when the game is over
 class GameOverComponent extends Component {
@@ -16,18 +16,23 @@ class GameOverComponent extends Component {
 
   submitScore() {
     let firebase = Firebase.sharedInstance
+    var date = new Date()
+    let timestamp = date.getTime()
+
     let data = {
-      score: this.props.score
+      [timestamp]: this.props.score
     };
+    let userID = this.props.player
 
     //set the data in Firebase
-    let setDoc = firebase.db.collection('users').doc('userid').set(data);
+    let setDoc = firebase.db.collection('users').doc(userID).update(data);
   }
 
   // calls the callback function from questions
   onGoHome() {
     //  this.setState({ startGame: !this.state.startGame })
     this.props.callback("START");
+    this.submitScore()
     console.log("Hello!!!");
   }
 

@@ -174,6 +174,7 @@ class QuestionsComponent extends Component {
               <GameOverComponent
                 score={this.state.currentScore}
                 callback={this.props.callback}
+                player={this.props.player}
               ></GameOverComponent>
             </>
           )}
