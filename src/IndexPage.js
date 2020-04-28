@@ -3,6 +3,7 @@ import StartComponent from "./components/Start";
 import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
+import ProfileComponent from "./components/Profiles"
 
 const styles = {};
 
@@ -12,14 +13,16 @@ export default class IndexPage extends Component {
 
     // initialize the game state
     this.state = {
-      gameState: "START",
+      gameState: "PROFILES",
       catArray: [],
       gameDifficulty: "",
       numQuestions: 10,
+      player: ""
     };
 
     this.renderSwitch = this.renderSwitch.bind(this);
     this.backHome = this.backHome.bind(this);
+    this.setPlayer = this.setPlayer.bind(this);
     this.setNumQuestions = this.setNumQuestions.bind(this)
     this.fromDifficultyToQuestions = this.fromDifficultyToQuestions.bind(this);
     this.fromCategoriestoDifficulty = this.fromCategoriestoDifficulty.bind(this);
@@ -40,6 +43,12 @@ export default class IndexPage extends Component {
     this.setState({ gameState: nextActions });
   }
 
+  setPlayer(player) {
+    this.setState({ player: player });
+    console.log("player is: " + player)
+  }
+
+
   // sets the number of questions
   setNumQuestions(numQuestions) {
     this.setState({ numQuestions: numQuestions });
@@ -56,6 +65,14 @@ export default class IndexPage extends Component {
             callback={this.fromCategoriestoDifficulty}
           ></CategoriesComponent>
         );
+        case "PROFILES":
+        return (
+          <ProfileComponent
+            callback={this.backHome}
+            setPlayer={this.setPlayer}
+            ></ProfileComponent>
+
+        );
       case "QUESTIONS":
         return (
           <QuestionsComponent
@@ -63,6 +80,7 @@ export default class IndexPage extends Component {
             numQuestions={this.state.numQuestions}
             cat={this.state.catArray}
             diff={this.state.gameDifficulty}
+            player={this.state.player}
           >
             {" "}
           </QuestionsComponent>

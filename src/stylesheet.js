@@ -28,7 +28,6 @@ const styles = {
     marginTop: 20,
     marginBottom: 20,
   },
-  //NOTE: Not sure if this is the right formatting for a column
   column: {
     display: "flex",
     justifyContent: "space-around",
@@ -36,6 +35,16 @@ const styles = {
     flexDirection: "column",
     marginTop: 20,
     marginBottom: 20,
+  },
+  selectedButton: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '5px solid #4DFAFA',
+    width: 332,
+    height: 78,
+    fontFamily: 'Kontakt'
   },
   nextButton: {
     color: "white",
@@ -95,6 +104,40 @@ const styles = {
     display: "grid",
     direction: "row",
   },
+  unselectedCharacterButton: {
+    display: 'flex',
+    width: 200,
+    height: 200,
+    borderRadius: 20,
+    fontFamily: 'Kontakt',
+    backgroundColor: "#205B82",
+    color: "white",
+  },
+  selectedCharacterButton: {
+    display: 'flex',
+    width: 200,
+    height: 200,
+    borderRadius: 20,
+    fontFamily: 'Kontakt',
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '5px solid #4DFAFA',
+  },
+  characterButtonContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  characterButtonImage: {
+    width: 75,
+    height: 75
+  },
+  characterButtonText: {
+    fontSize: 16,
+    marginTop: 20
+  }
 };
 
 export { styles };
