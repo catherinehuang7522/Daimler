@@ -51,8 +51,8 @@ class ProfileComponent extends Component {
     select.play()
     this.setState({ funnyFox: !this.state.funnyFox });
     !this.state.funnyFox
-      ? this.addPlayer("patientPanda")
-      : this.removePlayer("patientPanda");
+      ? this.addPlayer("funnyFox")
+      : this.removePlayer("funnyFox");
 
     if (this.state.numOfPlayers == 1 && !this.state.funnyFox) {
       console.log("Single Player is only supported");

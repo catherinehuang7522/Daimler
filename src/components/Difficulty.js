@@ -5,12 +5,17 @@ import Grid from "@material-ui/core/Grid";
 import { styles } from "../stylesheet.js";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3";
+import Firebase from "./firebase"
+
+
+
 
 const select = new UIFx(selectAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
     throttleMs: 100
   })
+
 
 class DifficultyComponent extends Component {
   constructor(props) {
@@ -23,10 +28,18 @@ class DifficultyComponent extends Component {
       hard: false,
       startGame: false,
     };
+
+    //init analytics
+    const firebase = Firebase.sharedInstance
+    this.analytics = firebase.analytics;
+
     this.onClickEasy = this.onClickEasy.bind(this);
     this.onClickMedium = this.onClickMedium.bind(this);
     this.onClickHard = this.onClickHard.bind(this);
     this.onClickStartGame = this.onClickStartGame.bind(this);
+
+    
+    
   }
 
   onClickEasy() {
@@ -35,6 +48,8 @@ class DifficultyComponent extends Component {
     this.setState({ chosenDifficulty: "easy" });
     this.setState({ medium: false });
     this.setState({ hard: false });
+
+    this.analytics.logEvent('difficulty', { level: 'easy'});
   }
 
   onClickMedium() {
@@ -43,6 +58,8 @@ class DifficultyComponent extends Component {
     this.setState({ chosenDifficulty: "medium" });
     this.setState({ easy: false });
     this.setState({ hard: false });
+
+    this.analytics.logEvent('difficulty', { level: 'medium'});
   }
 
   onClickHard() {
@@ -51,6 +68,8 @@ class DifficultyComponent extends Component {
     this.setState({ chosenDifficulty: "hard" });
     this.setState({ easy: false });
     this.setState({ medium: false });
+
+    this.analytics.logEvent('difficulty', { level: 'hard'});
   }
 
   onClickStartGame() {

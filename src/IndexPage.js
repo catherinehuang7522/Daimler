@@ -4,8 +4,10 @@ import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
 import ProfileComponent from "./components/Profiles"
+import Firebase from "./components/firebase"
 
-const styles = {};
+
+
 
 export default class IndexPage extends Component {
   constructor(props) {
@@ -34,6 +36,11 @@ export default class IndexPage extends Component {
   }
 
   fromDifficultyToQuestions(nextActions, difficulty) {
+
+    //await analytics.setUserId("patientPanda")
+    const analytics = Firebase.sharedInstance.analytics
+    analytics.logEvent('difficulty', { level: difficulty });
+
     this.setState({ gameDifficulty: difficulty });
     this.setState({ gameState: nextActions });
   }
@@ -65,12 +72,12 @@ export default class IndexPage extends Component {
             callback={this.fromCategoriestoDifficulty}
           ></CategoriesComponent>
         );
-        case "PROFILES":
+      case "PROFILES":
         return (
           <ProfileComponent
             callback={this.backHome}
             setPlayer={this.setPlayer}
-            ></ProfileComponent>
+          ></ProfileComponent>
 
         );
       case "QUESTIONS":

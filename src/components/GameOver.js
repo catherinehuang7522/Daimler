@@ -2,7 +2,7 @@ import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Firebase from "../components/firebase"
+import Firebase from "./firebase"
 
 // component shown when the game is over
 class GameOverComponent extends Component {
@@ -10,6 +10,7 @@ class GameOverComponent extends Component {
     super(props);
 
     this.state = {};
+    this.submitScore()
 
     this.onGoHome = this.onGoHome.bind(this);
   }
@@ -24,6 +25,13 @@ class GameOverComponent extends Component {
     };
     let userID = this.props.player
 
+    // console.log("Getting the user id: ");
+    // console.log(userID);
+
+    
+    
+    
+
     //set the data in Firebase
     let setDoc = firebase.db.collection('users').doc(userID).update(data);
   }
@@ -31,9 +39,9 @@ class GameOverComponent extends Component {
   // calls the callback function from questions
   onGoHome() {
     //  this.setState({ startGame: !this.state.startGame })
+    const analytics = Firebase.sharedInstance.analytics
+    analytics.logEvent('back_to_home', { user: this.props.player});
     this.props.callback("START");
-    this.submitScore()
-    console.log("Hello!!!");
   }
 
   render() {

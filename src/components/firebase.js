@@ -1,6 +1,7 @@
 import app from 'firebase/app'
 import React from 'react'
 import "firebase/firestore";
+import firebase from 'firebase'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCflJCi6lH8CCj-HzqKLQDVgLs0GhQ4W1U",
@@ -18,6 +19,8 @@ class Firebase {
     try {
       app.initializeApp(firebaseConfig);
       this.db = app.firestore()
+      this.analytics = firebase.analytics(app)
+
     } catch (err) {
       //already exists, no need to reinitialize
     }
