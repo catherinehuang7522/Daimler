@@ -47,21 +47,24 @@ class ProfileComponent extends Component {
 
   }
 
+
+  //TODO: FIX LOGIC
+  //If you click trust tiger, you're still able to select funny foxImageSelected
+  //Similar with Patient panda
+  //I believe it has to do with the order of the if Stataments 
+
   onClickFunnyFox() {
     select.play()
     this.setState({ funnyFox: !this.state.funnyFox });
     !this.state.funnyFox
-      ? this.addPlayer("patientPanda")
-      : this.removePlayer("patientPanda");
+      ? this.addPlayer("funnyFox")
+      : this.removePlayer("funnyFox");
 
     if (this.state.numOfPlayers == 1 && !this.state.funnyFox) {
       console.log("Single Player is only supported");
       return;
     }
-    // this.setState({ funnyFox: !this.state.funnyFox });
-    // !this.state.funnyFox
-    //   ? this.addPlayer("patientPanda")
-    //   : this.removePlayer("patientPanda");
+
   }
 
   onClickPatientPanda() {
@@ -98,6 +101,9 @@ class ProfileComponent extends Component {
     !this.state.newPlayer
       ? this.addPlayer("newPlayer")
       : this.removePlayer("newPlayer");
+
+    this.props.callback("NEW_PROFILE");
+
   }
 
   addPlayer(playerName) {

@@ -4,6 +4,7 @@ import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
 import ProfileComponent from "./components/Profiles"
+import NewProfileComponent from "./components/NewProfile"
 
 const styles = {};
 
@@ -71,6 +72,15 @@ export default class IndexPage extends Component {
             callback={this.backHome}
             setPlayer={this.setPlayer}
             ></ProfileComponent>
+
+        );
+
+        case "NEW_PROFILE":
+        return (
+          <NewProfileComponent
+            callback={this.backHome}
+            setPlayer={this.setPlayer}
+            ></NewProfileComponent>
 
         );
       case "QUESTIONS":
