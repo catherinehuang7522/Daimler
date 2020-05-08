@@ -13,6 +13,8 @@ class GameOverComponent extends Component {
     this.submitScore()
 
     this.onGoHome = this.onGoHome.bind(this);
+    this.goToLeaderboard = this.goToLeaderboard.bind(this);
+
   }
 
   submitScore() {
@@ -28,9 +30,9 @@ class GameOverComponent extends Component {
     // console.log("Getting the user id: ");
     // console.log(userID);
 
-    
-    
-    
+
+
+
 
     //set the data in Firebase
     let setDoc = firebase.db.collection('users').doc(userID).update(data);
@@ -40,8 +42,14 @@ class GameOverComponent extends Component {
   onGoHome() {
     //  this.setState({ startGame: !this.state.startGame })
     const analytics = Firebase.sharedInstance.analytics
-    analytics.logEvent('back_to_home', { user: this.props.player});
+    analytics.logEvent('back_to_home', { user: this.props.player });
     this.props.callback("START");
+  }
+
+  goToLeaderboard() {
+    const analytics = Firebase.sharedInstance.analytics
+    analytics.logEvent('back_to_home', { user: this.props.player });
+    this.props.callback("LEADERBOARD");
   }
 
   render() {
@@ -52,6 +60,9 @@ class GameOverComponent extends Component {
         </p>
         <Button style={styles.unselectedButton} onClick={this.onGoHome}>
           Back to Home
+        </Button>
+        <Button style={styles.unselectedButton} onClick={this.goToLeaderboard}>
+          Go to Leaderboard
         </Button>
       </Grid>
     );

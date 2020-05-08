@@ -137,6 +137,10 @@ const styles = {
   characterButtonText: {
     fontSize: 16,
     marginTop: 20
+  },
+  leaderBoardText: {
+    color: "white",
+    fontSize: 36,
   }
 };
 

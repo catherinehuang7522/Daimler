@@ -4,6 +4,7 @@ import QuestionsComponent from "./components/Questions";
 import CategoriesComponent from "./components/Categories";
 import DifficultyComponent from "./components/Difficulty";
 import ProfileComponent from "./components/Profiles"
+import LeaderboardComponent from './components/Leaderboard';
 import Firebase from "./components/firebase"
 
 
@@ -18,7 +19,7 @@ export default class IndexPage extends Component {
       gameState: "PROFILES",
       catArray: [],
       gameDifficulty: "",
-      numQuestions: 10,
+      numQuestions: 1, //This is manually set for easier debugging 
       player: ""
     };
 
@@ -98,6 +99,11 @@ export default class IndexPage extends Component {
             callback={this.fromDifficultyToQuestions}
           ></DifficultyComponent>
         );
+      case "LEADERBOARD":
+        return (
+          <LeaderboardComponent callback={this.backHome}>
+          </LeaderboardComponent>
+        )
       default:
         return <StartComponent></StartComponent>;
     }

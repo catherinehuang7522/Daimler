@@ -14,7 +14,6 @@ const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 10;
 const FEEDBACK_SHOW_TIME_SECS = 2;
 
 // component that displays the questions or the game over component
@@ -53,7 +52,7 @@ class QuestionsComponent extends Component {
   getUrls(categories) {
 
     const analytics = Firebase.sharedInstance.analytics  // init analytics object
-    
+
 
     var urls = [];
     var customURL = "";
@@ -69,7 +68,7 @@ class QuestionsComponent extends Component {
       //Add URL LINK to array
       urls.push(customURL);
       //log category to analytics
-      analytics.logEvent('category', { category: categories[i] }); 
+      analytics.logEvent('category', { category: categories[i] });
     }
     return urls;
   }
