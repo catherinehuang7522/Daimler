@@ -16,6 +16,16 @@ const styles = {
     marginTop: 20,
     marginBottom: 20,
   },
+  characterRow: {
+    display: "flex",
+    marginLeft: 192,
+    marginRight: 192,
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 20,
+    marginBottom: 20,
+  },
   categoryButtonsContainer: {
     paddingLeft: 166,
     paddingRight: 166,

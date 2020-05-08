@@ -9,11 +9,23 @@ import selectAudio from "../res/select.mp3";
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import foxImageUnselected from '../assets/avatar_fox_unselected.png';
-import pandaImageUnselected from '../assets/avatar_panda_unselected.png';
-import tigerImageUnselected from '../assets/avatar_tiger_unselected.png';
 import foxImageSelected from '../assets/avatar_fox_selected.png';
+import pandaImageUnselected from '../assets/avatar_panda_unselected.png';
 import pandaImageSelected from '../assets/avatar_panda_selected.png';
+import tigerImageUnselected from '../assets/avatar_tiger_unselected.png';
 import tigerImageSelected from '../assets/avatar_tiger_selected.png';
+import walrusImageUnselected from '../assets/avatar_walrus_unselected.png';
+import walrusImageSelected from '../assets/avatar_walrus_selected.png';
+import elephantImageUnselected from '../assets/avatar_elephant_unselected.png';
+import elephantImageSelected from '../assets/avatar_elephant_selected.png';
+import penguinImageUnselected from '../assets/avatar_penguin_unselected.png';
+import penguinImageSelected from '../assets/avatar_penguin_selected.png';
+import giraffeImageUnselected from '../assets/avatar_giraffe_unselected.png';
+import giraffeImageSelected from '../assets/avatar_giraffe_selected.png';
+import sheepImageUnselected from '../assets/avatar_sheep_unselected.png';
+import sheepImageSelected from '../assets/avatar_sheep_selected.png';
+import bearImageUnselected from '../assets/avatar_bear_unselected.png';
+import bearImageSelected from '../assets/avatar_bear_selected.png';
 import CharacterButton from "./CharacterButton";
 import Firebase from "../components/firebase"
 
@@ -35,6 +47,12 @@ class ProfileComponent extends Component {
       funnyFox: false,
       patientPanda: false,
       trustyTiger: false,
+      wittyWalrus: false,
+      ecstaticElephant: false,
+      proudPenguin: false,
+      greatGiraffe: false,
+      smartSheep: false,
+      boldBear: false,
       newPlayer: false,
       isReadyToStart: false,
     };
@@ -42,6 +60,12 @@ class ProfileComponent extends Component {
     this.onClickFunnyFox = this.onClickFunnyFox.bind(this);
     this.onClickPatientPanda = this.onClickPatientPanda.bind(this);
     this.onClickTrustyTiger = this.onClickTrustyTiger.bind(this);
+    this.onClickWittyWalrus = this.onClickWittyWalrus.bind(this);
+    this.onClickEcstaticElephant = this.onClickEcstaticElephant.bind(this);
+    this.onClickProudPenguin = this.onClickProudPenguin.bind(this);
+    this.onClickGreatGiraffe = this.onClickGreatGiraffe.bind(this);
+    this.onClickSmartSheep = this.onClickSmartSheep.bind(this);
+    this.onClickBoldBear = this.onClickBoldBear.bind(this);
     this.onClickNewPlayer = this.onClickNewPlayer.bind(this);
     this.onClickShowStartScreen = this.onClickShowStartScreen.bind(this);
     this.addPlayer = this.addPlayer.bind(this);
@@ -69,24 +93,16 @@ class ProfileComponent extends Component {
     // TODO: Insert the logic to only show the player profiles from this.state.playersToShow
   }
 
-
-  //TODO: FIX LOGIC
-  //If you click trust tiger, you're still able to select funny foxImageSelected
-  //Similar with Patient panda
-  //I believe it has to do with the order of the if Stataments
-
   onClickFunnyFox() {
     select.play()
-    this.setState({ funnyFox: !this.state.funnyFox });
-    !this.state.funnyFox
-      ? this.addPlayer("funnyFox")
-      : this.removePlayer("funnyFox");
-
     if (this.state.numOfPlayers == 1 && !this.state.funnyFox) {
       console.log("Single Player is only supported");
       return;
     }
-
+    this.setState({ funnyFox: !this.state.funnyFox });
+    !this.state.funnyFox
+      ? this.addPlayer("funnyFox")
+      : this.removePlayer("funnyFox");
   }
 
   onClickPatientPanda() {
@@ -111,6 +127,78 @@ class ProfileComponent extends Component {
     !this.state.trustyTiger
       ? this.addPlayer("trustyTiger")
       : this.removePlayer("trustyTiger");
+  }
+
+  onClickWittyWalrus() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.wittyWalrus) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ wittyWalrus: !this.state.wittyWalrus });
+    !this.state.wittyWalrus
+      ? this.addPlayer("wittyWalrus")
+      : this.removePlayer("wittyWalrus");
+  }
+
+  onClickEcstaticElephant() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.ecstaticElephant) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ ecstaticElephant: !this.state.ecstaticElephant });
+    !this.state.ecstaticElephant
+      ? this.addPlayer("ecstaticElephant")
+      : this.removePlayer("ecstaticElephant");
+  }
+
+  onClickProudPenguin() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.proudPenguin) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ proudPenguin: !this.state.proudPenguin });
+    !this.state.proudPenguin
+      ? this.addPlayer("proudPenguin")
+      : this.removePlayer("proudPenguin");
+  }
+
+  onClickGreatGiraffe() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.greatGiraffe) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ greatGiraffe: !this.state.greatGiraffe });
+    !this.state.greatGiraffe
+      ? this.addPlayer("greatGiraffe")
+      : this.removePlayer("greatGiraffe");
+  }
+
+  onClickSmartSheep() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.smartSheep) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ smartSheep: !this.state.smartSheep });
+    !this.state.smartSheep
+      ? this.addPlayer("smartSheep")
+      : this.removePlayer("smartSheep");
+  }
+
+  onClickBoldBear() {
+    select.play()
+    if (this.state.numOfPlayers == 1 && !this.state.boldBear) {
+      console.log("Single Player is only supported");
+      return;
+    }
+    this.setState({ boldBear: !this.state.boldBear });
+    !this.state.boldBear
+      ? this.addPlayer("boldBear")
+      : this.removePlayer("boldBear");
   }
 
   onClickNewPlayer() {
@@ -200,18 +288,102 @@ class ProfileComponent extends Component {
     />
     ;
 
-    const newPlayerButton = this.state.newPlayer ?
-      <CharacterButton
-        name="+"
-        selected={this.state.newPlayer}
-        onClick={this.onClickNewPlayer}
-      />
-      :
-      <CharacterButton
-        name="+"
-        selected={this.state.newPlayer}
-        onClick={this.onClickNewPlayer}
-      />
+    const wittyWalrusButton = this.state.wittyWalrus ?
+    <CharacterButton image={walrusImageSelected}
+      name="Witty Walrus"
+      selected={this.state.wittyWalrus}
+      onClick={this.onClickWittyWalrus}
+    />
+    :
+    <CharacterButton image={walrusImageUnselected}
+      name="Witty Walrus"
+      selected={this.state.wittyWalrus}
+      onClick={this.onClickWittyWalrus}
+    />
+    ;
+
+    const ecstaticElephantButton = this.state.ecstaticElephant ?
+    <CharacterButton image={elephantImageSelected}
+      name="Ecstatic Elephant"
+      selected={this.state.ecstaticElephant}
+      onClick={this.onClickEcstaticElephant}
+    />
+    :
+    <CharacterButton image={elephantImageUnselected}
+      name="Ecstatic Elephant"
+      selected={this.state.ecstaticElephant}
+      onClick={this.onClickEcstaticElephant}
+    />
+    ;
+
+    const proudPenguinButton = this.state.proudPenguin ?
+    <CharacterButton image={penguinImageSelected}
+      name="Proud Penguin"
+      selected={this.state.proudPenguin}
+      onClick={this.onClickProudPenguin}
+    />
+    :
+    <CharacterButton image={penguinImageUnselected}
+      name="Proud Penguin"
+      selected={this.state.proudPenguin}
+      onClick={this.onClickProudPenguin}
+    />
+    ;
+
+    const greatGiraffeButton = this.state.greatGiraffe ?
+    <CharacterButton image={giraffeImageSelected}
+      name="Great Giraffe"
+      selected={this.state.greatGiraffe}
+      onClick={this.onClickGreatGiraffe}
+    />
+    :
+    <CharacterButton image={giraffeImageUnselected}
+      name="Great Giraffe"
+      selected={this.state.greatGiraffe}
+      onClick={this.onClickGreatGiraffe}
+    />
+    ;
+
+    const smartSheepButton = this.state.smartSheep ?
+    <CharacterButton image={sheepImageSelected}
+      name="Smart Sheep"
+      selected={this.state.smartSheep}
+      onClick={this.onClickSmartSheep}
+    />
+    :
+    <CharacterButton image={sheepImageUnselected}
+      name="Smart Sheep"
+      selected={this.state.smartSheep}
+      onClick={this.onClickSmartSheep}
+    />
+    ;
+
+    const boldBearButton = this.state.boldBear ?
+    <CharacterButton image={bearImageSelected}
+      name="Bold Bear"
+      selected={this.state.boldBear}
+      onClick={this.onClickBoldBear}
+    />
+    :
+    <CharacterButton image={bearImageUnselected}
+      name="Bold Bear"
+      selected={this.state.boldBear}
+      onClick={this.onClickBoldBear}
+    />
+    ;
+
+    // const newPlayerButton = this.state.newPlayer ?
+    //   <CharacterButton
+    //     name="+"
+    //     selected={this.state.newPlayer}
+    //     onClick={this.onClickNewPlayer}
+    //   />
+    //   :
+    //   <CharacterButton
+    //     name="+"
+    //     selected={this.state.newPlayer}
+    //     onClick={this.onClickNewPlayer}
+    //   />
 
     const nextButton = this.state.numOfPlayers == 1 ? (
       <IconButton
@@ -228,11 +400,22 @@ class ProfileComponent extends Component {
       <div style={styles.root}>
         <Grid style={styles.title}> CHOOSE A CHARACTER </Grid>
 
-        <Grid style={styles.row} spacing={4}>
+        <Grid style={styles.characterRow} spacing={3}>
           {funnyFoxButton}
           {patientPandaButton}
           {trustyTigerButton}
-          {newPlayerButton}
+        </Grid>
+
+        <Grid style={styles.characterRow} spacing={3}>
+          {wittyWalrusButton}
+          {ecstaticElephantButton}
+          {proudPenguinButton}
+        </Grid>
+
+        <Grid style={styles.characterRow} spacing={3}>
+          {greatGiraffeButton}
+          {smartSheepButton}
+          {boldBearButton}
         </Grid>
 
         <Grid style={styles.row} spacing={3}>
