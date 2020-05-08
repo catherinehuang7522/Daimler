@@ -15,6 +15,7 @@ import foxImageSelected from '../assets/avatar_fox_selected.png';
 import pandaImageSelected from '../assets/avatar_panda_selected.png';
 import tigerImageSelected from '../assets/avatar_tiger_selected.png';
 import CharacterButton from "./CharacterButton";
+import Firebase from "../components/firebase"
 
 const select = new UIFx(selectAudio,
   {
@@ -29,6 +30,7 @@ class ProfileComponent extends Component {
     this.state = {
       numOfPlayers: 0,
       playersChosen: [],
+      playersToShow: [],
 
       funnyFox: false,
       patientPanda: false,
@@ -44,14 +46,34 @@ class ProfileComponent extends Component {
     this.onClickShowStartScreen = this.onClickShowStartScreen.bind(this);
     this.addPlayer = this.addPlayer.bind(this);
     this.removePlayer = this.removePlayer.bind(this);
+    this.getPlayersFromBackend = this.getPlayersFromBackend.bind(this);
+    this.updatePlayersToShow = this.updatePlayersToShow.bind(this);
 
+    this.getPlayersFromBackend();
+
+  }
+
+  getPlayersFromBackend() {
+    let firebase = Firebase.sharedInstance
+    let readUsers = firebase.db.collection('users').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        var players = this.state.playersToShow;
+        players.push(doc.id);
+        this.setState({ playersToShow: players})
+      });
+      this.updatePlayersToShow();
+    });
+  }
+
+  updatePlayersToShow() {
+    // TODO: Insert the logic to only show the player profiles from this.state.playersToShow
   }
 
 
   //TODO: FIX LOGIC
   //If you click trust tiger, you're still able to select funny foxImageSelected
   //Similar with Patient panda
-  //I believe it has to do with the order of the if Stataments 
+  //I believe it has to do with the order of the if Stataments
 
   onClickFunnyFox() {
     select.play()
