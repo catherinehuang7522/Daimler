@@ -35,7 +35,7 @@ class GameOverComponent extends Component {
 
 
     //set the data in Firebase
-    let setDoc = firebase.db.collection('users').doc(userID).update(data);
+    let setDoc = firebase.db.collection('users').doc(userID).set(data, {merge: true});
   }
 
   // calls the callback function from questions

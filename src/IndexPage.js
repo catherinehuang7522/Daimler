@@ -8,8 +8,6 @@ import LeaderboardComponent from './components/Leaderboard';
 import Firebase from "./components/firebase"
 
 
-
-
 export default class IndexPage extends Component {
   constructor(props) {
     super(props);
@@ -79,6 +77,15 @@ export default class IndexPage extends Component {
             callback={this.backHome}
             setPlayer={this.setPlayer}
           ></ProfileComponent>
+
+        );
+
+        case "NEW_PROFILE":
+        return (
+          <NewProfileComponent
+            callback={this.backHome}
+            setPlayer={this.setPlayer}
+            ></NewProfileComponent>
 
         );
       case "QUESTIONS":
