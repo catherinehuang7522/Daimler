@@ -29,15 +29,15 @@ class StartComponent extends Component {
       duration: 1,
     };
 
-    this.onClickShowCategoriesScreen = this.onClickShowCategoriesScreen.bind(this);
+    this.onClickShowCharactersScreen = this.onClickShowCharactersScreen.bind(this);
     this.onClickSingle = this.onClickSingle.bind(this);
     this.onClickMulti = this.onClickMulti.bind(this);
   }
 
   // sets up the state to play a game for the prototype. Calls a callback function that will call the backhome function
-  onClickShowCategoriesScreen() {
+  onClickShowCharactersScreen() {
     this.setState({ startGame: !this.state.startGame });
-    this.props.callback("CATEGORIES");
+    this.props.callback("PROFILES");
     select.play()
   }
 
@@ -61,7 +61,7 @@ class StartComponent extends Component {
     const startButton = (
       <IconButton
         style={styles.nextButton}
-        onClick={this.onClickShowCategoriesScreen}
+        onClick={this.onClickShowCharactersScreen}
       >
         <DoubleArrowIcon fontSize="large" />
       </IconButton>

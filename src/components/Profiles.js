@@ -67,7 +67,7 @@ class ProfileComponent extends Component {
     this.onClickSmartSheep = this.onClickSmartSheep.bind(this);
     this.onClickBoldBear = this.onClickBoldBear.bind(this);
     this.onClickNewPlayer = this.onClickNewPlayer.bind(this);
-    this.onClickShowStartScreen = this.onClickShowStartScreen.bind(this);
+    this.onClickShowCategoriesScreen = this.onClickShowCategoriesScreen.bind(this);
     this.addPlayer = this.addPlayer.bind(this);
     this.removePlayer = this.removePlayer.bind(this);
     this.getPlayersFromBackend = this.getPlayersFromBackend.bind(this);
@@ -233,11 +233,11 @@ class ProfileComponent extends Component {
     this.setState({ playersChosen: currPlayer });
   }
 
-  onClickShowStartScreen() {
+  onClickShowCategoriesScreen() {
     select.play()
     const currNumPlayers = this.state.numOfPlayers;
     if (currNumPlayers === 1) {
-      this.props.callback("START");
+      this.props.callback("CATEGORIES");
       this.props.setPlayer(this.state.playersChosen[0])
     } else {
       console.log("Select only 1 player.");
@@ -388,7 +388,7 @@ class ProfileComponent extends Component {
     const nextButton = this.state.numOfPlayers == 1 ? (
       <IconButton
         style={styles.nextButton}
-        onClick={this.onClickShowStartScreen}
+        onClick={this.onClickShowCategoriesScreen}
       >
         <DoubleArrowIcon fontSize="large" />
       </IconButton>

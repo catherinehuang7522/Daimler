@@ -14,10 +14,10 @@ export default class IndexPage extends Component {
 
     // initialize the game state
     this.state = {
-      gameState: "PROFILES",
+      gameState: "START",
       catArray: [],
       gameDifficulty: "",
-      numQuestions: 1, //This is manually set for easier debugging 
+      numQuestions: 1, //This is manually set for easier debugging
       player: ""
     };
 
@@ -79,15 +79,14 @@ export default class IndexPage extends Component {
           ></ProfileComponent>
 
         );
-
-        case "NEW_PROFILE":
-        return (
-          <NewProfileComponent
-            callback={this.backHome}
-            setPlayer={this.setPlayer}
-            ></NewProfileComponent>
-
-        );
+        // case "NEW_PROFILE":
+        // return (
+        //   <NewProfileComponent
+        //     callback={this.backHome}
+        //     setPlayer={this.setPlayer}
+        //     ></NewProfileComponent>
+        //
+        // );
       case "QUESTIONS":
         return (
           <QuestionsComponent
