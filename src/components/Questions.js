@@ -5,6 +5,8 @@ import Backdrop from "@material-ui/core/Backdrop";
 import AnswersComponent from "./Answers";
 import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
+import Firebase from "./firebase"
+
 import { CATEGORIES_MAP } from "../constants";
 
 
@@ -12,7 +14,6 @@ const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
 
-const MAX_NUM_QUESTIONS = 10;
 const FEEDBACK_SHOW_TIME_SECS = 2;
 
 // component that displays the questions or the game over component
@@ -49,6 +50,10 @@ class QuestionsComponent extends Component {
   Returns an array with all the URLS to fetch
   */
   getUrls(categories) {
+
+    const analytics = Firebase.sharedInstance.analytics  // init analytics object
+
+
     var urls = [];
     var customURL = "";
     const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
@@ -62,6 +67,8 @@ class QuestionsComponent extends Component {
         this.props.diff;
       //Add URL LINK to array
       urls.push(customURL);
+      //log category to analytics
+      analytics.logEvent('category', { category: categories[i] });
     }
     return urls;
   }

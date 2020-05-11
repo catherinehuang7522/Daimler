@@ -8,7 +8,7 @@ import selectAudio from "../res/select.mp3"
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
-const NUM_QUESTIONS_PER_MINUTE = 10;
+const NUM_QUESTIONS_PER_MINUTE = 0;
 const select = new UIFx(selectAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
@@ -70,14 +70,14 @@ class StartComponent extends Component {
     const singlePlayerSelector = this.state.singlePlayer ? (
       <DangerButton text="Single Player" />
     ) : (
-      <Button
-        style={styles.unselectedButton}
-        variant="contained"
-        onClick={this.onClickSingle}
-      >
-        Single Player
-      </Button>
-    );
+        <Button
+          style={styles.unselectedButton}
+          variant="contained"
+          onClick={this.onClickSingle}
+        >
+          Single Player
+        </Button>
+      );
 
     const multiPlayerSelector = this.state.singlePlayer ? (
       <Button
@@ -88,47 +88,47 @@ class StartComponent extends Component {
         Multi Player
       </Button>
     ) : (
-      <DangerButton text="Multi Player" />
-    );
+        <DangerButton text="Multi Player" />
+      );
 
     const shortDurationSelector =
       this.state.duration === 1 ? (
         <DangerButton text="Short Game [10 min]" />
       ) : (
-        <Button
-          style={styles.unselectedButton}
-          variant="contained"
-          onClick={() => this.onSelectDuration(1)}
-        >
-          Short Game [10 min]
-        </Button>
-      );
+          <Button
+            style={styles.unselectedButton}
+            variant="contained"
+            onClick={() => this.onSelectDuration(1)}
+          >
+            Short Game [10 min]
+          </Button>
+        );
 
     const medDurationSelector =
       this.state.duration === 2 ? (
         <DangerButton text="Medium Game [20 min]" />
       ) : (
-        <Button
-          style={styles.unselectedButton}
-          variant="contained"
-          onClick={() => this.onSelectDuration(2)}
-        >
-          Medium Game [20 min]
-        </Button>
-      );
+          <Button
+            style={styles.unselectedButton}
+            variant="contained"
+            onClick={() => this.onSelectDuration(2)}
+          >
+            Medium Game [20 min]
+          </Button>
+        );
 
     const longDurationSelector =
       this.state.duration === 3 ? (
         <DangerButton text="Long Game [30 min]" />
       ) : (
-        <Button
-          style={styles.unselectedButton}
-          variant="contained"
-          onClick={() => this.onSelectDuration(3)}
-        >
-          Long Game [30 min]
-        </Button>
-      );
+          <Button
+            style={styles.unselectedButton}
+            variant="contained"
+            onClick={() => this.onSelectDuration(3)}
+          >
+            Long Game [30 min]
+          </Button>
+        );
 
     return (
       <div style={styles.root}>
