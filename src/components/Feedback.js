@@ -38,14 +38,14 @@ class FeedbackComponent extends Component {
     this.questionsSeen.add(this.props.questionIndex)
     if (this.props.questionIndex) {  // Render only if the question index is set
       if (this.props.wasCorrect) {
-        if (!seenBefore) cheer.play()
+        // if (!seenBefore) cheer.play()
         headerText = <p style={styles.feedbackHeaderTextCorrect}>Correct!</p>;
         bodyText =
           "Way to go! You were right! " +
           this.props.correctAnswer +
           " is correct.";
       } else {
-        if (!seenBefore) sad.play()
+        // if (!seenBefore) sad.play()
         headerText = <p style={styles.feedbackHeaderTextIncorrect}>Incorrect</p>;
         bodyText =
           "Oh no, that wasn't right. The correct answer was " +
