@@ -49,7 +49,8 @@ class DifficultyComponent extends Component {
     this.setState({ medium: false });
     this.setState({ hard: false });
 
-    this.analytics.logEvent('difficulty', { level: 'easy'});
+    this.analytics.logEvent('difficulty', { level: 'easy'});  
+    this.analytics.logEvent('easy_difficulty', { level: 'easy'});  // backup if the other does not work
   }
 
   onClickMedium() {
@@ -59,7 +60,8 @@ class DifficultyComponent extends Component {
     this.setState({ easy: false });
     this.setState({ hard: false });
 
-    this.analytics.logEvent('difficulty', { level: 'medium'});
+    this.analytics.logEvent('difficulty', { level: 'medium'});  
+    this.analytics.logEvent('medium_difficulty', { level: 'medium'}); // backup if the other does not work
   }
 
   onClickHard() {
@@ -69,7 +71,8 @@ class DifficultyComponent extends Component {
     this.setState({ easy: false });
     this.setState({ medium: false });
 
-    this.analytics.logEvent('difficulty', { level: 'hard'});
+    this.analytics.logEvent('difficulty', { level: 'hard'});  
+    this.analytics.logEvent('hard_difficulty', { level: 'hard'});  // backup if the other does not work
   }
 
   onClickStartGame() {

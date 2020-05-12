@@ -18,8 +18,6 @@ class AnswersComponent extends Component {
     let correctAnswer;
     for (let i in this.props.answers) {
       let currAnswerObj = this.props.answers[i];
-      console.log("current answer is: ");
-      console.log(currAnswerObj)
       
       if (currAnswerObj.correct) {
         correctAnswer = entities.decode(currAnswerObj.text); // decoding because some of the questions and answers have HTML entities e.g. &quot;

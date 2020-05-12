@@ -9,6 +9,11 @@ class GameOverComponent extends Component {
   constructor(props) {
     super(props);
 
+     //init analytics
+     this.analytics = Firebase.sharedInstance.analytics
+     this.analytics.logEvent('page_view', {final_page: 1} );
+     this.analytics.logEvent('final_page', {final_page: 1} );
+
     this.state = {};
     this.submitScore()
 
@@ -29,11 +34,6 @@ class GameOverComponent extends Component {
 
     // console.log("Getting the user id: ");
     // console.log(userID);
-
-
-
-
-
     //set the data in Firebase
     let setDoc = firebase.db.collection('users').doc(userID).set(data, {merge: true});
   }
@@ -41,14 +41,13 @@ class GameOverComponent extends Component {
   // calls the callback function from questions
   onGoHome() {
     //  this.setState({ startGame: !this.state.startGame })
-    const analytics = Firebase.sharedInstance.analytics
-    analytics.logEvent('back_to_home', { user: this.props.player });
+    this.analytics.logEvent('back_to_home');
     this.props.callback("START");
   }
 
   goToLeaderboard() {
-    const analytics = Firebase.sharedInstance.analytics
-    analytics.logEvent('back_to_home', { user: this.props.player });
+    // const analytics = Firebase.sharedInstance.analytics
+    this.analytics.logEvent('show_leaderboard');
     this.props.callback("LEADERBOARD");
   }
 
