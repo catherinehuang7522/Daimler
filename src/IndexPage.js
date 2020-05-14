@@ -17,7 +17,7 @@ export default class IndexPage extends Component {
       gameState: "START",
       catArray: [],
       gameDifficulty: "",
-      numQuestions: 1, //This is manually set for easier debugging
+      numQuestions: 5, //This is manually set for easier debugging
       player: ""
     };
 
