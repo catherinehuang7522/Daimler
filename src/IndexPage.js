@@ -18,7 +18,7 @@ export default class IndexPage extends Component {
       catArray: [],
       gameDifficulty: "",
       numQuestions: 1, //This is manually set for easier debugging
-      player: ""
+      player: []
     };
 
     this.renderSwitch = this.renderSwitch.bind(this);
@@ -50,14 +50,15 @@ export default class IndexPage extends Component {
   }
 
   setPlayer(player) {
-    this.setState({ player: player });
+    this.setState({ player: [player] });
     console.log("player is: " + player)
   }
 
 
   // sets the number of questions
   setNumQuestions(numQuestions) {
-    this.setState({ numQuestions: numQuestions });
+    var numQuestionsAdjusted = numQuestions * this.state.player.length
+    this.setState({ numQuestions: numQuestionsAdjusted });
   }
 
   // reder the desired componenent based on the state

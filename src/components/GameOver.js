@@ -27,15 +27,13 @@ class GameOverComponent extends Component {
     var date = new Date()
     let timestamp = date.getTime()
 
-    let data = {
-      [timestamp]: this.props.score
-    };
-    let userID = this.props.player
+    for (var userID of this.props.player) {
+      let data = {
+        [timestamp]: this.props.score[userID]
+      };
+      let setDoc = firebase.db.collection('users').doc(userID).set(data, {merge: true});
+    }
 
-    // console.log("Getting the user id: ");
-    // console.log(userID);
-    //set the data in Firebase
-    let setDoc = firebase.db.collection('users').doc(userID).set(data, {merge: true});
   }
 
   // calls the callback function from questions

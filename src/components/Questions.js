@@ -26,7 +26,7 @@ class QuestionsComponent extends Component {
       singlePlayer: true,
       duration: 1,
       questionIndex: 0,
-      currentScore: 0,
+      currentScore: {},
       showFeedback: false,
       lastQuestionCorrect: false,
       lastQuestionAnswer: "",
@@ -36,11 +36,16 @@ class QuestionsComponent extends Component {
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
     this.shuffleArray = this.shuffleArray.bind(this);
+    this.currentPlayerName = this.currentPlayerName.bind(this);
   }
 
   // calls function to fetch the questions before the component mounts
   componentWillMount() {
     this.onGetQuestions(this.props.cat);
+  }
+
+  currentPlayerName() {
+    return this.props.player[this.state.questionIndex % this.state];
   }
 
   /*
@@ -131,8 +136,8 @@ class QuestionsComponent extends Component {
   //changes to the next question. isCorrect ia a bool for if the previous value was correct. correctAnswer is the correct answer
   nextQuestion(isCorrect, correctAnswer) {
     const score = isCorrect
-      ? this.state.currentScore + 1
-      : this.state.currentScore;
+      ? this.state.currentScore[this.currentPlayerName()] + 1
+      : this.state.currentScore[this.currentPlayerName()];
     const nextQIndex = this.state.questionIndex + 1;
 
     this.setState({ lastQuestionCorrect: isCorrect });
@@ -142,7 +147,10 @@ class QuestionsComponent extends Component {
       this.setState({ showFeedback: false });
     }, FEEDBACK_SHOW_TIME_SECS * 1000);
 
-    this.setState({ currentScore: score });
+    var scores = this.state.currentScore;
+    scores[this.currentPlayerName()] = score;
+
+    this.setState({ currentScore: scores });
     this.setState({ questionIndex: nextQIndex });
   }
 
