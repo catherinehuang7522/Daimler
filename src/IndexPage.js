@@ -14,7 +14,7 @@ export default class IndexPage extends Component {
 
     // initialize the game state
     this.state = {
-      gameState: "START",
+      gameState: "PROFILES",
       catArray: [],
       gameDifficulty: "",
       numQuestions: 5, //This is manually set for easier debugging
