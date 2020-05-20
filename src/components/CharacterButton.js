@@ -4,7 +4,7 @@ import { styles } from "../stylesheet.js";
 
 class CharacterButton extends Component {
   render() {
-    let avatar = this.props.image ? <img style={styles.characterButtonImage} src={this.props.image}/> : <div/>;
+    let avatar = this.props.selected ? <img style={styles.characterButtonImage} src={this.props.selectedImage} /> : <img style={styles.characterButtonImage} src={this.props.unSelectedImage} />;
     let label = <div style={styles.characterButtonText}> {this.props.name} </div>;
     let style = this.props.selected ? styles.selectedCharacterButton : styles.unselectedCharacterButton;
     return (

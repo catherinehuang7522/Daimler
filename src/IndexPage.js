@@ -79,14 +79,14 @@ export default class IndexPage extends Component {
           ></ProfileComponent>
 
         );
-        // case "NEW_PROFILE":
-        // return (
-        //   <NewProfileComponent
-        //     callback={this.backHome}
-        //     setPlayer={this.setPlayer}
-        //     ></NewProfileComponent>
-        //
-        // );
+      // case "NEW_PROFILE":
+      // return (
+      //   <NewProfileComponent
+      //     callback={this.backHome}
+      //     setPlayer={this.setPlayer}
+      //     ></NewProfileComponent>
+      //
+      // );
       case "QUESTIONS":
         return (
           <QuestionsComponent

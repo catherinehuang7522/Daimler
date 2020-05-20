@@ -1,8 +1,5 @@
 import { styles } from "../stylesheet";
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import DangerButton from "./DangerButton";
-import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3";
@@ -160,88 +157,6 @@ class NewProfileComponent extends Component {
 
   render() {
 
-    const wittyWalrusButton = this.state.wittyWalrus ?
-    <CharacterButton image={foxImageSelected}
-      name="Witty Walrus"
-      selected={this.state.wittyWalrus}
-      onClick={this.onClickWittyWalrus}
-    />
-    :
-    <CharacterButton image={foxImageUnselected}
-      name="Witty Walrus"
-      selected={this.state.wittyWalrus}
-      onClick={this.onClickWittyWalrus}
-    />;
-
-    const ecstaticElephantButton = this.state.ecstaticElephant ?
-    <CharacterButton image={pandaImageSelected}
-      name="Ecstatic Elephant"
-      selected={this.state.ecstaticElephant}
-      onClick={this.onClickEstaticElephant}
-    />
-    :
-    <CharacterButton image={pandaImageUnselected}
-      name="Ecstatic Elephant"
-      selected={this.state.ecstaticElephant}
-      onClick={this.onClickEstaticElephant}
-    />
-    ;
-
-    const proudPenguinButton = this.state.proudPenguin ?
-    <CharacterButton image={tigerImageSelected}
-      name="Proud Penguin"
-      selected={this.state.proudPenguin}
-      onClick={this.onClickProudPenguin}
-    />
-    :
-    <CharacterButton image={tigerImageUnselected}
-      name="Proud Penguin"
-      selected={this.state.proudPenguin}
-      onClick={this.onClickProudPenguin}
-    />
-    ;
-
-    const greatGiraffeButton = this.state.greatGiraffe ?
-    <CharacterButton image={tigerImageSelected}
-      name="Great Giraffe"
-      selected={this.state.greatGiraffe}
-      onClick={this.onClickGreatGiraffe}
-    />
-    :
-    <CharacterButton image={tigerImageUnselected}
-      name="Great Giraffe"
-      selected={this.state.greatGiraffe}
-      onClick={this.onClickGreatGiraffe}
-    />
-    ;
-
-    const smartSheepButton = this.state.smartSheep ?
-    <CharacterButton image={foxImageSelected}
-      name="Smart Sheep"
-      selected={this.state.smartSheep}
-      onClick={this.onClickSmartSheep}
-    />
-    :
-    <CharacterButton image={foxImageUnselected}
-      name="Smart Sheep"
-      selected={this.state.smartSheep}
-      onClick={this.onClickSmartSheep}
-    />;
-
-    const boldBearButton = this.state.boldBear ?
-    <CharacterButton image={pandaImageSelected}
-      name="Bold Bear"
-      selected={this.state.boldBear}
-      onClick={this.onClickEstaticElephant}
-    />
-    :
-    <CharacterButton image={pandaImageUnselected}
-      name="Bold Bear"
-      selected={this.state.boldBear}
-      onClick={this.onClickBoldBear}
-    />
-    ;
-
     const nextButton = this.state.numOfPlayers == 1 ? (
       <IconButton
         style={styles.nextButton}
@@ -250,8 +165,8 @@ class NewProfileComponent extends Component {
         <DoubleArrowIcon fontSize="large" />
       </IconButton>
     ) : (
-      <div></div>
-    );
+        <div></div>
+      );
 
     return (
       <div style={styles.root}>
