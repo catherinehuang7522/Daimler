@@ -80,16 +80,23 @@ class ProfileComponent extends Component {
   getPlayersFromBackend() {
     let firebase = Firebase.sharedInstance
     let readUsers = firebase.db.collection('users').get().then(snapshot => {
+      var players = [];
       snapshot.forEach(doc => {
-        var players = this.state.playersToShow;
-        players.push(doc.id);
-        this.setState({ playersToShow: players})
+        players.push(doc.data());
       });
+      this.setState({ playersToShow: players})
       this.updatePlayersToShow();
     });
   }
 
   updatePlayersToShow() {
+    for (const playerIndex in this.state.playersToShow) {
+      const player = this.state.playersToShow[playerIndex];
+      const username = player["username"];
+      const avatar = player["avatar"];
+
+      console.log("username: ", username, "avatar: ", avatar);
+    }
     // TODO: Insert the logic to only show the player profiles from this.state.playersToShow
   }
 
@@ -410,6 +417,12 @@ class ProfileComponent extends Component {
           {wittyWalrusButton}
           {ecstaticElephantButton}
           {proudPenguinButton}
+        </Grid>
+
+        <Grid style={styles.characterRow} spacing={3}>
+          {greatGiraffeButton}
+          {smartSheepButton}
+          {boldBearButton}
         </Grid>
 
         <Grid style={styles.characterRow} spacing={3}>
