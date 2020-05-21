@@ -8,6 +8,7 @@ import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import CharacterButton from "./CharacterButton";
 import Firebase from "../components/firebase";
 import { imageIndex } from "../components/ImageIndex";
+import Button from "@material-ui/core/Button";
 
 const select = new UIFx(selectAudio,
   {
@@ -96,18 +97,10 @@ class ProfileComponent extends Component {
   }
 
   render() {
-    const newPlayerButton = this.state.newPlayer ?
-      <CharacterButton
-        name="+"
-        selected={this.state.newPlayer}
-        onClick={this.onClickNewPlayer}
-      />
-      :
-      <CharacterButton
-        name="+"
-        selected={this.state.newPlayer}
-        onClick={this.onClickNewPlayer}
-      />
+    const newPlayerButton =
+      <Button style={styles.addPlayerButton} onClick={this.onClickNewPlayer}>
+        +
+      </Button>
 
     const nextButton = this.state.playersChosen.length !== 0 ? (
       <IconButton
@@ -123,12 +116,14 @@ class ProfileComponent extends Component {
     return (
       <div style={styles.root}>
         <Grid style={styles.title}> CHOOSE A CHARACTER </Grid>
-        <Grid style={styles.row} spacing={3}>
-          {newPlayerButton}
-        </Grid>
-        <Grid style={styles.row} spacing={3}>
-          {this.renderPlayers()}
-        </Grid>
+        <div style={styles.profileComponentWrapper}>
+          <div style={styles.avatarSection}>
+            {this.renderPlayers()}
+          </div>
+          <div style={styles.addPlayerSection}>
+            {newPlayerButton}
+          </div>
+        </div>
         <Grid style={styles.row} spacing={3}>
           {nextButton}
         </Grid>

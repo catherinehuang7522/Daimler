@@ -5,8 +5,12 @@ import { styles } from "../stylesheet.js";
 class CharacterButton extends Component {
   render() {
     let avatar = this.props.selected ? <img style={styles.characterButtonImage} src={this.props.selectedImage} /> : <img style={styles.characterButtonImage} src={this.props.unSelectedImage} />;
-    let label = <div style={styles.characterButtonText}> {this.props.name} </div>;
+    let label = this.props.name ? <div style={styles.characterButtonText}> {this.props.name} </div> : <div/>;
     let style = this.props.selected ? styles.selectedCharacterButton : styles.unselectedCharacterButton;
+    if (!this.props.name) {
+      style = this.props.selected ? styles.selectedAvatarButton : styles.unselectedAvatarButton;
+    }
+
     return (
       <Button
         style={style}

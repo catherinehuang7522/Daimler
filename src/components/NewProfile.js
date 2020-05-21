@@ -5,7 +5,7 @@ import UIFx from "uifx";
 import selectAudio from "../res/select.mp3";
 import CharacterButton from "./CharacterButton";
 import { imageIndex } from "../components/ImageIndex";
-import DangerButton from "./DangerButton";
+import Button from "@material-ui/core/Button";
 
 
 const select = new UIFx(selectAudio,
@@ -20,7 +20,7 @@ class NewProfileComponent extends Component {
 
     this.state = {
       newName: "",
-      newAvatar: null,  // newAvatar is just stored as a string like "fox" (See ImageIndex) 
+      newAvatar: null,  // newAvatar is just stored as a string like "fox" (See ImageIndex)
       avatarsToSelectFrom: imageIndex.getAllAvatars(),
     };
 
@@ -36,6 +36,7 @@ class NewProfileComponent extends Component {
 
 
   //Returns Characterbutton objets for all avatars. The avatars are retrieved from ImageIndex
+  // TODO: only render avatars that haven't been used yet
   renderAvatars() {
     return this.state.avatarsToSelectFrom.map((avatar, index) => (
       <CharacterButton
@@ -55,9 +56,11 @@ class NewProfileComponent extends Component {
   }
 
   render() {
-    //renders button when an avatar is selected and name has been entered 
+    //renders button when an avatar is selected and name has been entered
     const addButton = (this.state.newName !== "" && this.state.newAvatar !== null) ? (
-      <DangerButton text={"Add Player"} onClick={this.addPlayer} />
+      <Button onClick={this.addPlayer} style={styles.newPlayerButton}>
+       Add Player
+       </Button>
     ) : (
         <div></div>
       );
@@ -65,18 +68,18 @@ class NewProfileComponent extends Component {
     return (
       <div style={styles.root}>
         <Grid style={styles.title}> CREATE YOUR PLAYER </Grid>
-        <form>
-          <label>
-            Input Player Name:
-          <input type="text" value={this.state.newName} onChange={this.handleChange} />
-          </label>
-        </form>
-        <Grid style={styles.row} spacing={3}>
-          {this.renderAvatars()}
-        </Grid>
-        <Grid style={styles.row} spacing={3}>
-          {addButton}
-        </Grid>
+        <div style={styles.profileComponentWrapper}>
+          <div style={styles.avatarSection}>
+            {this.renderAvatars()}
+          </div>
+          <form style ={styles.inputSection}>
+            <div>
+              <div> Input Player Name </div>
+              <input type="text" value={this.state.newName} onChange={this.handleChange} />
+            </div>
+            {addButton}
+          </form>
+        </div>
       </div>
     );
   }
