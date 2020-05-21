@@ -34,6 +34,7 @@ class ProfileComponent extends Component {
 
   }
 
+  //loops through all plaers in playersToShow and create a CharacterButton for them
   renderPlayers() {
     return this.state.playersToShow.map((player, index) => (
       <CharacterButton
@@ -46,6 +47,7 @@ class ProfileComponent extends Component {
     ));
   }
 
+  //stores all players in playersToShow from firbase
   getPlayersFromBackend() {
     let firebase = Firebase.sharedInstance
     let readUsers = firebase.db.collection('users').get().then(snapshot => {
@@ -54,25 +56,14 @@ class ProfileComponent extends Component {
         players.push(doc.data());
       });
       this.setState({ playersToShow: players })
-      this.updatePlayersToShow();
     });
   }
 
-  updatePlayersToShow() {
-    for (const playerIndex in this.state.playersToShow) {
-      const player = this.state.playersToShow[playerIndex];
-      const username = player["username"];
-      const avatar = player["avatar"];
-
-      console.log("username: ", username, "avatar: ", avatar);
-    }
-    // TODO: Insert the logic to only show the player profiles from this.state.playersToShow
-  }
 
   onClickExistingPlayer(player) {
     select.play()
     if (this.state.playersChosen.includes(player)) {
-      //Remove a player
+      //un-select a player
       var currPlayer = this.state.playersChosen;
       var unwantedPlayer = currPlayer.indexOf(player);
       currPlayer.splice(unwantedPlayer, 1);
@@ -87,11 +78,6 @@ class ProfileComponent extends Component {
 
   onClickNewPlayer() {
     select.play()
-    this.setState({ newPlayer: !this.state.newPlayer });
-    !this.state.newPlayer
-      ? this.addPlayer("newPlayer")
-      : this.removePlayer("newPlayer");
-
     this.props.callback("NEW_PROFILE");
 
   }

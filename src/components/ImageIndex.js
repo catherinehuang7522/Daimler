@@ -19,8 +19,18 @@ import bearImageSelected from '../assets/avatar_bear_selected.png';
 
 
 
-const avatarSelectedMap = { fox: foxImageSelected, panda: pandaImageSelected, giraffe: giraffeImageSelected };
-const avatarUnSelectedMap = { fox: foxImageUnselected, panda: pandaImageUnselected, giraffe: giraffeImageUnselected };
+const avatarSelectedMap = {
+    fox: foxImageSelected, panda: pandaImageSelected, giraffe: giraffeImageSelected, tiger: tigerImageSelected, walrus: walrusImageSelected,
+    elephant: elephantImageSelected, penguin: penguinImageSelected, sheep: sheepImageSelected, bear: bearImageSelected
+};
+const avatarUnSelectedMap = {
+    fox: foxImageUnselected, panda: pandaImageUnselected, giraffe: giraffeImageUnselected, tiger: tigerImageUnselected, walrus: walrusImageUnselected,
+    elephant: elephantImageUnselected, penguin: penguinImageUnselected, sheep: sheepImageUnselected, bear: bearImageUnselected
+};
+
+var getAllAvatars = function () {
+    return ["fox", 'panda', "tiger", "walrus", 'elephant', 'penguin', "giraffe", 'sheep', 'bear']
+}
 
 
 var getImage = function (avatar, bool) {
@@ -32,7 +42,8 @@ var getImage = function (avatar, bool) {
 }
 
 var imageIndex = {
-    getImage: getImage
+    getImage: getImage,
+    getAllAvatars: getAllAvatars
 }
 
 export var imageIndex;
