@@ -6,7 +6,7 @@ import selectAudio from "../res/select.mp3";
 import CharacterButton from "./CharacterButton";
 import { imageIndex } from "../components/ImageIndex";
 import Button from "@material-ui/core/Button";
-
+import Firebase from "./firebase"
 
 const select = new UIFx(selectAudio,
   {
@@ -31,7 +31,19 @@ class NewProfileComponent extends Component {
   }
 
   addPlayer() {
-    // TODO: add player to database and then navigate back to "choose a player"
+    if (this.state.newName === "") { return }
+    if (this.state.newAvatar === null) { return }
+
+    let data = {
+      username: this.state.newName,
+      avatar: this.state.newAvatar
+    }
+
+    let firebase = Firebase.sharedInstance
+    let setDoc = firebase.db.collection('users').doc(this.state.newName).set(data, {merge: true});
+
+    select.play()
+    this.props.callback("PROFILES");
   }
 
 
