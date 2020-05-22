@@ -9,10 +9,10 @@ class GameOverComponent extends Component {
   constructor(props) {
     super(props);
 
-     //init analytics
-     this.analytics = Firebase.sharedInstance.analytics
-     this.analytics.logEvent('page_view', {final_page: 1} );
-     this.analytics.logEvent('final_page', {final_page: 1} );
+    //init analytics
+    this.analytics = Firebase.sharedInstance.analytics
+    this.analytics.logEvent('page_view', { final_page: 1 });
+    this.analytics.logEvent('final_page', { final_page: 1 });
 
     this.state = {};
     this.submitScore()
@@ -22,8 +22,12 @@ class GameOverComponent extends Component {
 
   }
 
-  submitScore() {
+  async submitScore() {
     let firebase = Firebase.sharedInstance
+    console.log("got the instance: ");
+    console.log(firebase);
+
+
     var date = new Date()
     let timestamp = date.getTime()
 
@@ -32,10 +36,9 @@ class GameOverComponent extends Component {
     };
     let userID = this.props.player
 
-    // console.log("Getting the user id: ");
-    // console.log(userID);
     //set the data in Firebase
-    let setDoc = firebase.db.collection('users').doc(userID).set(data, {merge: true});
+    let setDoc = await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+
   }
 
   // calls the callback function from questions
@@ -57,12 +60,17 @@ class GameOverComponent extends Component {
         <p style={styles.questionText}>
           Game Over. You scored: {this.props.score}
         </p>
-        <Button style={styles.unselectedButton} onClick={this.onGoHome}>
-          Back to Home
+
+
+        <Grid style={styles.column} spacing={3}>
+          <Button style={styles.unselectedButton} onClick={this.onGoHome}>
+            Back to Home
         </Button>
-        <Button style={styles.unselectedButton} onClick={this.goToLeaderboard}>
-          Go to Leaderboard
+          <Button style={styles.unselectedButton} m={5} onClick={this.goToLeaderboard}>
+            Go to Leaderboard
         </Button>
+        </Grid>
+
       </Grid>
     );
   }
