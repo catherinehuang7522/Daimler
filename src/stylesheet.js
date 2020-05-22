@@ -16,15 +16,44 @@ const styles = {
     marginTop: 20,
     marginBottom: 20,
   },
-  characterRow: {
+  profileComponentWrapper: {
     display: "flex",
-    marginLeft: 192,
-    marginRight: 192,
+    flexDirection: 'row',
+    marginLeft: 150,
+    marginRight: 150,
+  },
+  avatarSection: {
+    display: "flex",
+    flex: 3,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
-    marginTop: 20,
-    marginBottom: 20,
+    flexWrap: "wrap",
+  },
+  addPlayerSection: {
+    display: "flex",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: 'center'
+  },
+  inputSection: {
+    display: "flex",
+    flexDirection: 'column',
+    flex: 2,
+    marginTop: '10vh',
+    alignItems: 'center',
+    color: 'white',
+    justifyContent: 'space-between'
+  },
+  addPlayerButton: {
+    display: 'flex',
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+    fontFamily: 'Kontakt',
+    backgroundColor: "#205B82",
+    color: "white",
+    fontSize: 24,
   },
   categoryButtonsContainer: {
     paddingLeft: 166,
@@ -116,23 +145,57 @@ const styles = {
   },
   unselectedCharacterButton: {
     display: 'flex',
-    width: 200,
-    height: 200,
+    width: 150,
+    height: 150,
     borderRadius: 20,
+    marginTop: 20,
     fontFamily: 'Kontakt',
     backgroundColor: "#205B82",
     color: "white",
   },
   selectedCharacterButton: {
     display: 'flex',
-    width: 200,
-    height: 200,
+    width: 150,
+    height: 150,
     borderRadius: 20,
+    marginTop: 20,
     fontFamily: 'Kontakt',
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     border: '5px solid #4DFAFA',
+  },
+  unselectedAvatarButton: {
+    display: 'flex',
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+    marginTop: 20,
+    fontFamily: 'Kontakt',
+    backgroundColor: "#205B82",
+    color: "white",
+  },
+  selectedAvatarButton: {
+    display: 'flex',
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+    marginTop: 20,
+    fontFamily: 'Kontakt',
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '5px solid #4DFAFA',
+  },
+  newPlayerButton: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '5px solid #4DFAFA',
+    width: 200,
+    height: 78,
+    fontFamily: 'Kontakt'
   },
   characterButtonContent: {
     display: 'flex',
@@ -141,11 +204,17 @@ const styles = {
     alignItems: 'center'
   },
   characterButtonImage: {
-    width: 75,
-    height: 75
+    width: 50,
+    height: 50
+  },
+  inputRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    color: 'white'
   },
   characterButtonText: {
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 20
   },
   leaderBoardText: {

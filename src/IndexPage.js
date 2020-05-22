@@ -6,7 +6,7 @@ import DifficultyComponent from "./components/Difficulty";
 import ProfileComponent from "./components/Profiles"
 import LeaderboardComponent from './components/Leaderboard';
 import Firebase from "./components/firebase"
-
+import NewProfileComponent from "./components/NewProfile";
 
 export default class IndexPage extends Component {
   constructor(props) {
@@ -79,14 +79,14 @@ export default class IndexPage extends Component {
           ></ProfileComponent>
 
         );
-        // case "NEW_PROFILE":
-        // return (
-        //   <NewProfileComponent
-        //     callback={this.backHome}
-        //     setPlayer={this.setPlayer}
-        //     ></NewProfileComponent>
-        //
-        // );
+      case "NEW_PROFILE":
+        return (
+          <NewProfileComponent
+            callback={this.backHome}
+            setPlayer={this.setPlayer}
+          ></NewProfileComponent>
+
+        );
       case "QUESTIONS":
         return (
           <QuestionsComponent
