@@ -10,6 +10,8 @@ import Firebase from "./firebase"
 import { CATEGORIES_MAP } from "../constants";
 import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { imageIndex } from "../components/ImageIndex";
+import CharacterButton from "./CharacterButton";
 
 
 const Entities = require("html-entities").AllHtmlEntities;
@@ -150,6 +152,10 @@ class QuestionsComponent extends Component {
 
   render() {
     const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
+    // console.log("playersChosen", this.props.playersChosen);
+    let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
+    // console.log(currentPlayerIndex);
+    let currentPlayer = this.props.playersChosen[currentPlayerIndex];
 
     return (
       <div style={styles.root}>
@@ -166,7 +172,7 @@ class QuestionsComponent extends Component {
             <>
               <div style={styles.circularProgress}>
                 <CircularProgressbar value={percentageProgress}  text={`${this.state.currentScore}`}  styles={buildStyles({ textSize
-                  
+
                   :'40px' })} />
               </div>
               <p style={styles.questionText}>
@@ -175,13 +181,29 @@ class QuestionsComponent extends Component {
                     this.state.questionsArr[this.state.questionIndex].text
                   )}{" "}
               </p>
-              <AnswersComponent
-                answers={
-                  this.state.questionsArr &&
-                  this.state.questionsArr[this.state.questionIndex].answers
-                }
-                callback={this.nextQuestion}
-              ></AnswersComponent>
+
+              <div style={styles.questionsBottomWrapper}>
+                <div style={styles.currentPlayerSection}>
+                  <CharacterButton
+                    selectedImage={imageIndex.getImage(currentPlayer["avatar"], true)}
+                    unSelectedImage={imageIndex.getImage(currentPlayer["avatar"], false)}
+                    name={currentPlayer["username"]}
+                    selected={true}
+                  />
+                  <div style={styles.currentPlayerText}>
+                    CURRENT PLAYER
+                  </div>
+                </div>
+                <div style={styles.answersWrapper}>
+                  <AnswersComponent
+                    answers={
+                      this.state.questionsArr &&
+                      this.state.questionsArr[this.state.questionIndex].answers
+                    }
+                    callback={this.nextQuestion}
+                  ></AnswersComponent>
+                </div>
+              </div>
             </>
           )}
 
