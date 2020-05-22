@@ -24,9 +24,9 @@ class CategoriesComponent extends Component {
     this.state = {
       count: 0,
       categoriesChosen: [],
-
-      //PREVIOUSLY:
       generalKnowledge: false,
+      //NEW
+      location:false,
       film: false,
       scienceNature: false,
       sports: false,
@@ -39,6 +39,7 @@ class CategoriesComponent extends Component {
       art: false,
       videoGames: false,
     };
+    this.onClickLocation = this.onClickLocation.bind(this);
 
     this.onClickGeneralKnowledge = this.onClickGeneralKnowledge.bind(this);
     this.onClickFilm = this.onClickFilm.bind(this);
@@ -69,6 +70,18 @@ class CategoriesComponent extends Component {
     } else {
       console.log("Select 3 categories or less");
     }
+  }
+
+  //NEW
+  onClickLocation() {
+      if (this.state.count == 1 && !this.state.location) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
+    this.setState({ location: !this.state.location });
+    !this.state.generalKnowledge
+      ? this.incrementCount("LOCATION")
+      : this.decrementCount("LOCATION");
   }
 
   onClickGeneralKnowledge() {
@@ -315,6 +328,12 @@ class CategoriesComponent extends Component {
       <CategoriesButton text="Video Games" onClick={this.onClickVideoGames} />
     );
 
+    //NEW
+    const locationButton = this.state.location ? (
+      <DangerButton text="Location Based" onClick={this.onClickLocation} />
+    ) : (
+      <CategoriesButton text="Location Based" onClick={this.onClickLocation} />
+    );
     const nextButton = this.state.count > 0 ? (
       <IconButton
         style={styles.nextButton}
@@ -356,6 +375,11 @@ class CategoriesComponent extends Component {
           <Grid style={styles.categoryRow} spacing={3}>
             {artButton}
             {videoGamesButton}
+          </Grid>
+
+          //NEW
+          <Grid style={styles.categoryRow} spacing={3}>
+            {locationButton}
           </Grid>
         </div>
         {nextButton}

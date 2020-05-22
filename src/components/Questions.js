@@ -8,6 +8,10 @@ import FeedbackComponent from "./Feedback";
 import Firebase from "./firebase"
 
 import { CATEGORIES_MAP } from "../constants";
+
+import locationQuestions from './location.json';
+
+
 import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -58,7 +62,16 @@ class QuestionsComponent extends Component {
 
     var urls = [];
     var customURL = "";
-    const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    const numQs = this.props.numQuestions;
+
+    //NEW
+    // if (this.props.cat.find("LOCATION")) {
+    //   urls.push(locationQuestions)
+    //   //log category to analytics
+    //   analytics.logEvent('category', { category: categories[i] });
+    // }
+
+
     for (var i = 0; i < categories.length; i++) {
       customURL =
         "https://opentdb.com/api.php?amount=" +
@@ -72,6 +85,7 @@ class QuestionsComponent extends Component {
       //log category to analytics
       analytics.logEvent('category', { category: categories[i] });
     }
+
     return urls;
   }
 
@@ -166,7 +180,7 @@ class QuestionsComponent extends Component {
             <>
               <div style={styles.circularProgress}>
                 <CircularProgressbar value={percentageProgress}  text={`${this.state.currentScore}`}  styles={buildStyles({ textSize
-                  
+
                   :'40px' })} />
               </div>
               <p style={styles.questionText}>

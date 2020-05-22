@@ -2,7 +2,7 @@
    "response_code": 0,
    "results": [
       {
-         "category": "Custom",
+         "category": "loctation",
          "type": "multiple",
          "difficulty": "easy",
          "question": "Who was the person after whom Stanford University was named when it was founded in 1891?",
@@ -14,7 +14,7 @@
          ]
       },
       {
-         "category": "Entertainment: Music",
+         "category": "location",
          "type": "multiple",
          "difficulty": "easy",
          "question": " What property did the Stanford family use on which to build the campus?",

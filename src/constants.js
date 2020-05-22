@@ -15,9 +15,10 @@ export const CATEGORIES_MAP = {
   GEOGRAPHY: "22",
   HISTORY: "23",
   CELEBRITIES: "26",
+  LOCATION: "10000",
   VEHICLES: "28",
 };
 
 export const AVATAR_NAME_TO_PATH = {
-  
+
 }
