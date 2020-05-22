@@ -33,7 +33,12 @@ class Leaderboard extends Component {
     async getMarker() {
         let firebase = Firebase.sharedInstance;
         const snapshot = await firebase.db.collection("users").get()
-        return snapshot.docs.map(doc => doc.data());
+
+        return snapshot.docs.map((doc) => {
+            let temp = doc.data()
+            temp["uid"] = doc.id
+            return temp
+        });
     }
 
     async componentWillMount() {
@@ -51,16 +56,25 @@ class Leaderboard extends Component {
 
     async getData() {
         const res = await this.getMarker()
+
+        console.log("outer: ");
+        console.log(res);
+        
+
         const maxScores = []
         let counter = 0;
         for (let item of res) {
             let max = 0;
             for (let i in item) {
-                max = Math.max(max, item[i]);
+                if(i && Number(i) >= 1000000000000){
+                    max = Math.max(max, item[i]);
+                }
             }
-            maxScores.push({ player: counter, maxScore: max });
+            maxScores.push({ player: item["uid"], maxScore: max });
             counter++;
         }
+        
+        
         // sort the object with max scores and the players
         maxScores.sort(function (a, b) {
             var keyA = a.maxScore,
@@ -79,8 +93,7 @@ class Leaderboard extends Component {
     render() {
         return (
             <div style={styles.root}>
-                <Grid style={styles.title}> LEADERBOARD {}
-                </Grid>
+                <Grid style={styles.title} direction="column">  <>LEADERBOARD </>
                 <Table>
                     <TableBody>
                         <TableRow>
@@ -97,9 +110,11 @@ class Leaderboard extends Component {
                         </TableRow>
                     </TableBody>
                 </Table>
-                <Button style={styles.unselectedButton} onClick={this.onGoHome}>
+                <Button style={styles.unselectedButton} mt={5} onClick={this.onGoHome}>
                     Back to Home
                 </Button>
+                </Grid>
+                
             </div>
         );
     }

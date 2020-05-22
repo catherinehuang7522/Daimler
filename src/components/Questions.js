@@ -8,6 +8,8 @@ import FeedbackComponent from "./Feedback";
 import Firebase from "./firebase"
 
 import { CATEGORIES_MAP } from "../constants";
+import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 
 const Entities = require("html-entities").AllHtmlEntities;
@@ -147,6 +149,8 @@ class QuestionsComponent extends Component {
   }
 
   render() {
+    const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
+
     return (
       <div style={styles.root}>
         <Backdrop open={this.state.showFeedback} style={styles.feedbackWrapper}>
@@ -160,6 +164,11 @@ class QuestionsComponent extends Component {
         <Grid container direction="column" justify="center" alignItems="center">
           {this.state.questionIndex < this.props.numQuestions && (
             <>
+              <div style={styles.circularProgress}>
+                <CircularProgressbar value={percentageProgress}  text={`${this.state.currentScore}`}  styles={buildStyles({ textSize
+                  
+                  :'40px' })} />
+              </div>
               <p style={styles.questionText}>
                 {this.state.questionsArr &&
                   entities.decode(

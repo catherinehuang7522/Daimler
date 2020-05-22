@@ -83,7 +83,9 @@ const styles = {
     border: '5px solid #4DFAFA',
     width: 332,
     height: 78,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Kontakt',
+    marginTop: 10,
+    marginRight: 5,
   },
   nextButton: {
     color: "white",
@@ -95,6 +97,7 @@ const styles = {
     color: "white",
     fontSize: 48,
     display: "flex",
+    alignItems: "center",
     justifyContent: "center",
     marginTop: 50
   },
@@ -128,6 +131,8 @@ const styles = {
     width: 332,
     height: 78,
     fontFamily: "Kontakt",
+    marginTop: 10,
+    marginRight: 5,
   },
   container: {
     display: "flex",
@@ -220,6 +225,10 @@ const styles = {
   leaderBoardText: {
     color: "white",
     fontSize: 36,
+  },
+  circularProgress: {
+    width: '7%',
+    marginTop: 10,
   }
 };
 
