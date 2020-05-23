@@ -64,15 +64,10 @@ class QuestionsComponent extends Component {
     var customURL = "";
     const numQs = this.props.numQuestions;
 
-    //NEW
-    // if (this.props.cat.find("LOCATION")) {
-    //   urls.push(locationQuestions)
-    //   //log category to analytics
-    //   analytics.logEvent('category', { category: categories[i] });
-    // }
-
-
     for (var i = 0; i < categories.length; i++) {
+      if(CATEGORIES_MAP[categories[i]] == 1000){
+        urls.push(locationQuestions)
+      }
       customURL =
         "https://opentdb.com/api.php?amount=" +
         numQs +
