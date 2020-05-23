@@ -68,7 +68,7 @@ class QuestionsComponent extends Component {
     for (var i = 0; i < categories.length; i++) {
 
       //We are not actually pushing an url, but the resulting JSON file
-      if(CATEGORIES_MAP[categories[i]] == 10000){
+      if(CATEGORIES_MAP[categories[i]] === 10000){
         urls.push("dummy " + this.props.diff)
       }
       else{
@@ -105,15 +105,15 @@ class QuestionsComponent extends Component {
 
     for (var i = 0; i < allUrls.length; i++) {
       if(allUrls[i].split(' ')[0] == "dummy") {
-          if(allUrls[i].split(' ')[1] == "easy"){
+          if(allUrls[i].split(' ')[1] === "easy"){
             catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationEasy.results);
             allData = allData.concat(catQuestionsAndAnswers);
           }
-          else if(allUrls[i].split(' ')[1] == "medium"){
+          else if(allUrls[i].split(' ')[1] === "medium"){
             catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationMedium.results);
             allData = allData.concat(catQuestionsAndAnswers);
           }
-          else if(allUrls[i].split(' ')[1] == "hard"){
+          else if(allUrls[i].split(' ')[1] === "hard"){
           catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationHard.results);
           allData = allData.concat(catQuestionsAndAnswers);
         }
