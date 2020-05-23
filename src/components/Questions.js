@@ -65,9 +65,12 @@ class QuestionsComponent extends Component {
     const numQs = this.props.numQuestions;
 
     for (var i = 0; i < categories.length; i++) {
+
+      //We are not actually pushing an url, but the resulting JSON file
       if(CATEGORIES_MAP[categories[i]] == 1000){
-        urls.push(locationQuestions)
+        urls.push("dummy")
       }
+      else{
       customURL =
         "https://opentdb.com/api.php?amount=" +
         numQs +
@@ -80,6 +83,7 @@ class QuestionsComponent extends Component {
       //log category to analytics
       analytics.logEvent('category', { category: categories[i] });
     }
+  }
 
     return urls;
   }
@@ -95,17 +99,28 @@ class QuestionsComponent extends Component {
     let json;
     var allData = [];
     let catQuestionsAndAnswers;
+    let catQuestionsAndAnswers;
+
     let fetchRequest;
 
     for (var i = 0; i < allUrls.length; i++) {
-      fetchRequest = await fetch(allUrls[i]);
-      json = await fetchRequest.json();
-      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
-      allData = allData.concat(catQuestionsAndAnswers);
+      if(allUrls[i] == "dummy"){
+        catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationQuestions);
+        allData = allData.concat(catQuestionsAndAnswersLocation);
+      }
+      else {
+        fetchRequest = await fetch(allUrls[i]);
+        json = await fetchRequest.json();
+        catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
+        allData = allData.concat(catQuestionsAndAnswers);
+    }
+
     }
 
     this.shuffleArray(allData);
     allData.slice(0, this.props.numQuestions);
+  //  allData.slice(0, 14);
+
 
     this.setState({ questionsArr: allData });
   }
