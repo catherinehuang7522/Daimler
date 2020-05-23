@@ -8,10 +8,14 @@ import FeedbackComponent from "./Feedback";
 import Firebase from "./firebase"
 
 import { CATEGORIES_MAP } from "../constants";
+
+import locationEasy from './locationEasy.json';
+import locationMedium from './locationMedium.json';
+import locationHard from './locationHard.json';
+
+
 import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { imageIndex } from "../components/ImageIndex";
-import CharacterButton from "./CharacterButton";
 
 
 const Entities = require("html-entities").AllHtmlEntities;
@@ -57,11 +61,17 @@ class QuestionsComponent extends Component {
 
     const analytics = Firebase.sharedInstance.analytics  // init analytics object
 
-
     var urls = [];
     var customURL = "";
-    const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    const numQs = this.props.numQuestions;
+
     for (var i = 0; i < categories.length; i++) {
+
+      //We are not actually pushing an url, but the resulting JSON file
+      if(CATEGORIES_MAP[categories[i]] == 10000){
+        urls.push("dummy " + this.props.diff)
+      }
+      else{
       customURL =
         "https://opentdb.com/api.php?amount=" +
         numQs +
@@ -74,6 +84,8 @@ class QuestionsComponent extends Component {
       //log category to analytics
       analytics.logEvent('category', { category: categories[i] });
     }
+  }
+
     return urls;
   }
 
@@ -88,13 +100,31 @@ class QuestionsComponent extends Component {
     let json;
     var allData = [];
     let catQuestionsAndAnswers;
+
     let fetchRequest;
 
     for (var i = 0; i < allUrls.length; i++) {
-      fetchRequest = await fetch(allUrls[i]);
-      json = await fetchRequest.json();
-      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
-      allData = allData.concat(catQuestionsAndAnswers);
+      if(allUrls[i].split(' ')[0] == "dummy") {
+          if(allUrls[i].split(' ')[1] == "easy"){
+            catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationEasy.results);
+            allData = allData.concat(catQuestionsAndAnswers);
+          }
+          else if(allUrls[i].split(' ')[1] == "medium"){
+            catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationMedium.results);
+            allData = allData.concat(catQuestionsAndAnswers);
+          }
+          else if(allUrls[i].split(' ')[1] == "hard"){
+          catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationHard.results);
+          allData = allData.concat(catQuestionsAndAnswers);
+        }
+    }
+      else {
+        fetchRequest = await fetch(allUrls[i]);
+        json = await fetchRequest.json();
+        catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
+        allData = allData.concat(catQuestionsAndAnswers);
+    }
+
     }
 
     this.shuffleArray(allData);
@@ -152,10 +182,6 @@ class QuestionsComponent extends Component {
 
   render() {
     const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
-    // console.log("playersChosen", this.props.playersChosen);
-    let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
-    // console.log(currentPlayerIndex);
-    let currentPlayer = this.props.playersChosen[currentPlayerIndex];
 
     return (
       <div style={styles.root}>
@@ -181,29 +207,13 @@ class QuestionsComponent extends Component {
                     this.state.questionsArr[this.state.questionIndex].text
                   )}{" "}
               </p>
-
-              <div style={styles.questionsBottomWrapper}>
-                <div style={styles.currentPlayerSection}>
-                  <CharacterButton
-                    selectedImage={imageIndex.getImage(currentPlayer["avatar"], true)}
-                    unSelectedImage={imageIndex.getImage(currentPlayer["avatar"], false)}
-                    name={currentPlayer["username"]}
-                    selected={true}
-                  />
-                  <div style={styles.currentPlayerText}>
-                    CURRENT PLAYER
-                  </div>
-                </div>
-                <div style={styles.answersWrapper}>
-                  <AnswersComponent
-                    answers={
-                      this.state.questionsArr &&
-                      this.state.questionsArr[this.state.questionIndex].answers
-                    }
-                    callback={this.nextQuestion}
-                  ></AnswersComponent>
-                </div>
-              </div>
+              <AnswersComponent
+                answers={
+                  this.state.questionsArr &&
+                  this.state.questionsArr[this.state.questionIndex].answers
+                }
+                callback={this.nextQuestion}
+              ></AnswersComponent>
             </>
           )}
 
