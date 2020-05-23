@@ -59,7 +59,6 @@ class QuestionsComponent extends Component {
 
     const analytics = Firebase.sharedInstance.analytics  // init analytics object
 
-
     var urls = [];
     var customURL = "";
     const numQs = this.props.numQuestions;
@@ -99,14 +98,13 @@ class QuestionsComponent extends Component {
     let json;
     var allData = [];
     let catQuestionsAndAnswers;
-    let catQuestionsAndAnswers;
 
     let fetchRequest;
 
     for (var i = 0; i < allUrls.length; i++) {
       if(allUrls[i] == "dummy"){
         catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationQuestions);
-        allData = allData.concat(catQuestionsAndAnswersLocation);
+        allData = allData.concat(catQuestionsAndAnswers);
       }
       else {
         fetchRequest = await fetch(allUrls[i]);
