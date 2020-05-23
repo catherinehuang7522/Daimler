@@ -18,12 +18,14 @@ export default class IndexPage extends Component {
       catArray: [],
       gameDifficulty: "",
       numQuestions: 5, //This is manually set for easier debugging
-      player: ""
+      player: "",
+      playersChosen: [],
     };
 
     this.renderSwitch = this.renderSwitch.bind(this);
     this.backHome = this.backHome.bind(this);
     this.setPlayer = this.setPlayer.bind(this);
+    this.setPlayersChosen = this.setPlayersChosen.bind(this);
     this.setNumQuestions = this.setNumQuestions.bind(this)
     this.fromDifficultyToQuestions = this.fromDifficultyToQuestions.bind(this);
     this.fromCategoriestoDifficulty = this.fromCategoriestoDifficulty.bind(this);
@@ -54,6 +56,10 @@ export default class IndexPage extends Component {
     console.log("player is: " + player)
   }
 
+  setPlayersChosen(playersChosen) {
+    this.setState({playersChosen: playersChosen});
+    console.log("players chosen are: " + playersChosen);
+  }
 
   // sets the number of questions
   setNumQuestions(numQuestions) {
@@ -76,6 +82,7 @@ export default class IndexPage extends Component {
           <ProfileComponent
             callback={this.backHome}
             setPlayer={this.setPlayer}
+            setPlayersChosen={this.setPlayersChosen}
           ></ProfileComponent>
 
         );
@@ -95,6 +102,7 @@ export default class IndexPage extends Component {
             cat={this.state.catArray}
             diff={this.state.gameDifficulty}
             player={this.state.player}
+            playersChosen={this.state.playersChosen}
           >
             {" "}
           </QuestionsComponent>

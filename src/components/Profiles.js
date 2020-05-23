@@ -89,6 +89,8 @@ class ProfileComponent extends Component {
     const currNumPlayers = this.state.numOfPlayers;
     if (this.state.playersChosen.length < 5) {
       this.props.callback("START");
+      console.log("playersChosen", this.state.playersChosen)
+      this.props.setPlayersChosen(this.state.playersChosen)
       this.props.setPlayer(this.state.playersChosen)
     } else {
       console.log("Select only 1 player.");

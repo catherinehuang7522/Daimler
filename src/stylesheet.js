@@ -112,6 +112,10 @@ const styles = {
   },
   questionText: {
     color: "white",
+    fontSize: 24,
+    marginLeft: 50,
+    marginRight: 50,
+    textAlign: 'center'
   },
   feedbackHeaderTextCorrect: {
     color: "#379634",
@@ -130,6 +134,17 @@ const styles = {
     borderRadius: 20,
     width: 332,
     height: 78,
+    fontFamily: "Kontakt",
+    marginTop: 10,
+    marginRight: 5,
+  },
+  answerButton: {
+    backgroundColor: "#205B82",
+    color: "white",
+    fontSize: 22,
+    borderRadius: 20,
+    width: 332,
+    height: 120,
     fontFamily: "Kontakt",
     marginTop: 10,
     marginRight: 5,
@@ -219,7 +234,7 @@ const styles = {
     color: 'white'
   },
   characterButtonText: {
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 20
   },
   leaderBoardText: {
@@ -229,6 +244,30 @@ const styles = {
   circularProgress: {
     width: '7%',
     marginTop: 10,
+  },
+  questionsBottomWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%'
+  },
+  currentPlayerSection: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  currentPlayerText: {
+    color: "white",
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 10
+  },
+  answersWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 3
   }
 };
 
