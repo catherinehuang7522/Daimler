@@ -109,6 +109,7 @@ class ProfileComponent extends Component {
         style={styles.nextButton}
         onClick={this.onClickNext}
       >
+        NEXT
         <DoubleArrowIcon fontSize="large" />
       </IconButton>
     ) : (

@@ -320,6 +320,7 @@ class CategoriesComponent extends Component {
         style={styles.nextButton}
         onClick={this.onClickShowDifficultyScreen}
       >
+        NEXT
         <DoubleArrowIcon fontSize="large" />
       </IconButton>
     ) : (

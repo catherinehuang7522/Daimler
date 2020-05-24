@@ -58,11 +58,12 @@ class StartComponent extends Component {
   }
 
   render() {
-    const startButton = (
+    const nextButton = (
       <IconButton
         style={styles.nextButton}
         onClick={this.onClickShowCharactersScreen}
       >
+        NEXT
         <DoubleArrowIcon fontSize="large" />
       </IconButton>
     );
@@ -146,7 +147,7 @@ class StartComponent extends Component {
         </Grid>
 
         <Grid style={styles.row} spacing={3}>
-          {startButton}
+          {nextButton}
         </Grid>
       </div>
     );

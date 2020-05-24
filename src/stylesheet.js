@@ -91,7 +91,8 @@ const styles = {
     color: "white",
     position: "fixed",
     top: 420,
-    left: 980,
+    left: 920,
+    fontFamily: 'Kontakt'
   },
   title: {
     color: "white",
