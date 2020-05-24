@@ -66,7 +66,6 @@ class QuestionsComponent extends Component {
     const numQs = this.props.numQuestions;
 
     for (var i = 0; i < categories.length; i++) {
-
       //We are not actually pushing an url, but the resulting JSON file
       if(CATEGORIES_MAP[categories[i]] === 10000){
         urls.push("dummy " + this.props.diff)
@@ -104,7 +103,7 @@ class QuestionsComponent extends Component {
     let fetchRequest;
 
     for (var i = 0; i < allUrls.length; i++) {
-      if(allUrls[i].split(' ')[0] == "dummy") {
+      if(allUrls[i].split(' ')[0] === "dummy") {
           if(allUrls[i].split(' ')[1] === "easy"){
             catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationEasy.results);
             allData = allData.concat(catQuestionsAndAnswers);
