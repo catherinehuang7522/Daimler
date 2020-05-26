@@ -6,10 +6,12 @@ import Button from "@material-ui/core/Button";
 class LandingPage extends Component {
   render() {
     return (
-      <Button
-        style={styles.answerButton}
-        onClick={() => this.props.callback("PROFILES")}
-      >Start Game</Button>
+      <div style={styles.root}>
+        <Button
+          style={styles.answerButton}
+          onClick={() => this.props.callback("PROFILES")}
+        >Start Game</Button>
+      </div>
     )
   }
 }
