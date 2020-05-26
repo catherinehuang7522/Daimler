@@ -2,6 +2,7 @@ import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import DangerButton from "./DangerButton";
+import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
@@ -27,18 +28,59 @@ class StartComponent extends Component {
       startGame: true,
       singlePlayer: true,
       duration: 1,
+      chosenDifficulty: "",
+      easy: true,
+      medium: false,
+      hard: false,
+      startGame: false,
     };
 
     this.onClickShowCharactersScreen = this.onClickShowCharactersScreen.bind(this);
     this.onClickSingle = this.onClickSingle.bind(this);
     this.onClickMulti = this.onClickMulti.bind(this);
+    this.onClickEasy = this.onClickEasy.bind(this);
+    this.onClickMedium = this.onClickMedium.bind(this);
+    this.onClickHard = this.onClickHard.bind(this);
+  }
+
+  onClickEasy() {
+    select.play()
+    this.setState({ easy: !this.state.easy });
+    this.setState({ chosenDifficulty: "easy" });
+    this.setState({ medium: false });
+    this.setState({ hard: false });
+  }
+
+  onClickMedium() {
+    select.play()
+    this.setState({ medium: !this.state.medium });
+    this.setState({ chosenDifficulty: "medium" });
+    this.setState({ easy: false });
+    this.setState({ hard: false });
+  }
+
+  onClickHard() {
+    select.play()
+    this.setState({ hard: !this.state.hard });
+    this.setState({ chosenDifficulty: "hard" });
+    this.setState({ easy: false });
+    this.setState({ medium: false });
   }
 
   // sets up the state to play a game for the prototype. Calls a callback function that will call the backhome function
   onClickShowCharactersScreen() {
-    this.setState({ startGame: !this.state.startGame });
-    this.props.callback("CATEGORIES");
-    select.play()
+    if (
+      this.state.easy === false &&
+      this.state.medium === false &&
+      this.state.hard === false
+    ) {
+      // add a pop-up/message etc. to select difficulty
+    } else {
+      this.setState({ startGame: !this.state.startGame });
+      this.props.setDifficultyCallback(this.state.chosenDifficulty);
+      this.props.callback("CATEGORIES");
+      select.play()
+    }
   }
 
   onClickSingle() {
@@ -68,29 +110,23 @@ class StartComponent extends Component {
       </IconButton>
     );
 
-    const singlePlayerSelector = this.state.singlePlayer ? (
-      <DangerButton text="Single Player" />
+    const easyButton = this.state.easy ? (
+      <DangerButton text="Easy" onClick={this.onClickEasy} />
     ) : (
-        <Button
-          style={styles.unselectedButton}
-          variant="contained"
-          onClick={this.onClickSingle}
-        >
-          Single Player
-        </Button>
-      );
+      <CategoriesButton text="Easy" onClick={this.onClickEasy} />
+    );
 
-    const multiPlayerSelector = this.state.singlePlayer ? (
-      <Button
-        style={styles.unselectedButton}
-        variant="contained"
-        onClick={this.onClickMulti}
-      >
-        Multi Player
-      </Button>
+    const mediumButton = this.state.medium ? (
+      <DangerButton text="Medium" onClick={this.onClickMedium} />
     ) : (
-        <DangerButton text="Multi Player" />
-      );
+      <CategoriesButton text="Medium" onClick={this.onClickMedium} />
+    );
+
+    const hardButton = this.state.hard ? (
+      <DangerButton text="Hard" onClick={this.onClickHard} />
+    ) : (
+      <CategoriesButton text="Hard" onClick={this.onClickHard} />
+    )
 
     const shortDurationSelector =
       this.state.duration === 1 ? (
@@ -136,8 +172,9 @@ class StartComponent extends Component {
         <Grid style={styles.title}> TRIVIA </Grid>
 
         <Grid style={styles.row} spacing={3}>
-          {singlePlayerSelector}
-          {multiPlayerSelector}
+          {easyButton}
+          {mediumButton}
+          {hardButton}
         </Grid>
 
         <Grid style={styles.row} spacing={3}>

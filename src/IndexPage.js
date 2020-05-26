@@ -7,6 +7,13 @@ import ProfileComponent from "./components/Profiles"
 import LeaderboardComponent from './components/Leaderboard';
 import Firebase from "./components/firebase"
 import NewProfileComponent from "./components/NewProfile";
+import LandingPage from "./components/LandingPage";
+
+/* ** Game Flow Should Follow **
+* Profiles -> Duration/Difficulty -> Categories -> Questions -> Game Over -> [back to beginning]
+*   ↑↓                                                            ↓            ↑
+* New Profile                                                   Leaderboard -> ↑
+*/
 
 export default class IndexPage extends Component {
   constructor(props) {
@@ -14,7 +21,7 @@ export default class IndexPage extends Component {
 
     // initialize the game state
     this.state = {
-      gameState: "PROFILES",
+      gameState: "LANDING",
       catArray: [],
       gameDifficulty: "",
       numQuestions: 5, //This is manually set for easier debugging
@@ -27,7 +34,7 @@ export default class IndexPage extends Component {
     this.setPlayer = this.setPlayer.bind(this);
     this.setPlayersChosen = this.setPlayersChosen.bind(this);
     this.setNumQuestions = this.setNumQuestions.bind(this)
-    this.fromDifficultyToQuestions = this.fromDifficultyToQuestions.bind(this);
+    this.setDifficulty = this.setDifficulty.bind(this);
     this.fromCategoriestoDifficulty = this.fromCategoriestoDifficulty.bind(this);
   }
 
@@ -36,14 +43,11 @@ export default class IndexPage extends Component {
     this.setState({ gameState: nextActions });
   }
 
-  fromDifficultyToQuestions(nextActions, difficulty) {
-
-    //await analytics.setUserId("patientPanda")
+  setDifficulty(difficulty) {
     const analytics = Firebase.sharedInstance.analytics
     analytics.logEvent('difficulty', { level: difficulty });
 
     this.setState({ gameDifficulty: difficulty });
-    this.setState({ gameState: nextActions });
   }
 
   // changes the state of the game to whatever is passed as "nextActions". Can be e.g. START or QUESTIONS
@@ -69,8 +73,13 @@ export default class IndexPage extends Component {
   // reder the desired componenent based on the state
   renderSwitch(gameState) {
     switch (gameState) {
+      case "LANDING":
+        return <LandingPage callback={this.backHome} />
       case "START":
-        return <StartComponent callback={this.backHome} setNumQuestionsCallback={this.setNumQuestions}></StartComponent>;
+        return <StartComponent callback={this.backHome}
+                               setNumQuestionsCallback={this.setNumQuestions}
+                               setDifficultyCallback={this.setDifficulty}
+               ></StartComponent>;
       case "CATEGORIES":
         return (
           <CategoriesComponent
@@ -110,7 +119,6 @@ export default class IndexPage extends Component {
       case "DIFFICULTY":
         return (
           <DifficultyComponent
-            callback={this.fromDifficultyToQuestions}
           ></DifficultyComponent>
         );
       case "LEADERBOARD":

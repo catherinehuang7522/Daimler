@@ -34,10 +34,11 @@ class GameOverComponent extends Component {
     let data = {
       [timestamp]: this.props.score
     };
-    let userID = this.props.player
-
-    //set the data in Firebase
-    let setDoc = await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+    for (let index in this.props.player) {
+      let userID = this.props.player[index]["username"]
+      //set the data in Firebase
+      let setDoc = await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+    }
 
   }
 
@@ -45,7 +46,7 @@ class GameOverComponent extends Component {
   onGoHome() {
     //  this.setState({ startGame: !this.state.startGame })
     this.analytics.logEvent('back_to_home');
-    this.props.callback("START");
+    this.props.callback("LANDING");
   }
 
   goToLeaderboard() {

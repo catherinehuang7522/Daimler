@@ -64,7 +64,7 @@ class CategoriesComponent extends Component {
     //Checks if user has selected at least one category
     const currentCount = this.state.count;
     if (currentCount === 1 || currentCount === 2 || currentCount === 3) {
-      this.props.callback("DIFFICULTY", this.state.categoriesChosen);
+      this.props.callback("QUESTIONS", this.state.categoriesChosen);
       console.log("Ready to start");
     } else {
       console.log("Select 3 categories or less");

@@ -59,7 +59,7 @@ class Leaderboard extends Component {
 
         console.log("outer: ");
         console.log(res);
-        
+
 
         const maxScores = []
         let counter = 0;
@@ -73,8 +73,8 @@ class Leaderboard extends Component {
             maxScores.push({ player: item["uid"], maxScore: max });
             counter++;
         }
-        
-        
+
+
         // sort the object with max scores and the players
         maxScores.sort(function (a, b) {
             var keyA = a.maxScore,
@@ -87,7 +87,7 @@ class Leaderboard extends Component {
     }
 
     onGoHome() {
-        this.props.callback("START");
+        this.props.callback("LANDING");
     };
 
     render() {
@@ -114,7 +114,7 @@ class Leaderboard extends Component {
                     Back to Home
                 </Button>
                 </Grid>
-                
+
             </div>
         );
     }

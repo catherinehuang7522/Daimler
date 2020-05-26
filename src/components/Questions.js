@@ -61,6 +61,7 @@ class QuestionsComponent extends Component {
     var urls = [];
     var customURL = "";
     const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
+    console.log(this.props.diff);
     for (var i = 0; i < categories.length; i++) {
       customURL =
         "https://opentdb.com/api.php?amount=" +
