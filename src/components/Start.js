@@ -133,19 +133,37 @@ class StartComponent extends Component {
     const easyButton = this.state.easy ? (
       <DangerButton text="Easy" onClick={this.onClickEasy} />
     ) : (
-      <CategoriesButton text="Easy" onClick={this.onClickEasy} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickEasy}
+      >
+        Easy
+      </Button>
     );
 
     const mediumButton = this.state.medium ? (
       <DangerButton text="Medium" onClick={this.onClickMedium} />
     ) : (
-      <CategoriesButton text="Medium" onClick={this.onClickMedium} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickMedium}
+      >
+        Easy
+      </Button>
     );
 
     const hardButton = this.state.hard ? (
       <DangerButton text="Hard" onClick={this.onClickHard} />
     ) : (
-      <CategoriesButton text="Hard" onClick={this.onClickHard} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickHard}
+      >
+        Easy
+      </Button>
     )
 
     const shortDurationSelector =

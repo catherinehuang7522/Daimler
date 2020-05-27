@@ -57,8 +57,12 @@ const styles = {
     fontSize: 24,
   },
   categoryButtonsContainer: {
-    paddingLeft: 166,
-    paddingRight: 166,
+    paddingLeft: 150,
+    paddingRight: 150,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   },
   categoryRow: {
     display: "flex",
@@ -108,7 +112,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 50
+    marginTop: 40
   },
   feedbackWrapper: {
     zIndex: 10,
@@ -281,7 +285,27 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 3
-  }
+  },
+  unselectedCategoryButton: {
+    backgroundColor: "#205B82",
+    color: "white",
+    borderRadius: 20,
+    width: 160,
+    height: 78,
+    fontFamily: "Kontakt",
+    margin: 10
+  },
+  selectedCategoryButton: {
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '5px solid #4DFAFA',
+    borderRadius: 20,
+    width: 160,
+    height: 78,
+    fontFamily: "Kontakt",
+    margin: 10
+  },
 };
 
 export { styles };
