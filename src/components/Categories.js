@@ -8,6 +8,7 @@ import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import { CATEGORIES_MAP } from "../constants";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const select = new UIFx(selectAudio,
   {
@@ -59,6 +60,11 @@ class CategoriesComponent extends Component {
     this.onClickShowDifficultyScreen = this.onClickShowDifficultyScreen.bind(
       this
     );
+    this.showPreviousScreen = this.showPreviousScreen.bind(this);
+  }
+
+  showPreviousScreen() {
+    this.props.callback("START");
   }
 
   onClickShowDifficultyScreen() {
@@ -245,94 +251,108 @@ class CategoriesComponent extends Component {
     console.log("Array of current categories content  " + myEmptyArray);
     console.log("Array of current categories size " + emptyArraySize);
 
-    const generalKnowledgeButton = this.state.generalKnowledge ? (
-      <DangerButton
-        text="General Knowledge"
-        onClick={this.onClickGeneralKnowledge}
-      />
-    ) : (
+    const generalKnowledgeButton = (
       <CategoriesButton
         text="General Knowledge"
+        selected={this.state.generalKnowledge}
         onClick={this.onClickGeneralKnowledge}
       />
     );
 
-    const filmButton = this.state.film ? (
-      <DangerButton text="Film" onClick={this.onClickFilm} />
-    ) : (
-      <CategoriesButton text="Film" onClick={this.onClickFilm} />
+    const filmButton = (
+      <CategoriesButton
+        text="Film"
+        selected={this.state.film}
+        onClick={this.onClickFilm}
+      />
     );
 
-    const scienceNatureButton = this.state.scienceNature ? (
-      <DangerButton
-        text="Science and Nature"
-        onClick={this.onClickScienceNature}
-      />
-    ) : (
+    const scienceNatureButton = (
       <CategoriesButton
         text="Science and Nature"
+        selected={this.state.scienceNature}
         onClick={this.onClickScienceNature}
       />
     );
 
-    const sportsButton = this.state.sports ? (
-      <DangerButton text="Sports" onClick={this.onClickSports} />
-    ) : (
-      <CategoriesButton text="Sports" onClick={this.onClickSports} />
+    const sportsButton = (
+      <CategoriesButton
+        text="Sports"
+        selected={this.state.sports}
+        onClick={this.onClickSports}
+      />
     );
 
-    const historyButton = this.state.history ? (
-      <DangerButton text="History" onClick={this.onClickHistory} />
-    ) : (
-      <CategoriesButton text="History" onClick={this.onClickHistory} />
+    const historyButton = (
+      <CategoriesButton
+        text="History"
+        selected={this.state.history}
+        onClick={this.onClickHistory}
+      />
     );
 
-    const tvButton = this.state.tv ? (
-      <DangerButton text="Television" onClick={this.onClickTV} />
-    ) : (
-      <CategoriesButton text="Television" onClick={this.onClickTV} />
+    const tvButton = (
+      <CategoriesButton
+        text="Television"
+        selected={this.state.tv}
+        onClick={this.onClickTV}
+      />
     );
 
-    const booksButton = this.state.books ? (
-      <DangerButton text="Books" onClick={this.onClickBooks} />
-    ) : (
-      <CategoriesButton text="Books" onClick={this.onClickBooks} />
+    const booksButton = (
+      <CategoriesButton
+        text="Books"
+        selected={this.state.books}
+        onClick={this.onClickBooks}
+      />
     );
 
-    const musicButton = this.state.music ? (
-      <DangerButton text="Music" onClick={this.onClickMusic} />
-    ) : (
-      <CategoriesButton text="Music" onClick={this.onClickMusic} />
+    const musicButton = (
+      <CategoriesButton
+        text="Music"
+        selected={this.state.music}
+        onClick={this.onClickMusic}
+      />
     );
 
-    const mythologyButton = this.state.mythology ? (
-      <DangerButton text="Mythology" onClick={this.onClickMythology} />
-    ) : (
-      <CategoriesButton text="Mythology" onClick={this.onClickMythology} />
+    const mythologyButton = (
+      <CategoriesButton
+        text="Mythology"
+        selected={this.state.mythology}
+        onClick={this.onClickMythology}
+      />
     );
 
-    const geographyButton = this.state.geography ? (
-      <DangerButton text="Geography" onClick={this.onClickGeography} />
-    ) : (
-      <CategoriesButton text="Geography" onClick={this.onClickGeography} />
+    const geographyButton = (
+      <CategoriesButton
+        text="Geography"
+        selected={this.state.geography}
+        onClick={this.onClickGeography}
+      />
     );
 
-    const artButton = this.state.art ? (
-      <DangerButton text="Art" onClick={this.onClickArt} />
-    ) : (
-      <CategoriesButton text="Art" onClick={this.onClickArt} />
+    const artButton = (
+      <CategoriesButton
+        text="Art"
+        selected={this.state.art}
+        onClick={this.onClickArt}
+      />
     );
 
-    const videoGamesButton = this.state.videoGames ? (
-      <DangerButton text="Video Games" onClick={this.onClickVideoGames} />
-    ) : (
-      <CategoriesButton text="Video Games" onClick={this.onClickVideoGames} />
+    const videoGamesButton = (
+      <CategoriesButton
+        text="Video Games"
+        selected={this.state.videoGames}
+        onClick={this.onClickVideoGames}
+      />
     );
 
-    const locationButton = this.state.location ? (
-      <DangerButton text="Location Based" onClick={this.onClickLocation} />
-    ) : (
-      <CategoriesButton text="Location Based" onClick={this.onClickLocation} />
+    const locationButton = (
+      <CategoriesButton
+        text="Location Based"
+        selected={this.state.location}
+        onClick={this.onClickLocation}
+      />
     );
 
     const nextButton = this.state.count > 0 ? (
@@ -347,40 +367,37 @@ class CategoriesComponent extends Component {
       <div></div>
     );
 
+    const previousScreenButton = (
+      <IconButton
+        style={styles.previousButton}
+        onClick={this.showPreviousScreen}
+      >
+        <ArrowBackIcon fontSize="large" />
+        BACK
+      </IconButton>
+    );
+
     // TODO: Add arrow button that would mean "Next".
     // TODO: Limit selection to three categories.
     // TODO: Keep track of which categories were selected for future API calls
     return (
       <div style={styles.root}>
+        {previousScreenButton}
         <Grid style={styles.title}> SELECT UP TO 3 CATEGORIES </Grid>
         <div style={styles.categoryButtonsContainer}>
-          <Grid style={styles.categoryRow} spacing={3}>
             {generalKnowledgeButton}
             {filmButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {scienceNatureButton}
             {sportsButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {historyButton}
             {tvButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {booksButton}
             {musicButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {mythologyButton}
             {geographyButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {artButton}
             {videoGamesButton}
-          </Grid>
-          <Grid style={styles.categoryRow} spacing={3}>
             {locationButton}
-          </Grid>
         </div>
         {nextButton}
       </div>

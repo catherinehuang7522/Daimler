@@ -25,16 +25,17 @@ const styles = {
   avatarSection: {
     display: "flex",
     flex: 3,
-    justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     flexWrap: "wrap",
   },
   addPlayerSection: {
     display: "flex",
+    flexDirection: 'column',
     flex: 1,
-    justifyContent: "center",
-    alignItems: 'center'
+    alignItems: "center",
+    marginTop: '5vh',
+    color: 'white'
   },
   inputSection: {
     display: "flex",
@@ -56,8 +57,12 @@ const styles = {
     fontSize: 24,
   },
   categoryButtonsContainer: {
-    paddingLeft: 166,
-    paddingRight: 166,
+    paddingLeft: 150,
+    paddingRight: 150,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   },
   categoryRow: {
     display: "flex",
@@ -94,13 +99,20 @@ const styles = {
     left: 920,
     fontFamily: 'Kontakt'
   },
+  previousButton: {
+    color: "white",
+    position: "fixed",
+    top: 10,
+    left: 10,
+    fontFamily: 'Kontakt'
+  },
   title: {
     color: "white",
     fontSize: 48,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 50
+    marginTop: 40
   },
   feedbackWrapper: {
     zIndex: 10,
@@ -166,18 +178,19 @@ const styles = {
   },
   unselectedCharacterButton: {
     display: 'flex',
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 20,
     marginTop: 20,
     fontFamily: 'Kontakt',
     backgroundColor: "#205B82",
     color: "white",
+    margin: 5
   },
   selectedCharacterButton: {
     display: 'flex',
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 20,
     marginTop: 20,
     fontFamily: 'Kontakt',
@@ -185,6 +198,7 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     border: '5px solid #4DFAFA',
+    margin: 5
   },
   unselectedAvatarButton: {
     display: 'flex',
@@ -195,6 +209,7 @@ const styles = {
     fontFamily: 'Kontakt',
     backgroundColor: "#205B82",
     color: "white",
+    margin: 5
   },
   selectedAvatarButton: {
     display: 'flex',
@@ -207,6 +222,7 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     border: '5px solid #4DFAFA',
+    margin: 5
   },
   newPlayerButton: {
     backgroundColor: 'white',
@@ -235,8 +251,8 @@ const styles = {
     color: 'white'
   },
   characterButtonText: {
-    fontSize: 16,
-    marginTop: 20
+    fontSize: 10,
+    marginTop: 10
   },
   leaderBoardText: {
     color: "white",
@@ -269,7 +285,27 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 3
-  }
+  },
+  unselectedCategoryButton: {
+    backgroundColor: "#205B82",
+    color: "white",
+    borderRadius: 20,
+    width: 160,
+    height: 78,
+    fontFamily: "Kontakt",
+    margin: 10
+  },
+  selectedCategoryButton: {
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '5px solid #4DFAFA',
+    borderRadius: 20,
+    width: 160,
+    height: 78,
+    fontFamily: "Kontakt",
+    margin: 10
+  },
 };
 
 export { styles };

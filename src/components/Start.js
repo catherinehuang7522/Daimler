@@ -8,6 +8,7 @@ import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const NUM_QUESTIONS_PER_MINUTE = 5;
 const select = new UIFx(selectAudio,
@@ -41,6 +42,11 @@ class StartComponent extends Component {
     this.onClickEasy = this.onClickEasy.bind(this);
     this.onClickMedium = this.onClickMedium.bind(this);
     this.onClickHard = this.onClickHard.bind(this);
+    this.showPreviousScreen = this.showPreviousScreen.bind(this);
+  }
+
+  showPreviousScreen() {
+    this.props.callback("PROFILES");
   }
 
   onClickEasy() {
@@ -79,8 +85,8 @@ class StartComponent extends Component {
       this.setState({ startGame: !this.state.startGame });
       console.log("chosen diff: ");
       console.log(this.state.chosenDifficulty);
-      
-      
+
+
       this.props.setDifficultyCallback(this.state.chosenDifficulty);
       this.props.callback("CATEGORIES");
       select.play()
@@ -104,6 +110,16 @@ class StartComponent extends Component {
   }
 
   render() {
+    const previousScreenButton = (
+      <IconButton
+        style={styles.previousButton}
+        onClick={this.showPreviousScreen}
+      >
+        <ArrowBackIcon fontSize="large" />
+        BACK
+      </IconButton>
+    );
+
     const nextButton = (
       <IconButton
         style={styles.nextButton}
@@ -117,19 +133,37 @@ class StartComponent extends Component {
     const easyButton = this.state.easy ? (
       <DangerButton text="Easy" onClick={this.onClickEasy} />
     ) : (
-      <CategoriesButton text="Easy" onClick={this.onClickEasy} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickEasy}
+      >
+        Easy
+      </Button>
     );
 
     const mediumButton = this.state.medium ? (
       <DangerButton text="Medium" onClick={this.onClickMedium} />
     ) : (
-      <CategoriesButton text="Medium" onClick={this.onClickMedium} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickMedium}
+      >
+        Easy
+      </Button>
     );
 
     const hardButton = this.state.hard ? (
       <DangerButton text="Hard" onClick={this.onClickHard} />
     ) : (
-      <CategoriesButton text="Hard" onClick={this.onClickHard} />
+      <Button
+        style={styles.unselectedButton}
+        variant="contained"
+        onClick={this.onClickHard}
+      >
+        Easy
+      </Button>
     )
 
     const shortDurationSelector =
@@ -173,6 +207,7 @@ class StartComponent extends Component {
 
     return (
       <div style={styles.root}>
+        {previousScreenButton}
         <Grid style={styles.title}> TRIVIA </Grid>
 
         <Grid style={styles.row} spacing={3}>
