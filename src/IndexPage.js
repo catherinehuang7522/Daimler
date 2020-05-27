@@ -46,7 +46,7 @@ export default class IndexPage extends Component {
   setDifficulty(difficulty) {
     const analytics = Firebase.sharedInstance.analytics
     analytics.logEvent('difficulty', { level: difficulty });
-
+    
     this.setState({ gameDifficulty: difficulty });
   }
 

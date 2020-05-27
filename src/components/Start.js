@@ -9,7 +9,7 @@ import selectAudio from "../res/select.mp3"
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 
-const NUM_QUESTIONS_PER_MINUTE = 0;
+const NUM_QUESTIONS_PER_MINUTE = 5;
 const select = new UIFx(selectAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
@@ -28,7 +28,7 @@ class StartComponent extends Component {
       startGame: true,
       singlePlayer: true,
       duration: 1,
-      chosenDifficulty: "",
+      chosenDifficulty: "easy",
       easy: true,
       medium: false,
       hard: false,
@@ -77,6 +77,10 @@ class StartComponent extends Component {
       // add a pop-up/message etc. to select difficulty
     } else {
       this.setState({ startGame: !this.state.startGame });
+      console.log("chosen diff: ");
+      console.log(this.state.chosenDifficulty);
+      
+      
       this.props.setDifficultyCallback(this.state.chosenDifficulty);
       this.props.callback("CATEGORIES");
       select.play()

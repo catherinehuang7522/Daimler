@@ -1,0 +1,186 @@
+{
+   "response_code": 0,
+   "results": [
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Who was the person after whom Stanford University was named when it was founded in 1891?",
+         "correct_answer": "Leland Stanford Jr.",
+         "incorrect_answers": [
+            "Jane Lathrop Stanford",
+            "Governor Leland Stanford",
+            "Stanford White"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": " What property did the Stanford family use on which to build the campus?",
+         "correct_answer": "Their horse breeding farm in Palo Alto, California",
+         "incorrect_answers": [
+            "A tract of land near the governor's mansion in Sacramento,CA",
+            "Acreage overlooking the Pacific Ocean",
+            "A mission church abandoned by Father Junipero Serra"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Which Stanford varsity football player won the Heisman Trophy in 1970?",
+         "correct_answer": "Jim Plunkett",
+         "incorrect_answers": [
+            "James Lofton",
+            "Toby Gerhardt",
+            "Andrew Luck"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "What was the name of the Stanfords' pet cat whose name lives on in a popular local restaurant?",
+         "correct_answer": "Tootsie",
+         "incorrect_answers": [
+            "Footsie",
+            "Bootsie",
+            "Cutsie"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "boolean",
+         "difficulty": "hard",
+         "question": "Stanford's free Marguerite Shuttle service is named for Jane Stanford's favorite horse.",
+         "correct_answer": "False",
+         "incorrect_answers": [
+            "True"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "boolean",
+         "difficulty": "hard",
+         "question": "Stanford has always been a co-educational institution.",
+         "correct_answer": "True",
+         "incorrect_answers": [
+            "False"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Which of these US Presidents attended Stanford?",
+         "correct_answer": "Herbert Hoover and John F. Kennedy",
+         "incorrect_answers": [
+            "Only Hoover",
+            "Richard Nixon",
+            "Ronald Reagan"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "What architect designed both the Stanford University campus and Central Park in New York City?",
+         "correct_answer": "Frederick Law Olmsted",
+         "incorrect_answers": [
+            "I.M. Pei",
+            "Birge Clark",
+            "Stanford White"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Which presidential offspring graduated from Stanford in 2001?",
+         "correct_answer": "Chelsea Clinton",
+         "incorrect_answers": [
+            "Michael Reagan",
+            "Amy Carter",
+            "Jenna Bush"
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "What is the name of the official Stanford Cardinal fight song?",
+         "correct_answer": "Come Join The Band",
+         "incorrect_answers": [
+            "Victorious Cardinal",
+            "For Old Cardinal",
+            "All Right Now"
+
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "The Leland Stanford Junior University Marching Band bills itself as what?",
+         "correct_answer": "The World's Largest Rock and Roll Band",
+         "incorrect_answers": [
+            "The Pride of the West",
+            "The Marching Cardinal",
+            "The Wind of the Cardinal"
+
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Who did the Stanford Cardinal hire as their head football coach in 2011?",
+         "correct_answer": "David Shaw",
+         "incorrect_answers": [
+            "John Elway",
+            "Tyrone Willingham",
+            "Cliff Clavin"
+
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Before each home game, the Stanford football team, led by the marching band, walks from the Arrillaga Family Sports Center, along Sam MacDonald Road, to the stadium. Fans cheer them on in this traditional commonly known as what?",
+         "correct_answer": "The Walk",
+         "incorrect_answers": [
+            "The Stanford Stomp",
+            "The Cardinal March",
+            "Stanford Stride"
+
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "What is the name of the unofficial Stanford Cardinal mascot?",
+         "correct_answer": "Stanford Tree",
+         "incorrect_answers": [
+            "Cardy the Cardinal",
+            "Pops",
+            "Stan"
+
+         ]
+      },
+      {
+         "category": "location",
+         "type": "multiple",
+         "difficulty": "hard",
+         "question": "Stanford's motto appears on the University Seal: 'Die luft der freiheit weht.' What does this mean?",
+         "correct_answer": "The wind of freedom blows",
+         "incorrect_answers": [
+            "The light of freedom shines",
+            " Learning leads to freedom",
+            "The life of freedom is heavy"
+         ]
+      }
+   ]
+}

@@ -16,6 +16,7 @@ export const CATEGORIES_MAP = {
   HISTORY: "23",
   CELEBRITIES: "26",
   VEHICLES: "28",
+  LOCATION: "10000"
 };
 
 export const AVATAR_NAME_TO_PATH = {

@@ -27,6 +27,7 @@ class CategoriesComponent extends Component {
 
       //PREVIOUSLY:
       generalKnowledge: false,
+      location:false,
       film: false,
       scienceNature: false,
       sports: false,
@@ -40,6 +41,7 @@ class CategoriesComponent extends Component {
       videoGames: false,
     };
 
+    this.onClickLocation = this.onClickLocation.bind(this);
     this.onClickGeneralKnowledge = this.onClickGeneralKnowledge.bind(this);
     this.onClickFilm = this.onClickFilm.bind(this);
     this.onClickScienceNature = this.onClickScienceNature.bind(this);
@@ -70,6 +72,18 @@ class CategoriesComponent extends Component {
       console.log("Select 3 categories or less");
     }
   }
+
+   //NEW
+   onClickLocation() {
+    if (this.state.count == 3 && !this.state.location) {
+    console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+    return;
+  }
+  this.setState({ location: !this.state.location });
+  !this.state.location
+    ? this.incrementCount("LOCATION")
+    : this.decrementCount("LOCATION");
+}
 
   onClickGeneralKnowledge() {
     // Trying to select new one but 3 are already selected
@@ -315,6 +329,12 @@ class CategoriesComponent extends Component {
       <CategoriesButton text="Video Games" onClick={this.onClickVideoGames} />
     );
 
+    const locationButton = this.state.location ? (
+      <DangerButton text="Location Based" onClick={this.onClickLocation} />
+    ) : (
+      <CategoriesButton text="Location Based" onClick={this.onClickLocation} />
+    );
+
     const nextButton = this.state.count > 0 ? (
       <IconButton
         style={styles.nextButton}
@@ -357,6 +377,9 @@ class CategoriesComponent extends Component {
           <Grid style={styles.categoryRow} spacing={3}>
             {artButton}
             {videoGamesButton}
+          </Grid>
+          <Grid style={styles.categoryRow} spacing={3}>
+            {locationButton}
           </Grid>
         </div>
         {nextButton}
