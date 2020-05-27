@@ -125,11 +125,10 @@ class ProfileComponent extends Component {
           </div>
           <div style={styles.addPlayerSection}>
             {newPlayerButton}
+            <div style={styles.currentPlayerText}> Create new profile </div>
           </div>
         </div>
-        <Grid style={styles.row} spacing={3}>
-          {nextButton}
-        </Grid>
+        {nextButton}
       </div>
     );
   }

@@ -25,16 +25,17 @@ const styles = {
   avatarSection: {
     display: "flex",
     flex: 3,
-    justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     flexWrap: "wrap",
   },
   addPlayerSection: {
     display: "flex",
+    flexDirection: 'column',
     flex: 1,
-    justifyContent: "center",
-    alignItems: 'center'
+    alignItems: "center",
+    marginTop: '5vh',
+    color: 'white'
   },
   inputSection: {
     display: "flex",
@@ -173,18 +174,19 @@ const styles = {
   },
   unselectedCharacterButton: {
     display: 'flex',
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 20,
     marginTop: 20,
     fontFamily: 'Kontakt',
     backgroundColor: "#205B82",
     color: "white",
+    margin: 5
   },
   selectedCharacterButton: {
     display: 'flex',
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 20,
     marginTop: 20,
     fontFamily: 'Kontakt',
@@ -192,6 +194,7 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     border: '5px solid #4DFAFA',
+    margin: 5
   },
   unselectedAvatarButton: {
     display: 'flex',
@@ -202,6 +205,7 @@ const styles = {
     fontFamily: 'Kontakt',
     backgroundColor: "#205B82",
     color: "white",
+    margin: 5
   },
   selectedAvatarButton: {
     display: 'flex',
@@ -214,6 +218,7 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     border: '5px solid #4DFAFA',
+    margin: 5
   },
   newPlayerButton: {
     backgroundColor: 'white',
@@ -242,8 +247,8 @@ const styles = {
     color: 'white'
   },
   characterButtonText: {
-    fontSize: 16,
-    marginTop: 20
+    fontSize: 10,
+    marginTop: 10
   },
   leaderBoardText: {
     color: "white",
