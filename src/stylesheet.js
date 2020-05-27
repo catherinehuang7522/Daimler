@@ -94,6 +94,13 @@ const styles = {
     left: 920,
     fontFamily: 'Kontakt'
   },
+  previousButton: {
+    color: "white",
+    position: "fixed",
+    top: 10,
+    left: 10,
+    fontFamily: 'Kontakt'
+  },
   title: {
     color: "white",
     fontSize: 48,

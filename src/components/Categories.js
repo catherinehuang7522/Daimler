@@ -8,6 +8,7 @@ import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import { CATEGORIES_MAP } from "../constants";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const select = new UIFx(selectAudio,
   {
@@ -59,6 +60,11 @@ class CategoriesComponent extends Component {
     this.onClickShowDifficultyScreen = this.onClickShowDifficultyScreen.bind(
       this
     );
+    this.showPreviousScreen = this.showPreviousScreen.bind(this);
+  }
+
+  showPreviousScreen() {
+    this.props.callback("START");
   }
 
   onClickShowDifficultyScreen() {
@@ -347,11 +353,22 @@ class CategoriesComponent extends Component {
       <div></div>
     );
 
+    const previousScreenButton = (
+      <IconButton
+        style={styles.previousButton}
+        onClick={this.showPreviousScreen}
+      >
+        <ArrowBackIcon fontSize="large" />
+        BACK
+      </IconButton>
+    );
+
     // TODO: Add arrow button that would mean "Next".
     // TODO: Limit selection to three categories.
     // TODO: Keep track of which categories were selected for future API calls
     return (
       <div style={styles.root}>
+        {previousScreenButton}
         <Grid style={styles.title}> SELECT UP TO 3 CATEGORIES </Grid>
         <div style={styles.categoryButtonsContainer}>
           <Grid style={styles.categoryRow} spacing={3}>

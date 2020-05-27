@@ -7,6 +7,8 @@ import CharacterButton from "./CharacterButton";
 import { imageIndex } from "../components/ImageIndex";
 import Button from "@material-ui/core/Button";
 import Firebase from "./firebase"
+import { IconButton } from "@material-ui/core";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const select = new UIFx(selectAudio,
   {
@@ -27,6 +29,7 @@ class NewProfileComponent extends Component {
     this.renderAvatars = this.renderAvatars.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addPlayer = this.addPlayer.bind(this);
+    this.showPreviousScreen = this.showPreviousScreen.bind(this);
 
   }
 
@@ -43,6 +46,10 @@ class NewProfileComponent extends Component {
     let setDoc = firebase.db.collection('users').doc(this.state.newName).set(data, {merge: true});
 
     select.play()
+    this.props.callback("PROFILES");
+  }
+
+  showPreviousScreen() {
     this.props.callback("PROFILES");
   }
 
@@ -68,6 +75,17 @@ class NewProfileComponent extends Component {
   }
 
   render() {
+    const previousScreenButton = (
+      <IconButton
+        style={styles.previousButton}
+        onClick={this.showPreviousScreen}
+      >
+        <ArrowBackIcon fontSize="large" />
+        BACK
+      </IconButton>
+    );
+
+
     //renders button when an avatar is selected and name has been entered
     const addButton = (this.state.newName !== "" && this.state.newAvatar !== null) ? (
       <Button onClick={this.addPlayer} style={styles.newPlayerButton}>
@@ -79,6 +97,7 @@ class NewProfileComponent extends Component {
 
     return (
       <div style={styles.root}>
+        {previousScreenButton}
         <Grid style={styles.title}> CREATE YOUR PLAYER </Grid>
         <div style={styles.profileComponentWrapper}>
           <div style={styles.avatarSection}>
