@@ -150,7 +150,7 @@ class StartComponent extends Component {
         variant="contained"
         onClick={this.onClickMedium}
       >
-        Easy
+        Medium
       </Button>
     );
 
@@ -162,7 +162,7 @@ class StartComponent extends Component {
         variant="contained"
         onClick={this.onClickHard}
       >
-        Easy
+        Hard
       </Button>
     )
 
