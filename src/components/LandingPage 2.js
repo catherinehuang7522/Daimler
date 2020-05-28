@@ -9,7 +9,7 @@ class LandingPage extends Component {
     return (
       <div style={styles.root}>
         <Grid style={styles.title}> Cabana Trivia  </Grid>
-        <p>PUT SOME INFO TEXT HERE </p>
+        <p>PUT SOME INFO HERE </p>
         <Button
           style={styles.answerButton}
           onClick={() => this.props.callback("PROFILES")}

@@ -286,6 +286,10 @@ const styles = {
     alignItems: 'center',
     flex: 3
   },
+  background:{
+    backgroundImage: `url(require("../assets/bakground.jpeg"))`,  // Import background image
+
+  },
   unselectedCategoryButton: {
     backgroundColor: "#205B82",
     color: "white",
