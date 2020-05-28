@@ -2,6 +2,8 @@ import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import DangerButton from "./DangerButton";
+import SmallDangerButton from "./SmallDangerButton";
+
 import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import UIFx from "uifx";
@@ -131,10 +133,10 @@ class StartComponent extends Component {
     );
 
     const easyButton = this.state.easy ? (
-      <DangerButton text="Easy" onClick={this.onClickEasy} />
+      <SmallDangerButton text="Easy" onClick={this.onClickEasy} />
     ) : (
       <Button
-        style={styles.unselectedButton}
+        style={styles.smallUnselectedButton}
         variant="contained"
         onClick={this.onClickEasy}
       >
@@ -143,10 +145,10 @@ class StartComponent extends Component {
     );
 
     const mediumButton = this.state.medium ? (
-      <DangerButton text="Medium" onClick={this.onClickMedium} />
+      <SmallDangerButton text="Medium" onClick={this.onClickMedium} />
     ) : (
       <Button
-        style={styles.unselectedButton}
+        style={styles.smallUnselectedButton}
         variant="contained"
         onClick={this.onClickMedium}
       >
@@ -155,10 +157,10 @@ class StartComponent extends Component {
     );
 
     const hardButton = this.state.hard ? (
-      <DangerButton text="Hard" onClick={this.onClickHard} />
+      <SmallDangerButton text="Hard" onClick={this.onClickHard} />
     ) : (
       <Button
-        style={styles.unselectedButton}
+        style={styles.smallUnselectedButton}
         variant="contained"
         onClick={this.onClickHard}
       >
@@ -209,12 +211,17 @@ class StartComponent extends Component {
       <div style={styles.root}>
         {previousScreenButton}
         <Grid style={styles.title}> TRIVIA </Grid>
+        <Grid style={styles.selectionText}> Choose a difficulty </Grid>
 
         <Grid style={styles.row} spacing={3}>
+
           {easyButton}
           {mediumButton}
           {hardButton}
         </Grid>
+
+        <Grid style={styles.selectionText}> Choose a duration </Grid>
+
 
         <Grid style={styles.row} spacing={3}>
           {shortDurationSelector}

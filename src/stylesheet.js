@@ -92,6 +92,18 @@ const styles = {
     marginTop: 10,
     marginRight: 5,
   },
+  smallSelectedButton: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '5px solid #4DFAFA',
+    width: 280,
+    height: 78,
+    fontFamily: 'Kontakt',
+    marginTop: 10,
+    marginRight: 5,
+  },
   nextButton: {
     color: "white",
     position: "fixed",
@@ -146,6 +158,16 @@ const styles = {
     color: "white",
     borderRadius: 20,
     width: 332,
+    height: 78,
+    fontFamily: "Kontakt",
+    marginTop: 10,
+    marginRight: 5,
+  },
+  smallUnselectedButton: {
+    backgroundColor: "#205B82",
+    color: "white",
+    borderRadius: 20,
+    width: 280,
     height: 78,
     fontFamily: "Kontakt",
     marginTop: 10,
@@ -257,6 +279,15 @@ const styles = {
   leaderBoardText: {
     color: "white",
     fontSize: 36,
+  },
+  //For single page difficulty and duration
+  selectionText: {
+    color: "white",
+    fontSize: 20,
+    display: "flex",
+    alignItems: "center",
+    marginTop: 20,
+    justifyContent: "center",
   },
   circularProgress: {
     width: '7%',
