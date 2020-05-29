@@ -2,19 +2,23 @@ import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Image from '../assets/background.jpeg'; // Import background image
+import Spacer from 'react-add-space';
+import SmallDangerButton from "./SmallDangerButton";
 
 
 class LandingPage extends Component {
   render() {
     return (
-      <div style={styles.root}>
-          <Grid style={styles.title}> Cabana Trivia  </Grid>
-          <p>PUT SOME INFO TEXT HERE </p>
-          <Button
-            style={styles.answerButton}
-            onClick={() => this.props.callback("PROFILES")}
-          >Start Game</Button>
+      <div style={styles.rootBackgroundColor}>
+          <Grid style={styles.titleLandingPage}>
+          Cabana <br/>
+          Trivia
+            </Grid>
+                <Button
+                  style={styles.startButtonTrial}
+                  onClick={() => this.props.callback("PROFILES")}
+                >Start Game</Button>
+
       </div>
     )
   }

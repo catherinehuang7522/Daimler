@@ -1,12 +1,27 @@
 const styles = {
+  rootBackgroundColor: {
+    flexGrow: 1,
+    backgroundImage: `url(${ require("./background.jpeg") })`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    width: 1062,
+    height: 484,
+    resizeMode: 'cover',
+    fontFamily: "Kontakt",
+    overflow: "scroll",
+    zIndex: 1,
+  },
   root: {
     flexGrow: 1,
     backgroundColor: "#07142B",
     width: 1062,
     height: 484,
+    resizeMode: 'cover',
     fontFamily: "Kontakt",
     overflow: "scroll",
     zIndex: 1,
+
   },
   row: {
     display: "flex",
@@ -104,6 +119,20 @@ const styles = {
     marginTop: 10,
     marginRight: 5,
   },
+
+  smallSelectedButtonTimer: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '5px solid #4DFAFA',
+    width: 280,
+    height: 78,
+    fontFamily: 'Kontakt',
+    marginTop: 10,
+    marginRight: 5,
+  },
+
   nextButton: {
     color: "white",
     position: "fixed",
@@ -124,7 +153,20 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40
+    marginTop: 70,
+    marginLeft: 15,
+  },
+
+  //Landing Page Title Styling
+  titleLandingPage: {
+    color: "#1F1F55",
+    strokeWidth:"10",
+    fontSize: 48,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 70,
+    marginLeft: 15,
   },
   feedbackWrapper: {
     zIndex: 10,
@@ -184,6 +226,32 @@ const styles = {
     marginTop: 10,
     marginRight: 5,
   },
+  startButton: {
+    backgroundColor: "#205B82",
+    color: "#1F1F55",
+    fontSize: 22,
+    borderRadius: 20,
+    marginTop:130,
+    marginLeft: 430,
+    width: 200,
+    height: 120,
+    fontFamily: "Kontakt",
+  },
+
+startButtonTrial: {
+  backgroundColor: 'white',
+  color: '#07142B',
+  fontSize: 18,
+  boxShadow: '0px 0px 4px #ffffff',
+  borderRadius: 20,
+  border: '5px solid #4DFAFA',
+  width: 170,
+  height: 78,
+  fontFamily: 'Kontakt',
+  marginTop:120,
+  marginLeft: 443,
+},
+
   container: {
     display: "flex",
     justifyContent: "center",
@@ -317,10 +385,10 @@ const styles = {
     alignItems: 'center',
     flex: 3
   },
-  background:{
-    backgroundImage: `url(require("../assets/bakground.jpeg"))`,  // Import background image
-
-  },
+  // background:{
+  //   backgroundImage: `url(require("../assets/bakground.jpeg"))`,  // Import background image
+  //
+  // },
   unselectedCategoryButton: {
     backgroundColor: "#205B82",
     color: "white",

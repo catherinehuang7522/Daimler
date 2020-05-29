@@ -3,9 +3,15 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import DangerButton from "./DangerButton";
 import SmallDangerButton from "./SmallDangerButton";
+import SmallDangerButtonTimer from "./SmallDangerButton";
 
-import CategoriesButton from "./CategoriesButton";
+import DurationButton from "./DurationButton";
 import Grid from "@material-ui/core/Grid";
+import AvTimerIcon from '@material-ui/icons/AvTimer';
+
+import Icon from '@material-ui/core/Icon';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
 import { IconButton } from "@material-ui/core";
@@ -36,6 +42,7 @@ class StartComponent extends Component {
       medium: false,
       hard: false,
       startGame: false,
+      short: false,
     };
 
     this.onClickShowCharactersScreen = this.onClickShowCharactersScreen.bind(this);
@@ -117,7 +124,7 @@ class StartComponent extends Component {
         style={styles.previousButton}
         onClick={this.showPreviousScreen}
       >
-        <ArrowBackIcon fontSize="large" />
+        <ArrowBackIcon fontSize="small" />
         BACK
       </IconButton>
     );
@@ -170,48 +177,101 @@ class StartComponent extends Component {
 
     const shortDurationSelector =
       this.state.duration === 1 ? (
-        <DangerButton text="Short Game [10 min]" />
+        <Button
+          style={styles.smallSelectedButtonTimer}
+          variant="contained"
+          startIcon={
+            <AvTimerIcon
+            style= {{fontSize: 50}}
+            ></AvTimerIcon>
+          }
+          >
+            10 min
+          </Button>
       ) : (
           <Button
-            style={styles.unselectedButton}
+            style={styles.smallUnselectedButton}
             variant="contained"
+            startIcon={
+              <AvTimerIcon
+              style= {{fontSize: 50}}
+              ></AvTimerIcon>
+            }
+
             onClick={() => this.onSelectDuration(1)}
           >
-            Short Game [10 min]
+            10 min
+
           </Button>
         );
+
 
     const medDurationSelector =
       this.state.duration === 2 ? (
-        <DangerButton text="Medium Game [20 min]" />
+        <Button
+          style={styles.smallSelectedButtonTimer}
+          variant="contained"
+          startIcon={
+            <AvTimerIcon
+            style= {{fontSize: 50}}
+            ></AvTimerIcon>
+          }
+          >
+            20 min
+          </Button>
       ) : (
           <Button
-            style={styles.unselectedButton}
+            style={styles.smallUnselectedButton}
             variant="contained"
+            startIcon={
+              <AvTimerIcon
+              style= {{fontSize: 50}}
+              ></AvTimerIcon>
+            }
+
             onClick={() => this.onSelectDuration(2)}
           >
-            Medium Game [20 min]
+            20 min
+
+          </Button>
+        );
+    const longDurationSelector =
+      this.state.duration === 3 ? (
+        <Button
+          style={styles.smallSelectedButtonTimer}
+          variant="contained"
+          startIcon={
+            <AvTimerIcon
+            style= {{fontSize: 50}}
+            ></AvTimerIcon>
+          }
+          >
+            30 min
+          </Button>
+      ) : (
+          <Button
+            style={styles.smallUnselectedButton}
+            variant="contained"
+            startIcon={
+              <AvTimerIcon
+              style= {{fontSize: 50}}
+              ></AvTimerIcon>
+            }
+
+            onClick={() => this.onSelectDuration(3)}
+          >
+            30 min
+
           </Button>
         );
 
-    const longDurationSelector =
-      this.state.duration === 3 ? (
-        <DangerButton text="Long Game [30 min]" />
-      ) : (
-          <Button
-            style={styles.unselectedButton}
-            variant="contained"
-            onClick={() => this.onSelectDuration(3)}
-          >
-            Long Game [30 min]
-          </Button>
-        );
+
 
     return (
       <div style={styles.root}>
         {previousScreenButton}
         <Grid style={styles.title}> TRIVIA </Grid>
-        <Grid style={styles.selectionText}> Choose a difficulty </Grid>
+        <Grid style={styles.selectionText}> Choose a difficulty</Grid>
 
         <Grid style={styles.row} spacing={3}>
 
@@ -228,6 +288,7 @@ class StartComponent extends Component {
           {medDurationSelector}
           {longDurationSelector}
         </Grid>
+
 
         <Grid style={styles.row} spacing={3}>
           {nextButton}
