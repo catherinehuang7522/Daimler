@@ -37,7 +37,7 @@ class GameOverComponent extends Component {
     for (let index in this.props.player) {
       let userID = this.props.player[index]["username"]
       //set the data in Firebase
-      let setDoc = await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+      await firebase.db.collection('users').doc(userID).set(data, { merge: true });
     }
 
   }

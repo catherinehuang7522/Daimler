@@ -62,7 +62,6 @@ class Leaderboard extends Component {
 
 
         const maxScores = []
-        let counter = 0;
         for (let item of res) {
             let max = 0;
             for (let i in item) {
@@ -71,7 +70,6 @@ class Leaderboard extends Component {
                 }
             }
             maxScores.push({ player: item["uid"], maxScore: max });
-            counter++;
         }
 
 

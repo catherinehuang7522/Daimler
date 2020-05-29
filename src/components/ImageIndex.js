@@ -41,9 +41,7 @@ var getImage = function (avatar, bool) {
     }
 }
 
-var imageIndex = {
+export var imageIndex = {
     getImage: getImage,
     getAllAvatars: getAllAvatars
 }
-
-export var imageIndex;

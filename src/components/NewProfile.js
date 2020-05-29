@@ -43,7 +43,7 @@ class NewProfileComponent extends Component {
     }
 
     let firebase = Firebase.sharedInstance
-    let setDoc = firebase.db.collection('users').doc(this.state.newName).set(data, {merge: true});
+    firebase.db.collection('users').doc(this.state.newName).set(data, { merge: true });
 
     select.play()
     this.props.callback("PROFILES");
@@ -89,8 +89,8 @@ class NewProfileComponent extends Component {
     //renders button when an avatar is selected and name has been entered
     const addButton = (this.state.newName !== "" && this.state.newAvatar !== null) ? (
       <Button onClick={this.addPlayer} style={styles.newPlayerButton}>
-       Add Player
-       </Button>
+        Add Player
+      </Button>
     ) : (
         <div></div>
       );
@@ -103,7 +103,7 @@ class NewProfileComponent extends Component {
           <div style={styles.avatarSection}>
             {this.renderAvatars()}
           </div>
-          <form style ={styles.inputSection}>
+          <form style={styles.inputSection}>
             <div>
               <div> Input Player Name </div>
               <input type="text" value={this.state.newName} onChange={this.handleChange} />

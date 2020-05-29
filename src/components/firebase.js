@@ -1,5 +1,4 @@
 import app from 'firebase/app'
-import React from 'react'
 import "firebase/firestore";
 import firebase from 'firebase'
 

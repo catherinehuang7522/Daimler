@@ -51,7 +51,7 @@ class ProfileComponent extends Component {
   //stores all players in playersToShow from firbase
   getPlayersFromBackend() {
     let firebase = Firebase.sharedInstance
-    let readUsers = firebase.db.collection('users').get().then(snapshot => {
+    firebase.db.collection('users').get().then(snapshot => {
       var players = [];
       snapshot.forEach(doc => {
         players.push(doc.data());
@@ -86,7 +86,7 @@ class ProfileComponent extends Component {
 
   onClickNext() {
     select.play()
-    const currNumPlayers = this.state.numOfPlayers;
+    //const currNumPlayers = this.state.numOfPlayers;
     if (this.state.playersChosen.length < 5) {
       this.props.callback("START");
       console.log("playersChosen", this.state.playersChosen)

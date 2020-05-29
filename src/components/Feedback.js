@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import { styles } from "../stylesheet.js";
-import cheerAudio from "../res/cheer.mp3"
+/* import cheerAudio from "../res/cheer.mp3"
 import sadAudio from "../res/sad.mp3"
-import UIFx from "uifx";
+import UIFx from "uifx" */
 
-const Entities = require("html-entities").AllHtmlEntities;
+//const Entities = require("html-entities").AllHtmlEntities;
 
-const entities = new Entities();
-const cheer = new UIFx(cheerAudio,
+//const entities = new Entities();
+/* const cheer = new UIFx(cheerAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
     throttleMs: 100
@@ -17,7 +17,7 @@ const sad = new UIFx(sadAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
     throttleMs: 100
-  })
+  }) */
 
 class FeedbackComponent extends Component {
   constructor(props) {
@@ -33,8 +33,8 @@ class FeedbackComponent extends Component {
   render() {
     let headerText;
     let bodyText;
-    
-    const seenBefore = this.questionsSeen.has(this.props.questionIndex)
+
+    //const seenBefore = this.questionsSeen.has(this.props.questionIndex)
     this.questionsSeen.add(this.props.questionIndex)
     if (this.props.questionIndex) {  // Render only if the question index is set
       if (this.props.wasCorrect) {

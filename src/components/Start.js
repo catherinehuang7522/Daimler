@@ -1,17 +1,9 @@
 import { styles } from "../stylesheet";
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
-import DangerButton from "./DangerButton";
 import SmallDangerButton from "./SmallDangerButton";
-import SmallDangerButtonTimer from "./SmallDangerButton";
-
-import DurationButton from "./DurationButton";
 import Grid from "@material-ui/core/Grid";
 import AvTimerIcon from '@material-ui/icons/AvTimer';
-
-import Icon from '@material-ui/core/Icon';
-import DeleteIcon from '@material-ui/icons/Delete';
-
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
 import { IconButton } from "@material-ui/core";
@@ -34,7 +26,6 @@ class StartComponent extends Component {
 
     this.state = {
       randomvar: "",
-      startGame: true,
       singlePlayer: true,
       duration: 1,
       chosenDifficulty: "easy",
@@ -142,38 +133,38 @@ class StartComponent extends Component {
     const easyButton = this.state.easy ? (
       <SmallDangerButton text="Easy" onClick={this.onClickEasy} />
     ) : (
-      <Button
-        style={styles.smallUnselectedButton}
-        variant="contained"
-        onClick={this.onClickEasy}
-      >
-        Easy
-      </Button>
-    );
+        <Button
+          style={styles.smallUnselectedButton}
+          variant="contained"
+          onClick={this.onClickEasy}
+        >
+          Easy
+        </Button>
+      );
 
     const mediumButton = this.state.medium ? (
       <SmallDangerButton text="Medium" onClick={this.onClickMedium} />
     ) : (
-      <Button
-        style={styles.smallUnselectedButton}
-        variant="contained"
-        onClick={this.onClickMedium}
-      >
-        Medium
-      </Button>
-    );
+        <Button
+          style={styles.smallUnselectedButton}
+          variant="contained"
+          onClick={this.onClickMedium}
+        >
+          Medium
+        </Button>
+      );
 
     const hardButton = this.state.hard ? (
       <SmallDangerButton text="Hard" onClick={this.onClickHard} />
     ) : (
-      <Button
-        style={styles.smallUnselectedButton}
-        variant="contained"
-        onClick={this.onClickHard}
-      >
-        Hard
-      </Button>
-    )
+        <Button
+          style={styles.smallUnselectedButton}
+          variant="contained"
+          onClick={this.onClickHard}
+        >
+          Hard
+        </Button>
+      )
 
     const shortDurationSelector =
       this.state.duration === 1 ? (
@@ -182,19 +173,19 @@ class StartComponent extends Component {
           variant="contained"
           startIcon={
             <AvTimerIcon
-            style= {{fontSize: 50}}
+              style={{ fontSize: 50 }}
             ></AvTimerIcon>
           }
-          >
-            10 min
-          </Button>
+        >
+          10 min
+        </Button>
       ) : (
           <Button
             style={styles.smallUnselectedButton}
             variant="contained"
             startIcon={
               <AvTimerIcon
-              style= {{fontSize: 50}}
+                style={{ fontSize: 50 }}
               ></AvTimerIcon>
             }
 
@@ -213,19 +204,19 @@ class StartComponent extends Component {
           variant="contained"
           startIcon={
             <AvTimerIcon
-            style= {{fontSize: 50}}
+              style={{ fontSize: 50 }}
             ></AvTimerIcon>
           }
-          >
-            20 min
-          </Button>
+        >
+          20 min
+        </Button>
       ) : (
           <Button
             style={styles.smallUnselectedButton}
             variant="contained"
             startIcon={
               <AvTimerIcon
-              style= {{fontSize: 50}}
+                style={{ fontSize: 50 }}
               ></AvTimerIcon>
             }
 
@@ -242,19 +233,19 @@ class StartComponent extends Component {
           variant="contained"
           startIcon={
             <AvTimerIcon
-            style= {{fontSize: 50}}
+              style={{ fontSize: 50 }}
             ></AvTimerIcon>
           }
-          >
-            30 min
-          </Button>
+        >
+          30 min
+        </Button>
       ) : (
           <Button
             style={styles.smallUnselectedButton}
             variant="contained"
             startIcon={
               <AvTimerIcon
-              style= {{fontSize: 50}}
+                style={{ fontSize: 50 }}
               ></AvTimerIcon>
             }
 
