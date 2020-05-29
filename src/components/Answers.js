@@ -10,22 +10,35 @@ const entities = new Entities();
 class AnswersComponent extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      correctAnswer: 0,
+      selectedAnswer: 0
+    }
+
     this.onPressAnswer = this.onPressAnswer.bind(this);
   }
 
   // executed when answer is pressed
-  onPressAnswer(answerObj) {
+  onPressAnswer(index, answerObj) {
     let correctAnswer;
+    this.setState({selectedAnswer : index});
     for (let i in this.props.answers) {
       let currAnswerObj = this.props.answers[i];
 
       if (currAnswerObj.correct) {
+        this.setState({correctAnswer : String(i)})
         correctAnswer = entities.decode(currAnswerObj.text); // decoding because some of the questions and answers have HTML entities e.g. &quot;
         break;
       }
     }
 
+    console.log("correct answer set to: ", this.state.correctAnswer);
+
     this.props.callback(answerObj.correct, correctAnswer);
+
+    setTimeout(() => {
+      this.setState({ correctAnswer: 0 });
+    }, 2 * 1000);
   }
 
   render() {
@@ -43,6 +56,71 @@ class AnswersComponent extends Component {
       answer4 = this.props.answers[3];
     }
 
+    const button1 = this.state.correctAnswer === "1" ?
+      (<Button
+          style={styles.answerButtonCorrect}
+          onClick={() => this.onPressAnswer(1, answer1)}
+        >
+          {entities.decode(answer1.text)}{" "}
+        </Button>)
+    :
+      (<Button
+          style={styles.answerButton}
+          onClick={() => this.onPressAnswer(1, answer1)}
+        >
+          {entities.decode(answer1.text)}{" "}
+        </Button>)
+
+    const button2 = this.state.correctAnswer === "2" ?
+      (<Button
+        style={styles.answerButtonCorrect}
+        onClick={() => this.onPressAnswer(2, answer2)}
+      >
+        {entities.decode(answer2.text)}
+      </Button>)
+    :
+      (<Button
+        style={styles.answerButton}
+        onClick={() => this.onPressAnswer(2, answer2)}
+      >
+        {entities.decode(answer2.text)}
+      </Button>)
+
+
+    const button3 = (this.props.answers.length === 4) ? (
+      this.state.correctAnswer === "3" ?
+        (<Button
+          style={styles.answerButtonCorrect}
+          onClick={() => this.onPressAnswer(3, answer3)}
+        >
+          {entities.decode(answer3.text)}{" "}
+        </Button>)
+      :
+        (<Button
+          style={styles.answerButton}
+          onClick={() => this.onPressAnswer(3, answer3)}
+        >
+          {entities.decode(answer3.text)}{" "}
+        </Button>)
+      ) : null
+
+    const button4 = (this.props.answers.length === 4) ? (
+      this.state.correctAnswer === "4" ?
+        (<Button
+          style={styles.answerButtonCorrect}
+          onClick={() => this.onPressAnswer(4, answer4)}
+        >
+          {entities.decode(answer4.text)}
+        </Button> )
+      :
+        (<Button
+          style={styles.answerButton}
+          onClick={() => this.onPressAnswer(4, answer4)}
+        >
+          {entities.decode(answer4.text)}
+        </Button> )
+      ) : null
+
     return (
       <Grid
         columnGrid
@@ -51,34 +129,16 @@ class AnswersComponent extends Component {
         alignItems="center"
         spacing={2}
       >
+
+
         <Grid rowGrid spacing={1}>
-          <Button
-            style={styles.answerButton}
-            onClick={() => this.onPressAnswer(answer1)}
-          >
-            {entities.decode(answer1.text)}{" "}
-          </Button>
-          <Button
-            style={styles.answerButton}
-            onClick={() => this.onPressAnswer(answer2)}
-          >
-            {entities.decode(answer2.text)}
-          </Button>
+          {button1}
+          {button2}
         </Grid>
 
         <Grid rowGrid spacing={1}>
-          { (this.props.answers.length === 4) && <Button
-            style={styles.answerButton}
-            onClick={() => this.onPressAnswer(answer3)}
-          >
-            {entities.decode(answer3.text)}{" "}
-          </Button>}
-          { (this.props.answers.length === 4) && <Button
-            style={styles.answerButton}
-            onClick={() => this.onPressAnswer(answer4)}
-          >
-            {entities.decode(answer4.text)}
-          </Button> }
+          { (this.props.answers.length === 4) && button3}
+          { (this.props.answers.length === 4) && button4 }
         </Grid>
       </Grid>
     );
