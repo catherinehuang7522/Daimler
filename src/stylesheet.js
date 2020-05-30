@@ -314,6 +314,24 @@ startButtonTrial: {
     border: '5px solid #4DFAFA',
     margin: 5
   },
+  smallselectedAvatar: {
+    display: 'flex',
+    width: 55,
+    height: 55,
+    borderRadius: 5,
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '5px solid #4DFAFA',
+  },
+  smallUnselectedAvatar: {
+    display: 'flex',
+    width: 55,
+    height: 55,
+    borderRadius: 5,
+    backgroundColor: "#205B82",
+    color: "white",
+  },
   newPlayerButton: {
     backgroundColor: 'white',
     color: '#07142B',
@@ -346,7 +364,16 @@ startButtonTrial: {
   },
   leaderBoardText: {
     color: "white",
-    fontSize: 36,
+    fontSize: 24,
+  },
+  parent:{
+    display: "flex", 
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  leaderboard: {
+    display: "flex",
+    width: 1000
   },
   //For single page difficulty and duration
   selectionText: {

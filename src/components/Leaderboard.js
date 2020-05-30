@@ -5,8 +5,10 @@ import Grid from "@material-ui/core/Grid";
 import Table from "@material-ui/core/Table"
 import TableRow from "@material-ui/core/TableRow"
 import TableCell from "@material-ui/core/TableCell"
+import BoardRow from "./BoardRow"
 import TableBody from "@material-ui/core/TableBody"
 import Firebase from "./firebase"
+
 
 
 
@@ -15,15 +17,9 @@ class Leaderboard extends Component {
         super(props);
 
         this.state = {
-            firstPlayer: "",
-            secondPlayer: "",
-            thirdPlayer: "",
-            firstScore: "",
-            secondScore: "",
-            thirdScore: "",
-            maxScores: {},
+            allRows: []
         };
-
+        
         this.getData = this.getData.bind(this);
         this.getMarker = this.getMarker.bind(this);
         this.onGoHome = this.onGoHome.bind(this);
@@ -43,42 +39,50 @@ class Leaderboard extends Component {
 
     async componentWillMount() {
         const data = await this.getData();
-        console.log(data);
+
+        const currentPlayers = []
+        for (let player of this.props.playersChosen){
+            currentPlayers.push(player["username"])
+        }
+
+        const allRows = []
+        for (let item of data){
+            let isCurrentPlayer = false;
+            if (currentPlayers.indexOf(item.player) > -1) isCurrentPlayer = true
+        
+            
+            allRows.push( <BoardRow username={ item.player} score={item.totalScore} isCurrentPlayer={isCurrentPlayer} avatar={item.avatar}  />)
+        }
+
         this.setState({
-            firstPlayer: data[data.length - 1].player,
-            firstScore: data[data.length - 1].maxScore,
-            secondPlayer: data[data.length - 2].player,
-            secondScore: data[data.length - 2].maxScore,
-            thirdPlayer: data[data.length - 3].player,
-            thirdScore: data[data.length - 3].maxScore,
+            allRows : allRows
         });
     }
 
     async getData() {
         const res = await this.getMarker()
 
-        console.log("outer: ");
-        console.log(res);
-
 
         const maxScores = []
         for (let item of res) {
-            let max = 0;
+            let currentSum = 0;
             for (let i in item) {
                 if(i && Number(i) >= 1000000000000){
-                    max = Math.max(max, item[i]);
+                    
+                    currentSum += item[i]
                 }
             }
-            maxScores.push({ player: item["uid"], maxScore: max });
+
+            maxScores.push({ player: item["uid"], totalScore: currentSum , avatar: item["avatar"]});
         }
 
 
         // sort the object with max scores and the players
         maxScores.sort(function (a, b) {
-            var keyA = a.maxScore,
-                keyB = b.maxScore;
-            if (keyA < keyB) return -1;
-            if (keyA > keyB) return 1;
+            var keyA = a.totalScore,
+                keyB = b.totalScore;
+            if (keyA < keyB) return 1;
+            if (keyA > keyB) return -1;
             return 0;
         });
         return maxScores;
@@ -91,28 +95,19 @@ class Leaderboard extends Component {
     render() {
         return (
             <div style={styles.root}>
+                <div style={styles.parent}>
+
                 <Grid style={styles.title} direction="column">  <>LEADERBOARD </>
                 <Table>
                     <TableBody>
-                        <TableRow>
-                            <TableCell style={styles.leaderBoardText}>{this.state.firstPlayer}</TableCell>
-                            <TableCell style={styles.leaderBoardText} align="right">{this.state.firstScore}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell style={styles.leaderBoardText}>{this.state.secondPlayer}</TableCell>
-                            <TableCell style={styles.leaderBoardText} align="right">{this.state.secondScore}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell style={styles.leaderBoardText}>{this.state.thirdPlayer}</TableCell>
-                            <TableCell style={styles.leaderBoardText} align="right">{this.state.thirdScore}</TableCell>
-                        </TableRow>
+                        {this.state.allRows}
                     </TableBody>
                 </Table>
                 <Button style={styles.unselectedButton} mt={5} onClick={this.onGoHome}>
                     Back to Home
                 </Button>
                 </Grid>
-
+                </div>
             </div>
         );
     }

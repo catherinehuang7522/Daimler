@@ -123,7 +123,7 @@ export default class IndexPage extends Component {
         );
       case "LEADERBOARD":
         return (
-          <LeaderboardComponent callback={this.backHome}>
+          <LeaderboardComponent callback={this.backHome} playersChosen={this.state.playersChosen}>
           </LeaderboardComponent>
         )
       default:
