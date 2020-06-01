@@ -60,10 +60,10 @@ class GameOverComponent extends Component {
     return (
       <Grid container direction="column" justify="center" alignItems="center">
         <p style={styles.title}>
-          GAME OVER
+          Great Job!
         </p>
         <p style={styles.questionText}>
-          You scored: {this.props.score[this.props.player[0]]}
+          You scored {this.props.score[this.props.player[0]]} points
         </p>
 
 

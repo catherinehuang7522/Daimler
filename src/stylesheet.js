@@ -14,7 +14,8 @@ const styles = {
   },
   root: {
     flexGrow: 1,
-    backgroundColor: "#07142B",
+    //Daimler Background image
+    backgroundImage: `url(${ require("./daimlerBackground.png") })`,
     width: 1062,
     height: 484,
     resizeMode: 'cover',
