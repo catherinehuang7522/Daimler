@@ -8,7 +8,7 @@ const styles = {
     width: 1062,
     height: 484,
     resizeMode: 'cover',
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     overflow: "scroll",
     zIndex: 1,
   },
@@ -18,7 +18,7 @@ const styles = {
     width: 1062,
     height: 484,
     resizeMode: 'cover',
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     overflow: "scroll",
     zIndex: 1,
 
@@ -66,7 +66,7 @@ const styles = {
     width: 100,
     height: 100,
     borderRadius: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     fontSize: 24,
@@ -100,10 +100,10 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 332,
     height: 78,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     marginTop: 10,
     marginRight: 5,
   },
@@ -112,12 +112,13 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 280,
     height: 78,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
 
   smallSelectedButtonTimer: {
@@ -125,12 +126,13 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 280,
     height: 78,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
 
   nextButton: {
@@ -138,14 +140,14 @@ const styles = {
     position: "fixed",
     top: 420,
     left: 920,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Bangers'
   },
   previousButton: {
     color: "white",
     position: "fixed",
     top: 10,
     left: 10,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Bangers'
   },
   title: {
     color: "white",
@@ -153,18 +155,18 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 70,
-    marginLeft: 15,
+    marginTop: 40,
   },
 
   //Landing Page Title Styling
   titleLandingPage: {
     color: "#1F1F55",
     strokeWidth:"10",
-    fontSize: 48,
+    fontSize: 52,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    textAlign: "center",
     marginTop: 70,
     marginLeft: 15,
   },
@@ -180,9 +182,11 @@ const styles = {
   questionText: {
     color: "white",
     fontSize: 24,
-    marginLeft: 50,
-    marginRight: 50,
-    textAlign: 'center'
+    fontWeight: 'bold',
+    marginLeft: 20,
+    marginRight: 20,
+    textAlign: 'center',
+    fontFamily: 'Open Sans'
   },
   feedbackHeaderTextCorrect: {
     color: "#379634",
@@ -201,9 +205,10 @@ const styles = {
     borderRadius: 20,
     width: 332,
     height: 78,
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
   smallUnselectedButton: {
     backgroundColor: "#205B82",
@@ -211,18 +216,20 @@ const styles = {
     borderRadius: 20,
     width: 280,
     height: 78,
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
   answerButton: {
     backgroundColor: "#205B82",
     color: "white",
-    fontSize: 22,
+    fontSize: 20,
     borderRadius: 20,
     width: 332,
     height: 120,
-    fontFamily: "Kontakt",
+    fontFamily: "Open Sans",
+    fontWeight: 'bold',
     marginTop: 10,
     marginRight: 5,
   },
@@ -235,19 +242,19 @@ const styles = {
     marginLeft: 430,
     width: 200,
     height: 120,
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
   },
 
 startButtonTrial: {
   backgroundColor: 'white',
   color: '#07142B',
-  fontSize: 18,
+  fontSize: 32,
   boxShadow: '0px 0px 4px #ffffff',
   borderRadius: 20,
-  border: '5px solid #4DFAFA',
+  border: '3px solid #4DFAFA',
   width: 170,
   height: 78,
-  fontFamily: 'Kontakt',
+  fontFamily: 'Bangers',
   marginTop:120,
   marginLeft: 443,
 },
@@ -272,7 +279,7 @@ startButtonTrial: {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     margin: 5
@@ -283,11 +290,11 @@ startButtonTrial: {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     margin: 5
   },
   unselectedAvatarButton: {
@@ -296,7 +303,7 @@ startButtonTrial: {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     margin: 5
@@ -307,11 +314,11 @@ startButtonTrial: {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     margin: 5
   },
   smallselectedAvatar: {
@@ -322,7 +329,7 @@ startButtonTrial: {
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
   },
   smallUnselectedAvatar: {
     display: 'flex',
@@ -337,10 +344,10 @@ startButtonTrial: {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 200,
     height: 78,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Bangers'
   },
   characterButtonContent: {
     display: 'flex',
@@ -359,15 +366,16 @@ startButtonTrial: {
     color: 'white'
   },
   characterButtonText: {
-    fontSize: 10,
-    marginTop: 10
+    fontSize: 16,
+    marginTop: 5
   },
   leaderBoardText: {
     color: "white",
     fontSize: 24,
+    fontFamily: 'Open Sans'
   },
   parent:{
-    display: "flex", 
+    display: "flex",
     alignItems: "center",
     justifyContent: "center"
   },
@@ -378,7 +386,7 @@ startButtonTrial: {
   //For single page difficulty and duration
   selectionText: {
     color: "white",
-    fontSize: 20,
+    fontSize: 24,
     display: "flex",
     alignItems: "center",
     marginTop: 20,
@@ -412,29 +420,33 @@ startButtonTrial: {
     alignItems: 'center',
     flex: 3
   },
-  // background:{
-  //   backgroundImage: `url(require("../assets/bakground.jpeg"))`,  // Import background image
-  //
-  // },
   unselectedCategoryButton: {
     backgroundColor: "#205B82",
     color: "white",
     borderRadius: 20,
     width: 160,
     height: 78,
-    fontFamily: "Kontakt",
-    margin: 10
+    fontFamily: "Bangers",
+    margin: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontSize: 20
   },
   selectedCategoryButton: {
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     borderRadius: 20,
     width: 160,
     height: 78,
-    fontFamily: "Kontakt",
-    margin: 10
+    fontFamily: "Bangers",
+    margin: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontSize: 20
   },
 };
 

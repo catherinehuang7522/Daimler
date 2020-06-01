@@ -8,14 +8,15 @@ class LandingPage extends Component {
     return (
       <div style={styles.rootBackgroundColor}>
         <Grid style={styles.titleLandingPage}>
-          Cabana <br />
-          Trivia
+          CABANA <br />
+          TRIVIA
             </Grid>
         <Button
           style={styles.startButtonTrial}
           onClick={() => this.props.callback("PROFILES")}
-        >Start Game</Button>
-
+        >
+          START
+        </Button>
       </div>
     )
   }
