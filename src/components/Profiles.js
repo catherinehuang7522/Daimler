@@ -44,11 +44,13 @@ class ProfileComponent extends Component {
         name={player["username"]}
         selected={this.state.playersChosen.includes(player)}
         onClick={() => this.onClickExistingPlayer(player)}
+        key={index}
       />
     ));
   }
 
   //stores all players in playersToShow from firbase
+  //TODO write this so it stores players direct in playerstoshow without calling setState
   getPlayersFromBackend() {
     let firebase = Firebase.sharedInstance
     firebase.db.collection('users').get().then(snapshot => {

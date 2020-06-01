@@ -40,6 +40,7 @@ class QuestionsComponent extends Component {
     this.getUrls = this.getUrls.bind(this);
     this.parseQuestionAnswerFormat = this.parseQuestionAnswerFormat.bind(this);
     this.shuffleArray = this.shuffleArray.bind(this);
+    this.getPlayers = this.getPlayers.bind(this);
   }
 
   // calls function to fetch the questions before the component mounts
@@ -151,7 +152,21 @@ class QuestionsComponent extends Component {
     this.setState({ questionIndex: nextQIndex });
   }
 
+  //renders the players and shows how's the current player to keep track
+  getPlayers(currentPlayer) {
+    return this.props.playersChosen.map((player, index) => (
+      <CharacterButton
+        selectedImage={imageIndex.getImage(player["avatar"], true)}
+        unSelectedImage={imageIndex.getImage(player["avatar"], false)}
+        name={player["username"]}
+        selected={currentPlayer === player ? true : false}
+        key={index}
+      />
+    ));
+  }
+
   render() {
+    console.log("in render")
     const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
@@ -172,7 +187,7 @@ class QuestionsComponent extends Component {
           {this.state.questionIndex < this.props.numQuestions && (
             <>
               <div style={styles.circularProgress}>
-                <CircularProgressbar value={percentageProgress} text={`${this.state.currentScore}`} styles={buildStyles({
+                <CircularProgressbar value={percentageProgress} text={``} styles={buildStyles({
                   textSize
 
                     : '40px'
@@ -187,14 +202,9 @@ class QuestionsComponent extends Component {
 
               <div style={styles.questionsBottomWrapper}>
                 <div style={styles.currentPlayerSection}>
-                  <CharacterButton
-                    selectedImage={imageIndex.getImage(currentPlayer["avatar"], true)}
-                    unSelectedImage={imageIndex.getImage(currentPlayer["avatar"], false)}
-                    name={currentPlayer["username"]}
-                    selected={true}
-                  />
+                  {this.getPlayers(currentPlayer)}
+
                   <div style={styles.currentPlayerText}>
-                    CURRENT PLAYER
                   </div>
                 </div>
                 <div style={styles.answersWrapper}>
