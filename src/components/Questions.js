@@ -213,7 +213,7 @@ class QuestionsComponent extends Component {
 
     this.setState({ lastQuestionCorrect: isCorrect });
     this.setState({ lastQuestionAnswer: correctAnswer });
-    this.setState({ showFeedback: true });
+    //this.setState({ showFeedback: true });
     this.setState({ currentScore: score });
 
     setTimeout(() => {

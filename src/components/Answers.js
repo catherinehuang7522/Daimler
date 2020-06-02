@@ -26,7 +26,9 @@ class AnswersComponent extends Component {
       let currAnswerObj = this.props.answers[i];
 
       if (currAnswerObj.correct) {
-        this.setState({correctAnswer : String(i)})
+        let correctAnswerIndex = parseInt(i) + 1
+        console.log("correct answer index: ", correctAnswerIndex);
+        this.setState({correctAnswer : String(correctAnswerIndex)})
         correctAnswer = entities.decode(currAnswerObj.text); // decoding because some of the questions and answers have HTML entities e.g. &quot;
         break;
       }
