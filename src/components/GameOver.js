@@ -31,13 +31,14 @@ class GameOverComponent extends Component {
     var date = new Date()
     let timestamp = date.getTime()
 
-    let data = {
-      [timestamp]: this.props.score
-    };
     for (let index in this.props.player) {
+      let user = this.props.player[index]
       let userID = this.props.player[index]["username"]
+      let data = {
+        [timestamp]: this.props.score[user]
+      };
       //set the data in Firebase
-      let setDoc = await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+      await firebase.db.collection('users').doc(userID).set(data, { merge: true });
     }
 
   }
@@ -58,8 +59,11 @@ class GameOverComponent extends Component {
   render() {
     return (
       <Grid container direction="column" justify="center" alignItems="center">
+        <p style={styles.title}>
+          Great Job!
+        </p>
         <p style={styles.questionText}>
-          Game Over. You scored: {this.props.score}
+          You scored {this.props.score[this.props.player[0]]} points
         </p>
 
 

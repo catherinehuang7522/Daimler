@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import DangerButton from "./DangerButton";
 import CategoriesButton from "./CategoriesButton";
 import Grid from "@material-ui/core/Grid";
 import { styles } from "../stylesheet.js";
 import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
-import { CATEGORIES_MAP } from "../constants";
 import UIFx from "uifx";
 import selectAudio from "../res/select.mp3"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -28,7 +26,7 @@ class CategoriesComponent extends Component {
 
       //PREVIOUSLY:
       generalKnowledge: false,
-      location:false,
+      location: false,
       film: false,
       scienceNature: false,
       sports: false,
@@ -79,21 +77,21 @@ class CategoriesComponent extends Component {
     }
   }
 
-   //NEW
-   onClickLocation() {
-    if (this.state.count == 3 && !this.state.location) {
-    console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
-    return;
+  //NEW
+  onClickLocation() {
+    if (this.state.count === 3 && !this.state.location) {
+      console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
+      return;
+    }
+    this.setState({ location: !this.state.location });
+    !this.state.location
+      ? this.incrementCount("LOCATION")
+      : this.decrementCount("LOCATION");
   }
-  this.setState({ location: !this.state.location });
-  !this.state.location
-    ? this.incrementCount("LOCATION")
-    : this.decrementCount("LOCATION");
-}
 
   onClickGeneralKnowledge() {
     // Trying to select new one but 3 are already selected
-    if (this.state.count == 3 && !this.state.generalKnowledge) {
+    if (this.state.count === 3 && !this.state.generalKnowledge) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -104,7 +102,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickFilm() {
-    if (this.state.count == 3 && !this.state.film) {
+    if (this.state.count === 3 && !this.state.film) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -115,7 +113,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickScienceNature() {
-    if (this.state.count == 3 && !this.state.scienceNature) {
+    if (this.state.count === 3 && !this.state.scienceNature) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -126,7 +124,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickSports() {
-    if (this.state.count == 3 && !this.state.sports) {
+    if (this.state.count === 3 && !this.state.sports) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -137,7 +135,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickHistory() {
-    if (this.state.count == 3 && !this.state.history) {
+    if (this.state.count === 3 && !this.state.history) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -148,7 +146,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickTV() {
-    if (this.state.count == 3 && !this.state.tv) {
+    if (this.state.count === 3 && !this.state.tv) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -159,7 +157,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickBooks() {
-    if (this.state.count == 3 && !this.state.books) {
+    if (this.state.count === 3 && !this.state.books) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -170,7 +168,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickMusic() {
-    if (this.state.count == 3 && !this.state.music) {
+    if (this.state.count === 3 && !this.state.music) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -181,7 +179,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickMythology() {
-    if (this.state.count == 3 && !this.state.mythology) {
+    if (this.state.count === 3 && !this.state.mythology) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -192,7 +190,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickGeography() {
-    if (this.state.count == 3 && !this.state.geography) {
+    if (this.state.count === 3 && !this.state.geography) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -203,7 +201,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickArt() {
-    if (this.state.count == 3 && !this.state.art) {
+    if (this.state.count === 3 && !this.state.art) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -212,7 +210,7 @@ class CategoriesComponent extends Component {
   }
 
   onClickVideoGames() {
-    if (this.state.count == 3 && !this.state.videoGames) {
+    if (this.state.count === 3 && !this.state.videoGames) {
       console.log("You've already selected 3 categories. Please deselect one before selecting another one.");
       return;
     }
@@ -364,8 +362,8 @@ class CategoriesComponent extends Component {
         <DoubleArrowIcon fontSize="large" />
       </IconButton>
     ) : (
-      <div></div>
-    );
+        <div></div>
+      );
 
     const previousScreenButton = (
       <IconButton
@@ -385,19 +383,19 @@ class CategoriesComponent extends Component {
         {previousScreenButton}
         <Grid style={styles.title}> SELECT UP TO 3 CATEGORIES </Grid>
         <div style={styles.categoryButtonsContainer}>
-            {generalKnowledgeButton}
-            {filmButton}
-            {scienceNatureButton}
-            {sportsButton}
-            {historyButton}
-            {tvButton}
-            {booksButton}
-            {musicButton}
-            {mythologyButton}
-            {geographyButton}
-            {artButton}
-            {videoGamesButton}
-            {locationButton}
+          {generalKnowledgeButton}
+          {filmButton}
+          {scienceNatureButton}
+          {sportsButton}
+          {historyButton}
+          {tvButton}
+          {booksButton}
+          {musicButton}
+          {mythologyButton}
+          {geographyButton}
+          {artButton}
+          {videoGamesButton}
+          {locationButton}
         </div>
         {nextButton}
       </div>

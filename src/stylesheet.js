@@ -1,12 +1,29 @@
 const styles = {
-  root: {
+  rootBackgroundColor: {
     flexGrow: 1,
-    backgroundColor: "#07142B",
-    width: 1062,
-    height: 484,
-    fontFamily: "Kontakt",
+    backgroundImage: `url(${ require("./background.jpeg") })`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    width: 1000,
+    height: 495,
+    resizeMode: 'cover',
+    fontFamily: "Bangers",
     overflow: "scroll",
     zIndex: 1,
+  },
+  root: {
+    flexGrow: 1,
+    //Daimler Background image
+    backgroundImage: `url(${ require("./daimlerBackground.png") })`,
+    backgroundSize: 'contain',
+    width: 1000,
+    height: 495,
+    resizeMode: 'cover',
+    fontFamily: "Bangers",
+    overflow: "scroll",
+    zIndex: 1,
+
   },
   row: {
     display: "flex",
@@ -15,12 +32,14 @@ const styles = {
     flexDirection: "row",
     marginTop: 20,
     marginBottom: 20,
+    marginLeft: 100,
+    marginRight: 100
   },
   profileComponentWrapper: {
     display: "flex",
     flexDirection: 'row',
-    marginLeft: 150,
-    marginRight: 150,
+    marginLeft: 100,
+    marginRight: 100,
   },
   avatarSection: {
     display: "flex",
@@ -51,14 +70,14 @@ const styles = {
     width: 100,
     height: 100,
     borderRadius: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     fontSize: 24,
   },
   categoryButtonsContainer: {
-    paddingLeft: 150,
-    paddingRight: 150,
+    marginLeft: 100,
+    marginRight: 100,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -85,10 +104,10 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 332,
     height: 78,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     marginTop: 10,
     marginRight: 5,
   },
@@ -97,26 +116,42 @@ const styles = {
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 280,
     height: 78,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
+
+  smallSelectedButtonTimer: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '3px solid #4DFAFA',
+    width: 280,
+    height: 78,
+    fontFamily: 'Bangers',
+    marginTop: 10,
+    marginRight: 5,
+    fontSize: 30,
+  },
+
   nextButton: {
     color: "white",
     position: "fixed",
     top: 420,
-    left: 920,
-    fontFamily: 'Kontakt'
+    left: 880,
+    fontFamily: 'Bangers'
   },
   previousButton: {
     color: "white",
     position: "fixed",
     top: 10,
     left: 10,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Bangers'
   },
   title: {
     color: "white",
@@ -124,12 +159,30 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40
+    marginTop: 40,
+  },
+  landingTitle: {
+    color: "#1F1F55",
+    strokeWidth:"10",
+    fontSize: 52,
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    marginTop: 70
+  },
+  //Landing Page Title Styling
+  titleLandingPage: {
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    textAlign: "center",
   },
   feedbackWrapper: {
     zIndex: 10,
-    width: 1062,
-    height: 484,
+    width: 1000,
+    height: 495,
   },
   feedbackContent: {
     display: "flex",
@@ -138,9 +191,11 @@ const styles = {
   questionText: {
     color: "white",
     fontSize: 24,
-    marginLeft: 50,
-    marginRight: 50,
-    textAlign: 'center'
+    fontWeight: 'bold',
+    marginLeft: 20,
+    marginRight: 20,
+    textAlign: 'center',
+    fontFamily: 'Open Sans'
   },
   feedbackHeaderTextCorrect: {
     color: "#379634",
@@ -159,9 +214,10 @@ const styles = {
     borderRadius: 20,
     width: 332,
     height: 78,
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
   smallUnselectedButton: {
     backgroundColor: "#205B82",
@@ -169,18 +225,20 @@ const styles = {
     borderRadius: 20,
     width: 280,
     height: 78,
-    fontFamily: "Kontakt",
+    fontFamily: "Bangers",
     marginTop: 10,
     marginRight: 5,
+    fontSize: 30,
   },
   answerButton: {
     backgroundColor: "#205B82",
     color: "white",
-    fontSize: 22,
+    fontSize: 20,
     borderRadius: 20,
     width: 332,
     height: 120,
-    fontFamily: "Kontakt",
+    fontFamily: "Open Sans",
+    fontWeight: 'bold',
     marginTop: 10,
     marginRight: 5,
   },
@@ -196,6 +254,29 @@ const styles = {
     marginRight: 5,
     border: '5px solid #33FF62',
   },
+  startButton: {
+    backgroundColor: "#205B82",
+    color: "#1F1F55",
+    fontSize: 22,
+    borderRadius: 20,
+    marginTop:130,
+    marginLeft: 430,
+    width: 200,
+    height: 120,
+    fontFamily: "Bangers",
+  },
+landingStartButton: {
+  backgroundColor: 'white',
+  color: '#07142B',
+  fontSize: 32,
+  boxShadow: '0px 0px 4px #ffffff',
+  borderRadius: 20,
+  border: '3px solid #4DFAFA',
+  width: 170,
+  height: 78,
+  fontFamily: 'Bangers',
+  marginTop:120,
+},
   container: {
     display: "flex",
     justifyContent: "center",
@@ -216,7 +297,7 @@ const styles = {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     margin: 5
@@ -227,11 +308,11 @@ const styles = {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     margin: 5
   },
   unselectedAvatarButton: {
@@ -240,7 +321,7 @@ const styles = {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "#205B82",
     color: "white",
     margin: 5
@@ -251,22 +332,40 @@ const styles = {
     height: 100,
     borderRadius: 20,
     marginTop: 20,
-    fontFamily: 'Kontakt',
+    fontFamily: 'Bangers',
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     margin: 5
+  },
+  smallselectedAvatar: {
+    display: 'flex',
+    width: 55,
+    height: 55,
+    borderRadius: 5,
+    backgroundColor: "white",
+    color: '#07142B',
+    boxShadow: '0px 0px 4px #ffffff',
+    border: '3px solid #4DFAFA',
+  },
+  smallUnselectedAvatar: {
+    display: 'flex',
+    width: 55,
+    height: 55,
+    borderRadius: 5,
+    backgroundColor: "#205B82",
+    color: "white",
   },
   newPlayerButton: {
     backgroundColor: 'white',
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
     borderRadius: 20,
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     width: 200,
     height: 78,
-    fontFamily: 'Kontakt'
+    fontFamily: 'Bangers'
   },
   characterButtonContent: {
     display: 'flex',
@@ -285,17 +384,27 @@ const styles = {
     color: 'white'
   },
   characterButtonText: {
-    fontSize: 10,
-    marginTop: 10
+    fontSize: 16,
+    marginTop: 5
   },
   leaderBoardText: {
     color: "white",
-    fontSize: 36,
+    fontSize: 24,
+    fontFamily: 'Open Sans'
+  },
+  parent:{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  leaderboard: {
+    display: "flex",
+    width: 1000
   },
   //For single page difficulty and duration
   selectionText: {
     color: "white",
-    fontSize: 20,
+    fontSize: 24,
     display: "flex",
     alignItems: "center",
     marginTop: 20,
@@ -329,29 +438,33 @@ const styles = {
     alignItems: 'center',
     flex: 3
   },
-  background:{
-    backgroundImage: `url(require("../assets/bakground.jpeg"))`,  // Import background image
-
-  },
   unselectedCategoryButton: {
     backgroundColor: "#205B82",
     color: "white",
     borderRadius: 20,
     width: 160,
     height: 78,
-    fontFamily: "Kontakt",
-    margin: 10
+    fontFamily: "Bangers",
+    margin: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontSize: 20
   },
   selectedCategoryButton: {
     backgroundColor: "white",
     color: '#07142B',
     boxShadow: '0px 0px 4px #ffffff',
-    border: '5px solid #4DFAFA',
+    border: '3px solid #4DFAFA',
     borderRadius: 20,
     width: 160,
     height: 78,
-    fontFamily: "Kontakt",
-    margin: 10
+    fontFamily: "Bangers",
+    margin: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontSize: 20
   },
 };
 
