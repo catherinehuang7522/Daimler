@@ -6,8 +6,6 @@ import AnswersComponent from "./Answers";
 import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
 import Firebase from "./firebase"
-import { IconButton } from "@material-ui/core";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import { CATEGORIES_MAP } from "../constants";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -68,10 +66,7 @@ class QuestionsComponent extends Component {
 
     var urls = [];
     var customURL = "";
-    console.log("categ length: "+this.props.cat.length+" num questions: "+this.state.numQuestions);
-
-    const numQs = Math.floor(this.state.numQuestions/ categories.length); // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
-    this.setState({numQuestions: numQs*categories.length})
+    const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
     console.log(this.props.diff);
     for (var i = 0; i < categories.length; i++) {
       customURL =
@@ -109,10 +104,8 @@ class QuestionsComponent extends Component {
       allData = allData.concat(catQuestionsAndAnswers);
     }
 
-
-   allData = this.shuffleArray(allData);
-    allData.slice(0, this.state.numQuestions);
-
+    this.shuffleArray(allData);
+    allData.slice(0, this.props.numQuestions);
 
     this.setState({ questionsArr: allData });
   }
@@ -167,13 +160,16 @@ class QuestionsComponent extends Component {
 
     this.setState({ lastQuestionCorrect: isCorrect });
     this.setState({ lastQuestionAnswer: correctAnswer });
-    //this.setState({ showFeedback: true });
-    this.setState({ currentScore: score });
-
+    this.setState({ showFeedback: true });
     setTimeout(() => {
       this.setState({ showFeedback: false });
-      this.setState({ questionIndex: nextQIndex });
     }, FEEDBACK_SHOW_TIME_SECS * 1000);
+
+    var scores = this.state.currentScore;
+    scores[this.currentPlayerName()] = score;
+
+    this.setState({ currentScore: scores });
+    this.setState({ questionIndex: nextQIndex });
   }
 
   //renders the players and shows how's the current player to keep track
@@ -190,24 +186,8 @@ class QuestionsComponent extends Component {
   }
 
   render() {
-    const previousScreenButton = (
-      <IconButton
-        style={styles.previousButton}
-        onClick={() => this.props.callback("LANDING")}
-      >
-        <ArrowBackIcon fontSize="large" />
-        HOME
-      </IconButton>
-    );
-
-    const percentageProgress = Number((this.state.questionIndex / this.state.numQuestions).toPrecision(2)) * 100
-
-    var scores = this.state.currentScore;
-    scores[this.currentPlayerName()] = score;
-
-    this.setState({ currentScore: scores });
-    this.setState({ questionIndex: nextQIndex });
-
+    console.log("in render")
+    const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
     // console.log(currentPlayerIndex);
@@ -226,7 +206,6 @@ class QuestionsComponent extends Component {
         <Grid container direction="column" justify="center" alignItems="center">
           {this.state.questionIndex < this.props.numQuestions && (
             <>
-              {previousScreenButton}
               <div style={styles.circularProgress}>
                 <CircularProgressbar value={percentageProgress} text={`${this.state.currentScore[this.currentPlayerName()]}`} styles={buildStyles({
                   textSize
