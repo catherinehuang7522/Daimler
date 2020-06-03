@@ -5,8 +5,8 @@ const styles = {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    width: 1062,
-    height: 484,
+    width: 1000,
+    height: 495,
     resizeMode: 'cover',
     fontFamily: "Bangers",
     overflow: "scroll",
@@ -16,8 +16,9 @@ const styles = {
     flexGrow: 1,
     //Daimler Background image
     backgroundImage: `url(${ require("./daimlerBackground.png") })`,
-    width: 1062,
-    height: 484,
+    backgroundSize: 'contain',
+    width: 1000,
+    height: 495,
     resizeMode: 'cover',
     fontFamily: "Bangers",
     overflow: "scroll",
@@ -31,12 +32,14 @@ const styles = {
     flexDirection: "row",
     marginTop: 20,
     marginBottom: 20,
+    marginLeft: 100,
+    marginRight: 100
   },
   profileComponentWrapper: {
     display: "flex",
     flexDirection: 'row',
-    marginLeft: 150,
-    marginRight: 150,
+    marginLeft: 100,
+    marginRight: 100,
   },
   avatarSection: {
     display: "flex",
@@ -73,8 +76,8 @@ const styles = {
     fontSize: 24,
   },
   categoryButtonsContainer: {
-    paddingLeft: 150,
-    paddingRight: 150,
+    marginLeft: 100,
+    marginRight: 100,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -140,7 +143,7 @@ const styles = {
     color: "white",
     position: "fixed",
     top: 420,
-    left: 920,
+    left: 880,
     fontFamily: 'Bangers'
   },
   previousButton: {
@@ -158,23 +161,28 @@ const styles = {
     justifyContent: "center",
     marginTop: 40,
   },
-
-  //Landing Page Title Styling
-  titleLandingPage: {
+  landingTitle: {
     color: "#1F1F55",
     strokeWidth:"10",
     fontSize: 52,
     display: "flex",
+    flexDirection: 'column',
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    marginTop: 70,
-    marginLeft: 15,
+    marginTop: 70
+  },
+  //Landing Page Title Styling
+  titleLandingPage: {
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    textAlign: "center",
   },
   feedbackWrapper: {
     zIndex: 10,
-    width: 1062,
-    height: 484,
+    width: 1000,
+    height: 495,
   },
   feedbackContent: {
     display: "flex",
@@ -246,7 +254,7 @@ const styles = {
     fontFamily: "Bangers",
   },
 
-startButtonTrial: {
+landingStartButton: {
   backgroundColor: 'white',
   color: '#07142B',
   fontSize: 32,
@@ -257,7 +265,6 @@ startButtonTrial: {
   height: 78,
   fontFamily: 'Bangers',
   marginTop:120,
-  marginLeft: 443,
 },
 
   container: {
