@@ -184,7 +184,7 @@ class CategoriesComponent extends Component {
       return;
     }
     this.setState({ mythology: !this.state.mythology });
-    !this.state.music
+    !this.state.mythology
       ? this.incrementCount("MYTHOLOGY")
       : this.decrementCount("MYTHOLOGY");
   }
@@ -236,6 +236,11 @@ class CategoriesComponent extends Component {
     var unwantedCategory = currentCategories.indexOf(index);
     currentCategories.splice(unwantedCategory, 1);
     this.setState({ categoriesChosen: currentCategories });
+  }
+
+  onClickCategory(category){
+
+
   }
 
   render() {

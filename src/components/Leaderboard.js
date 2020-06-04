@@ -8,6 +8,9 @@ import TableCell from "@material-ui/core/TableCell"
 import BoardRow from "./BoardRow"
 import TableBody from "@material-ui/core/TableBody"
 import Firebase from "./firebase"
+import HomeIcon from '@material-ui/icons/Home';
+import Fab from '@material-ui/core/Fab';
+import purple from '@material-ui/core/colors/purple';
 
 
 
@@ -50,6 +53,10 @@ class Leaderboard extends Component {
             let isCurrentPlayer = false;
             if (currentPlayers.indexOf(item.player) > -1) isCurrentPlayer = true
         
+            console.log("is current player: "+isCurrentPlayer);
+            console.log(item);
+            
+            
             
             allRows.push( <BoardRow username={ item.player} score={item.totalScore} isCurrentPlayer={isCurrentPlayer} avatar={item.avatar}  />)
         }
@@ -93,6 +100,8 @@ class Leaderboard extends Component {
     };
 
     render() {
+
+        const colHome = purple[600];
         return (
             <div style={styles.root}>
                 <div style={styles.parent}>
@@ -100,12 +109,16 @@ class Leaderboard extends Component {
                 <Grid style={styles.title} direction="column">  <>LEADERBOARD </>
                 <Table>
                     <TableBody>
+                        <TableRow style={styles.leaderBoardTitleCont} >
+                            <TableCell  style={styles.leaderBoardTitle}> Player</TableCell>
+                            <TableCell  style={styles.leaderBoardTitle}align="right">Total Score</TableCell>
+                        </TableRow>
                         {this.state.allRows}
                     </TableBody>
                 </Table>
-                <Button style={styles.unselectedButton} mt={5} onClick={this.onGoHome}>
-                    Back to Home
-                </Button>
+                <Fab size="medium" color={colHome} aria-label="home" style={styles.homeIcon} onClick={this.onGoHome} >
+          <HomeIcon />
+        </Fab>
                 </Grid>
                 </div>
             </div>

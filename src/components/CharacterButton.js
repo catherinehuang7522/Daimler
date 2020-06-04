@@ -11,6 +11,9 @@ class CharacterButton extends Component {
       style = this.props.selected ? styles.selectedAvatarButton : styles.unselectedAvatarButton;
     }
 
+    console.log("slected: "+this.props.selected+" selectedImage: "+this.props.selectedImage+" name: "+this.props.name );
+    
+
     return (
       <Button
         style={style}

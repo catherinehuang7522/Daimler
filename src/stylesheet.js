@@ -380,7 +380,8 @@ landingStartButton: {
   leaderBoardText: {
     color: "white",
     fontSize: 24,
-    fontFamily: 'Open Sans'
+    fontFamily: 'Open Sans',
+    borderBottom: "none"
   },
   parent:{
     display: "flex",
@@ -390,6 +391,21 @@ landingStartButton: {
   leaderboard: {
     display: "flex",
     width: 1000
+  },
+  homeIcon: {
+    position: 'absolute',
+    top:400,
+    left:900,
+    color: "purple"
+  },
+  leaderBoardTitleCont:{
+    width: 1000,
+  },
+  leaderBoardTitle: {
+    color: "white",
+    fontSize: 28,
+    fontFamily: 'inherit',
+    borderBottom: "none"
   },
   //For single page difficulty and duration
   selectionText: {
