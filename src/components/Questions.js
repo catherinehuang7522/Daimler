@@ -186,6 +186,7 @@ class QuestionsComponent extends Component {
   }
 
   render() {
+
     console.log("in render")
     const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
     // console.log("playersChosen", this.props.playersChosen);
@@ -245,6 +246,9 @@ class QuestionsComponent extends Component {
                 score={this.state.currentScore}
                 callback={this.props.callback}
                 player={this.props.player}
+
+                playersChosen={this.props.playersChosen}
+
               ></GameOverComponent>
             </>
           )
