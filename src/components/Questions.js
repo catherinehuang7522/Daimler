@@ -183,7 +183,7 @@ class QuestionsComponent extends Component {
   //renders the players and shows how's the current player to keep track
   getPlayers(currentPlayer) {
     return this.props.playersChosen.map((player, index) => (
-      <div>
+      <div style={styles.playerWrapper}>
         <CharacterButton
           selectedImage={imageIndex.getImage(player["avatar"], true)}
           unSelectedImage={imageIndex.getImage(player["avatar"], false)}
@@ -247,7 +247,7 @@ class QuestionsComponent extends Component {
               <GameOverComponent
                 score={this.state.currentScore}
                 callback={this.props.callback}
-                player={this.props.player} // What are we passing here and why, should not be needed. 
+                player={this.props.player} // What are we passing here and why, should not be needed.
               ></GameOverComponent>
             </>
           )

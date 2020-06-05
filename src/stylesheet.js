@@ -48,6 +48,11 @@ const styles = {
     flexDirection: "row",
     flexWrap: "wrap",
   },
+  playerWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   avatarScore: {
     display: "flex",
     flex: 1,
@@ -60,13 +65,11 @@ const styles = {
     marginBottom: 'auto',
     alignItems: "center",
   },
-
   score: {
-    //alignItems: "center",
-    flexDirection: "row",
     color: "white",
     fontSize: 24,
     fontWeight: 'bold',
+    marginLeft: 20,
   },
   addPlayerSection: {
     display: "flex",
