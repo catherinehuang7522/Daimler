@@ -31,14 +31,12 @@ class GameOverComponent extends Component {
     var date = new Date()
     let timestamp = date.getTime()
 
-    for (let index in this.props.player) {
-      let user = this.props.player[index]
-      let userID = this.props.player[index]["username"]
+    for (let username in this.props.score) {
       let data = {
-        [timestamp]: this.props.score[user]
+        [timestamp]: this.props.score[username]
       };
       //set the data in Firebase
-      await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+      await firebase.db.collection('users').doc(username).set(data, { merge: true });
     }
 
   }

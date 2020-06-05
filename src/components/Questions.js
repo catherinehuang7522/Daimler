@@ -7,8 +7,12 @@ import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
 import Firebase from "./firebase"
 
+
 import { CATEGORIES_MAP } from "../constants";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import Progress from 'react-progressbar';
+import { LinearProgress } from '@material-ui/core';
+import { Line, Circle } from 'rc-progress';
 import 'react-circular-progressbar/dist/styles.css';
 import { imageIndex } from "../components/ImageIndex";
 import CharacterButton from "./CharacterButton";
@@ -50,7 +54,7 @@ class QuestionsComponent extends Component {
   }
 
   currentPlayerName() {
-    return this.props.playersChosen[this.state.questionIndex % this.props.playersChosen.length];
+    return this.props.playersChosen[this.state.questionIndex % this.props.playersChosen.length]['username'];
   }
 
   /*
@@ -158,9 +162,11 @@ class QuestionsComponent extends Component {
 
     const nextQIndex = this.state.questionIndex + 1;
 
-    this.setState({ lastQuestionCorrect: isCorrect });
-    this.setState({ lastQuestionAnswer: correctAnswer });
-    this.setState({ showFeedback: true });
+    this.setState({
+      lastQuestionCorrect: isCorrect,
+      lastQuestionAnswer: correctAnswer,
+      showFeedback: true
+    });
     setTimeout(() => {
       this.setState({ showFeedback: false });
     }, FEEDBACK_SHOW_TIME_SECS * 1000);
@@ -168,25 +174,30 @@ class QuestionsComponent extends Component {
     var scores = this.state.currentScore;
     scores[this.currentPlayerName()] = score;
 
-    this.setState({ currentScore: scores });
-    this.setState({ questionIndex: nextQIndex });
+    this.setState({
+      currentScore: scores,
+      questionIndex: nextQIndex
+    });
   }
 
   //renders the players and shows how's the current player to keep track
   getPlayers(currentPlayer) {
     return this.props.playersChosen.map((player, index) => (
-      <CharacterButton
-        selectedImage={imageIndex.getImage(player["avatar"], true)}
-        unSelectedImage={imageIndex.getImage(player["avatar"], false)}
-        name={player["username"]}
-        selected={currentPlayer === player ? true : false}
-        key={index}
-      />
+      <div>
+        <CharacterButton
+          selectedImage={imageIndex.getImage(player["avatar"], true)}
+          unSelectedImage={imageIndex.getImage(player["avatar"], false)}
+          name={player["username"]}
+          selected={currentPlayer === player ? true : false}
+          key={index}
+        />
+        {console.log('player')}
+        <p style={styles.score}>{this.state.currentScore[player['username']] === undefined ? "0" : this.state.currentScore[player['username']]}</p>
+      </div>
     ));
   }
 
   render() {
-    console.log("in render")
     const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
@@ -207,11 +218,7 @@ class QuestionsComponent extends Component {
           {this.state.questionIndex < this.props.numQuestions && (
             <>
               <div style={styles.circularProgress}>
-                <CircularProgressbar value={percentageProgress} text={`${this.state.currentScore[this.currentPlayerName()]}`} styles={buildStyles({
-                  textSize
-
-                    : '40px'
-                })} />
+                <Line percent={percentageProgress} strokeWidth="1" trailWidth="1" strokeColor='#4DFAFA' trailColor='white' />
               </div>
               <p style={styles.questionText}>
                 {this.state.questionsArr &&
@@ -221,12 +228,7 @@ class QuestionsComponent extends Component {
               </p>
 
               <div style={styles.questionsBottomWrapper}>
-                <div style={styles.currentPlayerSection}>
-                  {this.getPlayers(currentPlayer)}
 
-                  <div style={styles.currentPlayerText}>
-                  </div>
-                </div>
                 <div style={styles.answersWrapper}>
                   <AnswersComponent
                     answers={
@@ -237,6 +239,7 @@ class QuestionsComponent extends Component {
                   ></AnswersComponent>
                 </div>
               </div>
+
             </>
           )}
           {this.state.questionIndex >= this.props.numQuestions && (
@@ -244,12 +247,15 @@ class QuestionsComponent extends Component {
               <GameOverComponent
                 score={this.state.currentScore}
                 callback={this.props.callback}
-                player={this.props.player}
+                player={this.props.player} // What are we passing here and why, should not be needed. 
               ></GameOverComponent>
             </>
           )
           }
         </Grid>
+        <div style={styles.avatarScore}>
+          {this.getPlayers(currentPlayer)}
+        </div>
       </div>
     );
   }
