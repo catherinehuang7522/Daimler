@@ -167,7 +167,13 @@ class QuestionsComponent extends Component {
 
     this.setState({ lastQuestionCorrect: isCorrect });
     this.setState({ lastQuestionAnswer: correctAnswer });
-    //this.setState({ showFeedback: true });
+    
+    var scores = this.state.currentScore;
+    scores[this.currentPlayerName()] = score;
+
+    this.setState({ currentScore: scores });
+    this.setState({ questionIndex: nextQIndex });
+
     this.setState({ currentScore: score });
 
     setTimeout(() => {
@@ -201,12 +207,6 @@ class QuestionsComponent extends Component {
     );
 
     const percentageProgress = Number((this.state.questionIndex / this.state.numQuestions).toPrecision(2)) * 100
-
-    var scores = this.state.currentScore;
-    scores[this.currentPlayerName()] = score;
-
-    this.setState({ currentScore: scores });
-    this.setState({ questionIndex: nextQIndex });
 
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
