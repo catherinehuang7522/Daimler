@@ -162,12 +162,11 @@ class QuestionsComponent extends Component {
 
     const nextQIndex = this.state.questionIndex + 1;
 
+
     this.setState({
       lastQuestionCorrect: isCorrect,
       lastQuestionAnswer: correctAnswer,
-      showFeedback: true
-    });
-    setTimeout(() => {
+    });    setTimeout(() => {
       this.setState({ showFeedback: false });
     }, FEEDBACK_SHOW_TIME_SECS * 1000);
 
@@ -198,7 +197,18 @@ class QuestionsComponent extends Component {
   }
 
   render() {
-    const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
+    const previousScreenButton = (
+      <IconButton
+        style={styles.previousButton}
+        onClick={() => this.props.callback("LANDING")}
+      >
+        <ArrowBackIcon fontSize="large" />
+        HOME
+      </IconButton>
+    );
+
+    const percentageProgress = Number((this.state.questionIndex / this.state.numQuestions).toPrecision(2)) * 100
+
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
     // console.log(currentPlayerIndex);
