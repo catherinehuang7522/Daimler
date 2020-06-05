@@ -24,7 +24,7 @@ export default class IndexPage extends Component {
       gameState: "LANDING",
       catArray: [],
       gameDifficulty: "",
-      numQuestions: 5, //This is manually set for easier debugging
+      numQuestions: 10, //This is manually set for easier debugging
       player: "",
       playersChosen: [],
     };
@@ -46,7 +46,7 @@ export default class IndexPage extends Component {
   setDifficulty(difficulty) {
     const analytics = Firebase.sharedInstance.analytics
     analytics.logEvent('difficulty', { level: difficulty });
-    
+
     this.setState({ gameDifficulty: difficulty });
   }
 

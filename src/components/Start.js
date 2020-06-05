@@ -10,7 +10,7 @@ import { IconButton } from "@material-ui/core";
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-const NUM_QUESTIONS_PER_MINUTE = 5;
+const NUM_QUESTIONS_PER_MINUTE = 10;
 const select = new UIFx(selectAudio,
   {
     volume: 0.4, // number between 0.0 ~ 1.0
@@ -177,7 +177,7 @@ class StartComponent extends Component {
             ></AvTimerIcon>
           }
         >
-          10 min
+          10 questions
         </Button>
       ) : (
           <Button
@@ -191,7 +191,7 @@ class StartComponent extends Component {
 
             onClick={() => this.onSelectDuration(1)}
           >
-            10 min
+            10 questions
 
           </Button>
         );
@@ -208,7 +208,7 @@ class StartComponent extends Component {
             ></AvTimerIcon>
           }
         >
-          20 min
+          20 questions
         </Button>
       ) : (
           <Button
@@ -222,7 +222,7 @@ class StartComponent extends Component {
 
             onClick={() => this.onSelectDuration(2)}
           >
-            20 min
+            20 questions
 
           </Button>
         );
@@ -237,7 +237,7 @@ class StartComponent extends Component {
             ></AvTimerIcon>
           }
         >
-          30 min
+          30 questions
         </Button>
       ) : (
           <Button
@@ -251,7 +251,7 @@ class StartComponent extends Component {
 
             onClick={() => this.onSelectDuration(3)}
           >
-            30 min
+            30 questions
 
           </Button>
         );
