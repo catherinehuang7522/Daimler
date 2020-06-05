@@ -86,7 +86,7 @@ class GameOverComponent extends Component {
         <p style={styles.title}>
           Congratulations!
         </p>
-    
+
         <div style={styles.avatarSection}>
               {this.renderPlayers()}
         </div>
