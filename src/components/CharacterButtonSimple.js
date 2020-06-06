@@ -8,7 +8,6 @@ class CharacterButtonSimple extends Component {
     let label = this.props.name ? <div style={styles.characterButtonText}> {this.props.name} </div> : <div />;
     let style = styles.unselectedCharacterButton;
   //Display score below text
-    let score = this.props.score;
 
 
     return (
@@ -18,8 +17,8 @@ class CharacterButtonSimple extends Component {
         <div style={styles.characterButtonContent}>
           {avatar}
           {label}
-          {score}
         </div>
+
       </Button>
     );
   }

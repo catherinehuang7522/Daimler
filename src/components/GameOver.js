@@ -35,14 +35,12 @@ class GameOverComponent extends Component {
     var date = new Date()
     let timestamp = date.getTime()
 
-    for (let index in this.props.player) {
-      let user = this.props.player[index]
-      let userID = this.props.player[index]["username"]
+    for (let username in this.props.score) {
       let data = {
-        [timestamp]: this.props.score[user]
+        [timestamp]: this.props.score[username]
       };
       //set the data in Firebase
-      await firebase.db.collection('users').doc(userID).set(data, { merge: true });
+      await firebase.db.collection('users').doc(username).set(data, { merge: true });
     }
 
   }
@@ -64,20 +62,17 @@ class GameOverComponent extends Component {
     //loops through all plaers to create a CharacterButton and display score
     //can you pass as a prop
     renderPlayers() {
-      console.log("Hello!")
-
       return this.props.playersChosen.map((player, index) => (
-        <CharacterButtonSimple
-          unSelectedImage={imageIndex.getImage(player["avatar"])}
-          name={player["username"]}
-          key={index}
-
-          //Access the score
-          score={this.props.score[player["username"]]}
-        />
+        <div style={styles.playerWrapperCol}>
+          <CharacterButtonSimple
+            unSelectedImage={imageIndex.getImage(player["avatar"])}
+            name={player["username"]}
+            key={index}
+          />
+          <p style={styles.scoreVertical}> {this.props.score[player["username"]]} </p>
+        </div>
       ));
     }
-
 
   render() {
 
@@ -86,10 +81,9 @@ class GameOverComponent extends Component {
         <p style={styles.title}>
           Congratulations!
         </p>
-
-        <div style={styles.avatarSection}>
-              {this.renderPlayers()}
-        </div>
+          <div style={styles.avatarSection}>
+                {this.renderPlayers()}
+          </div>
         <Grid style={styles.column} spacing={3}>
           <Button style={styles.unselectedButton} onClick={this.onGoHome}>
             Back to Home

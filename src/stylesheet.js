@@ -1,7 +1,7 @@
 const styles = {
   rootBackgroundColor: {
     flexGrow: 1,
-    backgroundImage: `url(${ require("./background.jpeg") })`,
+    backgroundImage: `url(${require("./background.jpeg")})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -15,7 +15,7 @@ const styles = {
   root: {
     flexGrow: 1,
     //Daimler Background image
-    backgroundImage: `url(${ require("./daimlerBackground.png") })`,
+    backgroundImage: `url(${require("./daimlerBackground.png")})`,
     backgroundSize: 'contain',
     width: 1000,
     height: 495,
@@ -47,6 +47,39 @@ const styles = {
     alignItems: "center",
     flexDirection: "row",
     flexWrap: "wrap",
+  },
+  playerWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  playerWrapperCol: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  avatarScore: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 50,
+    marginBottom: 'auto',
+    alignItems: "center",
+  },
+  score: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginLeft: 20,
+  },
+  scoreVertical: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: 'bold',
   },
   addPlayerSection: {
     display: "flex",
@@ -163,7 +196,7 @@ const styles = {
   },
   landingTitle: {
     color: "#1F1F55",
-    strokeWidth:"10",
+    strokeWidth: "10",
     fontSize: 52,
     display: "flex",
     flexDirection: 'column',
@@ -236,7 +269,7 @@ const styles = {
     fontSize: 20,
     borderRadius: 20,
     width: 332,
-    height: 120,
+    height: 80,
     fontFamily: "Open Sans",
     fontWeight: 'bold',
     marginTop: 10,
@@ -247,25 +280,25 @@ const styles = {
     color: "#1F1F55",
     fontSize: 22,
     borderRadius: 20,
-    marginTop:130,
+    marginTop: 130,
     marginLeft: 430,
     width: 200,
     height: 120,
     fontFamily: "Bangers",
   },
 
-landingStartButton: {
-  backgroundColor: 'white',
-  color: '#07142B',
-  fontSize: 32,
-  boxShadow: '0px 0px 4px #ffffff',
-  borderRadius: 20,
-  border: '3px solid #4DFAFA',
-  width: 170,
-  height: 78,
-  fontFamily: 'Bangers',
-  marginTop:120,
-},
+  landingStartButton: {
+    backgroundColor: 'white',
+    color: '#07142B',
+    fontSize: 32,
+    boxShadow: '0px 0px 4px #ffffff',
+    borderRadius: 20,
+    border: '3px solid #4DFAFA',
+    width: 170,
+    height: 78,
+    fontFamily: 'Bangers',
+    marginTop: 120,
+  },
 
   container: {
     display: "flex",
@@ -383,7 +416,7 @@ landingStartButton: {
     fontFamily: 'Open Sans',
     borderBottom: "none"
   },
-  parent:{
+  parent: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
@@ -394,11 +427,11 @@ landingStartButton: {
   },
   homeIcon: {
     position: 'absolute',
-    top:400,
-    left:900,
+    top: 400,
+    left: 900,
     color: "purple"
   },
-  leaderBoardTitleCont:{
+  leaderBoardTitleCont: {
     width: 1000,
   },
   leaderBoardTitle: {
@@ -417,8 +450,9 @@ landingStartButton: {
     justifyContent: "center",
   },
   circularProgress: {
-    width: '7%',
-    marginTop: 10,
+    width: '80%',
+    marginTop: 20,
+    colorPrimary: '#1F1F55',
   },
   questionsBottomWrapper: {
     display: 'flex',
