@@ -5,7 +5,9 @@ import Backdrop from "@material-ui/core/Backdrop";
 import AnswersComponent from "./Answers";
 import GameOverComponent from "./GameOver";
 import FeedbackComponent from "./Feedback";
+import { IconButton } from "@material-ui/core";
 import Firebase from "./firebase"
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 import { CATEGORIES_MAP } from "../constants";
@@ -166,8 +168,10 @@ class QuestionsComponent extends Component {
     this.setState({
       lastQuestionCorrect: isCorrect,
       lastQuestionAnswer: correctAnswer,
-    });    setTimeout(() => {
-      this.setState({ showFeedback: false });
+    });
+
+    setTimeout(() => {
+      this.setState({ questionIndex: nextQIndex });
     }, FEEDBACK_SHOW_TIME_SECS * 1000);
 
     var scores = this.state.currentScore;
@@ -175,7 +179,6 @@ class QuestionsComponent extends Component {
 
     this.setState({
       currentScore: scores,
-      questionIndex: nextQIndex
     });
   }
 

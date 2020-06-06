@@ -265,6 +265,18 @@ const styles = {
     marginTop: 10,
     marginRight: 5,
   },
+  answerButtonCorrect: {
+    backgroundColor: "#33FF62",
+    color: "white",
+    fontSize: 20,
+    borderRadius: 20,
+    width: 332,
+    height: 80,
+    fontFamily: "Kontakt",
+    marginTop: 10,
+    marginRight: 5,
+    border: '5px solid #33FF62',
+  },
   startButton: {
     backgroundColor: "#205B82",
     color: "#1F1F55",
