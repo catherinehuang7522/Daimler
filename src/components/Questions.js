@@ -260,7 +260,9 @@ class QuestionsComponent extends Component {
               <GameOverComponent
                 score={this.state.currentScore}
                 callback={this.props.callback}
-                player={this.props.player} // What are we passing here and why, should not be needed.
+                player={this.props.player}
+                playersChosen={this.props.playersChosen}
+
               ></GameOverComponent>
             </>
           )

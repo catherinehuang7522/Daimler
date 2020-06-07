@@ -53,6 +53,11 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center'
   },
+  playerWrapperCol: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
   avatarScore: {
     display: "flex",
     flex: 1,
@@ -70,6 +75,11 @@ const styles = {
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 20,
+  },
+  scoreVertical: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: 'bold',
   },
   addPlayerSection: {
     display: "flex",

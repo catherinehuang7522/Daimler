@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Firebase from "./firebase"
+import CharacterButtonSimple from "./CharacterButtonSimple";
+import { imageIndex } from "../components/ImageIndex";
+
 
 // component shown when the game is over
 class GameOverComponent extends Component {
@@ -19,6 +22,7 @@ class GameOverComponent extends Component {
 
     this.onGoHome = this.onGoHome.bind(this);
     this.goToLeaderboard = this.goToLeaderboard.bind(this);
+    this.renderPlayers = this.renderPlayers.bind(this);
 
   }
 
@@ -54,17 +58,32 @@ class GameOverComponent extends Component {
     this.props.callback("LEADERBOARD");
   }
 
+    //This is on Game Over
+    //loops through all plaers to create a CharacterButton and display score
+    //can you pass as a prop
+    renderPlayers() {
+      return this.props.playersChosen.map((player, index) => (
+        <div style={styles.playerWrapperCol}>
+          <CharacterButtonSimple
+            unSelectedImage={imageIndex.getImage(player["avatar"])}
+            name={player["username"]}
+            key={index}
+          />
+          <p style={styles.scoreVertical}> {this.props.score[player["username"]]} </p>
+        </div>
+      ));
+    }
+
   render() {
+
     return (
       <Grid container direction="column" justify="center" alignItems="center">
         <p style={styles.title}>
-          Great Job!
+          Congratulations!
         </p>
-        <p style={styles.questionText}>
-          You scored {this.props.score[this.props.player[0]]} points
-        </p>
-
-
+          <div style={styles.avatarSection}>
+                {this.renderPlayers()}
+          </div>
         <Grid style={styles.column} spacing={3}>
           <Button style={styles.unselectedButton} onClick={this.onGoHome}>
             Back to Home
