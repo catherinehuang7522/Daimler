@@ -266,9 +266,12 @@ class QuestionsComponent extends Component {
           )
           }
         </Grid>
-        <div style={styles.avatarScore}>
+        {this.state.questionIndex < this.props.numQuestions ? <div style={styles.avatarScore}>
           {this.getPlayers(currentPlayer)}
         </div>
+          :
+          <div></div>
+        }
       </div>
     );
   }
