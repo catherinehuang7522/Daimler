@@ -12,7 +12,8 @@ class AnswersComponent extends Component {
     super(props);
     this.state = {
       correctAnswer: 0,
-      selectedAnswer: 0
+      selectedAnswer: 0,
+      blockReclicking: false
     }
 
     this.onPressAnswer = this.onPressAnswer.bind(this);
@@ -20,6 +21,10 @@ class AnswersComponent extends Component {
 
   // executed when answer is pressed
   onPressAnswer(index, answerObj) {
+    if (this.state.blockReclicking) { return }
+
+    this.setState({ blockReclicking: true });
+
     let correctAnswer;
     this.setState({selectedAnswer : index});
     for (let i in this.props.answers) {
@@ -40,6 +45,7 @@ class AnswersComponent extends Component {
 
     setTimeout(() => {
       this.setState({ correctAnswer: 0 });
+      this.setState({ blockReclicking: false });
     }, 2 * 1000);
   }
 
