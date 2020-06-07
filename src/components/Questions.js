@@ -210,7 +210,7 @@ class QuestionsComponent extends Component {
       </IconButton>
     );
 
-    const percentageProgress = Number((this.state.questionIndex / this.state.numQuestions).toPrecision(2)) * 100
+    const percentageProgress = Number((this.state.questionIndex / this.props.numQuestions).toPrecision(2)) * 100
 
     // console.log("playersChosen", this.props.playersChosen);
     let currentPlayerIndex = this.state.questionIndex % this.props.playersChosen.length;
