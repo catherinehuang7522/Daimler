@@ -18,6 +18,9 @@ import { Line, Circle } from 'rc-progress';
 import 'react-circular-progressbar/dist/styles.css';
 import { imageIndex } from "../components/ImageIndex";
 import CharacterButton from "./CharacterButton";
+import locationEasy from './locationEasy.json'
+import locationMedium from './locationMedium.json'
+import locationHard from './locationHard.json'
 
 
 const Entities = require("html-entities").AllHtmlEntities;
@@ -59,22 +62,20 @@ class QuestionsComponent extends Component {
     return this.props.playersChosen[this.state.questionIndex % this.props.playersChosen.length]['username'];
   }
 
-  /*
-  function: getUrls
-  Iterates over the user's selected categories (stored in this.props.cat)
-  Creates a custom URL for each category
-  Returns an array with all the URLS to fetch
-  */
   getUrls(categories) {
 
     const analytics = Firebase.sharedInstance.analytics  // init analytics object
 
-
     var urls = [];
     var customURL = "";
-    const numQs = this.props.numQuestions; // TODO: HOW MANY QUESTIONS SHOULD WE ASK? this or pass it into the function DUMMY FUNCTION
-    console.log(this.props.diff);
+    const numQs = this.props.numQuestions;
+
     for (var i = 0; i < categories.length; i++) {
+      //We are not actually pushing an url, but the resulting JSON file
+      if(CATEGORIES_MAP[categories[i]] === "10000"){
+        urls.push("dummy " + this.props.diff)
+      }
+      else{
       customURL =
         "https://opentdb.com/api.php?amount=" +
         numQs +
@@ -87,27 +88,49 @@ class QuestionsComponent extends Component {
       //log category to analytics
       analytics.logEvent('category', { category: categories[i] });
     }
+  }
+
     return urls;
   }
+
+
 
   // fetch quesions from cocktail trivia
   async onGetQuestions(category) {
     var chosenCategories = this.props.cat;
     const allUrls = this.getUrls(chosenCategories);
-    //const finalCateg = category == null ? "MUSIC" : category; // pass in the array of categories.
-    //const difficulty = this.props.diff;
-    //const numQs = this.props.numQuestions; // change this or pass it into the function
+    const finalCateg = category == null ? "MUSIC" : category; // pass in the array of categories.
+    const difficulty = this.props.diff;
+    const numQs = this.props.numQuestions; // change this or pass it into the function
 
     let json;
     var allData = [];
     let catQuestionsAndAnswers;
+
     let fetchRequest;
 
     for (var i = 0; i < allUrls.length; i++) {
-      fetchRequest = await fetch(allUrls[i]);
-      json = await fetchRequest.json();
-      catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
-      allData = allData.concat(catQuestionsAndAnswers);
+      if(allUrls[i].split(' ')[0] === "dummy") {
+          if(allUrls[i].split(' ')[1] === "easy"){
+            catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationEasy.results);
+            allData = allData.concat(catQuestionsAndAnswers);
+          }
+          else if(allUrls[i].split(' ')[1] === "medium"){
+            catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationMedium.results);
+            allData = allData.concat(catQuestionsAndAnswers);
+          }
+          else if(allUrls[i].split(' ')[1] === "hard"){
+          catQuestionsAndAnswers = this.parseQuestionAnswerFormat(locationHard.results);
+          allData = allData.concat(catQuestionsAndAnswers);
+        }
+    }
+      else {
+        fetchRequest = await fetch(allUrls[i]);
+        json = await fetchRequest.json();
+        catQuestionsAndAnswers = this.parseQuestionAnswerFormat(json.results);
+        allData = allData.concat(catQuestionsAndAnswers);
+    }
+
     }
 
     this.shuffleArray(allData);
@@ -127,6 +150,7 @@ class QuestionsComponent extends Component {
     }
     return a;
   }
+  
 
   /*This function parses the result from the API to the same format that was used in the previous API*/
   parseQuestionAnswerFormat(arr) {
