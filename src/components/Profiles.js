@@ -120,7 +120,7 @@ class ProfileComponent extends Component {
 
     return (
       <div style={styles.root}>
-        <Grid style={styles.title}> CHOOSE A CHARACTER </Grid>
+        <Grid style={styles.title}> Who is playing? </Grid>
         <div style={styles.profileComponentWrapper}>
           <div style={styles.avatarSection}>
             {this.renderPlayers()}
