@@ -122,7 +122,7 @@
          "category": "location",
          "type": "multiple",
          "difficulty": "easy",
-         "question": "The Leland Stanford Junior University Marching Band bills itself as what?",
+         "question": "The Stanford University Marching Band bills itself as what?",
          "correct_answer": "The World's Largest Rock and Roll Band",
          "incorrect_answers": [
             "The Pride of the West",
