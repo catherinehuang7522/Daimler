@@ -18,11 +18,11 @@
          "type": "multiple",
          "difficulty": "easy",
          "question": " What property did the Stanford family use on which to build the campus?",
-         "correct_answer": "Their horse breeding farm in Palo Alto, California",
+         "correct_answer": "Their horse breeding farm",
          "incorrect_answers": [
-            "A tract of land near the governor's mansion in Sacramento,CA",
+            "Near the governor's mansion",
             "Acreage overlooking the Pacific Ocean",
-            "A mission church abandoned by Father Junipero Serra"
+            "An abandoned mission church"
          ]
       },
       {
@@ -148,7 +148,7 @@
          "category": "location",
          "type": "multiple",
          "difficulty": "easy",
-         "question": "Before each home game, the Stanford football team, led by the marching band, walks from the Arrillaga Family Sports Center, along Sam MacDonald Road, to the stadium. Fans cheer them on in this traditional commonly known as what?",
+         "question": "Before each home game, the Stanford football team walk past cheering fans from the AFSC to the stadium, in this tradition commonly known as?",
          "correct_answer": "The Walk",
          "incorrect_answers": [
             "The Stanford Stomp",

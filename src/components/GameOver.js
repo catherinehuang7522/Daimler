@@ -69,28 +69,37 @@ class GameOverComponent extends Component {
             name={player["username"]}
             key={index}
           />
-          <p style={styles.scoreVertical}> {this.props.score[player["username"]]} </p>
+          <div style={styles.scoreVertical}> {this.props.score[player["username"]]} </div>
         </div>
       ));
     }
 
   render() {
+    let winner = "";
+    let topScore = 0;
+    for (let username in this.props.score) {
+      let score = this.props.score[username]
+      if (score >= topScore) {
+        winner = username
+        topScore = score
+      }
+    }
 
     return (
       <Grid container direction="column" justify="center" alignItems="center">
-        <p style={styles.title}>
-          Congratulations!
-        </p>
+        <div style={styles.title}>
+          Congratulations, {winner}!
+        </div>
           <div style={styles.avatarSection}>
                 {this.renderPlayers()}
           </div>
         <Grid style={styles.column} spacing={3}>
           <Button style={styles.unselectedButton} onClick={this.onGoHome}>
             Back to Home
-        </Button>
+          </Button>
           <Button style={styles.unselectedButton} m={5} onClick={this.goToLeaderboard}>
             Go to Leaderboard
-        </Button>
+          </Button>
         </Grid>
 
       </Grid>

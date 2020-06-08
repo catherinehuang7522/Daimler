@@ -56,7 +56,8 @@ const styles = {
   playerWrapperCol: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 5,
   },
   avatarScore: {
     display: "flex",
@@ -80,6 +81,7 @@ const styles = {
     color: "white",
     fontSize: 24,
     fontWeight: 'bold',
+    marginTop: 5
   },
   addPlayerSection: {
     display: "flex",
@@ -283,6 +285,7 @@ const styles = {
     width: 332,
     height: 80,
     fontFamily: "Open Sans",
+    fontWeight: 'bold',
     marginTop: 10,
     marginRight: 5,
     border: '5px solid #33FF62',
