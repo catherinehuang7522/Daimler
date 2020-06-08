@@ -1,13 +1,23 @@
 # Cabana
 
 <img src="Cabana Logo.png" alt="Cabana Logo"/>
- 
-# Play our Trivia Game
 
-https://master-dev.d28ds4nnoxwdjw.amplifyapp.com
+ ## Project Overview
  
+ We are reimagining the in-car entertainment system for the self-driving age by building an engaging trivia game.
+
+
+# Links
+[Play CabanaTrivia](https://master-dev.d28ds4nnoxwdjw.amplifyapp.com)
+
+ [Theme Music](https://open.spotify.com/user/21kv2tf3fcihbiwnlgww7asly/playlist/65LWzmY6oKjGv141vKFQqX?si=bn9aqPjESgKEjo_0pvkYFQ)
+
  # :rocket: Latest Updates :rocket:
- * Up-to-date Spring Quarter **dev roadmap** can be found [here](https://docs.google.com/document/d/1ChToyw4i9olIfGBn4hQI5PKr5D6cuIxsthny17nNpTE/edit?usp=sharing)
+ * Successfully presented the final product to Daimler team on June 8th.
+ * Many thanks to Daimer and the CS210 teaching team for facilitating this experience. We have learned to work better in a team, become better programmers and learned to manage expectations between partners and the team. 
+ 
+  #  Past Updates 
+ *  Spring Quarter **dev roadmap** can be found [here](https://docs.google.com/document/d/1ChToyw4i9olIfGBn4hQI5PKr5D6cuIxsthny17nNpTE/edit?usp=sharing)
  * Contract of Deliverables can be found [here](https://docs.google.com/document/d/1Iv_HUolDp9VPYimOF6F2-ApQbSc_rVTuXsCuaLQxfLA/edit?usp=sharing)
  * We are now going in to Finals Week and Spring Break so Activity will be lower until the start of Spring quarter starting March 30th. 
  * Stanford is closing the campus and moves all classes online until further notice. More information [here](https://healthalerts.stanford.edu/)
@@ -16,11 +26,7 @@ https://master-dev.d28ds4nnoxwdjw.amplifyapp.com
  * A more detailed Roadmap/Overview can be viewed [here](https://docs.google.com/spreadsheets/d/1XCwTbh0N-ijNtFKVzL6cxW9gsjVZF3XECJRNrYBc3ho/edit#gid=0)
  * GitHub repository made public for Daimler to view progress (3/3/2020)
  
- ## Project Overview
- 
- We are reimagining the in-car entertainment system for the self-driving age.
- 
- [Theme Music](https://open.spotify.com/user/21kv2tf3fcihbiwnlgww7asly/playlist/65LWzmY6oKjGv141vKFQqX?si=bn9aqPjESgKEjo_0pvkYFQ)
+
  
  # Team Members
 Member |  Email | Photo
