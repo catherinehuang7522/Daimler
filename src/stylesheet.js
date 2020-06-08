@@ -272,7 +272,7 @@ const styles = {
     borderRadius: 20,
     width: 332,
     height: 80,
-    fontFamily: "Kontakt",
+    fontFamily: "Open Sans",
     marginTop: 10,
     marginRight: 5,
     border: '5px solid #33FF62',
