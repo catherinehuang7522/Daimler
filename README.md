@@ -26,6 +26,12 @@
  * A more detailed Roadmap/Overview can be viewed [here](https://docs.google.com/spreadsheets/d/1XCwTbh0N-ijNtFKVzL6cxW9gsjVZF3XECJRNrYBc3ho/edit#gid=0)
  * GitHub repository made public for Daimler to view progress (3/3/2020)
  
+ # Hosting and Backend
+ 
+The current version of the game on this branch "master-dev" is connected to, and hosted on the free AWS tier "Amplify" [here](https://master-dev.d28ds4nnoxwdjw.amplifyapp.com). Any changes that are made to this branch will automatically update the game on the link with a small delay for the server to update of a couple of minutes. It is currently hosted by Wilhelm and will be kept online until the end of 2020. 
+
+Backend TBD
+
  
  # Team Members
 Member |  Email | Photo
